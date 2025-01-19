@@ -6,9 +6,15 @@ DEF SND_CH3_PTR        EQU LOW(rNR33)
 DEF SND_CH4_PTR        EQU LOW(rNR43)
 DEF SNDLEN_INFINITE    EQU $FF
 
+; wSnd_Unused_SfxPriority
+DEF SNPB_SFXMULTI         EQU 7 ; An high-priority multi-channel SFX is playing
+DEF SNPB_SFX4             EQU 6 ; An high-priority SFX4 is playing
+DEF SNP_SFXMULTI          EQU 1 << SNPB_SFXMULTI
+DEF SNP_SFX4              EQU 1 << SNPB_SFX4
+
 ; iSndInfo_Status
 DEF SISB_PAUSE            EQU 0 ; If set, iSndInfo processing is paused for that channel
-DEF SISB_SKIPNRx2         EQU 1 ; If set, rNR*2 won't be updated
+DEF SISB_LOCKNRx2         EQU 1 ; If set, rNR*2 won't be updated
 DEF SISB_USEDBYSFX        EQU 2 ; wBGMCh*Info only. If set, it marks that a sound effect is currently using the channel.
 DEF SISB_SFX              EQU 3 ; If set, the SndInfo is handled as a sound effect. If clear, it's a BGM.
 DEF SISB_SLIDE            EQU 5 ; If set, a pitch slide is in progress.
@@ -16,7 +22,7 @@ DEF SISB_VIBRATO          EQU 6 ; If set, vibrato is enabled for that channel.
 DEF SISB_ENABLED          EQU 7 ; If set, iSndInfo processing is enabled for that channel
 
 DEF SIS_PAUSE             EQU 1 << SISB_PAUSE
-DEF SIS_SKIPNRx2          EQU 1 << SISB_SKIPNRx2    
+DEF SIS_LOCKNRx2          EQU 1 << SISB_LOCKNRx2    
 DEF SIS_USEDBYSFX         EQU 1 << SISB_USEDBYSFX   
 DEF SIS_SFX               EQU 1 << SISB_SFX         
 DEF SIS_SLIDE             EQU 1 << SISB_SLIDE

@@ -16,7 +16,7 @@ print "Converting data...".PHP_EOL;
 
 $bit_status = [
 	0 => "SIS_PAUSE",
-	1 => "SIS_SKIPNRx2",
+	1 => "SIS_LOCKNRx2",
 	2 => "SIS_USEDBYSFX",
 	3 => "SIS_SFX",
 	4 => "SIS_UNK_4",

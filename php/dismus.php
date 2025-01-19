@@ -130,7 +130,7 @@ for ($chnum = $i = 0; $i < count($asmfile);) {
 				out("snd_loop \${$ptrHigh}{$ptrLow} ; L1F{$ptrHigh}{$ptrLow} "); 
 				break;
 			case 0x06:
-				out("base_note ".mknote(hexdec(getdb($i))));
+				out("fine_tune ".mknote(hexdec(getdb($i))));
 				break;
 			case 0x07:
 				$timerId = getdb($i++);
@@ -200,17 +200,17 @@ for ($chnum = $i = 0; $i < count($asmfile);) {
 				out("wave_id \$".getdb($i));
 				break;	
 			case 0x14:
-				out("snd_UNUSED_endchflag7F");
+				out("chan_stop SNP_SFXMULTI");
 				$incPtr = false;
 				break;
 			case 0x15:
 				$val = getdb($i);
 				if ($val == "FF")
 					$val = "SNDLEN_INFINITE";
-				out("wave_cutoff_now \$".$val);
+				out("wave_cutoff \$".$val);
 				break;					
 			case 0x16:
-				out("snd_UNUSED_endchflagBF");
+				out("chan_stop SNP_SFX4");
 				$incPtr = false;
 				break;
 			case 0x1A:

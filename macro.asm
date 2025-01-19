@@ -59,26 +59,22 @@ ENDM
 
 ; =============== chan_stop ===============
 ; Stops channel playback.
-; Code: Sound_Cmd_EndCh
+; Code: Sound_Cmd_ChanStop / Sound_Cmd_ChanStopHiSFXMulti / Sound_Cmd_ChanStopHiSFX4
 ; IN
-; - 1: If set, this specifies the mask
+; - 1: [Optional] For SFX, the priority flag to clear from wSnd_Unused_SfxPriority (SNP_*).
+;                 It must match the flag that was set on the init action code.
 MACRO chan_stop
-	db SNDCMD_BASE + $03
-ENDM
-; TODO: seems to be for ending songs started by the unused start actions that set the flag
-;       is this for hi/lo priority????
-; =============== snd_UNUSED_endchflag7F ===============
-; Stops channel playback and updates an otherwise unused bitmask.
-; Code: Sound_Cmd_Unused_EndChFlag7F
-MACRO snd_UNUSED_endchflag7F
-	db SNDCMD_BASE + $14
-ENDM
-
-; =============== snd_UNUSED_endchflagBF ===============
-; Stops channel playback and updates an otherwise unused bitmask.
-; Code: Sound_Cmd_Unused_EndChFlagBF
-MACRO snd_UNUSED_endchflagBF
-	db SNDCMD_BASE + $16
+	IF _NARG > 0
+		IF \1 == SNP_SFXMULTI
+			db SNDCMD_BASE + $14
+		ELSEIF  \1 == SNP_SFX4
+			db SNDCMD_BASE + $16
+		ELSE
+			FAIL "Invalid parameter passed to chan_stop"
+		ENDC
+	ELSE
+		db SNDCMD_BASE + $03
+	ENDC
 ENDM
 
 ; =============== envelope ===============
@@ -103,13 +99,12 @@ ENDM
 
 ; =============== snd_loop ===============
 ; Jumps to the specified target in the song data.
-; It can loop for a specified amount of times, after which the command is ignored and the song continues. 
+; It can loop for a specified amount of times, after which the loop is ignored and the song continues. 
 ; Code: Sound_Cmd_JpFromLoop / Sound_Cmd_JpFromLoopByTimer
 ; IN:
 ; - 1: Ptr to song data
 ; - 2: [Optional] Timer ID (should be unique as to not overwrite other loops)
 ; - 3: [Optional] Times to loop (Initial timer value)
-
 MACRO snd_loop
 	IF _NARG > 1
 		; Conditional
@@ -123,26 +118,19 @@ MACRO snd_loop
 	ENDC
 ENDM
 
-; =============== base_note ===============
-; Sets the base note value.
-; All future note commands will be relative to this.
+; =============== fine_tune ===============
+; Adjusts the pitch offset for the track.
+; Note IDs will be shifted by this amount relative to the current offset.
 ; Code: Sound_Cmd_AddToBaseFreqId
 ; IN:
-; - 1: Note (C_ to B)
-; - 2: Octave (0-8)
-MACRO base_note
-	db SNDCMD_BASE + $06
-	IF _NARG > 1
-		_mknote \#
-		db DNOTE
-	ELSE
-		db 0
-	ENDC
+; - 1: Tune offsets
+MACRO fine_tune
+	db SNDCMD_BASE + $06, \1
 ENDM
 
 ; =============== sweep ===============
 ; Sets Pulse 1 sweep settings.
-; Code: Sound_Cmd_Unused_WriteToNR10
+; Code: Sound_Cmd_WriteToNR10
 ; IN:
 ; - 1: Raw NR10 data
 MACRO sweep
@@ -150,8 +138,8 @@ MACRO sweep
 ENDM
 
 ; =============== panning ===============
-; Sets the speakers to enable.
-; Code: Sound_Cmd_SetChEna
+; Sets the channel's stereo panning.
+; Code: Sound_Cmd_SetPanning
 ; IN:
 ; - 1: NR51 bits. 
 ;      Only the bits for the current channel should be set.
@@ -194,25 +182,16 @@ MACRO duty_cycle
 	db (\1 << 6)|CLEN
 ENDM
 
-; =============== cutoff ===============
-; Writes data to NRx1. Wave & Noise channels only.
-; Code: Sound_Cmd_WriteToNRx1
-; IN:
-; - 1: Channel length timer
-MACRO cutoff
-	db SNDCMD_BASE + $0E, \1
-ENDM
-
 ; =============== lock_envelope ===============
 ; Prevents the channel's envelope from being updated.
-; Code: Sound_Cmd_SetSkipNRx2
+; Code: Sound_Cmd_LockNRx2
 MACRO lock_envelope
 	db SNDCMD_BASE + $0F
 ENDM
 
 ; =============== unlock_envelope ===============
 ; Enables writes to the channel's envelope.
-; Code: Sound_Cmd_ClrSkipNRx2
+; Code: Sound_Cmd_UnlockNRx2
 MACRO unlock_envelope
 	db SNDCMD_BASE + $10
 ENDM
@@ -242,12 +221,12 @@ MACRO wave_id
 	db SNDCMD_BASE + $13, \1
 ENDM
 
-; =============== wave_cutoff_now ===============
+; =============== wave_cutoff ===============
 ; Writes data to NR31 and immediately applies it to the register.
-; Code: Sound_Cmd_SetCh3StopLength
+; Code: Sound_Cmd_WriteToNR31
 ; IN:
 ; - 1: Channel length timer
-MACRO wave_cutoff_now
+MACRO wave_cutoff
 	db SNDCMD_BASE + $15, \1
 ENDM
 

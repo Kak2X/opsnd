@@ -3,9 +3,9 @@ SECTION "Sound RAM", WRAM0[$DA00]
 ; SOUND DRIVER
 ;
 wSnd_Unused_Set             :db ; EQU $DA00 ; [TCRF] Leftover from 95, where it was set to play new a sound ID.
-wSnd_Unused_ChUsed          :db ; EQU $DA01 ; Appears to be a bitmask intended to mark the used sound channels, but it is only set properly in unreachable code.
+wSnd_Unused_SfxPriority     :db ; EQU $DA01 ; [TCRF] Keeps track of high priority sound being played.
 wSndEnaChBGM                :db ; EQU $DA02 ; Keeps track of the last rNR51 value used modified by a BGM SndInfo.
-wSndCh3StopLength           :db ; EQU $DA03 ; This is set to rNR31 sometimes (see logic)
+wSndCh3DelayCut             :db ; EQU $DA03 ; Keeps track of the last rNR31 wave cutoff value (wave_cutoff).
 ds 1
 wSndChProcLeft              :db ; EQU $DA05 ; Number of remaining wBGMCh*Info/wSFXCh*Info structs to process
 wSndFadeStatus              :db ; EQU $DA06 ; Fade control
@@ -59,7 +59,7 @@ DEF iSndInfo_LengthTarget              EQU $08 ; Handles delays -- the current s
 DEF iSndInfo_LengthTimer               EQU $09 ; Increases every time a SndInfo isn't paused/disabled. Once it reaches iSndInfo_LengthTarget it resets.
 DEF iSndInfo_VibratoDataOffset         EQU $0A ; Offset to the current vibrato table.
 DEF iSndInfo_RegNRx1Data               EQU $0B ; Last value written to rNR*1 | $FF00+(iSndInfo_RegPtr-2). Only written by Command IDs -- this isn't updated by the standard Sound_UpdateCustomRegs.
-DEF iSndInfo_Unknown_Unused_NR10Data   EQU $0C ; Last value written to NR10 by the unused sound command Sound_Cmd_Unused_WriteToNR10.
+DEF iSndInfo_RegNR10Data               EQU $0C ; Last value written to NR10 by the unused sound command Sound_Cmd_WriteToNR10.
 DEF iSndInfo_VolPredict                EQU $0D ; "Volume timer" which predicts the effective volume level (due to sweeps) at any given frame, used when restoring BGM playback. Low nybble is the timer, upper nybble is the predicted volume.
 DEF iSndInfo_RegNRx2Data               EQU $0E ; Last value written to rNR*2 | $FF00+(iSndInfo_RegPtr-1)
 DEF iSndInfo_RegNRx3Data               EQU $0F ; Last value written to rNR*3 | $FF00+(iSndInfo_RegPtr)

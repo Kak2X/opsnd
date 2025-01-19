@@ -67,7 +67,7 @@ MACRO chan_stop
 	IF _NARG > 0
 		IF \1 == SNP_SFXMULTI
 			db SNDCMD_BASE + $14
-		ELSEIF  \1 == SNP_SFX4
+		ELIF \1 == SNP_SFX4
 			db SNDCMD_BASE + $16
 		ELSE
 			FAIL "Invalid parameter passed to chan_stop"
@@ -276,17 +276,30 @@ MACRO note4
 	; Convert the SPN to respective values in the tbm noise frequency table
 	DEF HI_P1 = (6 - \2) * 3
 	DEF NOTE_INV = 11 - \1
-	IF \2 == 6 AND NOTE_INV < 4
+	IF (\2 == 6 && NOTE_INV < 4)
 		DEF DNOTE = (NOTE_INV & 3)
 	ELSE
 		DEF LOW_SUB = (NOTE_INV % 4) + 4
 		DEF LOW_BASE = NOTE_INV / 4
-		DEF DNOTE = ((HI_P1 + 1) << 4) + LOW_SUB - (0x20 - (LOW_BASE * 0x10))
+		DEF DNOTE = ((HI_P1 + 1) << 4) + LOW_SUB - ($20 - (LOW_BASE * $10))
 	ENDC
 	
 	db DNOTE
 	IF _NARG > 2
 		db \3
+	ENDC
+ENDM
+
+; =============== note4x ===============
+; Sets a custom note unrepresentable with tbm.
+; Code: N/A
+; IN:
+; - 1: NR43 data
+; - 2: New Length [Optional]
+MACRO note4x
+	db \1
+	IF _NARG > 1
+		db \2
 	ENDC
 ENDM
 

@@ -1,0 +1,14 @@
+# build output
+op.*
+
+# provide your own comparision rom
+original.*
+
+# not necessary
+*.sav
+tempconv.*
+shell.lnk
+temp
+.cdl
+old
+.reference

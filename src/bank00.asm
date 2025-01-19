@@ -1,0 +1,15013 @@
+L000000:;C
+	pop  de
+	ld   l, a
+	ld   h, $00
+	add  hl, hl
+	add  hl, de
+	ldi  a, [hl]
+	ld   h, [hl]
+	ld   l, a
+	jp   hl
+L00000a: db $FF;X
+L00000B: db $FF;X
+L00000C: db $FF;X
+L00000D: db $FF;X
+L00000E: db $FF;X
+L00000F: db $FF;X
+L000010: db $C9;X
+L000011: db $FF;X
+L000012: db $FF;X
+L000013: db $FF;X
+L000014: db $FF;X
+L000015: db $FF;X
+L000016: db $FF;X
+L000017: db $FF;X
+L000018: db $C9;X
+L000019: db $FF;X
+L00001A: db $FF;X
+L00001B: db $FF;X
+L00001C: db $FF;X
+L00001D: db $FF;X
+L00001E: db $FF;X
+L00001F: db $FF;X
+L000020: db $C9;X
+L000021: db $FF;X
+L000022: db $FF;X
+L000023: db $FF;X
+L000024: db $FF;X
+L000025: db $FF;X
+L000026: db $FF;X
+L000027: db $FF;X
+L000028: db $C9;X
+L000029: db $FF;X
+L00002A: db $FF;X
+L00002B: db $FF;X
+L00002C: db $FF;X
+L00002D: db $FF;X
+L00002E: db $FF;X
+L00002F: db $FF;X
+L000030: db $C9;X
+L000031: db $FF;X
+L000032: db $FF;X
+L000033: db $FF;X
+L000034: db $FF;X
+L000035: db $FF;X
+L000036: db $FF;X
+L000037: db $FF;X
+L000038: db $C9;X
+L000039: db $FF;X
+L00003A: db $FF;X
+L00003B: db $FF;X
+L00003C: db $FF;X
+L00003D: db $FF;X
+L00003E: db $FF;X
+L00003F: db $FF;X
+	jp   L00022D
+L000043: db $FF;X
+L000044: db $FF;X
+L000045: db $FF;X
+L000046: db $FF;X
+L000047: db $FF;X
+	jp   L000410
+L00004B: db $FF;X
+L00004C: db $FF;X
+L00004D: db $FF;X
+L00004E: db $FF;X
+L00004F: db $FF;X
+L000050: db $C3;X
+L000051: db $AA;X
+L000052: db $04;X
+L000053: db $FF;X
+L000054: db $FF;X
+L000055: db $FF;X
+L000056: db $FF;X
+L000057: db $FF;X
+L000058: db $C3;X
+L000059: db $D9;X
+L00005A: db $04;X
+L00005B: db $FF;X
+L00005C: db $FF;X
+L00005D: db $FF;X
+L00005E: db $FF;X
+L00005F: db $FF;X
+L000060: db $FF;X
+L000061: db $FF;X
+L000062: db $FF;X
+L000063: db $FF;X
+L000064: db $FF;X
+L000065: db $FF;X
+L000066: db $FF;X
+L000067: db $FF;X
+L000068: db $FF;X
+L000069: db $FF;X
+L00006A: db $FF;X
+L00006B: db $FF;X
+L00006C: db $FF;X
+L00006D: db $FF;X
+L00006E: db $FF;X
+L00006F: db $FF;X
+L000070: db $FF;X
+L000071: db $FF;X
+L000072: db $FF;X
+L000073: db $FF;X
+L000074: db $FF;X
+L000075: db $FF;X
+L000076: db $FF;X
+L000077: db $FF;X
+L000078: db $FF;X
+L000079: db $FF;X
+L00007A: db $FF;X
+L00007B: db $FF;X
+L00007C: db $FF;X
+L00007D: db $FF;X
+L00007E: db $FF;X
+L00007F: db $FF;X
+L000080: db $FF;X
+L000081: db $FF;X
+L000082: db $FF;X
+L000083: db $FF;X
+L000084: db $FF;X
+L000085: db $FF;X
+L000086: db $FF;X
+L000087: db $FF;X
+L000088: db $FF;X
+L000089: db $FF;X
+L00008A: db $FF;X
+L00008B: db $FF;X
+L00008C: db $FF;X
+L00008D: db $FF;X
+L00008E: db $FF;X
+L00008F: db $FF;X
+L000090: db $FF;X
+L000091: db $FF;X
+L000092: db $FF;X
+L000093: db $FF;X
+L000094: db $FF;X
+L000095: db $FF;X
+L000096: db $FF;X
+L000097: db $FF;X
+L000098: db $FF;X
+L000099: db $FF;X
+L00009A: db $FF;X
+L00009B: db $FF;X
+L00009C: db $FF;X
+L00009D: db $FF;X
+L00009E: db $FF;X
+L00009F: db $FF;X
+L0000A0: db $FF;X
+L0000A1: db $FF;X
+L0000A2: db $FF;X
+L0000A3: db $FF;X
+L0000A4: db $FF;X
+L0000A5: db $FF;X
+L0000A6: db $FF;X
+L0000A7: db $FF;X
+L0000A8: db $FF;X
+L0000A9: db $FF;X
+L0000AA: db $FF;X
+L0000AB: db $FF;X
+L0000AC: db $FF;X
+L0000AD: db $FF;X
+L0000AE: db $FF;X
+L0000AF: db $FF;X
+L0000B0: db $FF;X
+L0000B1: db $FF;X
+L0000B2: db $FF;X
+L0000B3: db $FF;X
+L0000B4: db $FF;X
+L0000B5: db $FF;X
+L0000B6: db $FF;X
+L0000B7: db $FF;X
+L0000B8: db $FF;X
+L0000B9: db $FF;X
+L0000BA: db $FF;X
+L0000BB: db $FF;X
+L0000BC: db $FF;X
+L0000BD: db $FF;X
+L0000BE: db $FF;X
+L0000BF: db $FF;X
+L0000C0: db $FF;X
+L0000C1: db $FF;X
+L0000C2: db $FF;X
+L0000C3: db $FF;X
+L0000C4: db $FF;X
+L0000C5: db $FF;X
+L0000C6: db $FF;X
+L0000C7: db $FF;X
+L0000C8: db $FF;X
+L0000C9: db $FF;X
+L0000CA: db $FF;X
+L0000CB: db $FF;X
+L0000CC: db $FF;X
+L0000CD: db $FF;X
+L0000CE: db $FF;X
+L0000CF: db $FF;X
+L0000D0: db $FF;X
+L0000D1: db $FF;X
+L0000D2: db $FF;X
+L0000D3: db $FF;X
+L0000D4: db $FF;X
+L0000D5: db $FF;X
+L0000D6: db $FF;X
+L0000D7: db $FF;X
+L0000D8: db $FF;X
+L0000D9: db $FF;X
+L0000DA: db $FF;X
+L0000DB: db $FF;X
+L0000DC: db $FF;X
+L0000DD: db $FF;X
+L0000DE: db $FF;X
+L0000DF: db $FF;X
+L0000E0: db $FF;X
+L0000E1: db $FF;X
+L0000E2: db $FF;X
+L0000E3: db $FF;X
+L0000E4: db $FF;X
+L0000E5: db $FF;X
+L0000E6: db $FF;X
+L0000E7: db $FF;X
+L0000E8: db $FF;X
+L0000E9: db $FF;X
+L0000EA: db $FF;X
+L0000EB: db $FF;X
+L0000EC: db $FF;X
+L0000ED: db $FF;X
+L0000EE: db $FF;X
+L0000EF: db $FF;X
+L0000F0: db $FF;X
+L0000F1: db $FF;X
+L0000F2: db $FF;X
+L0000F3: db $FF;X
+L0000F4: db $FF;X
+L0000F5: db $FF;X
+L0000F6: db $FF;X
+L0000F7: db $FF;X
+L0000F8: db $FF;X
+L0000F9: db $FF;X
+L0000FA: db $FF;X
+L0000FB: db $FF;X
+L0000FC: db $FF;X
+L0000FD: db $FF;X
+L0000FE: db $FF;X
+L0000FF: db $FF;X
+	nop  
+	jp   L000150
+L000104: db $CE;X
+L000105: db $ED;X
+L000106: db $66;X
+L000107: db $66;X
+L000108: db $CC;X
+L000109: db $0D;X
+L00010A: db $00;X
+L00010B: db $0B;X
+L00010C: db $03;X
+L00010D: db $73;X
+L00010E: db $00;X
+L00010F: db $83;X
+L000110: db $00;X
+L000111: db $0C;X
+L000112: db $00;X
+L000113: db $0D;X
+L000114: db $00;X
+L000115: db $08;X
+L000116: db $11;X
+L000117: db $1F;X
+L000118: db $88;X
+L000119: db $89;X
+L00011A: db $00;X
+L00011B: db $0E;X
+L00011C: db $DC;X
+L00011D: db $CC;X
+L00011E: db $6E;X
+L00011F: db $E6;X
+L000120: db $DD;X
+L000121: db $DD;X
+L000122: db $D9;X
+L000123: db $99;X
+L000124: db $BB;X
+L000125: db $BB;X
+L000126: db $67;X
+L000127: db $63;X
+L000128: db $6E;X
+L000129: db $0E;X
+L00012A: db $EC;X
+L00012B: db $CC;X
+L00012C: db $DD;X
+L00012D: db $DC;X
+L00012E: db $99;X
+L00012F: db $9F;X
+L000130: db $BB;X
+L000131: db $B9;X
+L000132: db $33;X
+L000133: db $3E;X
+L000134: db $4F;X
+L000135: db $4E;X
+L000136: db $45;X
+L000137: db $50;X
+L000138: db $49;X
+L000139: db $45;X
+L00013A: db $43;X
+L00013B: db $45;X
+L00013C: db $2D;X
+L00013D: db $30;X
+L00013E: db $31;X
+L00013F: db $42;X
+L000140: db $4C;X
+L000141: db $55;X
+L000142: db $4A;X
+L000143: db $00;X
+L000144: db $44;X
+L000145: db $39;X
+L000146: db $00;X
+L000147: db $1B;X
+L000148: db $04;X
+L000149: db $02;X
+L00014A: db $00;X
+L00014B: db $33;X
+L00014C: db $00;X
+L00014D: db $13;X
+L00014E: db $B8
+L00014F: db $67
+L000150:;J
+	di   
+	jp   L00015C
+L000154: db $F3;X
+L000155: db $FA;X
+L000156: db $38;X
+L000157: db $C8;X
+L000158: db $47;X
+L000159: db $FA;X
+L00015A: db $37;X
+L00015B: db $C8;X
+L00015C:;J
+	ld   sp, $DF00
+	ld   [$C837], a
+	ld   a, b
+	ld   [$C838], a
+	call L000E11
+	ld   a, $01
+	ld   [$C841], a
+	ld   [MBC1RomBank], a
+	ld   a, $00
+	ld   [$C842], a
+	ld   [$3000], a
+	ld   a, $01
+	ld   [$C843], a
+	ld   [$4000], a
+	ld   a, $00
+	ld   [$0000], a
+	xor  a, a
+	ldh  [rSCY], a
+	ldh  [rSCX], a
+	ld   a, $90
+	ldh  [rWY], a
+	ld   a, $08
+	ldh  [rWX], a
+	xor  a, a
+	ldh  [rLYC], a
+	xor  a, a
+	ldh  [rTIMA], a
+	ldh  [rTMA], a
+	ldh  [rTAC], a
+	ldh  [rSB], a
+	ldh  [rSC], a
+	xor  a, a
+	ldh  [rSTAT], a
+	ldh  [rIF], a
+	ld   a, $01
+	ldh  [rIE], a
+	call L0007FC
+	ld   a, [$C838]
+	push af
+	ld   a, [$C837]
+	push af
+	ld   hl, $C000
+L0001B8:;R
+	xor  a, a
+	ldi  [hl], a
+	ld   a, $DE
+	cp   a, h
+	jr   nz, L0001B8
+	ld   hl, $DF00
+	ld   b, $A0
+L0001C4:;J
+	xor  a, a
+	ldi  [hl], a
+	dec  b
+	jp   nz, L0001C4
+	xor  a, a
+	ld   [$DFA0], a
+	pop  af
+	ld   [$C837], a
+	pop  af
+	ld   [$C838], a
+	call $FF80
+	ei   
+	call L003DC9
+	ld   bc, $003C
+	call $1F9C
+	call L000F04
+	call L000F9C
+	call $220E
+	ld   a, $00
+	ld   [$C881], a
+	call $20A9
+	ld   bc, $003C
+	call $1F9C
+	xor  a, a
+	ld   bc, $0003
+	ld   hl, $C89E
+	call L000FD8
+	xor  a, a
+	ld   bc, $0003
+	ld   hl, $C8A1
+	call L000FD8
+	call L000D77
+	ld   a, $FF
+	ld   bc, $0080
+	ld   hl, $C8A4
+	call L000FD8
+	ld   a, $FF
+	ld   bc, $0080
+	ld   hl, $C924
+	call L000FD8
+	call L000D84
+	jp   L003587
+L00022D:;J
+	push af
+	push bc
+	push de
+	push hl
+	ld   a, [$C845]
+	ldh  [rSCX], a
+	ld   a, [$C847]
+	ldh  [rSCY], a
+	ld   hl, $C836
+	inc  [hl]
+	ld   a, [$DB59]
+	and  a, a
+	jr   nz, L000257
+	ld   a, [$C849]
+	and  a, a
+	jr   z, L000257
+	call $FF80
+	call L000367
+	call L000334
+	call L00026A
+L000257:;R
+	ei   
+	call $101F
+	call L003DE3
+	call L0004C0
+	xor  a, a
+	ld   [$C849], a
+	pop  hl
+	pop  de
+	pop  bc
+	pop  af
+	reti 
+L00026A:;C
+	ld   a, [$C89D]
+	and  a, $03
+	ret  z
+	ld   a, [$C89C]
+	and  a, a
+	ret  nz
+	ld   a, [$C834]
+	cp   $04
+	jp   z, L0002BD
+	ld   de, $C89E
+	ld   a, [$C89D]
+	bit  7, a
+	jr   z, $028A
+	ld   de, $C8A1
+	ld   a, [$C89D]
+	and  a, $03
+	ld   hl, $0296
+	call L000C71
+	jp   hl
+L000296: db $B8;X
+L000297: db $02;X
+L000298: db $9E;X
+L000299: db $02;X
+L00029A: db $A3;X
+L00029B: db $02;X
+L00029C: db $AD
+L00029D: db $02
+L00029E: db $1A;X
+L00029F: db $E0;X
+L0002A0: db $47;X
+L0002A1: db $18;X
+L0002A2: db $15;X
+L0002A3: db $13;X
+L0002A4: db $1A;X
+L0002A5: db $E0;X
+L0002A6: db $48;X
+L0002A7: db $13;X
+L0002A8: db $1A;X
+L0002A9: db $E0;X
+L0002AA: db $49;X
+L0002AB: db $18;X
+L0002AC: db $0B;X
+L0002AD:;I
+	ld   a, [de]
+	ldh  [rBGP], a
+	inc  de
+	ld   a, [de]
+	ldh  [rOBP0], a
+	inc  de
+	ld   a, [de]
+	ldh  [rOBP1], a
+	xor  a, a
+	ld   [$C89D], a
+	ret  
+L0002BD: db $21;X
+L0002BE: db $4B;X
+L0002BF: db $C8;X
+L0002C0: db $34;X
+L0002C1: db $7E;X
+L0002C2: db $CB;X
+L0002C3: db $47;X
+L0002C4: db $20;X
+L0002C5: db $1B;X
+L0002C6: db $FA;X
+L0002C7: db $9D;X
+L0002C8: db $C8;X
+L0002C9: db $CB;X
+L0002CA: db $47;X
+L0002CB: db $28;X
+L0002CC: db $07;X
+L0002CD: db $CB;X
+L0002CE: db $87;X
+L0002CF: db $EA;X
+L0002D0: db $9D;X
+L0002D1: db $C8;X
+L0002D2: db $18;X
+L0002D3: db $44;X
+L0002D4: db $FA;X
+L0002D5: db $9D;X
+L0002D6: db $C8;X
+L0002D7: db $CB;X
+L0002D8: db $4F;X
+L0002D9: db $C8;X
+L0002DA: db $CB;X
+L0002DB: db $8F;X
+L0002DC: db $EA;X
+L0002DD: db $9D;X
+L0002DE: db $C8;X
+L0002DF: db $18;X
+L0002E0: db $1B;X
+L0002E1: db $FA;X
+L0002E2: db $9D;X
+L0002E3: db $C8;X
+L0002E4: db $CB;X
+L0002E5: db $4F;X
+L0002E6: db $28;X
+L0002E7: db $07;X
+L0002E8: db $CB;X
+L0002E9: db $8F;X
+L0002EA: db $EA;X
+L0002EB: db $9D;X
+L0002EC: db $C8;X
+L0002ED: db $18;X
+L0002EE: db $0D;X
+L0002EF: db $FA;X
+L0002F0: db $9D;X
+L0002F1: db $C8;X
+L0002F2: db $CB;X
+L0002F3: db $47;X
+L0002F4: db $C8;X
+L0002F5: db $CB;X
+L0002F6: db $87;X
+L0002F7: db $EA;X
+L0002F8: db $9D;X
+L0002F9: db $C8;X
+L0002FA: db $18;X
+L0002FB: db $1C;X
+L0002FC: db $21;X
+L0002FD: db $E4;X
+L0002FE: db $C8;X
+L0002FF: db $FA;X
+L000300: db $9D;X
+L000301: db $C8;X
+L000302: db $CB;X
+L000303: db $7F;X
+L000304: db $28;X
+L000305: db $03;X
+L000306: db $21;X
+L000307: db $64;X
+L000308: db $C9;X
+L000309: db $3E;X
+L00030A: db $80;X
+L00030B: db $E0;X
+L00030C: db $6A;X
+L00030D: db $06;X
+L00030E: db $40;X
+L00030F: db $0E;X
+L000310: db $6B;X
+L000311: db $2A;X
+L000312: db $E2;X
+L000313: db $05;X
+L000314: db $C2;X
+L000315: db $11;X
+L000316: db $03;X
+L000317: db $C9;X
+L000318: db $21;X
+L000319: db $A4;X
+L00031A: db $C8;X
+L00031B: db $FA;X
+L00031C: db $9D;X
+L00031D: db $C8;X
+L00031E: db $CB;X
+L00031F: db $7F;X
+L000320: db $28;X
+L000321: db $03;X
+L000322: db $21;X
+L000323: db $24;X
+L000324: db $C9;X
+L000325: db $3E;X
+L000326: db $80;X
+L000327: db $E0;X
+L000328: db $68;X
+L000329: db $06;X
+L00032A: db $40;X
+L00032B: db $0E;X
+L00032C: db $69;X
+L00032D: db $2A;X
+L00032E: db $E2;X
+L00032F: db $05;X
+L000330: db $C2;X
+L000331: db $2D;X
+L000332: db $03;X
+L000333: db $C9;X
+L000334:;C
+	ld   hl, $CB64
+	ld   a, [hl]
+	and  a, a
+	ret  z
+L00033A: db $FA;X
+L00033B: db $41;X
+L00033C: db $C8;X
+L00033D: db $F5;X
+L00033E: db $7E;X
+L00033F: db $CD;X
+L000340: db $B9;X
+L000341: db $0C;X
+L000342: db $36;X
+L000343: db $00;X
+L000344: db $23;X
+L000345: db $2A;X
+L000346: db $5F;X
+L000347: db $2A;X
+L000348: db $57;X
+L000349: db $D5;X
+L00034A: db $2A;X
+L00034B: db $5F;X
+L00034C: db $2A;X
+L00034D: db $57;X
+L00034E: db $2A;X
+L00034F: db $4F;X
+L000350: db $46;X
+L000351: db $E1;X
+L000352: db $F0;X
+L000353: db $41;X
+L000354: db $E6;X
+L000355: db $03;X
+L000356: db $FE;X
+L000357: db $03;X
+L000358: db $28;X
+L000359: db $F8;X
+L00035A: db $2A;X
+L00035B: db $12;X
+L00035C: db $13;X
+L00035D: db $0B;X
+L00035E: db $78;X
+L00035F: db $B1;X
+L000360: db $20;X
+L000361: db $F0;X
+L000362: db $F1;X
+L000363: db $CD;X
+L000364: db $B9;X
+L000365: db $0C;X
+L000366: db $C9;X
+L000367:;C
+	ld   hl, $CB6B
+	ld   a, [hl]
+	or   a, a
+	ret  z
+L00036D: db $AF;X
+L00036E: db $22;X
+L00036F: db $5E;X
+L000370: db $23;X
+L000371: db $56;X
+L000372: db $23;X
+L000373: db $F0;X
+L000374: db $41;X
+L000375: db $E6;X
+L000376: db $03;X
+L000377: db $FE;X
+L000378: db $02;X
+L000379: db $30;X
+L00037A: db $F8;X
+L00037B: db $7E;X
+L00037C: db $12;X
+L00037D: db $C9;X
+L00037E: db $FA;X
+L00037F: db $04;X
+L000380: db $C7;X
+L000381: db $3C;X
+L000382: db $EA;X
+L000383: db $04;X
+L000384: db $C7;X
+L000385: db $FE;X
+L000386: db $3C;X
+L000387: db $D8;X
+L000388: db $AF;X
+L000389: db $EA;X
+L00038A: db $04;X
+L00038B: db $C7;X
+L00038C: db $FA;X
+L00038D: db $05;X
+L00038E: db $C7;X
+L00038F: db $3C;X
+L000390: db $EA;X
+L000391: db $05;X
+L000392: db $C7;X
+L000393: db $FE;X
+L000394: db $3C;X
+L000395: db $D8;X
+L000396: db $AF;X
+L000397: db $EA;X
+L000398: db $05;X
+L000399: db $C7;X
+L00039A: db $FA;X
+L00039B: db $06;X
+L00039C: db $C7;X
+L00039D: db $3C;X
+L00039E: db $EA;X
+L00039F: db $06;X
+L0003A0: db $C7;X
+L0003A1: db $FE;X
+L0003A2: db $3C;X
+L0003A3: db $D8;X
+L0003A4: db $AF;X
+L0003A5: db $EA;X
+L0003A6: db $06;X
+L0003A7: db $C7;X
+L0003A8: db $FA;X
+L0003A9: db $07;X
+L0003AA: db $C7;X
+L0003AB: db $3C;X
+L0003AC: db $EA;X
+L0003AD: db $07;X
+L0003AE: db $C7;X
+L0003AF: db $FE;X
+L0003B0: db $64;X
+L0003B1: db $D8;X
+L0003B2: db $3E;X
+L0003B3: db $63;X
+L0003B4: db $EA;X
+L0003B5: db $07;X
+L0003B6: db $C7;X
+L0003B7: db $C9;X
+L0003B8: db $C5;X
+L0003B9: db $47;X
+L0003BA: db $CD;X
+L0003BB: db $C3;X
+L0003BC: db $03;X
+L0003BD: db $05;X
+L0003BE: db $C2;X
+L0003BF: db $BA;X
+L0003C0: db $03;X
+L0003C1: db $C1;X
+L0003C2: db $C9;X
+L0003C3:;C
+	push bc
+	push de
+	push hl
+	ld   a, $01
+	ld   [$C849], a
+L0003CB:;J
+	halt 
+	nop  
+	ld   a, [$C849]
+	and  a, a
+	jp   nz, L0003CB
+	ld   a, [$DB52]
+	and  a, a
+	call nz, L0003E2
+	call L0003F6
+	pop  hl
+	pop  de
+	pop  bc
+	ret  
+L0003E2: db $FA;X
+L0003E3: db $36;X
+L0003E4: db $C8;X
+L0003E5: db $FE;X
+L0003E6: db $F0;X
+L0003E7: db $D2;X
+L0003E8: db $EB;X
+L0003E9: db $03;X
+L0003EA: db $C9;X
+L0003EB: db $AF;X
+L0003EC: db $EA;X
+L0003ED: db $52;X
+L0003EE: db $DB;X
+L0003EF: db $C9;X
+L0003F0: db $FA;X
+L0003F1: db $37;X
+L0003F2: db $C8;X
+L0003F3: db $C3;X
+L0003F4: db $50;X
+L0003F5: db $01;X
+L0003F6:;C
+	ld   a, [$C7F1]
+	cp   $01
+	ret  nz
+	call L000963
+	ld   a, [$C85F]
+	bit  3, a
+	ret  z
+	ld   a, $02
+	ld   [$C7F1], a
+	ld   a, $01
+	ld   [$C811], a
+	ret  
+L000410:;J
+	push af
+	ld   a, [$C882]
+	cp   $02
+	jr   z, L00041E
+	cp   $03
+	jr   z, L000450
+L00041C: db $F1;X
+L00041D: db $D9;X
+L00041E: db $FA;X
+L00041F: db $0B;X
+L000420: db $CA;X
+L000421: db $EE;X
+L000422: db $01;X
+L000423: db $EA;X
+L000424: db $0B;X
+L000425: db $CA;X
+L000426: db $20;X
+L000427: db $15;X
+L000428: db $FA;X
+L000429: db $03;X
+L00042A: db $CA;X
+L00042B: db $E0;X
+L00042C: db $4B;X
+L00042D: db $AF;X
+L00042E: db $E0;X
+L00042F: db $4A;X
+L000430: db $F0;X
+L000431: db $40;X
+L000432: db $E6;X
+L000433: db $FD;X
+L000434: db $E0;X
+L000435: db $40;X
+L000436: db $FA;X
+L000437: db $0A;X
+L000438: db $CA;X
+L000439: db $E0;X
+L00043A: db $45;X
+L00043B: db $F1;X
+L00043C: db $D9;X
+L00043D: db $3E;X
+L00043E: db $A7;X
+L00043F: db $E0;X
+L000440: db $4B;X
+L000441: db $AF;X
+L000442: db $E0;X
+L000443: db $4A;X
+L000444: db $F0;X
+L000445: db $40;X
+L000446: db $F6;X
+L000447: db $02;X
+L000448: db $E0;X
+L000449: db $40;X
+L00044A: db $3E;X
+L00044B: db $04;X
+L00044C: db $E0;X
+L00044D: db $45;X
+L00044E: db $F1;X
+L00044F: db $D9;X
+L000450:;R
+	ld   a, [$CA0B]
+	xor  $01
+	ld   [$CA0B], a
+	jr   nz, L000466
+	ldh  a, [rLCDC]
+	and  a, $FD
+	ldh  [rLCDC], a
+	ld   a, $8E
+	ldh  [rLYC], a
+	pop  af
+	reti 
+L000466:;R
+	ldh  a, [rLCDC]
+	or   a, $02
+	ldh  [rLCDC], a
+	ld   a, [$CA0A]
+	ldh  [rLYC], a
+	pop  af
+	reti 
+L000473:;C
+	di   
+	xor  a, a
+	ld   [$CA0B], a
+	ldh  a, [rSTAT]
+	or   a, $40
+	ldh  [rSTAT], a
+	ldh  a, [rIF]
+	and  a, $FD
+	ldh  [rIF], a
+	ldh  a, [rIE]
+	or   a, $02
+	ldh  [rIE], a
+	ldh  a, [rLCDC]
+	or   a, $60
+	ldh  [rLCDC], a
+	ei   
+	ret  
+L000492:;C
+	di   
+	xor  a, a
+	ldh  [rLYC], a
+	ldh  a, [rSTAT]
+	and  a, $BF
+	ldh  [rSTAT], a
+	ldh  a, [rIE]
+	and  a, $FD
+	ldh  [rIE], a
+	ldh  a, [rLCDC]
+	and  a, $9F
+	ldh  [rLCDC], a
+	ei   
+	ret  
+L0004AA: db $F5;X
+L0004AB: db $E5;X
+L0004AC: db $21;X
+L0004AD: db $06;X
+L0004AE: db $FF;X
+L0004AF: db $3E;X
+L0004B0: db $BF;X
+L0004B1: db $22;X
+L0004B2: db $AF;X
+L0004B3: db $77;X
+L0004B4: db $CB;X
+L0004B5: db $D6;X
+L0004B6: db $AF;X
+L0004B7: db $E0;X
+L0004B8: db $0F;X
+L0004B9: db $3E;X
+L0004BA: db $07;X
+L0004BB: db $E0;X
+L0004BC: db $FF;X
+L0004BD: db $E1;X
+L0004BE: db $F1;X
+L0004BF: db $D9;X
+L0004C0:;C
+	ld   a, [$DB52]
+	and  a, a
+	ret  z
+L0004C5: db $FA;X
+L0004C6: db $55;X
+L0004C7: db $DB;X
+L0004C8: db $A7;X
+L0004C9: db $C0;X
+L0004CA: db $FA;X
+L0004CB: db $53;X
+L0004CC: db $DB;X
+L0004CD: db $A7;X
+L0004CE: db $C8;X
+L0004CF: db $FA;X
+L0004D0: db $55;X
+L0004D1: db $DB;X
+L0004D2: db $A7;X
+L0004D3: db $C0;X
+L0004D4: db $3E;X
+L0004D5: db $81;X
+L0004D6: db $E0;X
+L0004D7: db $02;X
+L0004D8: db $C9;X
+L0004D9: db $F5;X
+L0004DA: db $C5;X
+L0004DB: db $D5;X
+L0004DC: db $E5;X
+L0004DD: db $AF;X
+L0004DE: db $EA;X
+L0004DF: db $36;X
+L0004E0: db $C8;X
+L0004E1: db $FA;X
+L0004E2: db $55;X
+L0004E3: db $DB;X
+L0004E4: db $A7;X
+L0004E5: db $C2;X
+L0004E6: db $70;X
+L0004E7: db $05;X
+L0004E8: db $3E;X
+L0004E9: db $01;X
+L0004EA: db $EA;X
+L0004EB: db $55;X
+L0004EC: db $DB;X
+L0004ED: db $FA;X
+L0004EE: db $52;X
+L0004EF: db $DB;X
+L0004F0: db $A7;X
+L0004F1: db $20;X
+L0004F2: db $3D;X
+L0004F3: db $FA;X
+L0004F4: db $58;X
+L0004F5: db $DB;X
+L0004F6: db $A7;X
+L0004F7: db $28;X
+L0004F8: db $2D;X
+L0004F9: db $F0;X
+L0004FA: db $01;X
+L0004FB: db $FE;X
+L0004FC: db $DD;X
+L0004FD: db $28;X
+L0004FE: db $13;X
+L0004FF: db $FE;X
+L000500: db $FE;X
+L000501: db $28;X
+L000502: db $17;X
+L000503: db $AF;X
+L000504: db $EA;X
+L000505: db $53;X
+L000506: db $DB;X
+L000507: db $3E;X
+L000508: db $DD;X
+L000509: db $E0;X
+L00050A: db $01;X
+L00050B: db $3E;X
+L00050C: db $80;X
+L00050D: db $E0;X
+L00050E: db $02;X
+L00050F: db $C3;X
+L000510: db $6C;X
+L000511: db $05;X
+L000512: db $3E;X
+L000513: db $01;X
+L000514: db $EA;X
+L000515: db $53;X
+L000516: db $DB;X
+L000517: db $EA;X
+L000518: db $54;X
+L000519: db $DB;X
+L00051A: db $3E;X
+L00051B: db $01;X
+L00051C: db $EA;X
+L00051D: db $52;X
+L00051E: db $DB;X
+L00051F: db $FA;X
+L000520: db $57;X
+L000521: db $DB;X
+L000522: db $3C;X
+L000523: db $EA;X
+L000524: db $57;X
+L000525: db $DB;X
+L000526: db $AF;X
+L000527: db $E0;X
+L000528: db $01;X
+L000529: db $3E;X
+L00052A: db $80;X
+L00052B: db $E0;X
+L00052C: db $02;X
+L00052D: db $C3;X
+L00052E: db $6C;X
+L00052F: db $05;X
+L000530: db $FA;X
+L000531: db $53;X
+L000532: db $DB;X
+L000533: db $EE;X
+L000534: db $01;X
+L000535: db $EA;X
+L000536: db $53;X
+L000537: db $DB;X
+L000538: db $21;X
+L000539: db $3C;X
+L00053A: db $DB;X
+L00053B: db $FA;X
+L00053C: db $56;X
+L00053D: db $DB;X
+L00053E: db $5F;X
+L00053F: db $AF;X
+L000540: db $57;X
+L000541: db $19;X
+L000542: db $F0;X
+L000543: db $01;X
+L000544: db $77;X
+L000545: db $21;X
+L000546: db $42;X
+L000547: db $DB;X
+L000548: db $19;X
+L000549: db $7E;X
+L00054A: db $E0;X
+L00054B: db $01;X
+L00054C: db $3E;X
+L00054D: db $80;X
+L00054E: db $E0;X
+L00054F: db $02;X
+L000550: db $FA;X
+L000551: db $56;X
+L000552: db $DB;X
+L000553: db $3C;X
+L000554: db $EA;X
+L000555: db $56;X
+L000556: db $DB;X
+L000557: db $47;X
+L000558: db $FA;X
+L000559: db $57;X
+L00055A: db $DB;X
+L00055B: db $B8;X
+L00055C: db $C2;X
+L00055D: db $6C;X
+L00055E: db $05;X
+L00055F: db $AF;X
+L000560: db $EA;X
+L000561: db $56;X
+L000562: db $DB;X
+L000563: db $EA;X
+L000564: db $55;X
+L000565: db $DB;X
+L000566: db $CD;X
+L000567: db $4F;X
+L000568: db $06;X
+L000569: db $CD;X
+L00056A: db $19;X
+L00056B: db $06;X
+L00056C: db $AF;X
+L00056D: db $EA;X
+L00056E: db $55;X
+L00056F: db $DB;X
+L000570: db $E1;X
+L000571: db $D1;X
+L000572: db $C1;X
+L000573: db $F1;X
+L000574: db $D9;X
+L000575: db $AF;X
+L000576: db $06;X
+L000577: db $1F;X
+L000578: db $21;X
+L000579: db $3C;X
+L00057A: db $DB;X
+L00057B: db $22;X
+L00057C: db $05;X
+L00057D: db $C2;X
+L00057E: db $7B;X
+L00057F: db $05;X
+L000580: db $06;X
+L000581: db $00;X
+L000582: db $21;X
+L000583: db $00;X
+L000584: db $DC;X
+L000585: db $22;X
+L000586: db $05;X
+L000587: db $C2;X
+L000588: db $85;X
+L000589: db $05;X
+L00058A: db $06;X
+L00058B: db $00;X
+L00058C: db $21;X
+L00058D: db $00;X
+L00058E: db $DD;X
+L00058F: db $22;X
+L000590: db $05;X
+L000591: db $C2;X
+L000592: db $8F;X
+L000593: db $05;X
+L000594: db $21;X
+L000595: db $00;X
+L000596: db $DC;X
+L000597: db $7D;X
+L000598: db $EA;X
+L000599: db $69;X
+L00059A: db $DB;X
+L00059B: db $7D;X
+L00059C: db $EA;X
+L00059D: db $6A;X
+L00059E: db $DB;X
+L00059F: db $21;X
+L0005A0: db $00;X
+L0005A1: db $DD;X
+L0005A2: db $7D;X
+L0005A3: db $EA;X
+L0005A4: db $6C;X
+L0005A5: db $DB;X
+L0005A6: db $7D;X
+L0005A7: db $EA;X
+L0005A8: db $6D;X
+L0005A9: db $DB;X
+L0005AA: db $AF;X
+L0005AB: db $EA;X
+L0005AC: db $6B;X
+L0005AD: db $DB;X
+L0005AE: db $EA;X
+L0005AF: db $6E;X
+L0005B0: db $DB;X
+L0005B1: db $3E;X
+L0005B2: db $03;X
+L0005B3: db $EA;X
+L0005B4: db $57;X
+L0005B5: db $DB;X
+L0005B6: db $3E;X
+L0005B7: db $DD;X
+L0005B8: db $E0;X
+L0005B9: db $01;X
+L0005BA: db $EA;X
+L0005BB: db $58;X
+L0005BC: db $DB;X
+L0005BD: db $3E;X
+L0005BE: db $80;X
+L0005BF: db $E0;X
+L0005C0: db $02;X
+L0005C1: db $F0;X
+L0005C2: db $FF;X
+L0005C3: db $F6;X
+L0005C4: db $08;X
+L0005C5: db $E0;X
+L0005C6: db $FF;X
+L0005C7: db $FB;X
+L0005C8: db $C9;X
+L0005C9: db $AF;X
+L0005CA: db $E0;X
+L0005CB: db $01;X
+L0005CC: db $EA;X
+L0005CD: db $58;X
+L0005CE: db $DB;X
+L0005CF: db $EA;X
+L0005D0: db $54;X
+L0005D1: db $DB;X
+L0005D2: db $EA;X
+L0005D3: db $52;X
+L0005D4: db $DB;X
+L0005D5: db $F0;X
+L0005D6: db $FF;X
+L0005D7: db $E6;X
+L0005D8: db $F7;X
+L0005D9: db $E0;X
+L0005DA: db $FF;X
+L0005DB: db $C9;X
+L0005DC: db $FA;X
+L0005DD: db $52;X
+L0005DE: db $DB;X
+L0005DF: db $A7;X
+L0005E0: db $C0;X
+L0005E1: db $3E;X
+L0005E2: db $FE;X
+L0005E3: db $E0;X
+L0005E4: db $01;X
+L0005E5: db $3E;X
+L0005E6: db $81;X
+L0005E7: db $E0;X
+L0005E8: db $02;X
+L0005E9: db $C9;X
+L0005EA: db $F3;X
+L0005EB: db $3E;X
+L0005EC: db $01;X
+L0005ED: db $EA;X
+L0005EE: db $6B;X
+L0005EF: db $DB;X
+L0005F0: db $FA;X
+L0005F1: db $69;X
+L0005F2: db $DB;X
+L0005F3: db $6F;X
+L0005F4: db $3E;X
+L0005F5: db $DC;X
+L0005F6: db $67;X
+L0005F7: db $11;X
+L0005F8: db $4D;X
+L0005F9: db $DB;X
+L0005FA: db $1A;X
+L0005FB: db $77;X
+L0005FC: db $47;X
+L0005FD: db $13;X
+L0005FE: db $2C;X
+L0005FF: db $1A;X
+L000600: db $77;X
+L000601: db $13;X
+L000602: db $2C;X
+L000603: db $80;X
+L000604: db $77;X
+L000605: db $20;X
+L000606: db $04;X
+L000607: db $38;X
+L000608: db $02;X
+L000609: db $18;X
+L00060A: db $0C;X
+L00060B: db $2C;X
+L00060C: db $7D;X
+L00060D: db $EA;X
+L00060E: db $69;X
+L00060F: db $DB;X
+L000610: db $AF;X
+L000611: db $21;X
+L000612: db $4D;X
+L000613: db $DB;X
+L000614: db $22;X
+L000615: db $22;X
+L000616: db $77;X
+L000617: db $FB;X
+L000618: db $C9;X
+L000619: db $FA;X
+L00061A: db $6B;X
+L00061B: db $DB;X
+L00061C: db $A7;X
+L00061D: db $28;X
+L00061E: db $23;X
+L00061F: db $AF;X
+L000620: db $EA;X
+L000621: db $6B;X
+L000622: db $DB;X
+L000623: db $FA;X
+L000624: db $6A;X
+L000625: db $DB;X
+L000626: db $6F;X
+L000627: db $3E;X
+L000628: db $DC;X
+L000629: db $67;X
+L00062A: db $11;X
+L00062B: db $42;X
+L00062C: db $DB;X
+L00062D: db $7E;X
+L00062E: db $12;X
+L00062F: db $47;X
+L000630: db $13;X
+L000631: db $2C;X
+L000632: db $7E;X
+L000633: db $12;X
+L000634: db $13;X
+L000635: db $2C;X
+L000636: db $80;X
+L000637: db $47;X
+L000638: db $F5;X
+L000639: db $7E;X
+L00063A: db $12;X
+L00063B: db $13;X
+L00063C: db $2C;X
+L00063D: db $F1;X
+L00063E: db $20;X
+L00063F: db $0A;X
+L000640: db $38;X
+L000641: db $08;X
+L000642: db $AF;X
+L000643: db $21;X
+L000644: db $42;X
+L000645: db $DB;X
+L000646: db $22;X
+L000647: db $22;X
+L000648: db $77;X
+L000649: db $C9;X
+L00064A: db $7D;X
+L00064B: db $EA;X
+L00064C: db $6A;X
+L00064D: db $DB;X
+L00064E: db $C9;X
+L00064F: db $3E;X
+L000650: db $01;X
+L000651: db $EA;X
+L000652: db $6E;X
+L000653: db $DB;X
+L000654: db $FA;X
+L000655: db $6C;X
+L000656: db $DB;X
+L000657: db $6F;X
+L000658: db $3E;X
+L000659: db $DD;X
+L00065A: db $67;X
+L00065B: db $11;X
+L00065C: db $3D;X
+L00065D: db $DB;X
+L00065E: db $1A;X
+L00065F: db $77;X
+L000660: db $47;X
+L000661: db $2C;X
+L000662: db $13;X
+L000663: db $1A;X
+L000664: db $77;X
+L000665: db $2C;X
+L000666: db $13;X
+L000667: db $80;X
+L000668: db $47;X
+L000669: db $20;X
+L00066A: db $03;X
+L00066B: db $38;X
+L00066C: db $01;X
+L00066D: db $C9;X
+L00066E: db $1A;X
+L00066F: db $B8;X
+L000670: db $28;X
+L000671: db $01;X
+L000672: db $C9;X
+L000673: db $78;X
+L000674: db $77;X
+L000675: db $2C;X
+L000676: db $7D;X
+L000677: db $EA;X
+L000678: db $6C;X
+L000679: db $DB;X
+L00067A: db $AF;X
+L00067B: db $21;X
+L00067C: db $3D;X
+L00067D: db $DB;X
+L00067E: db $22;X
+L00067F: db $22;X
+L000680: db $77;X
+L000681: db $C9;X
+L000682: db $F3;X
+L000683: db $FA;X
+L000684: db $6E;X
+L000685: db $DB;X
+L000686: db $A7;X
+L000687: db $28;X
+L000688: db $2B;X
+L000689: db $AF;X
+L00068A: db $EA;X
+L00068B: db $6E;X
+L00068C: db $DB;X
+L00068D: db $FA;X
+L00068E: db $6D;X
+L00068F: db $DB;X
+L000690: db $6F;X
+L000691: db $3E;X
+L000692: db $DD;X
+L000693: db $67;X
+L000694: db $11;X
+L000695: db $48;X
+L000696: db $DB;X
+L000697: db $7E;X
+L000698: db $12;X
+L000699: db $13;X
+L00069A: db $2C;X
+L00069B: db $47;X
+L00069C: db $7E;X
+L00069D: db $12;X
+L00069E: db $13;X
+L00069F: db $2C;X
+L0006A0: db $80;X
+L0006A1: db $47;X
+L0006A2: db $20;X
+L0006A3: db $04;X
+L0006A4: db $38;X
+L0006A5: db $02;X
+L0006A6: db $18;X
+L0006A7: db $0C;X
+L0006A8: db $7E;X
+L0006A9: db $B8;X
+L0006AA: db $20;X
+L0006AB: db $08;X
+L0006AC: db $12;X
+L0006AD: db $2C;X
+L0006AE: db $7D;X
+L0006AF: db $EA;X
+L0006B0: db $6D;X
+L0006B1: db $DB;X
+L0006B2: db $FB;X
+L0006B3: db $C9;X
+L0006B4: db $AF;X
+L0006B5: db $21;X
+L0006B6: db $48;X
+L0006B7: db $DB;X
+L0006B8: db $22;X
+L0006B9: db $22;X
+L0006BA: db $77;X
+L0006BB: db $FB;X
+L0006BC: db $C9;X
+L0006BD: db $F0;X
+L0006BE: db $FF;X
+L0006BF: db $E6;X
+L0006C0: db $FD;X
+L0006C1: db $E0;X
+L0006C2: db $FF;X
+L0006C3: db $3E;X
+L0006C4: db $01;X
+L0006C5: db $EA;X
+L0006C6: db $59;X
+L0006C7: db $DB;X
+L0006C8: db $78;X
+L0006C9: db $EA;X
+L0006CA: db $63;X
+L0006CB: db $DB;X
+L0006CC: db $7A;X
+L0006CD: db $EA;X
+L0006CE: db $61;X
+L0006CF: db $DB;X
+L0006D0: db $7B;X
+L0006D1: db $EA;X
+L0006D2: db $5F;X
+L0006D3: db $DB;X
+L0006D4: db $7C;X
+L0006D5: db $EA;X
+L0006D6: db $5D;X
+L0006D7: db $DB;X
+L0006D8: db $7D;X
+L0006D9: db $EA;X
+L0006DA: db $5B;X
+L0006DB: db $DB;X
+L0006DC: db $3E;X
+L0006DD: db $01;X
+L0006DE: db $EA;X
+L0006DF: db $67;X
+L0006E0: db $DB;X
+L0006E1: db $EA;X
+L0006E2: db $65;X
+L0006E3: db $DB;X
+L0006E4: db $AF;X
+L0006E5: db $EA;X
+L0006E6: db $68;X
+L0006E7: db $DB;X
+L0006E8: db $EA;X
+L0006E9: db $66;X
+L0006EA: db $DB;X
+L0006EB: db $EA;X
+L0006EC: db $6F;X
+L0006ED: db $DB;X
+L0006EE: db $EA;X
+L0006EF: db $70;X
+L0006F0: db $DB;X
+L0006F1: db $CD;X
+L0006F2: db $33;X
+L0006F3: db $07;X
+L0006F4: db $FA;X
+L0006F5: db $52;X
+L0006F6: db $DB;X
+L0006F7: db $A7;X
+L0006F8: db $28;X
+L0006F9: db $2B;X
+L0006FA: db $CD;X
+L0006FB: db $42;X
+L0006FC: db $07;X
+L0006FD: db $CD;X
+L0006FE: db $8B;X
+L0006FF: db $07;X
+L000700: db $CD;X
+L000701: db $9E;X
+L000702: db $07;X
+L000703: db $FA;X
+L000704: db $6F;X
+L000705: db $DB;X
+L000706: db $A7;X
+L000707: db $28;X
+L000708: db $0B;X
+L000709: db $FA;X
+L00070A: db $70;X
+L00070B: db $DB;X
+L00070C: db $3C;X
+L00070D: db $EA;X
+L00070E: db $70;X
+L00070F: db $DB;X
+L000710: db $FE;X
+L000711: db $0A;X
+L000712: db $30;X
+L000713: db $0E;X
+L000714: db $FA;X
+L000715: db $68;X
+L000716: db $DB;X
+L000717: db $A7;X
+L000718: db $28;X
+L000719: db $D7;X
+L00071A: db $FA;X
+L00071B: db $66;X
+L00071C: db $DB;X
+L00071D: db $A7;X
+L00071E: db $28;X
+L00071F: db $D1;X
+L000720: db $18;X
+L000721: db $03;X
+L000722: db $CD;X
+L000723: db $C9;X
+L000724: db $05;X
+L000725: db $AF;X
+L000726: db $EA;X
+L000727: db $59;X
+L000728: db $DB;X
+L000729: db $AF;X
+L00072A: db $E0;X
+L00072B: db $0F;X
+L00072C: db $F0;X
+L00072D: db $FF;X
+L00072E: db $F6;X
+L00072F: db $02;X
+L000730: db $E0;X
+L000731: db $FF;X
+L000732: db $C9;X
+L000733: db $CD;X
+L000734: db $C3;X
+L000735: db $03;X
+L000736: db $FA;X
+L000737: db $52;X
+L000738: db $DB;X
+L000739: db $A7;X
+L00073A: db $C8;X
+L00073B: db $FA;X
+L00073C: db $55;X
+L00073D: db $DB;X
+L00073E: db $A7;X
+L00073F: db $20;X
+L000740: db $F2;X
+L000741: db $C9;X
+L000742: db $FA;X
+L000743: db $68;X
+L000744: db $DB;X
+L000745: db $A7;X
+L000746: db $28;X
+L000747: db $08;X
+L000748: db $AF;X
+L000749: db $21;X
+L00074A: db $4D;X
+L00074B: db $DB;X
+L00074C: db $22;X
+L00074D: db $22;X
+L00074E: db $77;X
+L00074F: db $C9;X
+L000750: db $FA;X
+L000751: db $5D;X
+L000752: db $DB;X
+L000753: db $67;X
+L000754: db $FA;X
+L000755: db $5B;X
+L000756: db $DB;X
+L000757: db $6F;X
+L000758: db $2A;X
+L000759: db $47;X
+L00075A: db $7C;X
+L00075B: db $EA;X
+L00075C: db $5D;X
+L00075D: db $DB;X
+L00075E: db $7D;X
+L00075F: db $EA;X
+L000760: db $5B;X
+L000761: db $DB;X
+L000762: db $FA;X
+L000763: db $67;X
+L000764: db $DB;X
+L000765: db $EA;X
+L000766: db $4D;X
+L000767: db $DB;X
+L000768: db $78;X
+L000769: db $EA;X
+L00076A: db $4E;X
+L00076B: db $DB;X
+L00076C: db $FA;X
+L00076D: db $67;X
+L00076E: db $DB;X
+L00076F: db $80;X
+L000770: db $EA;X
+L000771: db $4F;X
+L000772: db $DB;X
+L000773: db $FA;X
+L000774: db $63;X
+L000775: db $DB;X
+L000776: db $47;X
+L000777: db $FA;X
+L000778: db $67;X
+L000779: db $DB;X
+L00077A: db $B8;X
+L00077B: db $28;X
+L00077C: db $05;X
+L00077D: db $3C;X
+L00077E: db $EA;X
+L00077F: db $67;X
+L000780: db $DB;X
+L000781: db $C9;X
+L000782: db $EA;X
+L000783: db $67;X
+L000784: db $DB;X
+L000785: db $3E;X
+L000786: db $01;X
+L000787: db $EA;X
+L000788: db $68;X
+L000789: db $DB;X
+L00078A: db $C9;X
+L00078B: db $CD;X
+L00078C: db $EA;X
+L00078D: db $05;X
+L00078E: db $CD;X
+L00078F: db $C3;X
+L000790: db $03;X
+L000791: db $CD;X
+L000792: db $C3;X
+L000793: db $03;X
+L000794: db $CD;X
+L000795: db $C3;X
+L000796: db $03;X
+L000797: db $CD;X
+L000798: db $C3;X
+L000799: db $03;X
+L00079A: db $CD;X
+L00079B: db $82;X
+L00079C: db $06;X
+L00079D: db $C9;X
+L00079E: db $FA;X
+L00079F: db $48;X
+L0007A0: db $DB;X
+L0007A1: db $A7;X
+L0007A2: db $28;X
+L0007A3: db $50;X
+L0007A4: db $3E;X
+L0007A5: db $01;X
+L0007A6: db $EA;X
+L0007A7: db $6F;X
+L0007A8: db $DB;X
+L0007A9: db $FA;X
+L0007AA: db $48;X
+L0007AB: db $DB;X
+L0007AC: db $47;X
+L0007AD: db $FA;X
+L0007AE: db $65;X
+L0007AF: db $DB;X
+L0007B0: db $B8;X
+L0007B1: db $20;X
+L0007B2: db $41;X
+L0007B3: db $FA;X
+L0007B4: db $49;X
+L0007B5: db $DB;X
+L0007B6: db $80;X
+L0007B7: db $47;X
+L0007B8: db $38;X
+L0007B9: db $02;X
+L0007BA: db $28;X
+L0007BB: db $38;X
+L0007BC: db $FA;X
+L0007BD: db $4A;X
+L0007BE: db $DB;X
+L0007BF: db $B8;X
+L0007C0: db $20;X
+L0007C1: db $32;X
+L0007C2: db $FA;X
+L0007C3: db $49;X
+L0007C4: db $DB;X
+L0007C5: db $47;X
+L0007C6: db $FA;X
+L0007C7: db $61;X
+L0007C8: db $DB;X
+L0007C9: db $67;X
+L0007CA: db $FA;X
+L0007CB: db $5F;X
+L0007CC: db $DB;X
+L0007CD: db $6F;X
+L0007CE: db $78;X
+L0007CF: db $22;X
+L0007D0: db $7C;X
+L0007D1: db $EA;X
+L0007D2: db $61;X
+L0007D3: db $DB;X
+L0007D4: db $7D;X
+L0007D5: db $EA;X
+L0007D6: db $5F;X
+L0007D7: db $DB;X
+L0007D8: db $3E;X
+L0007D9: db $00;X
+L0007DA: db $EA;X
+L0007DB: db $70;X
+L0007DC: db $DB;X
+L0007DD: db $FA;X
+L0007DE: db $63;X
+L0007DF: db $DB;X
+L0007E0: db $47;X
+L0007E1: db $FA;X
+L0007E2: db $65;X
+L0007E3: db $DB;X
+L0007E4: db $B8;X
+L0007E5: db $20;X
+L0007E6: db $09;X
+L0007E7: db $EA;X
+L0007E8: db $65;X
+L0007E9: db $DB;X
+L0007EA: db $3E;X
+L0007EB: db $01;X
+L0007EC: db $EA;X
+L0007ED: db $66;X
+L0007EE: db $DB;X
+L0007EF: db $C9;X
+L0007F0: db $3C;X
+L0007F1: db $EA;X
+L0007F2: db $65;X
+L0007F3: db $DB;X
+L0007F4: db $AF;X
+L0007F5: db $21;X
+L0007F6: db $48;X
+L0007F7: db $DB;X
+L0007F8: db $22;X
+L0007F9: db $22;X
+L0007FA: db $77;X
+L0007FB: db $C9;X
+L0007FC:;C
+	ld   c, $80
+	ld   b, $0F
+	ld   hl, $080A
+L000803:;R
+	ldi  a, [hl]
+	ld   [c], a
+	inc  c
+	dec  b
+	jr   nz, L000803
+	ret  
+L00080A: db $FA
+L00080B: db $A0
+L00080C: db $DF
+L00080D: db $A7
+L00080E: db $C0
+L00080F: db $3E
+L000810: db $DF
+L000811: db $E0
+L000812: db $46
+L000813: db $3E
+L000814: db $28
+L000815: db $3D
+L000816: db $20
+L000817: db $FD
+L000818: db $C9
+L000819:;C
+	jp   hl
+L00081A: db $C9;X
+L00081B:;C
+	ld   [$C84F], a
+	ld   a, [$C841]
+	push af
+	ld   a, [$C84F]
+	call L000CB9
+	call L000819
+	ld   [$C84F], a
+	pop  af
+	call L000CB9
+	ld   a, [$C84F]
+	ret  
+L000836: db $EA;X
+L000837: db $4F;X
+L000838: db $C8;X
+L000839: db $FA;X
+L00083A: db $41;X
+L00083B: db $C8;X
+L00083C: db $F5;X
+L00083D: db $FA;X
+L00083E: db $4F;X
+L00083F: db $C8;X
+L000840: db $CD;X
+L000841: db $B9;X
+L000842: db $0C;X
+L000843: db $CD;X
+L000844: db $47;X
+L000845: db $0E;X
+L000846: db $7E;X
+L000847: db $12;X
+L000848: db $FB;X
+L000849: db $23;X
+L00084A: db $13;X
+L00084B: db $0B;X
+L00084C: db $79;X
+L00084D: db $B0;X
+L00084E: db $20;X
+L00084F: db $F3;X
+L000850: db $F1;X
+L000851: db $CD;X
+L000852: db $B9;X
+L000853: db $0C;X
+L000854: db $C9;X
+L000855: db $EA;X
+L000856: db $4F;X
+L000857: db $C8;X
+L000858: db $FA;X
+L000859: db $41;X
+L00085A: db $C8;X
+L00085B: db $F5;X
+L00085C: db $FA;X
+L00085D: db $4F;X
+L00085E: db $C8;X
+L00085F: db $CD;X
+L000860: db $B9;X
+L000861: db $0C;X
+L000862: db $CD;X
+L000863: db $47;X
+L000864: db $0E;X
+L000865: db $1A;X
+L000866: db $77;X
+L000867: db $FB;X
+L000868: db $23;X
+L000869: db $13;X
+L00086A: db $0B;X
+L00086B: db $79;X
+L00086C: db $B0;X
+L00086D: db $20;X
+L00086E: db $F3;X
+L00086F: db $F1;X
+L000870: db $CD;X
+L000871: db $B9;X
+L000872: db $0C;X
+L000873: db $C9;X
+L000874:;C
+	push bc
+	push af
+	push hl
+	ld   hl, $CA45
+	ld   a, [$CB5E]
+	ld   c, a
+	ld   a, [$CB5F]
+	ld   b, a
+	add  hl, bc
+	push hl
+	pop  bc
+	pop  hl
+	pop  af
+	ld   [bc], a
+	inc  bc
+	ld   a, l
+	ld   [bc], a
+	inc  bc
+	ld   a, h
+	ld   [bc], a
+	inc  bc
+	ld   a, e
+	ld   [bc], a
+	inc  bc
+	ld   a, d
+	ld   [bc], a
+	inc  bc
+	push bc
+	pop  hl
+	pop  bc
+	ld   [hl], c
+	inc  hl
+	ld   [hl], b
+	inc  hl
+	ld   [hl], $00
+	ld   a, [$CB5E]
+	ld   l, a
+	ld   a, [$CB5F]
+	ld   h, a
+	ld   de, $0007
+	add  hl, de
+	ld   a, l
+	ld   [$CB5E], a
+	ld   a, h
+	ld   [$CB5F], a
+	ret  
+L0008B3:;C
+	ld   hl, $CA45
+L0008B6:;R
+	ld   a, [hl]
+	or   a, a
+	jr   z, L0008DF
+	push hl
+	ld   a, [$C841]
+	push af
+	ldi  a, [hl]
+	call L000CB9
+	ldi  a, [hl]
+	ld   c, a
+	ldi  a, [hl]
+	ld   b, a
+	ldi  a, [hl]
+	ld   e, a
+	ldi  a, [hl]
+	ld   d, a
+	push bc
+	ldi  a, [hl]
+	ld   c, a
+	ldi  a, [hl]
+	ld   b, a
+	pop  hl
+	call L000AEE
+	pop  af
+	call L000CB9
+	pop  hl
+	ld   de, $0007
+	add  hl, de
+	jr   L0008B6
+L0008DF:;CR
+	xor  a, a
+	ld   [$CA45], a
+	ld   [$CB5E], a
+	ld   [$CB5F], a
+	ret  
+L0008EA:;C
+	ld   [$C84F], a
+	ld   a, [$C841]
+	push af
+	ld   a, [$C84F]
+	call L000CB9
+	call L000907
+	ld   a, [$C834]
+	cp   $04
+	call z, L000920
+	pop  af
+	call L000CB9
+	ret  
+L000907:;C
+	push bc
+	push hl
+	push de
+	ld   a, $00
+	ldh  [rVBK], a
+L00090E:;R
+	call L000E47
+	ld   a, [de]
+	ld   [hl], a
+	ei   
+	inc  hl
+	inc  de
+	inc  de
+	dec  bc
+	ld   a, c
+	or   a, b
+	jr   nz, L00090E
+	pop  de
+	pop  hl
+	pop  bc
+	ret  
+L000920: db $C5;X
+L000921: db $E5;X
+L000922: db $D5;X
+L000923: db $3E;X
+L000924: db $01;X
+L000925: db $E0;X
+L000926: db $4F;X
+L000927: db $13;X
+L000928: db $CD;X
+L000929: db $47;X
+L00092A: db $0E;X
+L00092B: db $1A;X
+L00092C: db $77;X
+L00092D: db $FB;X
+L00092E: db $23;X
+L00092F: db $13;X
+L000930: db $13;X
+L000931: db $0B;X
+L000932: db $79;X
+L000933: db $B0;X
+L000934: db $20;X
+L000935: db $F2;X
+L000936: db $3E;X
+L000937: db $00;X
+L000938: db $E0;X
+L000939: db $4F;X
+L00093A: db $D1;X
+L00093B: db $E1;X
+L00093C: db $C1;X
+L00093D: db $C9;X
+L00093E: db $E5;X
+L00093F: db $21;X
+L000940: db $61;X
+L000941: db $C8;X
+L000942: db $06;X
+L000943: db $10;X
+L000944: db $AF;X
+L000945: db $22;X
+L000946: db $05;X
+L000947: db $20;X
+L000948: db $FC;X
+L000949: db $21;X
+L00094A: db $61;X
+L00094B: db $C8;X
+L00094C: db $3E;X
+L00094D: db $21;X
+L00094E: db $22;X
+L00094F: db $3E;X
+L000950: db $01;X
+L000951: db $22;X
+L000952: db $22;X
+L000953: db $D1;X
+L000954: db $06;X
+L000955: db $05;X
+L000956: db $1A;X
+L000957: db $13;X
+L000958: db $22;X
+L000959: db $05;X
+L00095A: db $20;X
+L00095B: db $FA;X
+L00095C: db $21;X
+L00095D: db $61;X
+L00095E: db $C8;X
+L00095F: db $CD;X
+L000960: db $5A;X
+L000961: db $1F;X
+L000962: db $C9;X
+L000963:;C
+	ld   a, [$C833]
+	ld   hl, $0973
+	call L000C71
+	call L000819
+	call L000A25
+	ret  
+L000973: db $7D
+L000974: db $09
+L000975: db $7D;X
+L000976: db $09;X
+L000977: db $7D;X
+L000978: db $09;X
+L000979: db $8E;X
+L00097A: db $09;X
+L00097B: db $A3;X
+L00097C: db $09;X
+L00097D:;I
+	call L0009B4
+	ld   a, [$C858]
+	ld   b, a
+	ld   a, c
+	ld   [$C858], a
+	xor  a, b
+	and  a, c
+	ld   [$C859], a
+	ret  
+L00098E: db $CD;X
+L00098F: db $3A;X
+L000990: db $20;X
+L000991: db $FA;X
+L000992: db $86;X
+L000993: db $C8;X
+L000994: db $4F;X
+L000995: db $FA;X
+L000996: db $58;X
+L000997: db $C8;X
+L000998: db $47;X
+L000999: db $79;X
+L00099A: db $EA;X
+L00099B: db $58;X
+L00099C: db $C8;X
+L00099D: db $A8;X
+L00099E: db $A1;X
+L00099F: db $EA;X
+L0009A0: db $59;X
+L0009A1: db $C8;X
+L0009A2: db $C9;X
+L0009A3: db $CD;X
+L0009A4: db $DE;X
+L0009A5: db $09;X
+L0009A6: db $FA;X
+L0009A7: db $58;X
+L0009A8: db $C8;X
+L0009A9: db $47;X
+L0009AA: db $79;X
+L0009AB: db $EA;X
+L0009AC: db $58;X
+L0009AD: db $C8;X
+L0009AE: db $A8;X
+L0009AF: db $A1;X
+L0009B0: db $EA;X
+L0009B1: db $59;X
+L0009B2: db $C8;X
+L0009B3: db $C9;X
+L0009B4:;C
+	ld   a, $20
+	ldh  [rJOYP], a
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	cpl  
+	and  a, $0F
+	swap a
+	ld   b, a
+	ld   a, $10
+	ldh  [rJOYP], a
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	cpl  
+	and  a, $0F
+	or   a, b
+	ld   c, a
+	ld   a, $30
+	ldh  [rJOYP], a
+	ld   b, $00
+	ret  
+L0009DE: db $FA;X
+L0009DF: db $41;X
+L0009E0: db $C8;X
+L0009E1: db $F5;X
+L0009E2: db $FA;X
+L0009E3: db $74;X
+L0009E4: db $CB;X
+L0009E5: db $CD;X
+L0009E6: db $B9;X
+L0009E7: db $0C;X
+L0009E8: db $FA;X
+L0009E9: db $75;X
+L0009EA: db $CB;X
+L0009EB: db $3D;X
+L0009EC: db $EA;X
+L0009ED: db $75;X
+L0009EE: db $CB;X
+L0009EF: db $A7;X
+L0009F0: db $28;X
+L0009F1: db $06;X
+L0009F2: db $FA;X
+L0009F3: db $77;X
+L0009F4: db $CB;X
+L0009F5: db $4F;X
+L0009F6: db $18;X
+L0009F7: db $28;X
+L0009F8: db $FA;X
+L0009F9: db $72;X
+L0009FA: db $CB;X
+L0009FB: db $6F;X
+L0009FC: db $FA;X
+L0009FD: db $73;X
+L0009FE: db $CB;X
+L0009FF: db $67;X
+L000A00: db $2A;X
+L000A01: db $EA;X
+L000A02: db $75;X
+L000A03: db $CB;X
+L000A04: db $2A;X
+L000A05: db $4F;X
+L000A06: db $EA;X
+L000A07: db $77;X
+L000A08: db $CB;X
+L000A09: db $7E;X
+L000A0A: db $FE;X
+L000A0B: db $FF;X
+L000A0C: db $20;X
+L000A0D: db $0A;X
+L000A0E: db $23;X
+L000A0F: db $2A;X
+L000A10: db $66;X
+L000A11: db $6F;X
+L000A12: db $FA;X
+L000A13: db $76;X
+L000A14: db $CB;X
+L000A15: db $EA;X
+L000A16: db $33;X
+L000A17: db $C8;X
+L000A18: db $7D;X
+L000A19: db $EA;X
+L000A1A: db $72;X
+L000A1B: db $CB;X
+L000A1C: db $7C;X
+L000A1D: db $EA;X
+L000A1E: db $73;X
+L000A1F: db $CB;X
+L000A20: db $F1;X
+L000A21: db $CD;X
+L000A22: db $B9;X
+L000A23: db $0C;X
+L000A24: db $C9;X
+L000A25:;C
+	push hl
+	ld   a, [$C833]
+	ld   hl, $0A60
+	call L000C71
+	ld   a, [$C857]
+	and  a, $0F
+	call L000C71
+	ld   b, [hl]
+	ld   a, [$C833]
+	ld   hl, $0A72
+	call L000C71
+	ld   a, [$C857]
+	and  a, $0F
+	call L000C71
+	ld   c, [hl]
+	call L000A84
+	pop  hl
+	ld   [$C860], a
+	ld   a, c
+	ld   [$C85F], a
+	ld   a, b
+	ld   [$C85E], a
+	call L000ACE
+	ld   a, [$C860]
+	ret  
+L000A60: db $6A
+L000A61: db $0A
+L000A62: db $6A;X
+L000A63: db $0A;X
+L000A64: db $6A;X
+L000A65: db $0A;X
+L000A66: db $6E;X
+L000A67: db $0A;X
+L000A68: db $6A;X
+L000A69: db $0A;X
+L000A6A: db $59
+L000A6B: db $C8
+L000A6C: db $5B;X
+L000A6D: db $C8;X
+L000A6E: db $87;X
+L000A6F: db $C8;X
+L000A70: db $89;X
+L000A71: db $C8;X
+L000A72: db $7C
+L000A73: db $0A
+L000A74: db $7C;X
+L000A75: db $0A;X
+L000A76: db $7C;X
+L000A77: db $0A;X
+L000A78: db $80;X
+L000A79: db $0A;X
+L000A7A: db $7C;X
+L000A7B: db $0A;X
+L000A7C: db $58
+L000A7D: db $C8
+L000A7E: db $5A;X
+L000A7F: db $C8;X
+L000A80: db $86;X
+L000A81: db $C8;X
+L000A82: db $88;X
+L000A83: db $C8;X
+L000A84:;C
+	push de
+	push bc
+	ld   a, b
+	and  a, $F0
+	ld   d, a
+	ld   a, c
+	and  a, $F0
+	jr   z, L000AAB
+	and  a, d
+	jr   z, L000A9B
+	xor  a, a
+	ld   [$C85C], a
+	ld   [$C85D], a
+	jr   L000AB1
+L000A9B:;R
+	call L000AB5
+	ld   a, [$C85C]
+	and  a, $E0
+	jr   z, L000AAB
+	ld   a, [$C85D]
+	and  a, a
+	jr   z, L000AB1
+L000AAB:;R
+	ld   a, c
+	and  a, $0F
+	or   a, d
+	jr   L000AB2
+L000AB1:;R
+	ld   a, c
+L000AB2:;R
+	pop  bc
+	pop  de
+	ret  
+L000AB5:;C
+	ld   a, [$C85C]
+	inc  a
+	and  a, a
+	jr   nz, L000ABE
+	ld   a, $FF
+L000ABE:;R
+	ld   [$C85C], a
+	and  a, $F0
+	ret  z
+	ld   a, [$C85D]
+	inc  a
+	and  a, $03
+	ld   [$C85D], a
+	ret  
+L000ACE:;C
+	ld   a, [$D900]
+	and  a, a
+	ret  z
+L000AD3: db $FA;X
+L000AD4: db $5F;X
+L000AD5: db $C8;X
+L000AD6: db $E6;X
+L000AD7: db $07;X
+L000AD8: db $FE;X
+L000AD9: db $07;X
+L000ADA: db $C0;X
+L000ADB: db $FA;X
+L000ADC: db $5E;X
+L000ADD: db $C8;X
+L000ADE: db $E6;X
+L000ADF: db $08;X
+L000AE0: db $FE;X
+L000AE1: db $08;X
+L000AE2: db $C0;X
+L000AE3: db $CD;X
+L000AE4: db $C9;X
+L000AE5: db $3D;X
+L000AE6: db $3E;X
+L000AE7: db $04;X
+L000AE8: db $CD;X
+L000AE9: db $B8;X
+L000AEA: db $03;X
+L000AEB: db $C3;X
+L000AEC: db $54;X
+L000AED: db $01;X
+L000AEE:;CR
+	call L000E47
+	ld   a, [hl]
+	ld   [de], a
+	ei   
+	inc  hl
+	inc  de
+	dec  bc
+	ld   a, b
+	or   a, c
+	jr   nz, L000AEE
+	ret  
+L000AFC: db $CD;X
+L000AFD: db $47;X
+L000AFE: db $0E;X
+L000AFF: db $22;X
+L000B00: db $FB;X
+L000B01: db $C9;X
+L000B02: db $EA;X
+L000B03: db $4F;X
+L000B04: db $C8;X
+L000B05: db $FA;X
+L000B06: db $41;X
+L000B07: db $C8;X
+L000B08: db $F5;X
+L000B09: db $FA;X
+L000B0A: db $4F;X
+L000B0B: db $C8;X
+L000B0C: db $CD;X
+L000B0D: db $B9;X
+L000B0E: db $0C;X
+L000B0F: db $3E;X
+L000B10: db $00;X
+L000B11: db $E0;X
+L000B12: db $4F;X
+L000B13: db $CD;X
+L000B14: db $2C;X
+L000B15: db $0B;X
+L000B16: db $3E;X
+L000B17: db $01;X
+L000B18: db $E0;X
+L000B19: db $4F;X
+L000B1A: db $13;X
+L000B1B: db $FA;X
+L000B1C: db $34;X
+L000B1D: db $C8;X
+L000B1E: db $FE;X
+L000B1F: db $04;X
+L000B20: db $CC;X
+L000B21: db $2C;X
+L000B22: db $0B;X
+L000B23: db $3E;X
+L000B24: db $00;X
+L000B25: db $E0;X
+L000B26: db $4F;X
+L000B27: db $F1;X
+L000B28: db $CD;X
+L000B29: db $B9;X
+L000B2A: db $0C;X
+L000B2B: db $C9;X
+L000B2C: db $C5;X
+L000B2D: db $D5;X
+L000B2E: db $E5;X
+L000B2F: db $C5;X
+L000B30: db $E5;X
+L000B31: db $CD;X
+L000B32: db $47;X
+L000B33: db $0E;X
+L000B34: db $1A;X
+L000B35: db $77;X
+L000B36: db $FB;X
+L000B37: db $23;X
+L000B38: db $13;X
+L000B39: db $13;X
+L000B3A: db $05;X
+L000B3B: db $20;X
+L000B3C: db $F4;X
+L000B3D: db $E1;X
+L000B3E: db $01;X
+L000B3F: db $20;X
+L000B40: db $00;X
+L000B41: db $09;X
+L000B42: db $C1;X
+L000B43: db $0D;X
+L000B44: db $20;X
+L000B45: db $E9;X
+L000B46: db $E1;X
+L000B47: db $D1;X
+L000B48: db $C1;X
+L000B49: db $C9;X
+L000B4A: db $EA;X
+L000B4B: db $4F;X
+L000B4C: db $C8;X
+L000B4D: db $FA;X
+L000B4E: db $41;X
+L000B4F: db $C8;X
+L000B50: db $F5;X
+L000B51: db $FA;X
+L000B52: db $4F;X
+L000B53: db $C8;X
+L000B54: db $CD;X
+L000B55: db $B9;X
+L000B56: db $0C;X
+L000B57: db $3E;X
+L000B58: db $00;X
+L000B59: db $E0;X
+L000B5A: db $4F;X
+L000B5B: db $CD;X
+L000B5C: db $74;X
+L000B5D: db $0B;X
+L000B5E: db $3E;X
+L000B5F: db $01;X
+L000B60: db $E0;X
+L000B61: db $4F;X
+L000B62: db $13;X
+L000B63: db $FA;X
+L000B64: db $34;X
+L000B65: db $C8;X
+L000B66: db $FE;X
+L000B67: db $04;X
+L000B68: db $CC;X
+L000B69: db $74;X
+L000B6A: db $0B;X
+L000B6B: db $3E;X
+L000B6C: db $00;X
+L000B6D: db $E0;X
+L000B6E: db $4F;X
+L000B6F: db $F1;X
+L000B70: db $CD;X
+L000B71: db $B9;X
+L000B72: db $0C;X
+L000B73: db $C9;X
+L000B74: db $C5;X
+L000B75: db $D5;X
+L000B76: db $E5;X
+L000B77: db $C5;X
+L000B78: db $D5;X
+L000B79: db $E5;X
+L000B7A: db $CD;X
+L000B7B: db $47;X
+L000B7C: db $0E;X
+L000B7D: db $1A;X
+L000B7E: db $77;X
+L000B7F: db $FB;X
+L000B80: db $23;X
+L000B81: db $13;X
+L000B82: db $13;X
+L000B83: db $05;X
+L000B84: db $20;X
+L000B85: db $F4;X
+L000B86: db $E1;X
+L000B87: db $01;X
+L000B88: db $20;X
+L000B89: db $00;X
+L000B8A: db $09;X
+L000B8B: db $D1;X
+L000B8C: db $3E;X
+L000B8D: db $40;X
+L000B8E: db $CD;X
+L000B8F: db $B0;X
+L000B90: db $0E;X
+L000B91: db $C1;X
+L000B92: db $0D;X
+L000B93: db $20;X
+L000B94: db $E2;X
+L000B95: db $E1;X
+L000B96: db $D1;X
+L000B97: db $C1;X
+L000B98: db $C9;X
+L000B99:;CR
+	push bc
+	push hl
+L000B9B:;R
+	call L000E47
+	ld   a, [de]
+	ld   [hl], a
+	ei   
+	inc  hl
+	inc  de
+	dec  b
+	jr   nz, L000B9B
+	pop  hl
+	ld   bc, $0020
+	add  hl, bc
+	pop  bc
+	dec  c
+	jr   nz, L000B99
+	ret  
+L000BB0:;C
+	ld   d, a
+L000BB1:;R
+	call L000E47
+	ld   a, d
+	ldi  [hl], a
+	ei   
+	dec  bc
+	ld   a, c
+	or   a, b
+	jr   nz, L000BB1
+	ret  
+L000BBD:;C
+	ld   d, a
+L000BBE:;R
+	push bc
+	push hl
+L000BC0:;J
+	call L000E47
+	ld   a, d
+	ldi  [hl], a
+	ei   
+	dec  b
+	jp   nz, L000BC0
+	pop  hl
+	ld   bc, $0020
+	add  hl, bc
+	pop  bc
+	dec  c
+	jr   nz, L000BBE
+	ret  
+L000BD4: db $21;X
+L000BD5: db $00;X
+L000BD6: db $98;X
+L000BD7: db $01;X
+L000BD8: db $20;X
+L000BD9: db $20;X
+L000BDA: db $3E;X
+L000BDB: db $00;X
+L000BDC: db $CD;X
+L000BDD: db $BD;X
+L000BDE: db $0B;X
+L000BDF: db $21;X
+L000BE0: db $00;X
+L000BE1: db $9C;X
+L000BE2: db $01;X
+L000BE3: db $20;X
+L000BE4: db $20;X
+L000BE5: db $3E;X
+L000BE6: db $00;X
+L000BE7: db $CD;X
+L000BE8: db $BD;X
+L000BE9: db $0B;X
+L000BEA: db $AF;X
+L000BEB: db $EA;X
+L000BEC: db $45;X
+L000BED: db $C8;X
+L000BEE: db $EA;X
+L000BEF: db $47;X
+L000BF0: db $C8;X
+L000BF1: db $C9;X
+L000BF2: db $C5;X
+L000BF3: db $E5;X
+L000BF4: db $CD;X
+L000BF5: db $02;X
+L000BF6: db $0C;X
+L000BF7: db $E1;X
+L000BF8: db $01;X
+L000BF9: db $20;X
+L000BFA: db $00;X
+L000BFB: db $09;X
+L000BFC: db $C1;X
+L000BFD: db $05;X
+L000BFE: db $C2;X
+L000BFF: db $F2;X
+L000C00: db $0B;X
+L000C01: db $C9;X
+L000C02: db $CD;X
+L000C03: db $47;X
+L000C04: db $0E;X
+L000C05: db $2A;X
+L000C06: db $12;X
+L000C07: db $FB;X
+L000C08: db $13;X
+L000C09: db $0D;X
+L000C0A: db $20;X
+L000C0B: db $F6;X
+L000C0C: db $C9;X
+L000C0D: db $D5;X
+L000C0E: db $5F;X
+L000C0F: db $16;X
+L000C10: db $00;X
+L000C11: db $CB;X
+L000C12: db $23;X
+L000C13: db $CB;X
+L000C14: db $12;X
+L000C15: db $CD;X
+L000C16: db $B0;X
+L000C17: db $0E;X
+L000C18: db $19;X
+L000C19: db $2A;X
+L000C1A: db $5F;X
+L000C1B: db $2A;X
+L000C1C: db $66;X
+L000C1D: db $6F;X
+L000C1E: db $7B;X
+L000C1F: db $D1;X
+L000C20: db $C9;X
+L000C21: db $EA;X
+L000C22: db $4F;X
+L000C23: db $C8;X
+L000C24: db $FA;X
+L000C25: db $41;X
+L000C26: db $C8;X
+L000C27: db $F5;X
+L000C28: db $78;X
+L000C29: db $CD;X
+L000C2A: db $B9;X
+L000C2B: db $0C;X
+L000C2C: db $FA;X
+L000C2D: db $4F;X
+L000C2E: db $C8;X
+L000C2F: db $CD;X
+L000C30: db $0D;X
+L000C31: db $0C;X
+L000C32: db $EA;X
+L000C33: db $4F;X
+L000C34: db $C8;X
+L000C35: db $F1;X
+L000C36: db $CD;X
+L000C37: db $B9;X
+L000C38: db $0C;X
+L000C39: db $FA;X
+L000C3A: db $4F;X
+L000C3B: db $C8;X
+L000C3C: db $C9;X
+L000C3D: db $D5;X
+L000C3E: db $5F;X
+L000C3F: db $16;X
+L000C40: db $00;X
+L000C41: db $CB;X
+L000C42: db $23;X
+L000C43: db $CB;X
+L000C44: db $12;X
+L000C45: db $83;X
+L000C46: db $5F;X
+L000C47: db $7A;X
+L000C48: db $CE;X
+L000C49: db $00;X
+L000C4A: db $57;X
+L000C4B: db $19;X
+L000C4C: db $2A;X
+L000C4D: db $5F;X
+L000C4E: db $2A;X
+L000C4F: db $57;X
+L000C50: db $7E;X
+L000C51: db $D5;X
+L000C52: db $E1;X
+L000C53: db $D1;X
+L000C54: db $C9;X
+L000C55: db $EA;X
+L000C56: db $4F;X
+L000C57: db $C8;X
+L000C58: db $FA;X
+L000C59: db $41;X
+L000C5A: db $C8;X
+L000C5B: db $F5;X
+L000C5C: db $78;X
+L000C5D: db $CD;X
+L000C5E: db $B9;X
+L000C5F: db $0C;X
+L000C60: db $FA;X
+L000C61: db $4F;X
+L000C62: db $C8;X
+L000C63: db $CD;X
+L000C64: db $3D;X
+L000C65: db $0C;X
+L000C66: db $EA;X
+L000C67: db $4F;X
+L000C68: db $C8;X
+L000C69: db $F1;X
+L000C6A: db $CD;X
+L000C6B: db $B9;X
+L000C6C: db $0C;X
+L000C6D: db $FA;X
+L000C6E: db $4F;X
+L000C6F: db $C8;X
+L000C70: db $C9;X
+L000C71:;C
+	push de
+	ld   e, a
+	ld   d, $00
+	sla  e
+	rl   d
+	add  hl, de
+	ldi  a, [hl]
+	ld   h, [hl]
+	ld   l, a
+	pop  de
+	ret  
+L000C7F: db $EA;X
+L000C80: db $4F;X
+L000C81: db $C8;X
+L000C82: db $FA;X
+L000C83: db $41;X
+L000C84: db $C8;X
+L000C85: db $F5;X
+L000C86: db $78;X
+L000C87: db $CD;X
+L000C88: db $B9;X
+L000C89: db $0C;X
+L000C8A: db $FA;X
+L000C8B: db $4F;X
+L000C8C: db $C8;X
+L000C8D: db $CD;X
+L000C8E: db $71;X
+L000C8F: db $0C;X
+L000C90: db $F1;X
+L000C91: db $CD;X
+L000C92: db $B9;X
+L000C93: db $0C;X
+L000C94: db $C9;X
+L000C95:;C
+	push de
+	ld   e, a
+	ld   d, $00
+	add  hl, de
+	ld   a, [hl]
+	pop  de
+	ret  
+L000C9D:;C
+	ld   [$C84F], a
+	ld   a, [$C841]
+	push af
+	ld   a, b
+	call L000CB9
+	ld   a, [$C84F]
+	call L000C95
+	ld   [$C84F], a
+	pop  af
+	call L000CB9
+	ld   a, [$C84F]
+	ret  
+L000CB9:;C
+	ld   [$C841], a
+	ld   [MBC1RomBank], a
+	ret  
+L000CC0: db $EA;X
+L000CC1: db $44;X
+L000CC2: db $C8;X
+L000CC3: db $E0;X
+L000CC4: db $4F;X
+L000CC5: db $C9;X
+L000CC6: db $3E;X
+L000CC7: db $01;X
+L000CC8: db $EA;X
+L000CC9: db $4C;X
+L000CCA: db $C8;X
+L000CCB: db $79;X
+L000CCC: db $EA;X
+L000CCD: db $4F;X
+L000CCE: db $C8;X
+L000CCF: db $78;X
+L000CD0: db $EA;X
+L000CD1: db $50;X
+L000CD2: db $C8;X
+L000CD3: db $46;X
+L000CD4: db $23;X
+L000CD5: db $4E;X
+L000CD6: db $23;X
+L000CD7: db $11;X
+L000CD8: db $00;X
+L000CD9: db $00;X
+L000CDA: db $C5;X
+L000CDB: db $D5;X
+L000CDC: db $2A;X
+L000CDD: db $E5;X
+L000CDE: db $F5;X
+L000CDF: db $FA;X
+L000CE0: db $4F;X
+L000CE1: db $C8;X
+L000CE2: db $6F;X
+L000CE3: db $FA;X
+L000CE4: db $50;X
+L000CE5: db $C8;X
+L000CE6: db $67;X
+L000CE7: db $FA;X
+L000CE8: db $4E;X
+L000CE9: db $C8;X
+L000CEA: db $83;X
+L000CEB: db $22;X
+L000CEC: db $FA;X
+L000CED: db $4D;X
+L000CEE: db $C8;X
+L000CEF: db $82;X
+L000CF0: db $22;X
+L000CF1: db $F1;X
+L000CF2: db $22;X
+L000CF3: db $3E;X
+L000CF4: db $10;X
+L000CF5: db $22;X
+L000CF6: db $7D;X
+L000CF7: db $EA;X
+L000CF8: db $4F;X
+L000CF9: db $C8;X
+L000CFA: db $7C;X
+L000CFB: db $EA;X
+L000CFC: db $50;X
+L000CFD: db $C8;X
+L000CFE: db $E1;X
+L000CFF: db $7A;X
+L000D00: db $C6;X
+L000D01: db $08;X
+L000D02: db $57;X
+L000D03: db $05;X
+L000D04: db $20;X
+L000D05: db $D6;X
+L000D06: db $D1;X
+L000D07: db $C1;X
+L000D08: db $7B;X
+L000D09: db $C6;X
+L000D0A: db $08;X
+L000D0B: db $5F;X
+L000D0C: db $0D;X
+L000D0D: db $20;X
+L000D0E: db $CB;X
+L000D0F: db $AF;X
+L000D10: db $EA;X
+L000D11: db $4C;X
+L000D12: db $C8;X
+L000D13: db $C9;X
+L000D14: db $3E;X
+L000D15: db $01;X
+L000D16: db $EA;X
+L000D17: db $4C;X
+L000D18: db $C8;X
+L000D19: db $79;X
+L000D1A: db $EA;X
+L000D1B: db $4F;X
+L000D1C: db $C8;X
+L000D1D: db $78;X
+L000D1E: db $EA;X
+L000D1F: db $50;X
+L000D20: db $C8;X
+L000D21: db $46;X
+L000D22: db $23;X
+L000D23: db $4E;X
+L000D24: db $23;X
+L000D25: db $11;X
+L000D26: db $00;X
+L000D27: db $00;X
+L000D28: db $C5;X
+L000D29: db $D5;X
+L000D2A: db $2A;X
+L000D2B: db $E5;X
+L000D2C: db $F5;X
+L000D2D: db $FA;X
+L000D2E: db $4F;X
+L000D2F: db $C8;X
+L000D30: db $6F;X
+L000D31: db $FA;X
+L000D32: db $50;X
+L000D33: db $C8;X
+L000D34: db $67;X
+L000D35: db $FA;X
+L000D36: db $4E;X
+L000D37: db $C8;X
+L000D38: db $83;X
+L000D39: db $22;X
+L000D3A: db $FA;X
+L000D3B: db $4D;X
+L000D3C: db $C8;X
+L000D3D: db $82;X
+L000D3E: db $22;X
+L000D3F: db $F1;X
+L000D40: db $22;X
+L000D41: db $3E;X
+L000D42: db $14;X
+L000D43: db $22;X
+L000D44: db $7D;X
+L000D45: db $EA;X
+L000D46: db $4F;X
+L000D47: db $C8;X
+L000D48: db $7C;X
+L000D49: db $EA;X
+L000D4A: db $50;X
+L000D4B: db $C8;X
+L000D4C: db $E1;X
+L000D4D: db $7A;X
+L000D4E: db $C6;X
+L000D4F: db $08;X
+L000D50: db $57;X
+L000D51: db $05;X
+L000D52: db $20;X
+L000D53: db $D6;X
+L000D54: db $D1;X
+L000D55: db $C1;X
+L000D56: db $7B;X
+L000D57: db $C6;X
+L000D58: db $10;X
+L000D59: db $5F;X
+L000D5A: db $0D;X
+L000D5B: db $20;X
+L000D5C: db $CB;X
+L000D5D: db $AF;X
+L000D5E: db $EA;X
+L000D5F: db $4C;X
+L000D60: db $C8;X
+L000D61: db $C9;X
+L000D62: db $EA;X
+L000D63: db $4F;X
+L000D64: db $C8;X
+L000D65: db $FA;X
+L000D66: db $41;X
+L000D67: db $C8;X
+L000D68: db $F5;X
+L000D69: db $FA;X
+L000D6A: db $4F;X
+L000D6B: db $C8;X
+L000D6C: db $CD;X
+L000D6D: db $B9;X
+L000D6E: db $0C;X
+L000D6F: db $CD;X
+L000D70: db $14;X
+L000D71: db $0D;X
+L000D72: db $F1;X
+L000D73: db $CD;X
+L000D74: db $B9;X
+L000D75: db $0C;X
+L000D76: db $C9;X
+L000D77:;C
+	ld   hl, $C89E
+	ldi  a, [hl]
+	ldh  [rBGP], a
+	ldi  a, [hl]
+	ldh  [rOBP0], a
+	ld   a, [hl]
+	ldh  [rOBP1], a
+	ret  
+L000D84:;C
+	ld   a, $80
+	ldh  [rBGPI], a
+	ld   b, $40
+	ld   c, $69
+	ld   hl, $C8A4
+L000D8F:;J
+	ldi  a, [hl]
+	ld   [c], a
+	dec  b
+	jp   nz, L000D8F
+	ld   a, $80
+	ldh  [rOBPI], a
+	ld   b, $40
+	ld   c, $6B
+	ld   hl, $C8E4
+L000DA0:;J
+	ldi  a, [hl]
+	ld   [c], a
+	dec  b
+	jp   nz, L000DA0
+	ret  
+L000DA7: db $F5;X
+L000DA8: db $3E;X
+L000DA9: db $E4;X
+L000DAA: db $21;X
+L000DAB: db $9E;X
+L000DAC: db $C8;X
+L000DAD: db $22;X
+L000DAE: db $22;X
+L000DAF: db $77;X
+L000DB0: db $F1;X
+L000DB1: db $A7;X
+L000DB2: db $28;X
+L000DB3: db $06;X
+L000DB4: db $3E;X
+L000DB5: db $E0;X
+L000DB6: db $32;X
+L000DB7: db $3E;X
+L000DB8: db $D0;X
+L000DB9: db $77;X
+L000DBA: db $3E;X
+L000DBB: db $03;X
+L000DBC: db $EA;X
+L000DBD: db $9D;X
+L000DBE: db $C8;X
+L000DBF: db $C9;X
+L000DC0: db $F5;X
+L000DC1: db $CD;X
+L000DC2: db $CB;X
+L000DC3: db $0D;X
+L000DC4: db $F1;X
+L000DC5: db $F5;X
+L000DC6: db $CD;X
+L000DC7: db $E1;X
+L000DC8: db $0D;X
+L000DC9: db $F1;X
+L000DCA: db $C9;X
+L000DCB:;C
+	push hl
+	push af
+	ld   a, $E4
+	ld   hl, $C89E
+	ldi  [hl], a
+	ldi  [hl], a
+	ld   [hl], a
+	pop  af
+	and  a, a
+	jr   z, L000DDF
+L000DD9: db $3E;X
+L000DDA: db $E0;X
+L000DDB: db $32;X
+L000DDC: db $3E;X
+L000DDD: db $D0;X
+L000DDE: db $77;X
+L000DDF:;R
+	pop  hl
+	ret  
+L000DE1: db $E5;X
+L000DE2: db $F5;X
+L000DE3: db $3E;X
+L000DE4: db $E4;X
+L000DE5: db $21;X
+L000DE6: db $A1;X
+L000DE7: db $C8;X
+L000DE8: db $22;X
+L000DE9: db $22;X
+L000DEA: db $77;X
+L000DEB: db $F1;X
+L000DEC: db $A7;X
+L000DED: db $28;X
+L000DEE: db $06;X
+L000DEF: db $3E;X
+L000DF0: db $E0;X
+L000DF1: db $32;X
+L000DF2: db $3E;X
+L000DF3: db $D0;X
+L000DF4: db $77;X
+L000DF5: db $E1;X
+L000DF6: db $C9;X
+L000DF7: db $AF;X
+L000DF8: db $21;X
+L000DF9: db $9E;X
+L000DFA: db $C8;X
+L000DFB: db $22;X
+L000DFC: db $22;X
+L000DFD: db $77;X
+L000DFE: db $3E;X
+L000DFF: db $11;X
+L000E00: db $EA;X
+L000E01: db $9D;X
+L000E02: db $C8;X
+L000E03: db $C9;X
+L000E04:;C
+	ld   a, b
+	ldh  [rWX], a
+	ld   a, c
+	ldh  [rWY], a
+	ldh  a, [rLCDC]
+	or   a, $60
+	ldh  [rLCDC], a
+	ret  
+L000E11:;C
+	push af
+	ldh  a, [rLCDC]
+	bit  7, a
+	jr   z, L000E31
+L000E18: db $F0;X
+L000E19: db $FF;X
+L000E1A: db $F5;X
+L000E1B: db $CB;X
+L000E1C: db $87;X
+L000E1D: db $E0;X
+L000E1E: db $FF;X
+L000E1F: db $F0;X
+L000E20: db $44;X
+L000E21: db $FE;X
+L000E22: db $91;X
+L000E23: db $38;X
+L000E24: db $FA;X
+L000E25: db $F0;X
+L000E26: db $40;X
+L000E27: db $E6;X
+L000E28: db $7C;X
+L000E29: db $E0;X
+L000E2A: db $40;X
+L000E2B: db $AF;X
+L000E2C: db $E0;X
+L000E2D: db $0F;X
+L000E2E: db $F1;X
+L000E2F: db $E0;X
+L000E30: db $FF;X
+L000E31:;R
+	pop  af
+	ret  
+L000E33:;C
+	push af
+	ldh  a, [rLCDC]
+	or   a, $83
+	ldh  [rLCDC], a
+	pop  af
+	ret  
+L000E3C: db $F0;X
+L000E3D: db $40;X
+L000E3E: db $E6;X
+L000E3F: db $7F;X
+L000E40: db $E0;X
+L000E41: db $40;X
+L000E42: db $F6;X
+L000E43: db $80;X
+L000E44: db $E0;X
+L000E45: db $40;X
+L000E46: db $C9;X
+L000E47:;C
+	push af
+	di   
+	ldh  a, [rLCDC]
+	bit  7, a
+	jr   z, L000E5F
+L000E4F:;R
+	ldh  a, [rSTAT]
+	and  a, $03
+	cp   $03
+	jr   nz, L000E4F
+L000E57:;R
+	ldh  a, [rSTAT]
+	and  a, $03
+	cp   $03
+	jr   z, L000E57
+L000E5F:;R
+	pop  af
+	ret  
+L000E61: db $D5;X
+L000E62: db $5F;X
+L000E63: db $16;X
+L000E64: db $00;X
+L000E65: db $CB;X
+L000E66: db $23;X
+L000E67: db $CB;X
+L000E68: db $12;X
+L000E69: db $19;X
+L000E6A: db $D1;X
+L000E6B: db $C9;X
+L000E6C: db $D5;X
+L000E6D: db $5F;X
+L000E6E: db $16;X
+L000E6F: db $00;X
+L000E70: db $CB;X
+L000E71: db $23;X
+L000E72: db $CB;X
+L000E73: db $12;X
+L000E74: db $CB;X
+L000E75: db $23;X
+L000E76: db $CB;X
+L000E77: db $12;X
+L000E78: db $19;X
+L000E79: db $D1;X
+L000E7A: db $C9;X
+L000E7B: db $E5;X
+L000E7C: db $6F;X
+L000E7D: db $26;X
+L000E7E: db $00;X
+L000E7F: db $29;X
+L000E80: db $09;X
+L000E81: db $4D;X
+L000E82: db $44;X
+L000E83: db $E1;X
+L000E84: db $C9;X
+L000E85: db $E5;X
+L000E86: db $6F;X
+L000E87: db $26;X
+L000E88: db $00;X
+L000E89: db $29;X
+L000E8A: db $29;X
+L000E8B: db $29;X
+L000E8C: db $09;X
+L000E8D: db $4D;X
+L000E8E: db $44;X
+L000E8F: db $E1;X
+L000E90: db $C9;X
+L000E91: db $E5;X
+L000E92: db $6F;X
+L000E93: db $26;X
+L000E94: db $00;X
+L000E95: db $CB;X
+L000E96: db $25;X
+L000E97: db $CB;X
+L000E98: db $14;X
+L000E99: db $19;X
+L000E9A: db $5D;X
+L000E9B: db $54;X
+L000E9C: db $E1;X
+L000E9D: db $C9;X
+L000E9E: db $81;X
+L000E9F: db $4F;X
+L000EA0: db $78;X
+L000EA1: db $CE;X
+L000EA2: db $00;X
+L000EA3: db $47;X
+L000EA4: db $C9;X
+L000EA5: db $D5;X
+L000EA6: db $5F;X
+L000EA7: db $79;X
+L000EA8: db $93;X
+L000EA9: db $4F;X
+L000EAA: db $78;X
+L000EAB: db $DE;X
+L000EAC: db $00;X
+L000EAD: db $47;X
+L000EAE: db $D1;X
+L000EAF: db $C9;X
+L000EB0: db $83;X
+L000EB1: db $5F;X
+L000EB2: db $7A;X
+L000EB3: db $CE;X
+L000EB4: db $00;X
+L000EB5: db $57;X
+L000EB6: db $C9;X
+L000EB7: db $C5;X
+L000EB8: db $4F;X
+L000EB9: db $7B;X
+L000EBA: db $91;X
+L000EBB: db $5F;X
+L000EBC: db $7A;X
+L000EBD: db $DE;X
+L000EBE: db $00;X
+L000EBF: db $57;X
+L000EC0: db $C1;X
+L000EC1: db $C9;X
+L000EC2: db $CB;X
+L000EC3: db $7F;X
+L000EC4: db $28;X
+L000EC5: db $0F;X
+L000EC6: db $2F;X
+L000EC7: db $3C;X
+L000EC8: db $18;X
+L000EC9: db $00;X
+L000ECA: db $C5;X
+L000ECB: db $4F;X
+L000ECC: db $7D;X
+L000ECD: db $91;X
+L000ECE: db $6F;X
+L000ECF: db $7C;X
+L000ED0: db $DE;X
+L000ED1: db $00;X
+L000ED2: db $67;X
+L000ED3: db $C1;X
+L000ED4: db $C9;X
+L000ED5:;C
+	push af
+	add  a, l
+	ld   l, a
+	ld   a, h
+	adc  a, $00
+	ld   h, a
+	pop  af
+	ret  
+L000EDE: db $F5;X
+L000EDF: db $2A;X
+L000EE0: db $66;X
+L000EE1: db $6F;X
+L000EE2: db $F1;X
+L000EE3: db $C9;X
+L000EE4: db $FA;X
+L000EE5: db $41;X
+L000EE6: db $C8;X
+L000EE7: db $F5;X
+L000EE8: db $78;X
+L000EE9: db $CD;X
+L000EEA: db $B9;X
+L000EEB: db $0C;X
+L000EEC: db $CD;X
+L000EED: db $DE;X
+L000EEE: db $0E;X
+L000EEF: db $F1;X
+L000EF0: db $CD;X
+L000EF1: db $B9;X
+L000EF2: db $0C;X
+L000EF3: db $C9;X
+L000EF4: db $E5;X
+L000EF5: db $D5;X
+L000EF6: db $E1;X
+L000EF7: db $2A;X
+L000EF8: db $56;X
+L000EF9: db $5F;X
+L000EFA: db $E1;X
+L000EFB: db $C9;X
+L000EFC: db $E5;X
+L000EFD: db $C5;X
+L000EFE: db $E1;X
+L000EFF: db $2A;X
+L000F00: db $46;X
+L000F01: db $4F;X
+L000F02: db $E1;X
+L000F03: db $C9;X
+L000F04:;C
+	call $1FAD
+	jp   c, L000F11
+	xor  a, a
+	ld   [$C833], a
+	jp   L000F9B
+L000F11: db $FA;X
+L000F12: db $41;X
+L000F13: db $C8;X
+L000F14: db $F5;X
+L000F15: db $3E;X
+L000F16: db $9C;X
+L000F17: db $CD;X
+L000F18: db $B9;X
+L000F19: db $0C;X
+L000F1A: db $3E;X
+L000F1B: db $03;X
+L000F1C: db $EA;X
+L000F1D: db $33;X
+L000F1E: db $C8;X
+L000F1F: db $21;X
+L000F20: db $80;X
+L000F21: db $41;X
+L000F22: db $CD;X
+L000F23: db $5A;X
+L000F24: db $1F;X
+L000F25: db $01;X
+L000F26: db $04;X
+L000F27: db $00;X
+L000F28: db $CD;X
+L000F29: db $9C;X
+L000F2A: db $1F;X
+L000F2B: db $21;X
+L000F2C: db $70;X
+L000F2D: db $42;X
+L000F2E: db $CD;X
+L000F2F: db $5A;X
+L000F30: db $1F;X
+L000F31: db $01;X
+L000F32: db $04;X
+L000F33: db $00;X
+L000F34: db $CD;X
+L000F35: db $9C;X
+L000F36: db $1F;X
+L000F37: db $21;X
+L000F38: db $80;X
+L000F39: db $42;X
+L000F3A: db $CD;X
+L000F3B: db $5A;X
+L000F3C: db $1F;X
+L000F3D: db $01;X
+L000F3E: db $04;X
+L000F3F: db $00;X
+L000F40: db $CD;X
+L000F41: db $9C;X
+L000F42: db $1F;X
+L000F43: db $21;X
+L000F44: db $90;X
+L000F45: db $42;X
+L000F46: db $CD;X
+L000F47: db $5A;X
+L000F48: db $1F;X
+L000F49: db $01;X
+L000F4A: db $04;X
+L000F4B: db $00;X
+L000F4C: db $CD;X
+L000F4D: db $9C;X
+L000F4E: db $1F;X
+L000F4F: db $21;X
+L000F50: db $A0;X
+L000F51: db $42;X
+L000F52: db $CD;X
+L000F53: db $5A;X
+L000F54: db $1F;X
+L000F55: db $01;X
+L000F56: db $04;X
+L000F57: db $00;X
+L000F58: db $CD;X
+L000F59: db $9C;X
+L000F5A: db $1F;X
+L000F5B: db $21;X
+L000F5C: db $B0;X
+L000F5D: db $42;X
+L000F5E: db $CD;X
+L000F5F: db $5A;X
+L000F60: db $1F;X
+L000F61: db $01;X
+L000F62: db $04;X
+L000F63: db $00;X
+L000F64: db $CD;X
+L000F65: db $9C;X
+L000F66: db $1F;X
+L000F67: db $21;X
+L000F68: db $C0;X
+L000F69: db $42;X
+L000F6A: db $CD;X
+L000F6B: db $5A;X
+L000F6C: db $1F;X
+L000F6D: db $01;X
+L000F6E: db $04;X
+L000F6F: db $00;X
+L000F70: db $CD;X
+L000F71: db $9C;X
+L000F72: db $1F;X
+L000F73: db $21;X
+L000F74: db $D0;X
+L000F75: db $42;X
+L000F76: db $CD;X
+L000F77: db $5A;X
+L000F78: db $1F;X
+L000F79: db $01;X
+L000F7A: db $04;X
+L000F7B: db $00;X
+L000F7C: db $CD;X
+L000F7D: db $9C;X
+L000F7E: db $1F;X
+L000F7F: db $21;X
+L000F80: db $E0;X
+L000F81: db $42;X
+L000F82: db $CD;X
+L000F83: db $5A;X
+L000F84: db $1F;X
+L000F85: db $01;X
+L000F86: db $04;X
+L000F87: db $00;X
+L000F88: db $CD;X
+L000F89: db $9C;X
+L000F8A: db $1F;X
+L000F8B: db $21;X
+L000F8C: db $D0;X
+L000F8D: db $41;X
+L000F8E: db $CD;X
+L000F8F: db $5A;X
+L000F90: db $1F;X
+L000F91: db $01;X
+L000F92: db $04;X
+L000F93: db $00;X
+L000F94: db $CD;X
+L000F95: db $9C;X
+L000F96: db $1F;X
+L000F97: db $F1;X
+L000F98: db $CD;X
+L000F99: db $B9;X
+L000F9A: db $0C;X
+L000F9B:;J
+	ret  
+L000F9C:;C
+	ld   a, [$C837]
+	cp   $01
+	jr   z, L000FAB
+L000FA3: db $FE;X
+L000FA4: db $FF;X
+L000FA5: db $28;X
+L000FA6: db $17;X
+L000FA7: db $FE;X
+L000FA8: db $11;X
+L000FA9: db $28;X
+L000FAA: db $26;X
+L000FAB:;R
+	ld   a, [$C833]
+	cp   $03
+	jr   z, L000FB8
+	ld   a, $00
+	ld   [$C834], a
+	ret  
+L000FB8: db $3E;X
+L000FB9: db $02;X
+L000FBA: db $EA;X
+L000FBB: db $34;X
+L000FBC: db $C8;X
+L000FBD: db $C9;X
+L000FBE: db $FA;X
+L000FBF: db $33;X
+L000FC0: db $C8;X
+L000FC1: db $FE;X
+L000FC2: db $03;X
+L000FC3: db $28;X
+L000FC4: db $06;X
+L000FC5: db $3E;X
+L000FC6: db $01;X
+L000FC7: db $EA;X
+L000FC8: db $34;X
+L000FC9: db $C8;X
+L000FCA: db $C9;X
+L000FCB: db $3E;X
+L000FCC: db $03;X
+L000FCD: db $EA;X
+L000FCE: db $34;X
+L000FCF: db $C8;X
+L000FD0: db $C9;X
+L000FD1: db $3E;X
+L000FD2: db $04;X
+L000FD3: db $EA;X
+L000FD4: db $34;X
+L000FD5: db $C8;X
+L000FD6: db $C9;X
+L000FD7:;C
+	xor  a, a
+L000FD8:;C
+	push de
+	ld   d, a
+L000FDA:;R
+	ld   a, d
+	ldi  [hl], a
+	dec  bc
+	ld   a, c
+	or   a, b
+	jr   nz, L000FDA
+	pop  de
+	ret  
+L000FE3:;CR
+	ldi  a, [hl]
+	ld   [de], a
+	inc  de
+	dec  bc
+	ld   a, c
+	or   a, b
+	jr   nz, L000FE3
+	ret  
+L000FEC: db $1A;X
+L000FED: db $22;X
+L000FEE: db $13;X
+L000FEF: db $0B;X
+L000FF0: db $79;X
+L000FF1: db $B0;X
+L000FF2: db $20;X
+L000FF3: db $F8;X
+L000FF4: db $C9;X
+L000FF5:;C
+	ld   [$C84F], a
+	ld   a, [$C841]
+	push af
+	ld   a, [$C84F]
+	call L000CB9
+	call L000FE3
+	pop  af
+	call L000CB9
+	ret  
+L00100A: db $EA;X
+L00100B: db $4F;X
+L00100C: db $C8;X
+L00100D: db $FA;X
+L00100E: db $41;X
+L00100F: db $C8;X
+L001010: db $F5;X
+L001011: db $FA;X
+L001012: db $4F;X
+L001013: db $C8;X
+L001014: db $CD;X
+L001015: db $B9;X
+L001016: db $0C;X
+L001017: db $CD;X
+L001018: db $EC;X
+L001019: db $0F;X
+L00101A: db $F1;X
+L00101B: db $CD;X
+L00101C: db $B9;X
+L00101D: db $0C;X
+L00101E: db $C9;X
+L00101F:;C
+	push hl
+	ld   a, [$C83C]
+	inc  a
+	ld   [$C83C], a
+	ld   hl, $1033
+	call L000C95
+	ld   a, [hl]
+	pop  hl
+	ld   [$C83B], a
+	ret  
+L001033: db $82
+L001034: db $7B
+L001035: db $24
+L001036: db $CA
+L001037: db $0D
+L001038: db $7A
+L001039: db $0F
+L00103A: db $0C
+L00103B: db $48
+L00103C: db $CC
+L00103D: db $0B
+L00103E: db $29
+L00103F: db $42
+L001040: db $C3
+L001041: db $C4
+L001042: db $3F
+L001043: db $A8
+L001044: db $33
+L001045: db $47
+L001046: db $89
+L001047: db $4C
+L001048: db $FC
+L001049: db $4D
+L00104A: db $00
+L00104B: db $E6
+L00104C: db $FA
+L00104D: db $04
+L00104E: db $B7
+L00104F: db $7C
+L001050: db $F8
+L001051: db $EA
+L001052: db $4F
+L001053: db $DA
+L001054: db $87
+L001055: db $49
+L001056: db $20
+L001057: db $2C
+L001058: db $B2
+L001059: db $B3
+L00105A: db $22
+L00105B: db $AC
+L00105C: db $E9
+L00105D: db $B4
+L00105E: db $9C
+L00105F: db $DF
+L001060: db $B8
+L001061: db $CD
+L001062: db $77
+L001063: db $A6
+L001064: db $16
+L001065: db $17
+L001066: db $68
+L001067: db $15
+L001068: db $BA
+L001069: db $1D
+L00106A: db $19
+L00106B: db $C9
+L00106C: db $6D
+L00106D: db $0E
+L00106E: db $AD
+L00106F: db $2F
+L001070: db $06
+L001071: db $12
+L001072: db $1F
+L001073: db $14
+L001074: db $F0
+L001075: db $72
+L001076: db $25
+L001077: db $05
+L001078: db $D6
+L001079: db $8D
+L00107A: db $80
+L00107B: db $2A
+L00107C: db $78
+L00107D: db $28
+L00107E: db $DD
+L00107F: db $BF
+L001080: db $D9
+L001081: db $88
+L001082: db $8F
+L001083: db $60
+L001084: db $51
+L001085: db $59
+L001086: db $E7
+L001087: db $55
+L001088: db $EE
+L001089: db $52
+L00108A: db $26
+L00108B: db $18
+L00108C: db $ED
+L00108D: db $11
+L00108E: db $C1
+L00108F: db $FF
+L001090: db $43
+L001091: db $21
+L001092: db $5F
+L001093: db $D4
+L001094: db $F6
+L001095: db $BC
+L001096: db $F3
+L001097: db $70
+L001098: db $DE
+L001099: db $AE
+L00109A: db $A9
+L00109B: db $3A
+L00109C: db $36
+L00109D: db $DB
+L00109E: db $D7
+L00109F: db $9F
+L0010A0: db $6C
+L0010A1: db $D1
+L0010A2: db $3E
+L0010A3: db $71
+L0010A4: db $A7
+L0010A5: db $08
+L0010A6: db $C6
+L0010A7: db $97
+L0010A8: db $BB
+L0010A9: db $CE
+L0010AA: db $C8
+L0010AB: db $56
+L0010AC: db $E3
+L0010AD: db $01
+L0010AE: db $0A
+L0010AF: db $3C
+L0010B0: db $92
+L0010B1: db $41
+L0010B2: db $FE
+L0010B3: db $64
+L0010B4: db $6A
+L0010B5: db $40
+L0010B6: db $FB
+L0010B7: db $F4
+L0010B8: db $5D
+L0010B9: db $9A
+L0010BA: db $F1
+L0010BB: db $BE
+L0010BC: db $83
+L0010BD: db $C0
+L0010BE: db $F2
+L0010BF: db $D0
+L0010C0: db $4B
+L0010C1: db $3D
+L0010C2: db $FD
+L0010C3: db $90
+L0010C4: db $34
+L0010C5: db $8A
+L0010C6: db $84
+L0010C7: db $7E
+L0010C8: db $CF
+L0010C9: db $75
+L0010CA: db $95
+L0010CB: db $45
+L0010CC: db $7D
+L0010CD: db $03
+L0010CE: db $09
+L0010CF: db $07
+L0010D0: db $F9
+L0010D1: db $4E
+L0010D2: db $79
+L0010D3: db $23
+L0010D4: db $A4
+L0010D5: db $D8
+L0010D6: db $37
+L0010D7: db $DC
+L0010D8: db $93
+L0010D9: db $F7
+L0010DA: db $D5
+L0010DB: db $50
+L0010DC: db $81
+L0010DD: db $E4
+L0010DE: db $D3
+L0010DF: db $B1
+L0010E0: db $8C
+L0010E1: db $2E
+L0010E2: db $46
+L0010E3: db $61
+L0010E4: db $5B
+L0010E5: db $57
+L0010E6: db $31
+L0010E7: db $EC
+L0010E8: db $5C
+L0010E9: db $A2
+L0010EA: db $E2
+L0010EB: db $62
+L0010EC: db $E8
+L0010ED: db $13
+L0010EE: db $EB
+L0010EF: db $66
+L0010F0: db $94
+L0010F1: db $1E
+L0010F2: db $EF
+L0010F3: db $74
+L0010F4: db $AB
+L0010F5: db $E5
+L0010F6: db $02
+L0010F7: db $E0
+L0010F8: db $2D
+L0010F9: db $BD
+L0010FA: db $B5
+L0010FB: db $85
+L0010FC: db $B6
+L0010FD: db $D2
+L0010FE: db $B0
+L0010FF: db $2B
+L001100: db $E1
+L001101: db $8E
+L001102: db $B9
+L001103: db $A1
+L001104: db $1B
+L001105: db $1A
+L001106: db $67
+L001107: db $65
+L001108: db $1C
+L001109: db $6E
+L00110A: db $69
+L00110B: db $58
+L00110C: db $C2
+L00110D: db $53
+L00110E: db $6B
+L00110F: db $8B
+L001110: db $86
+L001111: db $5E
+L001112: db $6F
+L001113: db $5A
+L001114: db $76
+L001115: db $54
+L001116: db $A0
+L001117: db $9E
+L001118: db $39
+L001119: db $98
+L00111A: db $A5
+L00111B: db $4A
+L00111C: db $91
+L00111D: db $27
+L00111E: db $A3
+L00111F: db $AA
+L001120: db $F5
+L001121: db $AF
+L001122: db $99
+L001123: db $C7
+L001124: db $10
+L001125: db $96
+L001126: db $32
+L001127: db $38
+L001128: db $9D
+L001129: db $73
+L00112A: db $9B
+L00112B: db $C5
+L00112C: db $30
+L00112D: db $CB
+L00112E: db $44
+L00112F: db $3B
+L001130: db $63
+L001131: db $7F
+L001132: db $35
+L001133: db $E5;X
+L001134: db $FA;X
+L001135: db $3F;X
+L001136: db $C8;X
+L001137: db $3C;X
+L001138: db $EA;X
+L001139: db $3F;X
+L00113A: db $C8;X
+L00113B: db $21;X
+L00113C: db $33;X
+L00113D: db $10;X
+L00113E: db $CD;X
+L00113F: db $95;X
+L001140: db $0C;X
+L001141: db $E1;X
+L001142: db $EA;X
+L001143: db $3E;X
+L001144: db $C8;X
+L001145: db $C9;X
+L001146:;C
+	ld   a, [$C834]
+	cp   $04
+	jp   nz, $12B0
+L00114E: db $21;X
+L00114F: db $BD;X
+L001150: db $C9;X
+L001151: db $35;X
+L001152: db $2A;X
+L001153: db $A7;X
+L001154: db $C0;X
+L001155: db $3A;X
+L001156: db $77;X
+L001157: db $3E;X
+L001158: db $01;X
+L001159: db $EA;X
+L00115A: db $9C;X
+L00115B: db $C8;X
+L00115C: db $11;X
+L00115D: db $A4;X
+L00115E: db $C9;X
+L00115F: db $06;X
+L001160: db $10;X
+L001161: db $AF;X
+L001162: db $EA;X
+L001163: db $BC;X
+L001164: db $C9;X
+L001165: db $C5;X
+L001166: db $06;X
+L001167: db $04;X
+L001168: db $C5;X
+L001169: db $D5;X
+L00116A: db $1A;X
+L00116B: db $21;X
+L00116C: db $72;X
+L00116D: db $11;X
+L00116E: db $CD;X
+L00116F: db $71;X
+L001170: db $0C;X
+L001171: db $E9;X
+L001172: db $9A;X
+L001173: db $11;X
+L001174: db $7A;X
+L001175: db $11;X
+L001176: db $7A;X
+L001177: db $11;X
+L001178: db $9A;X
+L001179: db $11;X
+L00117A: db $CD;X
+L00117B: db $F4;X
+L00117C: db $11;X
+L00117D: db $CD;X
+L00117E: db $1F;X
+L00117F: db $12;X
+L001180: db $21;X
+L001181: db $B4;X
+L001182: db $C9;X
+L001183: db $CD;X
+L001184: db $B5;X
+L001185: db $11;X
+L001186: db $21;X
+L001187: db $B6;X
+L001188: db $C9;X
+L001189: db $CD;X
+L00118A: db $B5;X
+L00118B: db $11;X
+L00118C: db $21;X
+L00118D: db $B8;X
+L00118E: db $C9;X
+L00118F: db $CD;X
+L001190: db $B5;X
+L001191: db $11;X
+L001192: db $CD;X
+L001193: db $4A;X
+L001194: db $12;X
+L001195: db $3E;X
+L001196: db $83;X
+L001197: db $EA;X
+L001198: db $9D;X
+L001199: db $C8;X
+L00119A: db $D1;X
+L00119B: db $C1;X
+L00119C: db $21;X
+L00119D: db $BC;X
+L00119E: db $C9;X
+L00119F: db $34;X
+L0011A0: db $05;X
+L0011A1: db $C2;X
+L0011A2: db $68;X
+L0011A3: db $11;X
+L0011A4: db $13;X
+L0011A5: db $C1;X
+L0011A6: db $05;X
+L0011A7: db $C2;X
+L0011A8: db $65;X
+L0011A9: db $11;X
+L0011AA: db $AF;X
+L0011AB: db $EA;X
+L0011AC: db $9C;X
+L0011AD: db $C8;X
+L0011AE: db $CD;X
+L0011AF: db $E2;X
+L0011B0: db $11;X
+L0011B1: db $CD;X
+L0011B2: db $6F;X
+L0011B3: db $12;X
+L0011B4: db $C9;X
+L0011B5: db $2A;X
+L0011B6: db $4F;X
+L0011B7: db $3A;X
+L0011B8: db $B9;X
+L0011B9: db $C8;X
+L0011BA: db $38;X
+L0011BB: db $02;X
+L0011BC: db $18;X
+L0011BD: db $12;X
+L0011BE: db $FA;X
+L0011BF: db $BB;X
+L0011C0: db $C9;X
+L0011C1: db $4F;X
+L0011C2: db $2A;X
+L0011C3: db $47;X
+L0011C4: db $7E;X
+L0011C5: db $81;X
+L0011C6: db $30;X
+L0011C7: db $02;X
+L0011C8: db $3E;X
+L0011C9: db $FF;X
+L0011CA: db $B8;X
+L0011CB: db $38;X
+L0011CC: db $01;X
+L0011CD: db $78;X
+L0011CE: db $77;X
+L0011CF: db $C9;X
+L0011D0: db $FA;X
+L0011D1: db $BB;X
+L0011D2: db $C9;X
+L0011D3: db $4F;X
+L0011D4: db $2A;X
+L0011D5: db $47;X
+L0011D6: db $7E;X
+L0011D7: db $91;X
+L0011D8: db $30;X
+L0011D9: db $02;X
+L0011DA: db $3E;X
+L0011DB: db $00;X
+L0011DC: db $B8;X
+L0011DD: db $30;X
+L0011DE: db $01;X
+L0011DF: db $78;X
+L0011E0: db $77;X
+L0011E1: db $C9;X
+L0011E2: db $FA;X
+L0011E3: db $BA;X
+L0011E4: db $C9;X
+L0011E5: db $4F;X
+L0011E6: db $FA;X
+L0011E7: db $BB;X
+L0011E8: db $C9;X
+L0011E9: db $81;X
+L0011EA: db $FE;X
+L0011EB: db $1F;X
+L0011EC: db $38;X
+L0011ED: db $02;X
+L0011EE: db $3E;X
+L0011EF: db $1F;X
+L0011F0: db $EA;X
+L0011F1: db $BB;X
+L0011F2: db $C9;X
+L0011F3: db $C9;X
+L0011F4: db $FA;X
+L0011F5: db $BC;X
+L0011F6: db $C9;X
+L0011F7: db $87;X
+L0011F8: db $21;X
+L0011F9: db $A4;X
+L0011FA: db $C8;X
+L0011FB: db $CD;X
+L0011FC: db $D5;X
+L0011FD: db $0E;X
+L0011FE: db $7E;X
+L0011FF: db $E6;X
+L001200: db $1F;X
+L001201: db $EA;X
+L001202: db $B4;X
+L001203: db $C9;X
+L001204: db $2A;X
+L001205: db $E6;X
+L001206: db $E0;X
+L001207: db $4F;X
+L001208: db $7E;X
+L001209: db $E6;X
+L00120A: db $03;X
+L00120B: db $B1;X
+L00120C: db $07;X
+L00120D: db $07;X
+L00120E: db $07;X
+L00120F: db $E6;X
+L001210: db $1F;X
+L001211: db $EA;X
+L001212: db $B6;X
+L001213: db $C9;X
+L001214: db $7E;X
+L001215: db $CB;X
+L001216: db $3F;X
+L001217: db $CB;X
+L001218: db $3F;X
+L001219: db $E6;X
+L00121A: db $1F;X
+L00121B: db $EA;X
+L00121C: db $B8;X
+L00121D: db $C9;X
+L00121E: db $C9;X
+L00121F: db $FA;X
+L001220: db $BC;X
+L001221: db $C9;X
+L001222: db $87;X
+L001223: db $21;X
+L001224: db $24;X
+L001225: db $C9;X
+L001226: db $CD;X
+L001227: db $D5;X
+L001228: db $0E;X
+L001229: db $7E;X
+L00122A: db $E6;X
+L00122B: db $1F;X
+L00122C: db $EA;X
+L00122D: db $B5;X
+L00122E: db $C9;X
+L00122F: db $2A;X
+L001230: db $E6;X
+L001231: db $E0;X
+L001232: db $4F;X
+L001233: db $7E;X
+L001234: db $E6;X
+L001235: db $03;X
+L001236: db $B1;X
+L001237: db $07;X
+L001238: db $07;X
+L001239: db $07;X
+L00123A: db $E6;X
+L00123B: db $1F;X
+L00123C: db $EA;X
+L00123D: db $B7;X
+L00123E: db $C9;X
+L00123F: db $7E;X
+L001240: db $CB;X
+L001241: db $3F;X
+L001242: db $CB;X
+L001243: db $3F;X
+L001244: db $E6;X
+L001245: db $1F;X
+L001246: db $EA;X
+L001247: db $B9;X
+L001248: db $C9;X
+L001249: db $C9;X
+L00124A: db $FA;X
+L00124B: db $BC;X
+L00124C: db $C9;X
+L00124D: db $87;X
+L00124E: db $21;X
+L00124F: db $24;X
+L001250: db $C9;X
+L001251: db $CD;X
+L001252: db $D5;X
+L001253: db $0E;X
+L001254: db $FA;X
+L001255: db $B7;X
+L001256: db $C9;X
+L001257: db $0F;X
+L001258: db $0F;X
+L001259: db $0F;X
+L00125A: db $F5;X
+L00125B: db $E6;X
+L00125C: db $03;X
+L00125D: db $47;X
+L00125E: db $F1;X
+L00125F: db $E6;X
+L001260: db $E0;X
+L001261: db $4F;X
+L001262: db $FA;X
+L001263: db $B5;X
+L001264: db $C9;X
+L001265: db $B1;X
+L001266: db $22;X
+L001267: db $FA;X
+L001268: db $B9;X
+L001269: db $C9;X
+L00126A: db $07;X
+L00126B: db $07;X
+L00126C: db $B0;X
+L00126D: db $77;X
+L00126E: db $C9;X
+L00126F: db $06;X
+L001270: db $10;X
+L001271: db $0E;X
+L001272: db $00;X
+L001273: db $C5;X
+L001274: db $79;X
+L001275: db $87;X
+L001276: db $87;X
+L001277: db $87;X
+L001278: db $21;X
+L001279: db $A4;X
+L00127A: db $C8;X
+L00127B: db $CD;X
+L00127C: db $D5;X
+L00127D: db $0E;X
+L00127E: db $E5;X
+L00127F: db $D1;X
+L001280: db $79;X
+L001281: db $87;X
+L001282: db $87;X
+L001283: db $87;X
+L001284: db $21;X
+L001285: db $24;X
+L001286: db $C9;X
+L001287: db $CD;X
+L001288: db $D5;X
+L001289: db $0E;X
+L00128A: db $06;X
+L00128B: db $08;X
+L00128C: db $0E;X
+L00128D: db $00;X
+L00128E: db $1A;X
+L00128F: db $BE;X
+L001290: db $28;X
+L001291: db $02;X
+L001292: db $0E;X
+L001293: db $01;X
+L001294: db $13;X
+L001295: db $23;X
+L001296: db $05;X
+L001297: db $C2;X
+L001298: db $8E;X
+L001299: db $12;X
+L00129A: db $79;X
+L00129B: db $A7;X
+L00129C: db $20;X
+L00129D: db $0B;X
+L00129E: db $C1;X
+L00129F: db $C5;X
+L0012A0: db $79;X
+L0012A1: db $21;X
+L0012A2: db $A4;X
+L0012A3: db $C9;X
+L0012A4: db $CD;X
+L0012A5: db $D5;X
+L0012A6: db $0E;X
+L0012A7: db $36;X
+L0012A8: db $00;X
+L0012A9: db $C1;X
+L0012AA: db $0C;X
+L0012AB: db $05;X
+L0012AC: db $C2;X
+L0012AD: db $73;X
+L0012AE: db $12;X
+L0012AF: db $C9;X
+L0012B0:;J
+	ld   hl, $C9CD
+	dec  [hl]
+	ldi  a, [hl]
+	and  a, a
+	ret  nz
+	ldd  a, [hl]
+	ld   [hl], a
+	ld   a, $01
+	ld   [$C89C], a
+	ld   de, $C9BF
+	ld   b, $03
+	xor  a, a
+	ld   [$C9CC], a
+L0012C7:;J
+	push bc
+	push de
+	ld   a, [de]
+	ld   hl, $12D1
+	call L000C71
+	jp   hl
+L0012D1: db $FF
+L0012D2: db $12
+L0012D3: db $D9
+L0012D4: db $12
+L0012D5: db $D9
+L0012D6: db $12
+L0012D7: db $FF;X
+L0012D8: db $12;X
+L0012D9:;I
+	call $1370
+	call $139A
+	ld   hl, $C9C2
+	call $1315
+	ld   hl, $C9C4
+	call $1315
+	ld   hl, $C9C6
+	call $1315
+	ld   hl, $C9C8
+	call $1315
+	call $13C4
+	ld   a, $83
+	ld   [$C89D], a
+L0012FF:;I
+	pop  de
+	pop  bc
+	ld   hl, $C9CC
+	inc  [hl]
+	inc  de
+	dec  b
+	jp   nz, $12C7
+	xor  a, a
+	ld   [$C89C], a
+	call $1342
+	call $1356
+	ret  
+L001315:;C
+	ldi  a, [hl]
+	ld   c, a
+	ldd  a, [hl]
+	cp   a, c
+	ret  z
+	jr   c, $131E
+	jr   $1330
+L00131E:;R
+	ld   a, [$C9CB]
+	ld   c, a
+	ldi  a, [hl]
+	ld   b, a
+	ld   a, [hl]
+	add  a, c
+	jr   nc, $132A
+L001328: db $3E;X
+L001329: db $03;X
+L00132A:;R
+	cp   a, b
+	jr   c, $132E
+	ld   a, b
+L00132E:;R
+	ld   [hl], a
+	ret  
+L001330:;R
+	ld   a, [$C9CB]
+	ld   c, a
+	ldi  a, [hl]
+	ld   b, a
+	ld   a, [hl]
+	sub  a, c
+	jr   nc, $133C
+L00133A: db $3E;X
+L00133B: db $00;X
+L00133C:;R
+	cp   a, b
+	jr   nc, $1340
+	ld   a, b
+L001340:;R
+	ld   [hl], a
+	ret  
+L001342:;C
+	ld   a, [$C9CA]
+	ld   c, a
+	ld   a, [$C9CB]
+	add  a, c
+	cp   $03
+	jr   c, $1352
+	xor  a, a
+	ld   [de], a
+	ld   a, $03
+L001352:;R
+	ld   [$C9CB], a
+	ret  
+L001356:;C
+	ld   de, $C89E
+	ld   hl, $C8A1
+	ld   bc, $C9BF
+	ld   a, $03
+L001361:;R
+	push af
+	ld   a, [de]
+	cp   a, [hl]
+	jr   nz, $1368
+	xor  a, a
+	ld   [bc], a
+L001368:;R
+	inc  bc
+	inc  de
+	inc  hl
+	pop  af
+	dec  a
+	jr   nz, $1361
+	ret  
+L001370:;C
+	ld   a, [$C9CC]
+	ld   hl, $C89E
+	call L000ED5
+	ld   a, [hl]
+	and  a, $03
+	ld   [$C9C2], a
+	ld   a, [hl]
+	srl  a
+	srl  a
+	and  a, $03
+	ld   [$C9C4], a
+	ld   a, [hl]
+	swap a
+	and  a, $03
+	ld   [$C9C6], a
+	ld   a, [hl]
+	rlca 
+	rlca 
+	and  a, $03
+	ld   [$C9C8], a
+	ret  
+L00139A:;C
+	ld   a, [$C9CC]
+	ld   hl, $C8A1
+	call L000ED5
+	ld   a, [hl]
+	and  a, $03
+	ld   [$C9C3], a
+	ld   a, [hl]
+	srl  a
+	srl  a
+	and  a, $03
+	ld   [$C9C5], a
+	ld   a, [hl]
+	swap a
+	and  a, $03
+	ld   [$C9C7], a
+	ld   a, [hl]
+	rlca 
+	rlca 
+	and  a, $03
+	ld   [$C9C9], a
+	ret  
+L0013C4:;C
+	ld   a, [$C9CC]
+	ld   hl, $C8A1
+	call L000ED5
+	ld   a, [$C9C9]
+	sla  a
+	sla  a
+	swap a
+	ld   b, a
+	ld   a, [$C9C7]
+	swap a
+	or   a, b
+	ld   b, a
+	ld   a, [$C9C5]
+	sla  a
+	sla  a
+	or   a, b
+	ld   b, a
+	ld   a, [$C9C3]
+	or   a, b
+	ld   [hl], a
+	ret  
+L0013ED:;C
+	bit  7, c
+	call nz, $1459
+	push bc
+	push de
+	call $14E3
+	pop  de
+	pop  bc
+	ld   a, $01
+	ld   [$C9BD], a
+	ld   [$C9BA], a
+	ld   [$C9BB], a
+	ld   a, b
+	ld   [$C9BE], a
+	call $1478
+	bit  7, c
+	ret  z
+L00140E: db $C5;X
+L00140F: db $06;X
+L001410: db $10;X
+L001411: db $0E;X
+L001412: db $00;X
+L001413: db $21;X
+L001414: db $A4;X
+L001415: db $C9;X
+L001416: db $C5;X
+L001417: db $E5;X
+L001418: db $7E;X
+L001419: db $E6;X
+L00141A: db $03;X
+L00141B: db $21;X
+L00141C: db $22;X
+L00141D: db $14;X
+L00141E: db $CD;X
+L00141F: db $71;X
+L001420: db $0C;X
+L001421: db $E9;X
+L001422: db $4F;X
+L001423: db $14;X
+L001424: db $2A;X
+L001425: db $14;X
+L001426: db $3E;X
+L001427: db $14;X
+L001428: db $4F;X
+L001429: db $14;X
+L00142A: db $79;X
+L00142B: db $87;X
+L00142C: db $87;X
+L00142D: db $87;X
+L00142E: db $21;X
+L00142F: db $A4;X
+L001430: db $C8;X
+L001431: db $CD;X
+L001432: db $D5;X
+L001433: db $0E;X
+L001434: db $3E;X
+L001435: db $FF;X
+L001436: db $01;X
+L001437: db $08;X
+L001438: db $00;X
+L001439: db $CD;X
+L00143A: db $D8;X
+L00143B: db $0F;X
+L00143C: db $18;X
+L00143D: db $11;X
+L00143E: db $79;X
+L00143F: db $87;X
+L001440: db $87;X
+L001441: db $87;X
+L001442: db $21;X
+L001443: db $A4;X
+L001444: db $C8;X
+L001445: db $CD;X
+L001446: db $D5;X
+L001447: db $0E;X
+L001448: db $AF;X
+L001449: db $01;X
+L00144A: db $08;X
+L00144B: db $00;X
+L00144C: db $CD;X
+L00144D: db $D8;X
+L00144E: db $0F;X
+L00144F: db $E1;X
+L001450: db $C1;X
+L001451: db $23;X
+L001452: db $0C;X
+L001453: db $05;X
+L001454: db $C2;X
+L001455: db $16;X
+L001456: db $14;X
+L001457: db $C1;X
+L001458: db $C9;X
+L001459: db $C5;X
+L00145A: db $D5;X
+L00145B: db $E5;X
+L00145C: db $21;X
+L00145D: db $A4;X
+L00145E: db $C8;X
+L00145F: db $11;X
+L001460: db $24;X
+L001461: db $C9;X
+L001462: db $01;X
+L001463: db $80;X
+L001464: db $00;X
+L001465: db $CD;X
+L001466: db $E3;X
+L001467: db $0F;X
+L001468: db $21;X
+L001469: db $9E;X
+L00146A: db $C8;X
+L00146B: db $11;X
+L00146C: db $A1;X
+L00146D: db $C8;X
+L00146E: db $01;X
+L00146F: db $03;X
+L001470: db $00;X
+L001471: db $CD;X
+L001472: db $E3;X
+L001473: db $0F;X
+L001474: db $E1;X
+L001475: db $D1;X
+L001476: db $C1;X
+L001477: db $C9;X
+L001478:;C
+	push hl
+	push de
+	push bc
+	xor  a, a
+	ld   hl, $C9A4
+	ld   bc, $0010
+	call L000FD8
+	xor  a, a
+	ld   [$C9BF], a
+	ld   [$C9C0], a
+	ld   [$C9C1], a
+	pop  bc
+	push bc
+	ld   b, $08
+	ld   hl, $C9A4
+L001496:;J
+	ld   a, e
+	and  a, $01
+	jr   z, $14A2
+	ld   a, c
+	and  a, $03
+	ld   [hl], a
+	ld   [$C9BF], a
+	srl  e
+	inc  hl
+	dec  b
+	jp   nz, $1496
+	ld   b, $08
+	ld   hl, $C9AC
+L0014AE:;J
+	ld   a, d
+	and  a, $01
+	jr   z, $14BD
+	ld   a, c
+	and  a, $03
+	ld   [hl], a
+	ld   [$C9C0], a
+	ld   [$C9C1], a
+	srl  d
+	inc  hl
+	dec  b
+	jp   nz, $14AE
+	pop  bc
+	pop  de
+	pop  hl
+	ret  
+L0014C8:;C
+	bit  6, c
+	ret  z
+	ld   a, b
+	add  a, a
+	add  a, a
+	add  a, a
+	ld   b, a
+L0014D0:;J
+	push bc
+	call L0003C3
+	call $1146
+	pop  bc
+	dec  b
+	jp   nz, $14D0
+	call L0003C3
+	call L0003C3
+	ret  
+L0014E3:;C
+	ld   a, b
+	ld   [$C9CE], a
+	ld   a, $01
+	ld   [$C9CD], a
+	ld   [$C9CA], a
+	ld   [$C9CB], a
+	bit  7, c
+	jr   z, $153E
+L0014F6: db $79;X
+L0014F7: db $E6;X
+L0014F8: db $03;X
+L0014F9: db $21;X
+L0014FA: db $00;X
+L0014FB: db $15;X
+L0014FC: db $CD;X
+L0014FD: db $71;X
+L0014FE: db $0C;X
+L0014FF: db $E9;X
+L001500: db $8A;X
+L001501: db $15;X
+L001502: db $08;X
+L001503: db $15;X
+L001504: db $23;X
+L001505: db $15;X
+L001506: db $8A;X
+L001507: db $15;X
+L001508: db $7B;X
+L001509: db $FE;X
+L00150A: db $E0;X
+L00150B: db $20;X
+L00150C: db $04;X
+L00150D: db $FE;X
+L00150E: db $FF;X
+L00150F: db $20;X
+L001510: db $05;X
+L001511: db $3E;X
+L001512: db $00;X
+L001513: db $EA;X
+L001514: db $9E;X
+L001515: db $C8;X
+L001516: db $7A;X
+L001517: db $FE;X
+L001518: db $FF;X
+L001519: db $C0;X
+L00151A: db $3E;X
+L00151B: db $00;X
+L00151C: db $EA;X
+L00151D: db $9F;X
+L00151E: db $C8;X
+L00151F: db $EA;X
+L001520: db $A0;X
+L001521: db $C8;X
+L001522: db $C9;X
+L001523: db $7B;X
+L001524: db $FE;X
+L001525: db $E0;X
+L001526: db $20;X
+L001527: db $04;X
+L001528: db $FE;X
+L001529: db $FF;X
+L00152A: db $20;X
+L00152B: db $05;X
+L00152C: db $3E;X
+L00152D: db $FF;X
+L00152E: db $EA;X
+L00152F: db $9E;X
+L001530: db $C8;X
+L001531: db $7A;X
+L001532: db $FE;X
+L001533: db $FF;X
+L001534: db $C0;X
+L001535: db $3E;X
+L001536: db $FF;X
+L001537: db $EA;X
+L001538: db $9F;X
+L001539: db $C8;X
+L00153A: db $EA;X
+L00153B: db $A0;X
+L00153C: db $C8;X
+L00153D: db $C9;X
+L00153E:;R
+	xor  a, a
+	call L000DCB
+	ld   a, c
+	and  a, $03
+	ld   hl, $154C
+	call L000C71
+	jp   hl
+L00154C: db $8A;X
+L00154D: db $15;X
+L00154E: db $54
+L00154F: db $15
+L001550: db $6F
+L001551: db $15
+L001552: db $8A;X
+L001553: db $15;X
+L001554:;I
+	ld   a, e
+	cp   $E0
+	jr   z, $155D
+	cp   $FF
+	jr   nz, $1562
+	ld   a, $00
+	ld   [$C8A1], a
+	ld   a, d
+	cp   $FF
+	ret  nz
+	ld   a, $00
+	ld   [$C8A2], a
+	ld   [$C8A3], a
+	ret  
+L00156F:;I
+	ld   a, e
+	cp   $E0
+	jr   nz, $1578
+L001574: db $FE;X
+L001575: db $FF;X
+L001576: db $20;X
+L001577: db $05;X
+L001578:;R
+	ld   a, $FF
+	ld   [$C8A1], a
+	ld   a, d
+	cp   $FF
+	ret  nz
+	ld   a, $FF
+	ld   [$C8A2], a
+	ld   [$C8A3], a
+	ret  
+L00158A: db $C9;X
+L00158B: db $C5;X
+L00158C: db $D5;X
+L00158D: db $CD;X
+L00158E: db $E3;X
+L00158F: db $14;X
+L001590: db $D1;X
+L001591: db $C1;X
+L001592: db $CD;X
+L001593: db $78;X
+L001594: db $14;X
+L001595: db $06;X
+L001596: db $10;X
+L001597: db $0E;X
+L001598: db $00;X
+L001599: db $21;X
+L00159A: db $A4;X
+L00159B: db $C9;X
+L00159C: db $C5;X
+L00159D: db $E5;X
+L00159E: db $7E;X
+L00159F: db $E6;X
+L0015A0: db $03;X
+L0015A1: db $21;X
+L0015A2: db $A8;X
+L0015A3: db $15;X
+L0015A4: db $CD;X
+L0015A5: db $71;X
+L0015A6: db $0C;X
+L0015A7: db $E9;X
+L0015A8: db $D5;X
+L0015A9: db $15;X
+L0015AA: db $B0;X
+L0015AB: db $15;X
+L0015AC: db $C4;X
+L0015AD: db $15;X
+L0015AE: db $D5;X
+L0015AF: db $15;X
+L0015B0: db $79;X
+L0015B1: db $87;X
+L0015B2: db $87;X
+L0015B3: db $87;X
+L0015B4: db $21;X
+L0015B5: db $A4;X
+L0015B6: db $C8;X
+L0015B7: db $CD;X
+L0015B8: db $D5;X
+L0015B9: db $0E;X
+L0015BA: db $3E;X
+L0015BB: db $FF;X
+L0015BC: db $01;X
+L0015BD: db $08;X
+L0015BE: db $00;X
+L0015BF: db $CD;X
+L0015C0: db $D8;X
+L0015C1: db $0F;X
+L0015C2: db $18;X
+L0015C3: db $11;X
+L0015C4: db $79;X
+L0015C5: db $87;X
+L0015C6: db $87;X
+L0015C7: db $87;X
+L0015C8: db $21;X
+L0015C9: db $A4;X
+L0015CA: db $C8;X
+L0015CB: db $CD;X
+L0015CC: db $D5;X
+L0015CD: db $0E;X
+L0015CE: db $AF;X
+L0015CF: db $01;X
+L0015D0: db $08;X
+L0015D1: db $00;X
+L0015D2: db $CD;X
+L0015D3: db $D8;X
+L0015D4: db $0F;X
+L0015D5: db $E1;X
+L0015D6: db $C1;X
+L0015D7: db $23;X
+L0015D8: db $0C;X
+L0015D9: db $05;X
+L0015DA: db $C2;X
+L0015DB: db $9C;X
+L0015DC: db $15;X
+L0015DD: db $C1;X
+L0015DE: db $C9;X
+L0015DF: db $78;X
+L0015E0: db $EA;X
+L0015E1: db $85;X
+L0015E2: db $C8;X
+L0015E3: db $79;X
+L0015E4: db $EA;X
+L0015E5: db $84;X
+L0015E6: db $C8;X
+L0015E7: db $FA;X
+L0015E8: db $85;X
+L0015E9: db $C8;X
+L0015EA: db $4F;X
+L0015EB: db $CD;X
+L0015EC: db $C3;X
+L0015ED: db $03;X
+L0015EE: db $E5;X
+L0015EF: db $06;X
+L0015F0: db $10;X
+L0015F1: db $C5;X
+L0015F2: db $E5;X
+L0015F3: db $FA;X
+L0015F4: db $84;X
+L0015F5: db $C8;X
+L0015F6: db $47;X
+L0015F7: db $11;X
+L0015F8: db $10;X
+L0015F9: db $00;X
+L0015FA: db $CD;X
+L0015FB: db $47;X
+L0015FC: db $0E;X
+L0015FD: db $3E;X
+L0015FE: db $FF;X
+L0015FF: db $77;X
+L001600: db $FB;X
+L001601: db $19;X
+L001602: db $05;X
+L001603: db $C2;X
+L001604: db $FA;X
+L001605: db $15;X
+L001606: db $E1;X
+L001607: db $C1;X
+L001608: db $23;X
+L001609: db $05;X
+L00160A: db $C2;X
+L00160B: db $F1;X
+L00160C: db $15;X
+L00160D: db $E1;X
+L00160E: db $FA;X
+L00160F: db $84;X
+L001610: db $C8;X
+L001611: db $5F;X
+L001612: db $16;X
+L001613: db $00;X
+L001614: db $CB;X
+L001615: db $23;X
+L001616: db $CB;X
+L001617: db $12;X
+L001618: db $CB;X
+L001619: db $23;X
+L00161A: db $CB;X
+L00161B: db $12;X
+L00161C: db $CB;X
+L00161D: db $23;X
+L00161E: db $CB;X
+L00161F: db $12;X
+L001620: db $CB;X
+L001621: db $23;X
+L001622: db $CB;X
+L001623: db $12;X
+L001624: db $19;X
+L001625: db $0D;X
+L001626: db $20;X
+L001627: db $C3;X
+L001628: db $C9;X
+L001629: db $78;X
+L00162A: db $EA;X
+L00162B: db $85;X
+L00162C: db $C8;X
+L00162D: db $79;X
+L00162E: db $EA;X
+L00162F: db $84;X
+L001630: db $C8;X
+L001631: db $FA;X
+L001632: db $85;X
+L001633: db $C8;X
+L001634: db $47;X
+L001635: db $CD;X
+L001636: db $C3;X
+L001637: db $03;X
+L001638: db $C5;X
+L001639: db $D5;X
+L00163A: db $E5;X
+L00163B: db $06;X
+L00163C: db $10;X
+L00163D: db $C5;X
+L00163E: db $D5;X
+L00163F: db $E5;X
+L001640: db $FA;X
+L001641: db $84;X
+L001642: db $C8;X
+L001643: db $47;X
+L001644: db $CD;X
+L001645: db $47;X
+L001646: db $0E;X
+L001647: db $1A;X
+L001648: db $77;X
+L001649: db $FB;X
+L00164A: db $3E;X
+L00164B: db $10;X
+L00164C: db $CD;X
+L00164D: db $D5;X
+L00164E: db $0E;X
+L00164F: db $3E;X
+L001650: db $10;X
+L001651: db $CD;X
+L001652: db $B0;X
+L001653: db $0E;X
+L001654: db $05;X
+L001655: db $C2;X
+L001656: db $44;X
+L001657: db $16;X
+L001658: db $E1;X
+L001659: db $D1;X
+L00165A: db $C1;X
+L00165B: db $13;X
+L00165C: db $23;X
+L00165D: db $05;X
+L00165E: db $C2;X
+L00165F: db $3D;X
+L001660: db $16;X
+L001661: db $E1;X
+L001662: db $D1;X
+L001663: db $FA;X
+L001664: db $84;X
+L001665: db $C8;X
+L001666: db $4F;X
+L001667: db $06;X
+L001668: db $00;X
+L001669: db $CB;X
+L00166A: db $21;X
+L00166B: db $CB;X
+L00166C: db $10;X
+L00166D: db $CB;X
+L00166E: db $21;X
+L00166F: db $CB;X
+L001670: db $10;X
+L001671: db $CB;X
+L001672: db $21;X
+L001673: db $CB;X
+L001674: db $10;X
+L001675: db $CB;X
+L001676: db $21;X
+L001677: db $CB;X
+L001678: db $10;X
+L001679: db $09;X
+L00167A: db $7B;X
+L00167B: db $81;X
+L00167C: db $5F;X
+L00167D: db $7A;X
+L00167E: db $88;X
+L00167F: db $57;X
+L001680: db $C1;X
+L001681: db $05;X
+L001682: db $20;X
+L001683: db $B1;X
+L001684: db $C9;X
+L001685: db $EA;X
+L001686: db $4F;X
+L001687: db $C8;X
+L001688: db $FA;X
+L001689: db $41;X
+L00168A: db $C8;X
+L00168B: db $F5;X
+L00168C: db $FA;X
+L00168D: db $4F;X
+L00168E: db $C8;X
+L00168F: db $CD;X
+L001690: db $B9;X
+L001691: db $0C;X
+L001692: db $CD;X
+L001693: db $29;X
+L001694: db $16;X
+L001695: db $F1;X
+L001696: db $CD;X
+L001697: db $B9;X
+L001698: db $0C;X
+L001699: db $C9;X
+L00169A: db $C5;X
+L00169B: db $E5;X
+L00169C: db $D5;X
+L00169D: db $C5;X
+L00169E: db $06;X
+L00169F: db $10;X
+L0016A0: db $CD;X
+L0016A1: db $47;X
+L0016A2: db $0E;X
+L0016A3: db $1A;X
+L0016A4: db $77;X
+L0016A5: db $FB;X
+L0016A6: db $23;X
+L0016A7: db $13;X
+L0016A8: db $05;X
+L0016A9: db $C2;X
+L0016AA: db $A0;X
+L0016AB: db $16;X
+L0016AC: db $C1;X
+L0016AD: db $05;X
+L0016AE: db $C2;X
+L0016AF: db $9D;X
+L0016B0: db $16;X
+L0016B1: db $E1;X
+L0016B2: db $01;X
+L0016B3: db $00;X
+L0016B4: db $01;X
+L0016B5: db $09;X
+L0016B6: db $E5;X
+L0016B7: db $D1;X
+L0016B8: db $E1;X
+L0016B9: db $09;X
+L0016BA: db $C1;X
+L0016BB: db $0D;X
+L0016BC: db $20;X
+L0016BD: db $DC;X
+L0016BE: db $C9;X
+L0016BF: db $EA;X
+L0016C0: db $4F;X
+L0016C1: db $C8;X
+L0016C2: db $FA;X
+L0016C3: db $41;X
+L0016C4: db $C8;X
+L0016C5: db $F5;X
+L0016C6: db $FA;X
+L0016C7: db $4F;X
+L0016C8: db $C8;X
+L0016C9: db $CD;X
+L0016CA: db $B9;X
+L0016CB: db $0C;X
+L0016CC: db $CD;X
+L0016CD: db $9A;X
+L0016CE: db $16;X
+L0016CF: db $F1;X
+L0016D0: db $CD;X
+L0016D1: db $B9;X
+L0016D2: db $0C;X
+L0016D3: db $C9;X
+L0016D4: db $C5;X
+L0016D5: db $0A;X
+L0016D6: db $FE;X
+L0016D7: db $FF;X
+L0016D8: db $28;X
+L0016D9: db $29;X
+L0016DA: db $6F;X
+L0016DB: db $26;X
+L0016DC: db $00;X
+L0016DD: db $29;X
+L0016DE: db $29;X
+L0016DF: db $29;X
+L0016E0: db $29;X
+L0016E1: db $01;X
+L0016E2: db $00;X
+L0016E3: db $5A;X
+L0016E4: db $09;X
+L0016E5: db $FA;X
+L0016E6: db $41;X
+L0016E7: db $C8;X
+L0016E8: db $F5;X
+L0016E9: db $3E;X
+L0016EA: db $07;X
+L0016EB: db $CD;X
+L0016EC: db $B9;X
+L0016ED: db $0C;X
+L0016EE: db $06;X
+L0016EF: db $10;X
+L0016F0: db $CD;X
+L0016F1: db $47;X
+L0016F2: db $0E;X
+L0016F3: db $7E;X
+L0016F4: db $12;X
+L0016F5: db $FB;X
+L0016F6: db $23;X
+L0016F7: db $13;X
+L0016F8: db $05;X
+L0016F9: db $20;X
+L0016FA: db $F5;X
+L0016FB: db $F1;X
+L0016FC: db $CD;X
+L0016FD: db $B9;X
+L0016FE: db $0C;X
+L0016FF: db $C1;X
+L001700: db $03;X
+L001701: db $18;X
+L001702: db $D1;X
+L001703: db $C1;X
+L001704: db $C9;X
+L001705: db $EA;X
+L001706: db $4F;X
+L001707: db $C8;X
+L001708: db $FA;X
+L001709: db $41;X
+L00170A: db $C8;X
+L00170B: db $F5;X
+L00170C: db $FA;X
+L00170D: db $4F;X
+L00170E: db $C8;X
+L00170F: db $CD;X
+L001710: db $B9;X
+L001711: db $0C;X
+L001712: db $06;X
+L001713: db $10;X
+L001714: db $CD;X
+L001715: db $47;X
+L001716: db $0E;X
+L001717: db $2A;X
+L001718: db $12;X
+L001719: db $FB;X
+L00171A: db $13;X
+L00171B: db $05;X
+L00171C: db $20;X
+L00171D: db $F6;X
+L00171E: db $F1;X
+L00171F: db $CD;X
+L001720: db $B9;X
+L001721: db $0C;X
+L001722: db $C9;X
+L001723: db $EA;X
+L001724: db $4F;X
+L001725: db $C8;X
+L001726: db $FA;X
+L001727: db $41;X
+L001728: db $C8;X
+L001729: db $F5;X
+L00172A: db $FA;X
+L00172B: db $4F;X
+L00172C: db $C8;X
+L00172D: db $CD;X
+L00172E: db $B9;X
+L00172F: db $0C;X
+L001730: db $2A;X
+L001731: db $FE;X
+L001732: db $FF;X
+L001733: db $28;X
+L001734: db $31;X
+L001735: db $EA;X
+L001736: db $4F;X
+L001737: db $C8;X
+L001738: db $FA;X
+L001739: db $41;X
+L00173A: db $C8;X
+L00173B: db $F5;X
+L00173C: db $FA;X
+L00173D: db $4F;X
+L00173E: db $C8;X
+L00173F: db $E5;X
+L001740: db $D5;X
+L001741: db $6F;X
+L001742: db $26;X
+L001743: db $00;X
+L001744: db $29;X
+L001745: db $29;X
+L001746: db $29;X
+L001747: db $29;X
+L001748: db $01;X
+L001749: db $00;X
+L00174A: db $5A;X
+L00174B: db $09;X
+L00174C: db $01;X
+L00174D: db $10;X
+L00174E: db $00;X
+L00174F: db $3E;X
+L001750: db $07;X
+L001751: db $CD;X
+L001752: db $B9;X
+L001753: db $0C;X
+L001754: db $CD;X
+L001755: db $EE;X
+L001756: db $0A;X
+L001757: db $D1;X
+L001758: db $21;X
+L001759: db $10;X
+L00175A: db $00;X
+L00175B: db $19;X
+L00175C: db $E5;X
+L00175D: db $D1;X
+L00175E: db $E1;X
+L00175F: db $F1;X
+L001760: db $CD;X
+L001761: db $B9;X
+L001762: db $0C;X
+L001763: db $C3;X
+L001764: db $30;X
+L001765: db $17;X
+L001766: db $F1;X
+L001767: db $CD;X
+L001768: db $B9;X
+L001769: db $0C;X
+L00176A: db $C9;X
+L00176B:;C
+	ld   a, h
+	cp   a, d
+	jr   c, $177D
+	jr   z, $1773
+	jr   $1780
+L001773:;R
+	ld   a, l
+	cp   a, e
+	jr   c, $177D
+	jr   z, $177B
+L001779: db $18;X
+L00177A: db $05;X
+L00177B:;R
+	xor  a, a
+	ret  
+L00177D:;R
+	ld   a, $01
+	ret  
+L001780:;R
+	ld   a, $FF
+	ret  
+L001783: db $CB;X
+L001784: db $7C;X
+L001785: db $20;X
+L001786: db $06;X
+L001787: db $CB;X
+L001788: db $7A;X
+L001789: db $28;X
+L00178A: db $08;X
+L00178B: db $18;X
+L00178C: db $39;X
+L00178D: db $CB;X
+L00178E: db $7A;X
+L00178F: db $20;X
+L001790: db $12;X
+L001791: db $18;X
+L001792: db $30;X
+L001793: db $7C;X
+L001794: db $BA;X
+L001795: db $38;X
+L001796: db $2C;X
+L001797: db $28;X
+L001798: db $02;X
+L001799: db $18;X
+L00179A: db $2B;X
+L00179B: db $7D;X
+L00179C: db $BB;X
+L00179D: db $38;X
+L00179E: db $24;X
+L00179F: db $28;X
+L0017A0: db $20;X
+L0017A1: db $18;X
+L0017A2: db $23;X
+L0017A3: db $1B;X
+L0017A4: db $7B;X
+L0017A5: db $2F;X
+L0017A6: db $5F;X
+L0017A7: db $7A;X
+L0017A8: db $2F;X
+L0017A9: db $57;X
+L0017AA: db $2B;X
+L0017AB: db $7D;X
+L0017AC: db $2F;X
+L0017AD: db $6F;X
+L0017AE: db $7C;X
+L0017AF: db $2F;X
+L0017B0: db $67;X
+L0017B1: db $7C;X
+L0017B2: db $BA;X
+L0017B3: db $38;X
+L0017B4: db $11;X
+L0017B5: db $28;X
+L0017B6: db $02;X
+L0017B7: db $18;X
+L0017B8: db $0A;X
+L0017B9: db $7D;X
+L0017BA: db $BB;X
+L0017BB: db $38;X
+L0017BC: db $09;X
+L0017BD: db $28;X
+L0017BE: db $02;X
+L0017BF: db $18;X
+L0017C0: db $02;X
+L0017C1: db $AF;X
+L0017C2: db $C9;X
+L0017C3: db $3E;X
+L0017C4: db $01;X
+L0017C5: db $C9;X
+L0017C6: db $3E;X
+L0017C7: db $FF;X
+L0017C8: db $C9;X
+L0017C9: db $C5;X
+L0017CA: db $0E;X
+L0017CB: db $00;X
+L0017CC: db $F5;X
+L0017CD: db $CB;X
+L0017CE: db $7B;X
+L0017CF: db $CA;X
+L0017D0: db $D6;X
+L0017D1: db $17;X
+L0017D2: db $4B;X
+L0017D3: db $AF;X
+L0017D4: db $93;X
+L0017D5: db $5F;X
+L0017D6: db $F1;X
+L0017D7: db $CB;X
+L0017D8: db $7F;X
+L0017D9: db $CA;X
+L0017DA: db $DF;X
+L0017DB: db $17;X
+L0017DC: db $4F;X
+L0017DD: db $2F;X
+L0017DE: db $3C;X
+L0017DF: db $16;X
+L0017E0: db $00;X
+L0017E1: db $21;X
+L0017E2: db $00;X
+L0017E3: db $00;X
+L0017E4: db $06;X
+L0017E5: db $08;X
+L0017E6: db $CB;X
+L0017E7: db $3F;X
+L0017E8: db $D2;X
+L0017E9: db $EC;X
+L0017EA: db $17;X
+L0017EB: db $19;X
+L0017EC: db $CB;X
+L0017ED: db $23;X
+L0017EE: db $CB;X
+L0017EF: db $12;X
+L0017F0: db $05;X
+L0017F1: db $20;X
+L0017F2: db $F3;X
+L0017F3: db $CB;X
+L0017F4: db $79;X
+L0017F5: db $CA;X
+L0017F6: db $FB;X
+L0017F7: db $17;X
+L0017F8: db $CD;X
+L0017F9: db $3F;X
+L0017FA: db $18;X
+L0017FB: db $C1;X
+L0017FC: db $C9;X
+L0017FD: db $C5;X
+L0017FE: db $0E;X
+L0017FF: db $00;X
+L001800: db $16;X
+L001801: db $00;X
+L001802: db $21;X
+L001803: db $00;X
+L001804: db $00;X
+L001805: db $06;X
+L001806: db $08;X
+L001807: db $CB;X
+L001808: db $3F;X
+L001809: db $30;X
+L00180A: db $01;X
+L00180B: db $19;X
+L00180C: db $CB;X
+L00180D: db $23;X
+L00180E: db $CB;X
+L00180F: db $12;X
+L001810: db $05;X
+L001811: db $20;X
+L001812: db $F4;X
+L001813: db $C1;X
+L001814: db $C9;X
+L001815:;C
+	push bc
+	ld   c, a
+	push bc
+	ld   a, h
+	cp   a, d
+	jr   z, $1833
+	jr   c, $1829
+L00181E: db $7D;X
+L00181F: db $93;X
+L001820: db $6F;X
+L001821: db $7C;X
+L001822: db $9A;X
+L001823: db $67;X
+L001824: db $3E;X
+L001825: db $01;X
+L001826: db $A7;X
+L001827: db $18;X
+L001828: db $12;X
+L001829:;R
+	push af
+	ld   a, l
+	sub  a, e
+	ld   l, a
+	ld   a, h
+	sbc  a, d
+	ld   h, a
+	pop  af
+	jr   $183B
+L001833:;R
+	ld   a, l
+	sub  a, e
+	ld   l, a
+	push af
+	ld   a, h
+	sbc  a, d
+	ld   h, a
+	pop  af
+L00183B:;R
+	pop  bc
+	ld   a, c
+	pop  bc
+	ret  
+L00183F: db $2B;X
+L001840: db $7D;X
+L001841: db $2F;X
+L001842: db $6F;X
+L001843: db $7C;X
+L001844: db $2F;X
+L001845: db $67;X
+L001846: db $C9;X
+L001847: db $D5;X
+L001848: db $E5;X
+L001849: db $6F;X
+L00184A: db $01;X
+L00184B: db $00;X
+L00184C: db $00;X
+L00184D: db $CB;X
+L00184E: db $45;X
+L00184F: db $28;X
+L001850: db $06;X
+L001851: db $11;X
+L001852: db $01;X
+L001853: db $00;X
+L001854: db $CD;X
+L001855: db $A0;X
+L001856: db $18;X
+L001857: db $CB;X
+L001858: db $4D;X
+L001859: db $28;X
+L00185A: db $06;X
+L00185B: db $11;X
+L00185C: db $02;X
+L00185D: db $00;X
+L00185E: db $CD;X
+L00185F: db $A0;X
+L001860: db $18;X
+L001861: db $CB;X
+L001862: db $55;X
+L001863: db $28;X
+L001864: db $06;X
+L001865: db $11;X
+L001866: db $04;X
+L001867: db $00;X
+L001868: db $CD;X
+L001869: db $A0;X
+L00186A: db $18;X
+L00186B: db $CB;X
+L00186C: db $5D;X
+L00186D: db $28;X
+L00186E: db $06;X
+L00186F: db $11;X
+L001870: db $08;X
+L001871: db $00;X
+L001872: db $CD;X
+L001873: db $A0;X
+L001874: db $18;X
+L001875: db $CB;X
+L001876: db $65;X
+L001877: db $28;X
+L001878: db $06;X
+L001879: db $11;X
+L00187A: db $16;X
+L00187B: db $00;X
+L00187C: db $CD;X
+L00187D: db $A0;X
+L00187E: db $18;X
+L00187F: db $CB;X
+L001880: db $6D;X
+L001881: db $28;X
+L001882: db $06;X
+L001883: db $11;X
+L001884: db $32;X
+L001885: db $00;X
+L001886: db $CD;X
+L001887: db $A0;X
+L001888: db $18;X
+L001889: db $CB;X
+L00188A: db $75;X
+L00188B: db $28;X
+L00188C: db $06;X
+L00188D: db $11;X
+L00188E: db $64;X
+L00188F: db $00;X
+L001890: db $CD;X
+L001891: db $A0;X
+L001892: db $18;X
+L001893: db $CB;X
+L001894: db $7D;X
+L001895: db $28;X
+L001896: db $06;X
+L001897: db $11;X
+L001898: db $28;X
+L001899: db $01;X
+L00189A: db $CD;X
+L00189B: db $A0;X
+L00189C: db $18;X
+L00189D: db $E1;X
+L00189E: db $D1;X
+L00189F: db $C9;X
+L0018A0: db $79;X
+L0018A1: db $83;X
+L0018A2: db $27;X
+L0018A3: db $4F;X
+L0018A4: db $78;X
+L0018A5: db $8A;X
+L0018A6: db $27;X
+L0018A7: db $47;X
+L0018A8: db $C9;X
+L0018A9: db $7E;X
+L0018AA: db $CB;X
+L0018AB: db $37;X
+L0018AC: db $E6;X
+L0018AD: db $0F;X
+L0018AE: db $CB;X
+L0018AF: db $27;X
+L0018B0: db $F5;X
+L0018B1: db $CB;X
+L0018B2: db $27;X
+L0018B3: db $CB;X
+L0018B4: db $27;X
+L0018B5: db $C1;X
+L0018B6: db $80;X
+L0018B7: db $47;X
+L0018B8: db $7E;X
+L0018B9: db $E6;X
+L0018BA: db $0F;X
+L0018BB: db $80;X
+L0018BC: db $C9;X
+L0018BD: db $C5;X
+L0018BE: db $06;X
+L0018BF: db $00;X
+L0018C0: db $FE;X
+L0018C1: db $0A;X
+L0018C2: db $38;X
+L0018C3: db $0E;X
+L0018C4: db $D6;X
+L0018C5: db $0A;X
+L0018C6: db $04;X
+L0018C7: db $4F;X
+L0018C8: db $78;X
+L0018C9: db $FE;X
+L0018CA: db $0A;X
+L0018CB: db $79;X
+L0018CC: db $38;X
+L0018CD: db $F2;X
+L0018CE: db $3E;X
+L0018CF: db $99;X
+L0018D0: db $18;X
+L0018D1: db $03;X
+L0018D2: db $CB;X
+L0018D3: db $30;X
+L0018D4: db $B0;X
+L0018D5: db $C1;X
+L0018D6: db $C9;X
+L0018D7:;C
+	push af
+	push de
+	push hl
+	push bc
+	pop  de
+	ld   hl, $270F
+	call $176B
+	cp   $01
+	jr   z, $1924
+	ld   de, $03E8
+	call $1943
+	ld   a, c
+	ld   [$C852], a
+	push de
+	pop  bc
+	ld   de, $0064
+	call $1943
+	ld   a, c
+	ld   [$C851], a
+	push de
+	pop  bc
+	ld   de, $000A
+	call $1943
+	ld   a, c
+	ld   [$C850], a
+	ld   a, e
+	ld   [$C84F], a
+	ld   a, [$C84F]
+	ld   c, a
+	ld   a, [$C850]
+	swap a
+	or   a, c
+	ld   c, a
+	ld   a, [$C851]
+	ld   b, a
+	ld   a, [$C852]
+	swap a
+	or   a, b
+	ld   b, a
+	jr   $1927
+L001924: db $01;X
+L001925: db $99;X
+L001926: db $99;X
+L001927:;R
+	pop  hl
+	pop  de
+	pop  af
+	ret  
+L00192B: db $79;X
+L00192C: db $A7;X
+L00192D: db $28;X
+L00192E: db $0D;X
+L00192F: db $78;X
+L001930: db $A7;X
+L001931: db $28;X
+L001932: db $09;X
+L001933: db $78;X
+L001934: db $06;X
+L001935: db $00;X
+L001936: db $91;X
+L001937: db $38;X
+L001938: db $07;X
+L001939: db $04;X
+L00193A: db $18;X
+L00193B: db $FA;X
+L00193C: db $01;X
+L00193D: db $00;X
+L00193E: db $00;X
+L00193F: db $C9;X
+L001940: db $81;X
+L001941: db $4F;X
+L001942: db $C9;X
+L001943:;C
+	ld   a, d
+	or   a, e
+	jp   nz, $194F
+L001948: db $01;X
+L001949: db $00;X
+L00194A: db $00;X
+L00194B: db $11;X
+L00194C: db $00;X
+L00194D: db $00;X
+L00194E: db $C9;X
+L00194F:;J
+	push hl
+	ld   hl, $C88E
+	ld   [hl], $00
+	inc  hl
+	ld   [hl], $00
+	ld   hl, $0000
+	ld   a, $10
+L00195D:;J
+	push af
+	sla  c
+	rl   b
+	rl   l
+	rl   h
+	push hl
+	call $1815
+	bit  7, h
+	jp   z, $1974
+	pop  hl
+	and  a, a
+	jp   $1976
+L001974:;J
+	pop  af
+	scf  
+L001976:;J
+	push de
+	push hl
+	ld   hl, $C88E
+	ldi  a, [hl]
+	ld   d, [hl]
+	ld   e, a
+	rl   e
+	rl   d
+	ld   [hl], d
+	dec  hl
+	ld   [hl], e
+	pop  hl
+	pop  de
+	pop  af
+	dec  a
+	jp   nz, $195D
+	push hl
+	ld   hl, $C88E
+	ldi  a, [hl]
+	ld   b, [hl]
+	ld   c, a
+	pop  de
+	pop  hl
+	ret  
+L001996: db $3E;X
+L001997: db $01;X
+L001998: db $4D;X
+L001999: db $44;X
+L00199A: db $CB;X
+L00199B: db $23;X
+L00199C: db $CB;X
+L00199D: db $12;X
+L00199E: db $38;X
+L00199F: db $0D;X
+L0019A0: db $CD;X
+L0019A1: db $15;X
+L0019A2: db $18;X
+L0019A3: db $38;X
+L0019A4: db $07;X
+L0019A5: db $28;X
+L0019A6: db $34;X
+L0019A7: db $69;X
+L0019A8: db $60;X
+L0019A9: db $3C;X
+L0019AA: db $18;X
+L0019AB: db $EE;X
+L0019AC: db $A7;X
+L0019AD: db $CB;X
+L0019AE: db $1A;X
+L0019AF: db $CB;X
+L0019B0: db $1B;X
+L0019B1: db $EA;X
+L0019B2: db $8E;X
+L0019B3: db $C8;X
+L0019B4: db $69;X
+L0019B5: db $60;X
+L0019B6: db $01;X
+L0019B7: db $00;X
+L0019B8: db $00;X
+L0019B9: db $CD;X
+L0019BA: db $15;X
+L0019BB: db $18;X
+L0019BC: db $38;X
+L0019BD: db $15;X
+L0019BE: db $CB;X
+L0019BF: db $C1;X
+L0019C0: db $CB;X
+L0019C1: db $21;X
+L0019C2: db $CB;X
+L0019C3: db $10;X
+L0019C4: db $CB;X
+L0019C5: db $3A;X
+L0019C6: db $CB;X
+L0019C7: db $1B;X
+L0019C8: db $FA;X
+L0019C9: db $8E;X
+L0019CA: db $C8;X
+L0019CB: db $3D;X
+L0019CC: db $EA;X
+L0019CD: db $8E;X
+L0019CE: db $C8;X
+L0019CF: db $20;X
+L0019D0: db $E8;X
+L0019D1: db $18;X
+L0019D2: db $03;X
+L0019D3: db $19;X
+L0019D4: db $18;X
+L0019D5: db $EA;X
+L0019D6: db $CB;X
+L0019D7: db $38;X
+L0019D8: db $CB;X
+L0019D9: db $19;X
+L0019DA: db $C9;X
+L0019DB: db $0E;X
+L0019DC: db $01;X
+L0019DD: db $06;X
+L0019DE: db $00;X
+L0019DF: db $CB;X
+L0019E0: db $21;X
+L0019E1: db $CB;X
+L0019E2: db $10;X
+L0019E3: db $3D;X
+L0019E4: db $20;X
+L0019E5: db $F9;X
+L0019E6: db $C9;X
+L0019E7:;C
+	push de
+	ld   a, b
+	swap a
+	and  a, $0F
+	jr   z, $19F3
+L0019EF: db $C6;X
+L0019F0: db $A0;X
+L0019F1: db $18;X
+L0019F2: db $02;X
+L0019F3:;R
+	ld   a, $FF
+	ld   [de], a
+	ld   a, b
+	and  a, $0F
+	jr   z, $19FF
+	add  a, $A0
+	jr   $1A06
+L0019FF:;R
+	ld   a, [de]
+	cp   $FF
+	jr   z, $1A06
+L001A04: db $3E;X
+L001A05: db $A0;X
+L001A06:;R
+	inc  de
+	ld   [de], a
+	ld   a, c
+	swap a
+	and  a, $0F
+	jr   z, $1A13
+	add  a, $A0
+	jr   $1A1A
+L001A13:;R
+	ld   a, [de]
+	cp   $FF
+	jr   z, $1A1A
+	ld   a, $A0
+L001A1A:;R
+	inc  de
+	ld   [de], a
+	ld   a, c
+	and  a, $0F
+	add  a, $A0
+	inc  de
+	ld   [de], a
+	pop  de
+	ld   a, [$C9EF]
+	and  a, a
+	jr   nz, $1A37
+L001A2A: db $D5;X
+L001A2B: db $06;X
+L001A2C: db $04;X
+L001A2D: db $1A;X
+L001A2E: db $D6;X
+L001A2F: db $80;X
+L001A30: db $12;X
+L001A31: db $13;X
+L001A32: db $05;X
+L001A33: db $C2;X
+L001A34: db $2D;X
+L001A35: db $1A;X
+L001A36: db $D1;X
+L001A37:;R
+	ld   bc, $0401
+	call L000B99
+	ret  
+L001A3E: db $E5;X
+L001A3F: db $E5;X
+L001A40: db $D1;X
+L001A41: db $AF;X
+L001A42: db $21;X
+L001A43: db $98;X
+L001A44: db $C8;X
+L001A45: db $22;X
+L001A46: db $22;X
+L001A47: db $77;X
+L001A48: db $06;X
+L001A49: db $10;X
+L001A4A: db $0E;X
+L001A4B: db $00;X
+L001A4C: db $CD;X
+L001A4D: db $81;X
+L001A4E: db $1A;X
+L001A4F: db $CB;X
+L001A50: db $3A;X
+L001A51: db $CB;X
+L001A52: db $1B;X
+L001A53: db $DC;X
+L001A54: db $5D;X
+L001A55: db $1A;X
+L001A56: db $0C;X
+L001A57: db $05;X
+L001A58: db $C2;X
+L001A59: db $4C;X
+L001A5A: db $1A;X
+L001A5B: db $E1;X
+L001A5C: db $C9;X
+L001A5D: db $C5;X
+L001A5E: db $FA;X
+L001A5F: db $9A;X
+L001A60: db $C8;X
+L001A61: db $4F;X
+L001A62: db $3A;X
+L001A63: db $81;X
+L001A64: db $27;X
+L001A65: db $EA;X
+L001A66: db $9A;X
+L001A67: db $C8;X
+L001A68: db $FA;X
+L001A69: db $99;X
+L001A6A: db $C8;X
+L001A6B: db $4F;X
+L001A6C: db $3A;X
+L001A6D: db $89;X
+L001A6E: db $27;X
+L001A6F: db $EA;X
+L001A70: db $99;X
+L001A71: db $C8;X
+L001A72: db $FA;X
+L001A73: db $98;X
+L001A74: db $C8;X
+L001A75: db $4F;X
+L001A76: db $7E;X
+L001A77: db $89;X
+L001A78: db $27;X
+L001A79: db $EA;X
+L001A7A: db $98;X
+L001A7B: db $C8;X
+L001A7C: db $C1;X
+L001A7D: db $CD;X
+L001A7E: db $81;X
+L001A7F: db $1A;X
+L001A80: db $C9;X
+L001A81: db $79;X
+L001A82: db $87;X
+L001A83: db $81;X
+L001A84: db $21;X
+L001A85: db $8D;X
+L001A86: db $1A;X
+L001A87: db $CD;X
+L001A88: db $D5;X
+L001A89: db $0E;X
+L001A8A: db $23;X
+L001A8B: db $23;X
+L001A8C: db $C9;X
+L001A8D: db $00;X
+L001A8E: db $00;X
+L001A8F: db $01;X
+L001A90: db $00;X
+L001A91: db $00;X
+L001A92: db $02;X
+L001A93: db $00;X
+L001A94: db $00;X
+L001A95: db $04;X
+L001A96: db $00;X
+L001A97: db $00;X
+L001A98: db $08;X
+L001A99: db $00;X
+L001A9A: db $00;X
+L001A9B: db $16;X
+L001A9C: db $00;X
+L001A9D: db $00;X
+L001A9E: db $32;X
+L001A9F: db $00;X
+L001AA0: db $00;X
+L001AA1: db $64;X
+L001AA2: db $00;X
+L001AA3: db $01;X
+L001AA4: db $28;X
+L001AA5: db $00;X
+L001AA6: db $02;X
+L001AA7: db $56;X
+L001AA8: db $00;X
+L001AA9: db $05;X
+L001AAA: db $12;X
+L001AAB: db $00;X
+L001AAC: db $10;X
+L001AAD: db $24;X
+L001AAE: db $00;X
+L001AAF: db $20;X
+L001AB0: db $48;X
+L001AB1: db $00;X
+L001AB2: db $40;X
+L001AB3: db $96;X
+L001AB4: db $00;X
+L001AB5: db $81;X
+L001AB6: db $92;X
+L001AB7: db $01;X
+L001AB8: db $63;X
+L001AB9: db $84;X
+L001ABA: db $03;X
+L001ABB: db $27;X
+L001ABC: db $68;X
+L001ABD: db $CD;X
+L001ABE: db $C3;X
+L001ABF: db $03;X
+L001AC0: db $F5;X
+L001AC1: db $C5;X
+L001AC2: db $D5;X
+L001AC3: db $E5;X
+L001AC4: db $CD;X
+L001AC5: db $B3;X
+L001AC6: db $08;X
+L001AC7: db $CD;X
+L001AC8: db $63;X
+L001AC9: db $09;X
+L001ACA: db $CD;X
+L001ACB: db $B1;X
+L001ACC: db $32;X
+L001ACD: db $CD;X
+L001ACE: db $46;X
+L001ACF: db $11;X
+L001AD0: db $E1;X
+L001AD1: db $D1;X
+L001AD2: db $C1;X
+L001AD3: db $F1;X
+L001AD4: db $05;X
+L001AD5: db $C2;X
+L001AD6: db $BD;X
+L001AD7: db $1A;X
+L001AD8: db $C9;X
+L001AD9: db $F5;X
+L001ADA: db $08;X
+L001ADB: db $FD;X
+L001ADC: db $C6;X
+L001ADD: db $21;X
+L001ADE: db $06;X
+L001ADF: db $1B;X
+L001AE0: db $01;X
+L001AE1: db $ED;X
+L001AE2: db $C7;X
+L001AE3: db $11;X
+L001AE4: db $FB;X
+L001AE5: db $C6;X
+L001AE6: db $7D;X
+L001AE7: db $02;X
+L001AE8: db $7D;X
+L001AE9: db $12;X
+L001AEA: db $03;X
+L001AEB: db $13;X
+L001AEC: db $7C;X
+L001AED: db $02;X
+L001AEE: db $7C;X
+L001AEF: db $12;X
+L001AF0: db $F1;X
+L001AF1: db $FE;X
+L001AF2: db $01;X
+L001AF3: db $28;X
+L001AF4: db $06;X
+L001AF5: db $FE;X
+L001AF6: db $02;X
+L001AF7: db $28;X
+L001AF8: db $07;X
+L001AF9: db $18;X
+L001AFA: db $0B;X
+L001AFB: db $CD;X
+L001AFC: db $46;X
+L001AFD: db $2D;X
+L001AFE: db $18;X
+L001AFF: db $06;X
+L001B00: db $CD;X
+L001B01: db $46;X
+L001B02: db $2D;X
+L001B03: db $CD;X
+L001B04: db $53;X
+L001B05: db $2D;X
+L001B06: db $FA;X
+L001B07: db $FB;X
+L001B08: db $C6;X
+L001B09: db $5F;X
+L001B0A: db $FA;X
+L001B0B: db $FC;X
+L001B0C: db $C6;X
+L001B0D: db $57;X
+L001B0E: db $FA;X
+L001B0F: db $ED;X
+L001B10: db $C7;X
+L001B11: db $6F;X
+L001B12: db $FA;X
+L001B13: db $EE;X
+L001B14: db $C7;X
+L001B15: db $67;X
+L001B16: db $CD;X
+L001B17: db $6B;X
+L001B18: db $17;X
+L001B19: db $A7;X
+L001B1A: db $28;X
+L001B1B: db $09;X
+L001B1C: db $CD;X
+L001B1D: db $15;X
+L001B1E: db $2D;X
+L001B1F: db $CD;X
+L001B20: db $22;X
+L001B21: db $2D;X
+L001B22: db $3E;X
+L001B23: db $01;X
+L001B24: db $C9;X
+L001B25: db $3E;X
+L001B26: db $00;X
+L001B27: db $C9;X
+L001B28: db $D5;X
+L001B29: db $E5;X
+L001B2A: db $CB;X
+L001B2B: db $3C;X
+L001B2C: db $CB;X
+L001B2D: db $1D;X
+L001B2E: db $11;X
+L001B2F: db $B6;X
+L001B30: db $C4;X
+L001B31: db $19;X
+L001B32: db $7E;X
+L001B33: db $D1;X
+L001B34: db $CB;X
+L001B35: db $43;X
+L001B36: db $28;X
+L001B37: db $02;X
+L001B38: db $CB;X
+L001B39: db $37;X
+L001B3A: db $E6;X
+L001B3B: db $0F;X
+L001B3C: db $D1;X
+L001B3D: db $C9;X
+L001B3E: db $D5;X
+L001B3F: db $E5;X
+L001B40: db $F5;X
+L001B41: db $79;X
+L001B42: db $E6;X
+L001B43: db $F8;X
+L001B44: db $5F;X
+L001B45: db $78;X
+L001B46: db $57;X
+L001B47: db $CB;X
+L001B48: db $3A;X
+L001B49: db $CB;X
+L001B4A: db $1B;X
+L001B4B: db $CB;X
+L001B4C: db $3A;X
+L001B4D: db $CB;X
+L001B4E: db $1B;X
+L001B4F: db $CB;X
+L001B50: db $3A;X
+L001B51: db $CB;X
+L001B52: db $1B;X
+L001B53: db $79;X
+L001B54: db $E6;X
+L001B55: db $07;X
+L001B56: db $4F;X
+L001B57: db $06;X
+L001B58: db $01;X
+L001B59: db $79;X
+L001B5A: db $B7;X
+L001B5B: db $28;X
+L001B5C: db $06;X
+L001B5D: db $CB;X
+L001B5E: db $20;X
+L001B5F: db $0D;X
+L001B60: db $C3;X
+L001B61: db $59;X
+L001B62: db $1B;X
+L001B63: db $F1;X
+L001B64: db $B7;X
+L001B65: db $28;X
+L001B66: db $0A;X
+L001B67: db $21;X
+L001B68: db $BE;X
+L001B69: db $C5;X
+L001B6A: db $19;X
+L001B6B: db $7E;X
+L001B6C: db $B0;X
+L001B6D: db $77;X
+L001B6E: db $E1;X
+L001B6F: db $D1;X
+L001B70: db $C9;X
+L001B71: db $21;X
+L001B72: db $BE;X
+L001B73: db $C5;X
+L001B74: db $19;X
+L001B75: db $78;X
+L001B76: db $EE;X
+L001B77: db $FF;X
+L001B78: db $A6;X
+L001B79: db $77;X
+L001B7A: db $E1;X
+L001B7B: db $D1;X
+L001B7C: db $C9;X
+L001B7D: db $EA;X
+L001B7E: db $8E;X
+L001B7F: db $C8;X
+L001B80: db $FA;X
+L001B81: db $41;X
+L001B82: db $C8;X
+L001B83: db $F5;X
+L001B84: db $AF;X
+L001B85: db $EA;X
+L001B86: db $80;X
+L001B87: db $D9;X
+L001B88: db $EA;X
+L001B89: db $81;X
+L001B8A: db $D9;X
+L001B8B: db $EA;X
+L001B8C: db $84;X
+L001B8D: db $D9;X
+L001B8E: db $06;X
+L001B8F: db $DD;X
+L001B90: db $0E;X
+L001B91: db $00;X
+L001B92: db $21;X
+L001B93: db $B6;X
+L001B94: db $C4;X
+L001B95: db $C5;X
+L001B96: db $79;X
+L001B97: db $6F;X
+L001B98: db $26;X
+L001B99: db $00;X
+L001B9A: db $CD;X
+L001B9B: db $28;X
+L001B9C: db $1B;X
+L001B9D: db $CB;X
+L001B9E: db $4F;X
+L001B9F: db $CA;X
+L001BA0: db $CE;X
+L001BA1: db $1B;X
+L001BA2: db $3E;X
+L001BA3: db $3C;X
+L001BA4: db $CD;X
+L001BA5: db $B9;X
+L001BA6: db $0C;X
+L001BA7: db $79;X
+L001BA8: db $21;X
+L001BA9: db $00;X
+L001BAA: db $D9;X
+L001BAB: db $CD;X
+L001BAC: db $1B;X
+L001BAD: db $60;X
+L001BAE: db $FA;X
+L001BAF: db $80;X
+L001BB0: db $D9;X
+L001BB1: db $6F;X
+L001BB2: db $FA;X
+L001BB3: db $81;X
+L001BB4: db $D9;X
+L001BB5: db $67;X
+L001BB6: db $FA;X
+L001BB7: db $00;X
+L001BB8: db $D9;X
+L001BB9: db $85;X
+L001BBA: db $6F;X
+L001BBB: db $7C;X
+L001BBC: db $CE;X
+L001BBD: db $00;X
+L001BBE: db $67;X
+L001BBF: db $7D;X
+L001BC0: db $EA;X
+L001BC1: db $80;X
+L001BC2: db $D9;X
+L001BC3: db $7C;X
+L001BC4: db $EA;X
+L001BC5: db $81;X
+L001BC6: db $D9;X
+L001BC7: db $FA;X
+L001BC8: db $84;X
+L001BC9: db $D9;X
+L001BCA: db $3C;X
+L001BCB: db $EA;X
+L001BCC: db $84;X
+L001BCD: db $D9;X
+L001BCE: db $C1;X
+L001BCF: db $0C;X
+L001BD0: db $05;X
+L001BD1: db $C2;X
+L001BD2: db $95;X
+L001BD3: db $1B;X
+L001BD4: db $FA;X
+L001BD5: db $8E;X
+L001BD6: db $C8;X
+L001BD7: db $F5;X
+L001BD8: db $FA;X
+L001BD9: db $80;X
+L001BDA: db $D9;X
+L001BDB: db $4F;X
+L001BDC: db $FA;X
+L001BDD: db $81;X
+L001BDE: db $D9;X
+L001BDF: db $47;X
+L001BE0: db $FA;X
+L001BE1: db $84;X
+L001BE2: db $D9;X
+L001BE3: db $5F;X
+L001BE4: db $16;X
+L001BE5: db $00;X
+L001BE6: db $CD;X
+L001BE7: db $43;X
+L001BE8: db $19;X
+L001BE9: db $79;X
+L001BEA: db $EA;X
+L001BEB: db $82;X
+L001BEC: db $D9;X
+L001BED: db $78;X
+L001BEE: db $EA;X
+L001BEF: db $83;X
+L001BF0: db $D9;X
+L001BF1: db $F1;X
+L001BF2: db $EA;X
+L001BF3: db $8E;X
+L001BF4: db $C8;X
+L001BF5: db $3E;X
+L001BF6: db $0B;X
+L001BF7: db $CD;X
+L001BF8: db $B9;X
+L001BF9: db $0C;X
+L001BFA: db $FA;X
+L001BFB: db $8E;X
+L001BFC: db $C8;X
+L001BFD: db $EA;X
+L001BFE: db $3D;X
+L001BFF: db $CC;X
+L001C00: db $1E;X
+L001C01: db $07;X
+L001C02: db $CD;X
+L001C03: db $C9;X
+L001C04: db $17;X
+L001C05: db $11;X
+L001C06: db $A0;X
+L001C07: db $71;X
+L001C08: db $19;X
+L001C09: db $3E;X
+L001C0A: db $01;X
+L001C0B: db $EA;X
+L001C0C: db $CD;X
+L001C0D: db $CC;X
+L001C0E: db $2A;X
+L001C0F: db $EA;X
+L001C10: db $ED;X
+L001C11: db $CC;X
+L001C12: db $EA;X
+L001C13: db $2D;X
+L001C14: db $CD;X
+L001C15: db $2A;X
+L001C16: db $EA;X
+L001C17: db $EE;X
+L001C18: db $CC;X
+L001C19: db $EA;X
+L001C1A: db $2E;X
+L001C1B: db $CD;X
+L001C1C: db $2A;X
+L001C1D: db $EA;X
+L001C1E: db $0D;X
+L001C1F: db $CD;X
+L001C20: db $EA;X
+L001C21: db $4D;X
+L001C22: db $CD;X
+L001C23: db $2A;X
+L001C24: db $EA;X
+L001C25: db $0E;X
+L001C26: db $CD;X
+L001C27: db $EA;X
+L001C28: db $4E;X
+L001C29: db $CD;X
+L001C2A: db $2A;X
+L001C2B: db $EA;X
+L001C2C: db $6D;X
+L001C2D: db $CD;X
+L001C2E: db $2A;X
+L001C2F: db $EA;X
+L001C30: db $7D;X
+L001C31: db $CD;X
+L001C32: db $7E;X
+L001C33: db $EA;X
+L001C34: db $8D;X
+L001C35: db $CD;X
+L001C36: db $FA;X
+L001C37: db $8E;X
+L001C38: db $C8;X
+L001C39: db $3C;X
+L001C3A: db $EA;X
+L001C3B: db $3D;X
+L001C3C: db $CC;X
+L001C3D: db $3E;X
+L001C3E: db $00;X
+L001C3F: db $CD;X
+L001C40: db $FA;X
+L001C41: db $1D;X
+L001C42: db $3E;X
+L001C43: db $00;X
+L001C44: db $CD;X
+L001C45: db $B9;X
+L001C46: db $0C;X
+L001C47: db $FA;X
+L001C48: db $82;X
+L001C49: db $D9;X
+L001C4A: db $A7;X
+L001C4B: db $28;X
+L001C4C: db $04;X
+L001C4D: db $3D;X
+L001C4E: db $A7;X
+L001C4F: db $20;X
+L001C50: db $02;X
+L001C51: db $3E;X
+L001C52: db $01;X
+L001C53: db $47;X
+L001C54: db $3E;X
+L001C55: db $00;X
+L001C56: db $CD;X
+L001C57: db $D8;X
+L001C58: db $1C;X
+L001C59: db $3E;X
+L001C5A: db $3C;X
+L001C5B: db $CD;X
+L001C5C: db $B9;X
+L001C5D: db $0C;X
+L001C5E: db $21;X
+L001C5F: db $00;X
+L001C60: db $D9;X
+L001C61: db $FA;X
+L001C62: db $CD;X
+L001C63: db $CC;X
+L001C64: db $22;X
+L001C65: db $FA;X
+L001C66: db $2D;X
+L001C67: db $CD;X
+L001C68: db $22;X
+L001C69: db $FA;X
+L001C6A: db $2E;X
+L001C6B: db $CD;X
+L001C6C: db $22;X
+L001C6D: db $FA;X
+L001C6E: db $ED;X
+L001C6F: db $CC;X
+L001C70: db $22;X
+L001C71: db $FA;X
+L001C72: db $EE;X
+L001C73: db $CC;X
+L001C74: db $22;X
+L001C75: db $FA;X
+L001C76: db $4D;X
+L001C77: db $CD;X
+L001C78: db $22;X
+L001C79: db $FA;X
+L001C7A: db $4E;X
+L001C7B: db $CD;X
+L001C7C: db $22;X
+L001C7D: db $FA;X
+L001C7E: db $0D;X
+L001C7F: db $CD;X
+L001C80: db $22;X
+L001C81: db $FA;X
+L001C82: db $0E;X
+L001C83: db $CD;X
+L001C84: db $22;X
+L001C85: db $FA;X
+L001C86: db $6D;X
+L001C87: db $CD;X
+L001C88: db $22;X
+L001C89: db $FA;X
+L001C8A: db $7D;X
+L001C8B: db $CD;X
+L001C8C: db $22;X
+L001C8D: db $FA;X
+L001C8E: db $8D;X
+L001C8F: db $CD;X
+L001C90: db $22;X
+L001C91: db $AF;X
+L001C92: db $22;X
+L001C93: db $22;X
+L001C94: db $22;X
+L001C95: db $77;X
+L001C96: db $FA;X
+L001C97: db $8E;X
+L001C98: db $C8;X
+L001C99: db $21;X
+L001C9A: db $00;X
+L001C9B: db $D9;X
+L001C9C: db $CD;X
+L001C9D: db $F9;X
+L001C9E: db $5F;X
+L001C9F: db $FA;X
+L001CA0: db $4F;X
+L001CA1: db $C7;X
+L001CA2: db $6F;X
+L001CA3: db $26;X
+L001CA4: db $00;X
+L001CA5: db $2B;X
+L001CA6: db $29;X
+L001CA7: db $29;X
+L001CA8: db $E5;X
+L001CA9: db $D1;X
+L001CAA: db $29;X
+L001CAB: db $19;X
+L001CAC: db $11;X
+L001CAD: db $E4;X
+L001CAE: db $63;X
+L001CAF: db $19;X
+L001CB0: db $11;X
+L001CB1: db $09;X
+L001CB2: db $00;X
+L001CB3: db $19;X
+L001CB4: db $3E;X
+L001CB5: db $04;X
+L001CB6: db $11;X
+L001CB7: db $80;X
+L001CB8: db $D9;X
+L001CB9: db $01;X
+L001CBA: db $03;X
+L001CBB: db $00;X
+L001CBC: db $CD;X
+L001CBD: db $F5;X
+L001CBE: db $0F;X
+L001CBF: db $FA;X
+L001CC0: db $80;X
+L001CC1: db $D9;X
+L001CC2: db $6F;X
+L001CC3: db $FA;X
+L001CC4: db $81;X
+L001CC5: db $D9;X
+L001CC6: db $67;X
+L001CC7: db $FA;X
+L001CC8: db $82;X
+L001CC9: db $D9;X
+L001CCA: db $11;X
+L001CCB: db $00;X
+L001CCC: db $CF;X
+L001CCD: db $01;X
+L001CCE: db $00;X
+L001CCF: db $04;X
+L001CD0: db $CD;X
+L001CD1: db $F5;X
+L001CD2: db $0F;X
+L001CD3: db $F1;X
+L001CD4: db $CD;X
+L001CD5: db $B9;X
+L001CD6: db $0C;X
+L001CD7: db $C9;X
+L001CD8: db $5F;X
+L001CD9: db $16;X
+L001CDA: db $00;X
+L001CDB: db $21;X
+L001CDC: db $CD;X
+L001CDD: db $CC;X
+L001CDE: db $19;X
+L001CDF: db $7E;X
+L001CE0: db $FE;X
+L001CE1: db $63;X
+L001CE2: db $D2;X
+L001CE3: db $6B;X
+L001CE4: db $1D;X
+L001CE5: db $C5;X
+L001CE6: db $D5;X
+L001CE7: db $21;X
+L001CE8: db $CD;X
+L001CE9: db $CC;X
+L001CEA: db $19;X
+L001CEB: db $34;X
+L001CEC: db $21;X
+L001CED: db $F0;X
+L001CEE: db $CF;X
+L001CEF: db $19;X
+L001CF0: db $7E;X
+L001CF1: db $CD;X
+L001CF2: db $A9;X
+L001CF3: db $1D;X
+L001CF4: db $21;X
+L001CF5: db $ED;X
+L001CF6: db $CC;X
+L001CF7: db $CB;X
+L001CF8: db $23;X
+L001CF9: db $CB;X
+L001CFA: db $12;X
+L001CFB: db $19;X
+L001CFC: db $86;X
+L001CFD: db $22;X
+L001CFE: db $7E;X
+L001CFF: db $CE;X
+L001D00: db $00;X
+L001D01: db $32;X
+L001D02: db $E5;X
+L001D03: db $2A;X
+L001D04: db $5F;X
+L001D05: db $56;X
+L001D06: db $CD;X
+L001D07: db $9C;X
+L001D08: db $1D;X
+L001D09: db $E1;X
+L001D0A: db $7B;X
+L001D0B: db $22;X
+L001D0C: db $72;X
+L001D0D: db $D1;X
+L001D0E: db $D5;X
+L001D0F: db $21;X
+L001D10: db $00;X
+L001D11: db $D0;X
+L001D12: db $19;X
+L001D13: db $7E;X
+L001D14: db $CD;X
+L001D15: db $A9;X
+L001D16: db $1D;X
+L001D17: db $21;X
+L001D18: db $0D;X
+L001D19: db $CD;X
+L001D1A: db $CB;X
+L001D1B: db $23;X
+L001D1C: db $CB;X
+L001D1D: db $12;X
+L001D1E: db $19;X
+L001D1F: db $86;X
+L001D20: db $22;X
+L001D21: db $7E;X
+L001D22: db $CE;X
+L001D23: db $00;X
+L001D24: db $32;X
+L001D25: db $E5;X
+L001D26: db $2A;X
+L001D27: db $5F;X
+L001D28: db $56;X
+L001D29: db $CD;X
+L001D2A: db $9C;X
+L001D2B: db $1D;X
+L001D2C: db $E1;X
+L001D2D: db $7B;X
+L001D2E: db $22;X
+L001D2F: db $72;X
+L001D30: db $D1;X
+L001D31: db $D5;X
+L001D32: db $21;X
+L001D33: db $10;X
+L001D34: db $D0;X
+L001D35: db $19;X
+L001D36: db $7E;X
+L001D37: db $CD;X
+L001D38: db $A9;X
+L001D39: db $1D;X
+L001D3A: db $21;X
+L001D3B: db $6D;X
+L001D3C: db $CD;X
+L001D3D: db $19;X
+L001D3E: db $86;X
+L001D3F: db $CD;X
+L001D40: db $98;X
+L001D41: db $1D;X
+L001D42: db $77;X
+L001D43: db $21;X
+L001D44: db $20;X
+L001D45: db $D0;X
+L001D46: db $19;X
+L001D47: db $7E;X
+L001D48: db $CD;X
+L001D49: db $A9;X
+L001D4A: db $1D;X
+L001D4B: db $21;X
+L001D4C: db $7D;X
+L001D4D: db $CD;X
+L001D4E: db $19;X
+L001D4F: db $86;X
+L001D50: db $CD;X
+L001D51: db $98;X
+L001D52: db $1D;X
+L001D53: db $77;X
+L001D54: db $21;X
+L001D55: db $30;X
+L001D56: db $D0;X
+L001D57: db $19;X
+L001D58: db $7E;X
+L001D59: db $CD;X
+L001D5A: db $A9;X
+L001D5B: db $1D;X
+L001D5C: db $21;X
+L001D5D: db $8D;X
+L001D5E: db $CD;X
+L001D5F: db $19;X
+L001D60: db $86;X
+L001D61: db $CD;X
+L001D62: db $98;X
+L001D63: db $1D;X
+L001D64: db $77;X
+L001D65: db $D1;X
+L001D66: db $C1;X
+L001D67: db $05;X
+L001D68: db $C2;X
+L001D69: db $DB;X
+L001D6A: db $1C;X
+L001D6B: db $CB;X
+L001D6C: db $23;X
+L001D6D: db $CB;X
+L001D6E: db $12;X
+L001D6F: db $21;X
+L001D70: db $ED;X
+L001D71: db $CC;X
+L001D72: db $19;X
+L001D73: db $7E;X
+L001D74: db $21;X
+L001D75: db $2D;X
+L001D76: db $CD;X
+L001D77: db $19;X
+L001D78: db $77;X
+L001D79: db $21;X
+L001D7A: db $EE;X
+L001D7B: db $CC;X
+L001D7C: db $19;X
+L001D7D: db $7E;X
+L001D7E: db $21;X
+L001D7F: db $2E;X
+L001D80: db $CD;X
+L001D81: db $19;X
+L001D82: db $77;X
+L001D83: db $21;X
+L001D84: db $0D;X
+L001D85: db $CD;X
+L001D86: db $19;X
+L001D87: db $7E;X
+L001D88: db $21;X
+L001D89: db $4D;X
+L001D8A: db $CD;X
+L001D8B: db $19;X
+L001D8C: db $77;X
+L001D8D: db $21;X
+L001D8E: db $0E;X
+L001D8F: db $CD;X
+L001D90: db $19;X
+L001D91: db $7E;X
+L001D92: db $21;X
+L001D93: db $4E;X
+L001D94: db $CD;X
+L001D95: db $19;X
+L001D96: db $77;X
+L001D97: db $C9;X
+L001D98: db $D0;X
+L001D99: db $3E;X
+L001D9A: db $FF;X
+L001D9B: db $C9;X
+L001D9C: db $21;X
+L001D9D: db $E7;X
+L001D9E: db $03;X
+L001D9F: db $CD;X
+L001DA0: db $6B;X
+L001DA1: db $17;X
+L001DA2: db $FE;X
+L001DA3: db $01;X
+L001DA4: db $C0;X
+L001DA5: db $11;X
+L001DA6: db $E7;X
+L001DA7: db $03;X
+L001DA8: db $C9;X
+L001DA9: db $C5;X
+L001DAA: db $E5;X
+L001DAB: db $F5;X
+L001DAC: db $21;X
+L001DAD: db $CD;X
+L001DAE: db $CC;X
+L001DAF: db $19;X
+L001DB0: db $7E;X
+L001DB1: db $3D;X
+L001DB2: db $3D;X
+L001DB3: db $4F;X
+L001DB4: db $F1;X
+L001DB5: db $21;X
+L001DB6: db $C3;X
+L001DB7: db $1D;X
+L001DB8: db $CD;X
+L001DB9: db $3D;X
+L001DBA: db $0C;X
+L001DBB: db $47;X
+L001DBC: db $79;X
+L001DBD: db $CD;X
+L001DBE: db $9D;X
+L001DBF: db $0C;X
+L001DC0: db $E1;X
+L001DC1: db $C1;X
+L001DC2: db $C9;X
+L001DC3: db $AB;X
+L001DC4: db $79;X
+L001DC5: db $19;X
+L001DC6: db $85;X
+L001DC7: db $78;X
+L001DC8: db $19;X
+L001DC9: db $E7;X
+L001DCA: db $78;X
+L001DCB: db $19;X
+L001DCC: db $49;X
+L001DCD: db $79;X
+L001DCE: db $19;X
+L001DCF: db $AB;X
+L001DD0: db $79;X
+L001DD1: db $19;X
+L001DD2: db $0D;X
+L001DD3: db $7A;X
+L001DD4: db $19;X
+L001DD5: db $6F;X
+L001DD6: db $7A;X
+L001DD7: db $19;X
+L001DD8: db $D1;X
+L001DD9: db $7A;X
+L001DDA: db $19;X
+L001DDB: db $33;X
+L001DDC: db $7B;X
+L001DDD: db $19;X
+L001DDE: db $06;X
+L001DDF: db $0F;X
+L001DE0: db $0E;X
+L001DE1: db $00;X
+L001DE2: db $C5;X
+L001DE3: db $79;X
+L001DE4: db $FE;X
+L001DE5: db $05;X
+L001DE6: db $D2;X
+L001DE7: db $EF;X
+L001DE8: db $1D;X
+L001DE9: db $79;X
+L001DEA: db $CD;X
+L001DEB: db $FA;X
+L001DEC: db $1D;X
+L001DED: db $18;X
+L001DEE: db $04;X
+L001DEF: db $79;X
+L001DF0: db $CD;X
+L001DF1: db $87;X
+L001DF2: db $1E;X
+L001DF3: db $C1;X
+L001DF4: db $0C;X
+L001DF5: db $05;X
+L001DF6: db $C2;X
+L001DF7: db $E2;X
+L001DF8: db $1D;X
+L001DF9: db $C9;X
+L001DFA: db $5F;X
+L001DFB: db $16;X
+L001DFC: db $00;X
+L001DFD: db $21;X
+L001DFE: db $3D;X
+L001DFF: db $CC;X
+L001E00: db $19;X
+L001E01: db $7E;X
+L001E02: db $A7;X
+L001E03: db $CA;X
+L001E04: db $86;X
+L001E05: db $1E;X
+L001E06: db $D5;X
+L001E07: db $06;X
+L001E08: db $19;X
+L001E09: db $21;X
+L001E0A: db $17;X
+L001E0B: db $66;X
+L001E0C: db $CD;X
+L001E0D: db $7F;X
+L001E0E: db $0C;X
+L001E0F: db $3E;X
+L001E10: db $19;X
+L001E11: db $11;X
+L001E12: db $00;X
+L001E13: db $D9;X
+L001E14: db $01;X
+L001E15: db $0E;X
+L001E16: db $00;X
+L001E17: db $CD;X
+L001E18: db $F5;X
+L001E19: db $0F;X
+L001E1A: db $D1;X
+L001E1B: db $01;X
+L001E1C: db $00;X
+L001E1D: db $D9;X
+L001E1E: db $21;X
+L001E1F: db $F0;X
+L001E20: db $CF;X
+L001E21: db $19;X
+L001E22: db $0A;X
+L001E23: db $77;X
+L001E24: db $03;X
+L001E25: db $21;X
+L001E26: db $00;X
+L001E27: db $D0;X
+L001E28: db $19;X
+L001E29: db $0A;X
+L001E2A: db $77;X
+L001E2B: db $03;X
+L001E2C: db $21;X
+L001E2D: db $10;X
+L001E2E: db $D0;X
+L001E2F: db $19;X
+L001E30: db $0A;X
+L001E31: db $77;X
+L001E32: db $03;X
+L001E33: db $21;X
+L001E34: db $20;X
+L001E35: db $D0;X
+L001E36: db $19;X
+L001E37: db $0A;X
+L001E38: db $77;X
+L001E39: db $03;X
+L001E3A: db $21;X
+L001E3B: db $30;X
+L001E3C: db $D0;X
+L001E3D: db $19;X
+L001E3E: db $0A;X
+L001E3F: db $77;X
+L001E40: db $03;X
+L001E41: db $21;X
+L001E42: db $50;X
+L001E43: db $D0;X
+L001E44: db $19;X
+L001E45: db $0A;X
+L001E46: db $77;X
+L001E47: db $03;X
+L001E48: db $21;X
+L001E49: db $40;X
+L001E4A: db $D0;X
+L001E4B: db $19;X
+L001E4C: db $0A;X
+L001E4D: db $77;X
+L001E4E: db $03;X
+L001E4F: db $21;X
+L001E50: db $60;X
+L001E51: db $D0;X
+L001E52: db $19;X
+L001E53: db $0A;X
+L001E54: db $77;X
+L001E55: db $03;X
+L001E56: db $21;X
+L001E57: db $70;X
+L001E58: db $D0;X
+L001E59: db $19;X
+L001E5A: db $0A;X
+L001E5B: db $77;X
+L001E5C: db $03;X
+L001E5D: db $21;X
+L001E5E: db $80;X
+L001E5F: db $D0;X
+L001E60: db $19;X
+L001E61: db $0A;X
+L001E62: db $77;X
+L001E63: db $03;X
+L001E64: db $21;X
+L001E65: db $90;X
+L001E66: db $D0;X
+L001E67: db $19;X
+L001E68: db $0A;X
+L001E69: db $77;X
+L001E6A: db $03;X
+L001E6B: db $21;X
+L001E6C: db $A0;X
+L001E6D: db $D0;X
+L001E6E: db $19;X
+L001E6F: db $0A;X
+L001E70: db $77;X
+L001E71: db $03;X
+L001E72: db $21;X
+L001E73: db $B0;X
+L001E74: db $D0;X
+L001E75: db $19;X
+L001E76: db $0A;X
+L001E77: db $77;X
+L001E78: db $03;X
+L001E79: db $21;X
+L001E7A: db $C0;X
+L001E7B: db $D0;X
+L001E7C: db $19;X
+L001E7D: db $0A;X
+L001E7E: db $77;X
+L001E7F: db $03;X
+L001E80: db $21;X
+L001E81: db $D0;X
+L001E82: db $D0;X
+L001E83: db $19;X
+L001E84: db $0A;X
+L001E85: db $77;X
+L001E86: db $C9;X
+L001E87: db $5F;X
+L001E88: db $16;X
+L001E89: db $00;X
+L001E8A: db $21;X
+L001E8B: db $3D;X
+L001E8C: db $CC;X
+L001E8D: db $19;X
+L001E8E: db $7E;X
+L001E8F: db $A7;X
+L001E90: db $CA;X
+L001E91: db $1C;X
+L001E92: db $1F;X
+L001E93: db $D5;X
+L001E94: db $06;X
+L001E95: db $19;X
+L001E96: db $21;X
+L001E97: db $9B;X
+L001E98: db $6A;X
+L001E99: db $CD;X
+L001E9A: db $7F;X
+L001E9B: db $0C;X
+L001E9C: db $3E;X
+L001E9D: db $19;X
+L001E9E: db $11;X
+L001E9F: db $00;X
+L001EA0: db $D9;X
+L001EA1: db $01;X
+L001EA2: db $17;X
+L001EA3: db $00;X
+L001EA4: db $CD;X
+L001EA5: db $F5;X
+L001EA6: db $0F;X
+L001EA7: db $01;X
+L001EA8: db $00;X
+L001EA9: db $D9;X
+L001EAA: db $03;X
+L001EAB: db $03;X
+L001EAC: db $03;X
+L001EAD: db $03;X
+L001EAE: db $03;X
+L001EAF: db $03;X
+L001EB0: db $03;X
+L001EB1: db $03;X
+L001EB2: db $03;X
+L001EB3: db $D1;X
+L001EB4: db $21;X
+L001EB5: db $F0;X
+L001EB6: db $CF;X
+L001EB7: db $19;X
+L001EB8: db $0A;X
+L001EB9: db $77;X
+L001EBA: db $03;X
+L001EBB: db $21;X
+L001EBC: db $00;X
+L001EBD: db $D0;X
+L001EBE: db $19;X
+L001EBF: db $0A;X
+L001EC0: db $77;X
+L001EC1: db $03;X
+L001EC2: db $21;X
+L001EC3: db $10;X
+L001EC4: db $D0;X
+L001EC5: db $19;X
+L001EC6: db $0A;X
+L001EC7: db $77;X
+L001EC8: db $03;X
+L001EC9: db $21;X
+L001ECA: db $20;X
+L001ECB: db $D0;X
+L001ECC: db $19;X
+L001ECD: db $0A;X
+L001ECE: db $77;X
+L001ECF: db $03;X
+L001ED0: db $21;X
+L001ED1: db $30;X
+L001ED2: db $D0;X
+L001ED3: db $19;X
+L001ED4: db $0A;X
+L001ED5: db $77;X
+L001ED6: db $03;X
+L001ED7: db $21;X
+L001ED8: db $50;X
+L001ED9: db $D0;X
+L001EDA: db $19;X
+L001EDB: db $0A;X
+L001EDC: db $77;X
+L001EDD: db $03;X
+L001EDE: db $21;X
+L001EDF: db $40;X
+L001EE0: db $D0;X
+L001EE1: db $19;X
+L001EE2: db $0A;X
+L001EE3: db $77;X
+L001EE4: db $03;X
+L001EE5: db $21;X
+L001EE6: db $60;X
+L001EE7: db $D0;X
+L001EE8: db $19;X
+L001EE9: db $0A;X
+L001EEA: db $77;X
+L001EEB: db $03;X
+L001EEC: db $21;X
+L001EED: db $70;X
+L001EEE: db $D0;X
+L001EEF: db $19;X
+L001EF0: db $0A;X
+L001EF1: db $77;X
+L001EF2: db $03;X
+L001EF3: db $21;X
+L001EF4: db $80;X
+L001EF5: db $D0;X
+L001EF6: db $19;X
+L001EF7: db $0A;X
+L001EF8: db $77;X
+L001EF9: db $03;X
+L001EFA: db $21;X
+L001EFB: db $90;X
+L001EFC: db $D0;X
+L001EFD: db $19;X
+L001EFE: db $0A;X
+L001EFF: db $77;X
+L001F00: db $03;X
+L001F01: db $21;X
+L001F02: db $A0;X
+L001F03: db $D0;X
+L001F04: db $19;X
+L001F05: db $0A;X
+L001F06: db $77;X
+L001F07: db $03;X
+L001F08: db $21;X
+L001F09: db $B0;X
+L001F0A: db $D0;X
+L001F0B: db $19;X
+L001F0C: db $0A;X
+L001F0D: db $77;X
+L001F0E: db $03;X
+L001F0F: db $21;X
+L001F10: db $C0;X
+L001F11: db $D0;X
+L001F12: db $19;X
+L001F13: db $0A;X
+L001F14: db $77;X
+L001F15: db $03;X
+L001F16: db $21;X
+L001F17: db $D0;X
+L001F18: db $D0;X
+L001F19: db $19;X
+L001F1A: db $0A;X
+L001F1B: db $77;X
+L001F1C: db $C9;X
+L001F1D: db $F3;X
+L001F1E: db $D5;X
+L001F1F: db $CD;X
+L001F20: db $89;X
+L001F21: db $20;X
+L001F22: db $3E;X
+L001F23: db $E4;X
+L001F24: db $E0;X
+L001F25: db $47;X
+L001F26: db $11;X
+L001F27: db $00;X
+L001F28: db $88;X
+L001F29: db $01;X
+L001F2A: db $00;X
+L001F2B: db $10;X
+L001F2C: db $CD;X
+L001F2D: db $E3;X
+L001F2E: db $0F;X
+L001F2F: db $21;X
+L001F30: db $00;X
+L001F31: db $98;X
+L001F32: db $11;X
+L001F33: db $0C;X
+L001F34: db $00;X
+L001F35: db $3E;X
+L001F36: db $80;X
+L001F37: db $0E;X
+L001F38: db $0D;X
+L001F39: db $06;X
+L001F3A: db $14;X
+L001F3B: db $22;X
+L001F3C: db $3C;X
+L001F3D: db $05;X
+L001F3E: db $20;X
+L001F3F: db $FB;X
+L001F40: db $19;X
+L001F41: db $0D;X
+L001F42: db $20;X
+L001F43: db $F5;X
+L001F44: db $3E;X
+L001F45: db $81;X
+L001F46: db $E0;X
+L001F47: db $40;X
+L001F48: db $01;X
+L001F49: db $05;X
+L001F4A: db $00;X
+L001F4B: db $CD;X
+L001F4C: db $9C;X
+L001F4D: db $1F;X
+L001F4E: db $E1;X
+L001F4F: db $CD;X
+L001F50: db $5A;X
+L001F51: db $1F;X
+L001F52: db $01;X
+L001F53: db $06;X
+L001F54: db $00;X
+L001F55: db $CD;X
+L001F56: db $9C;X
+L001F57: db $1F;X
+L001F58: db $FB;X
+L001F59: db $C9;X
+L001F5A:;C
+	ld   a, [hl]
+	and  a, $07
+	ret  z
+	ld   b, a
+	ld   c, $00
+	push bc
+	ld   a, $00
+	ld   [c], a
+	ld   a, $30
+	ld   [c], a
+	ld   b, $10
+L001F6A:;R
+	ld   e, $08
+	ldi  a, [hl]
+	ld   d, a
+L001F6E:;R
+	bit  0, d
+	ld   a, $10
+	jr   nz, $1F76
+	ld   a, $20
+L001F76:;R
+	ld   [c], a
+	ld   a, $30
+	ld   [c], a
+	rr   d
+	dec  e
+	jr   nz, $1F6E
+	dec  b
+	jr   nz, $1F6A
+	ld   a, $20
+	ld   [c], a
+	ld   a, $30
+	ld   [c], a
+	pop  bc
+	dec  b
+	ret  z
+L001F8B: db $CD;X
+L001F8C: db $90;X
+L001F8D: db $1F;X
+L001F8E: db $18;X
+L001F8F: db $D1;X
+L001F90:;C
+	ld   de, $1B58
+L001F93:;R
+	nop  
+	nop  
+	nop  
+	dec  de
+	ld   a, d
+	or   a, e
+	jr   nz, $1F93
+	ret  
+L001F9C:;CR
+	ld   de, $06D6
+L001F9F:;R
+	nop  
+	nop  
+	nop  
+	dec  de
+	ld   a, d
+	or   a, e
+	jr   nz, $1F9F
+	dec  bc
+	ld   a, b
+	or   a, c
+	jr   nz, $1F9C
+	ret  
+L001FAD:;C
+	ld   hl, $202A
+	call $1F5A
+	ld   bc, $0004
+	call $1F9C
+	call $1F90
+	ldh  a, [rJOYP]
+	ld   [$C897], a
+	and  a, $03
+	cp   $03
+	jr   nz, $2009
+	ld   a, $20
+	ldh  [rJOYP], a
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ld   a, $30
+	ldh  [rJOYP], a
+	ld   a, $10
+	ldh  [rJOYP], a
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ld   a, $30
+	ldh  [rJOYP], a
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ldh  a, [rJOYP]
+	ld   [$C896], a
+	and  a, $03
+	cp   $03
+	jr   nz, $2009
+	ld   hl, $201A
+	call $1F5A
+	ld   bc, $0004
+	call $1F9C
+	call $1F90
+	sub  a, a
+	ret  
+L002009: db $21;X
+L00200A: db $1A;X
+L00200B: db $20;X
+L00200C: db $CD;X
+L00200D: db $5A;X
+L00200E: db $1F;X
+L00200F: db $01;X
+L002010: db $04;X
+L002011: db $00;X
+L002012: db $CD;X
+L002013: db $9C;X
+L002014: db $1F;X
+L002015: db $CD;X
+L002016: db $90;X
+L002017: db $1F;X
+L002018: db $37;X
+L002019: db $C9;X
+L00201A: db $89
+L00201B: db $00
+L00201C: db $00
+L00201D: db $00
+L00201E: db $00
+L00201F: db $00
+L002020: db $00
+L002021: db $00
+L002022: db $00
+L002023: db $00
+L002024: db $00
+L002025: db $00
+L002026: db $00
+L002027: db $00
+L002028: db $00
+L002029: db $00
+L00202A: db $89
+L00202B: db $01
+L00202C: db $00
+L00202D: db $00
+L00202E: db $00
+L00202F: db $00
+L002030: db $00
+L002031: db $00
+L002032: db $00
+L002033: db $00
+L002034: db $00
+L002035: db $00
+L002036: db $00
+L002037: db $00
+L002038: db $00
+L002039: db $00
+L00203A: db $F0;X
+L00203B: db $00;X
+L00203C: db $06;X
+L00203D: db $04;X
+L00203E: db $4F;X
+L00203F: db $18;X
+L002040: db $04;X
+L002041: db $F0;X
+L002042: db $00;X
+L002043: db $B9;X
+L002044: db $C8;X
+L002045: db $F3;X
+L002046: db $2F;X
+L002047: db $E6;X
+L002048: db $03;X
+L002049: db $CB;X
+L00204A: db $27;X
+L00204B: db $16;X
+L00204C: db $00;X
+L00204D: db $5F;X
+L00204E: db $21;X
+L00204F: db $86;X
+L002050: db $C8;X
+L002051: db $19;X
+L002052: db $3E;X
+L002053: db $20;X
+L002054: db $E0;X
+L002055: db $00;X
+L002056: db $F0;X
+L002057: db $00;X
+L002058: db $F0;X
+L002059: db $00;X
+L00205A: db $2F;X
+L00205B: db $E6;X
+L00205C: db $0F;X
+L00205D: db $CB;X
+L00205E: db $37;X
+L00205F: db $57;X
+L002060: db $3E;X
+L002061: db $30;X
+L002062: db $E0;X
+L002063: db $00;X
+L002064: db $3E;X
+L002065: db $10;X
+L002066: db $E0;X
+L002067: db $00;X
+L002068: db $F0;X
+L002069: db $00;X
+L00206A: db $F0;X
+L00206B: db $00;X
+L00206C: db $F0;X
+L00206D: db $00;X
+L00206E: db $F0;X
+L00206F: db $00;X
+L002070: db $F0;X
+L002071: db $00;X
+L002072: db $F0;X
+L002073: db $00;X
+L002074: db $2F;X
+L002075: db $E6;X
+L002076: db $0F;X
+L002077: db $B2;X
+L002078: db $57;X
+L002079: db $2A;X
+L00207A: db $AA;X
+L00207B: db $A2;X
+L00207C: db $32;X
+L00207D: db $7A;X
+L00207E: db $77;X
+L00207F: db $3E;X
+L002080: db $30;X
+L002081: db $E0;X
+L002082: db $00;X
+L002083: db $FB;X
+L002084: db $05;X
+L002085: db $C2;X
+L002086: db $41;X
+L002087: db $20;X
+L002088: db $C9;X
+L002089: db $F0;X
+L00208A: db $40;X
+L00208B: db $CB;X
+L00208C: db $7F;X
+L00208D: db $C8;X
+L00208E: db $F0;X
+L00208F: db $FF;X
+L002090: db $EA;X
+L002091: db $3A;X
+L002092: db $C8;X
+L002093: db $CB;X
+L002094: db $87;X
+L002095: db $E0;X
+L002096: db $FF;X
+L002097: db $F0;X
+L002098: db $44;X
+L002099: db $FE;X
+L00209A: db $91;X
+L00209B: db $20;X
+L00209C: db $FA;X
+L00209D: db $F0;X
+L00209E: db $40;X
+L00209F: db $E6;X
+L0020A0: db $7F;X
+L0020A1: db $E0;X
+L0020A2: db $40;X
+L0020A3: db $FA;X
+L0020A4: db $3A;X
+L0020A5: db $C8;X
+L0020A6: db $E0;X
+L0020A7: db $FF;X
+L0020A8: db $C9;X
+L0020A9:;C
+	ld   a, [$C833]
+	cp   $03
+	ret  nz
+L0020AF: db $CD;X
+L0020B0: db $90;X
+L0020B1: db $1F;X
+L0020B2: db $21;X
+L0020B3: db $4D;X
+L0020B4: db $21;X
+L0020B5: db $CD;X
+L0020B6: db $5A;X
+L0020B7: db $1F;X
+L0020B8: db $01;X
+L0020B9: db $04;X
+L0020BA: db $00;X
+L0020BB: db $CD;X
+L0020BC: db $9C;X
+L0020BD: db $1F;X
+L0020BE: db $CD;X
+L0020BF: db $90;X
+L0020C0: db $1F;X
+L0020C1: db $FA;X
+L0020C2: db $41;X
+L0020C3: db $C8;X
+L0020C4: db $F5;X
+L0020C5: db $FA;X
+L0020C6: db $81;X
+L0020C7: db $C8;X
+L0020C8: db $21;X
+L0020C9: db $31;X
+L0020CA: db $21;X
+L0020CB: db $CD;X
+L0020CC: db $95;X
+L0020CD: db $0C;X
+L0020CE: db $CD;X
+L0020CF: db $B9;X
+L0020D0: db $0C;X
+L0020D1: db $FA;X
+L0020D2: db $81;X
+L0020D3: db $C8;X
+L0020D4: db $21;X
+L0020D5: db $3D;X
+L0020D6: db $21;X
+L0020D7: db $CD;X
+L0020D8: db $71;X
+L0020D9: db $0C;X
+L0020DA: db $11;X
+L0020DB: db $6D;X
+L0020DC: db $21;X
+L0020DD: db $CD;X
+L0020DE: db $1D;X
+L0020DF: db $1F;X
+L0020E0: db $FA;X
+L0020E1: db $81;X
+L0020E2: db $C8;X
+L0020E3: db $21;X
+L0020E4: db $45;X
+L0020E5: db $21;X
+L0020E6: db $CD;X
+L0020E7: db $71;X
+L0020E8: db $0C;X
+L0020E9: db $11;X
+L0020EA: db $7D;X
+L0020EB: db $21;X
+L0020EC: db $CD;X
+L0020ED: db $1D;X
+L0020EE: db $1F;X
+L0020EF: db $FA;X
+L0020F0: db $81;X
+L0020F1: db $C8;X
+L0020F2: db $21;X
+L0020F3: db $35;X
+L0020F4: db $21;X
+L0020F5: db $CD;X
+L0020F6: db $71;X
+L0020F7: db $0C;X
+L0020F8: db $11;X
+L0020F9: db $8D;X
+L0020FA: db $21;X
+L0020FB: db $CD;X
+L0020FC: db $1D;X
+L0020FD: db $1F;X
+L0020FE: db $3E;X
+L0020FF: db $80;X
+L002100: db $E0;X
+L002101: db $40;X
+L002102: db $06;X
+L002103: db $00;X
+L002104: db $CD;X
+L002105: db $BD;X
+L002106: db $21;X
+L002107: db $21;X
+L002108: db $00;X
+L002109: db $80;X
+L00210A: db $01;X
+L00210B: db $00;X
+L00210C: db $20;X
+L00210D: db $AF;X
+L00210E: db $CD;X
+L00210F: db $B0;X
+L002110: db $0B;X
+L002111: db $F1;X
+L002112: db $CD;X
+L002113: db $B9;X
+L002114: db $0C;X
+L002115: db $CD;X
+L002116: db $90;X
+L002117: db $1F;X
+L002118: db $CD;X
+L002119: db $11;X
+L00211A: db $0E;X
+L00211B: db $01;X
+L00211C: db $04;X
+L00211D: db $00;X
+L00211E: db $CD;X
+L00211F: db $9C;X
+L002120: db $1F;X
+L002121: db $21;X
+L002122: db $5D;X
+L002123: db $21;X
+L002124: db $CD;X
+L002125: db $5A;X
+L002126: db $1F;X
+L002127: db $01;X
+L002128: db $04;X
+L002129: db $00;X
+L00212A: db $CD;X
+L00212B: db $9C;X
+L00212C: db $1F;X
+L00212D: db $CD;X
+L00212E: db $90;X
+L00212F: db $1F;X
+L002130: db $C9;X
+L002131: db $9C;X
+L002132: db $9C;X
+L002133: db $9C;X
+L002134: db $9C;X
+L002135: db $6A;X
+L002136: db $43;X
+L002137: db $6A;X
+L002138: db $43;X
+L002139: db $6A;X
+L00213A: db $43;X
+L00213B: db $6A;X
+L00213C: db $43;X
+L00213D: db $EA;X
+L00213E: db $4B;X
+L00213F: db $EA;X
+L002140: db $4B;X
+L002141: db $EA;X
+L002142: db $4B;X
+L002143: db $EA;X
+L002144: db $4B;X
+L002145: db $EA;X
+L002146: db $5B;X
+L002147: db $EA;X
+L002148: db $5B;X
+L002149: db $EA;X
+L00214A: db $5B;X
+L00214B: db $EA;X
+L00214C: db $5B;X
+L00214D: db $B9;X
+L00214E: db $02;X
+L00214F: db $00;X
+L002150: db $00;X
+L002151: db $00;X
+L002152: db $00;X
+L002153: db $00;X
+L002154: db $00;X
+L002155: db $00;X
+L002156: db $00;X
+L002157: db $00;X
+L002158: db $00;X
+L002159: db $00;X
+L00215A: db $00;X
+L00215B: db $00;X
+L00215C: db $00;X
+L00215D: db $B9;X
+L00215E: db $00;X
+L00215F: db $00;X
+L002160: db $00;X
+L002161: db $00;X
+L002162: db $00;X
+L002163: db $00;X
+L002164: db $00;X
+L002165: db $00;X
+L002166: db $00;X
+L002167: db $00;X
+L002168: db $00;X
+L002169: db $00;X
+L00216A: db $00;X
+L00216B: db $00;X
+L00216C: db $00;X
+L00216D: db $99;X
+L00216E: db $00;X
+L00216F: db $00;X
+L002170: db $00;X
+L002171: db $00;X
+L002172: db $00;X
+L002173: db $00;X
+L002174: db $00;X
+L002175: db $00;X
+L002176: db $00;X
+L002177: db $00;X
+L002178: db $00;X
+L002179: db $00;X
+L00217A: db $00;X
+L00217B: db $00;X
+L00217C: db $00;X
+L00217D: db $99;X
+L00217E: db $01;X
+L00217F: db $00;X
+L002180: db $00;X
+L002181: db $00;X
+L002182: db $00;X
+L002183: db $00;X
+L002184: db $00;X
+L002185: db $00;X
+L002186: db $00;X
+L002187: db $00;X
+L002188: db $00;X
+L002189: db $00;X
+L00218A: db $00;X
+L00218B: db $00;X
+L00218C: db $00;X
+L00218D: db $A1;X
+L00218E: db $00;X
+L00218F: db $00;X
+L002190: db $00;X
+L002191: db $00;X
+L002192: db $00;X
+L002193: db $00;X
+L002194: db $00;X
+L002195: db $00;X
+L002196: db $00;X
+L002197: db $00;X
+L002198: db $00;X
+L002199: db $00;X
+L00219A: db $00;X
+L00219B: db $00;X
+L00219C: db $00;X
+L00219D: db $01;X
+L00219E: db $7B;X
+L00219F: db $6F;X
+L0021A0: db $10;X
+L0021A1: db $42;X
+L0021A2: db $4A;X
+L0021A3: db $29;X
+L0021A4: db $00;X
+L0021A5: db $00;X
+L0021A6: db $10;X
+L0021A7: db $42;X
+L0021A8: db $4A;X
+L0021A9: db $29;X
+L0021AA: db $00;X
+L0021AB: db $00;X
+L0021AC: db $00;X
+L0021AD: db $09;X
+L0021AE: db $7B;X
+L0021AF: db $6F;X
+L0021B0: db $10;X
+L0021B1: db $42;X
+L0021B2: db $4A;X
+L0021B3: db $29;X
+L0021B4: db $00;X
+L0021B5: db $00;X
+L0021B6: db $10;X
+L0021B7: db $42;X
+L0021B8: db $4A;X
+L0021B9: db $29;X
+L0021BA: db $00;X
+L0021BB: db $00;X
+L0021BC: db $00;X
+L0021BD:;C
+	ld   a, [$C833]
+	cp   $03
+	ret  nz
+L0021C3: db $78;X
+L0021C4: db $21;X
+L0021C5: db $DA;X
+L0021C6: db $21;X
+L0021C7: db $CD;X
+L0021C8: db $71;X
+L0021C9: db $0C;X
+L0021CA: db $CD;X
+L0021CB: db $5A;X
+L0021CC: db $1F;X
+L0021CD: db $CD;X
+L0021CE: db $90;X
+L0021CF: db $1F;X
+L0021D0: db $21;X
+L0021D1: db $FE;X
+L0021D2: db $21;X
+L0021D3: db $CD;X
+L0021D4: db $5A;X
+L0021D5: db $1F;X
+L0021D6: db $CD;X
+L0021D7: db $90;X
+L0021D8: db $1F;X
+L0021D9: db $C9;X
+L0021DA: db $DE;X
+L0021DB: db $21;X
+L0021DC: db $EE;X
+L0021DD: db $21;X
+L0021DE: db $01;X
+L0021DF: db $FF;X
+L0021E0: db $7F;X
+L0021E1: db $94;X
+L0021E2: db $52;X
+L0021E3: db $5A;X
+L0021E4: db $08;X
+L0021E5: db $00;X
+L0021E6: db $00;X
+L0021E7: db $50;X
+L0021E8: db $7A;X
+L0021E9: db $00;X
+L0021EA: db $7C;X
+L0021EB: db $00;X
+L0021EC: db $00;X
+L0021ED: db $00;X
+L0021EE: db $01;X
+L0021EF: db $FF;X
+L0021F0: db $7F;X
+L0021F1: db $94;X
+L0021F2: db $52;X
+L0021F3: db $4A;X
+L0021F4: db $29;X
+L0021F5: db $00;X
+L0021F6: db $00;X
+L0021F7: db $50;X
+L0021F8: db $7A;X
+L0021F9: db $00;X
+L0021FA: db $7C;X
+L0021FB: db $00;X
+L0021FC: db $00;X
+L0021FD: db $00;X
+L0021FE: db $21;X
+L0021FF: db $01;X
+L002200: db $01;X
+L002201: db $00;X
+L002202: db $00;X
+L002203: db $00;X
+L002204: db $13;X
+L002205: db $11;X
+L002206: db $00;X
+L002207: db $00;X
+L002208: db $00;X
+L002209: db $00;X
+L00220A: db $00;X
+L00220B: db $00;X
+L00220C: db $00;X
+L00220D: db $00;X
+L00220E:;C
+	xor  a, a
+	ld   [$C835], a
+	ld   a, [$C834]
+	cp   $04
+	ret  nz
+L002218: db $FA;X
+L002219: db $38;X
+L00221A: db $C8;X
+L00221B: db $CB;X
+L00221C: db $47;X
+L00221D: db $C8;X
+L00221E: db $3E;X
+L00221F: db $01;X
+L002220: db $EA;X
+L002221: db $35;X
+L002222: db $C8;X
+L002223: db $C9;X
+L002224: db $FA;X
+L002225: db $33;X
+L002226: db $C8;X
+L002227: db $A7;X
+L002228: db $C8;X
+L002229: db $FA;X
+L00222A: db $41;X
+L00222B: db $C8;X
+L00222C: db $F5;X
+L00222D: db $3E;X
+L00222E: db $27;X
+L00222F: db $CD;X
+L002230: db $B9;X
+L002231: db $0C;X
+L002232: db $21;X
+L002233: db $A4;X
+L002234: db $C8;X
+L002235: db $06;X
+L002236: db $80;X
+L002237: db $CD;X
+L002238: db $4B;X
+L002239: db $22;X
+L00223A: db $CD;X
+L00223B: db $8B;X
+L00223C: db $22;X
+L00223D: db $CD;X
+L00223E: db $6F;X
+L00223F: db $22;X
+L002240: db $23;X
+L002241: db $23;X
+L002242: db $05;X
+L002243: db $C2;X
+L002244: db $37;X
+L002245: db $22;X
+L002246: db $F1;X
+L002247: db $CD;X
+L002248: db $B9;X
+L002249: db $0C;X
+L00224A: db $C9;X
+L00224B: db $2A;X
+L00224C: db $56;X
+L00224D: db $5F;X
+L00224E: db $7B;X
+L00224F: db $E6;X
+L002250: db $1F;X
+L002251: db $EA;X
+L002252: db $D0;X
+L002253: db $C9;X
+L002254: db $AF;X
+L002255: db $EA;X
+L002256: db $D1;X
+L002257: db $C9;X
+L002258: db $7B;X
+L002259: db $E6;X
+L00225A: db $E0;X
+L00225B: db $EA;X
+L00225C: db $D2;X
+L00225D: db $C9;X
+L00225E: db $7A;X
+L00225F: db $E6;X
+L002260: db $03;X
+L002261: db $EA;X
+L002262: db $D3;X
+L002263: db $C9;X
+L002264: db $AF;X
+L002265: db $EA;X
+L002266: db $D4;X
+L002267: db $C9;X
+L002268: db $7A;X
+L002269: db $E6;X
+L00226A: db $7C;X
+L00226B: db $EA;X
+L00226C: db $D5;X
+L00226D: db $C9;X
+L00226E: db $C9;X
+L00226F: db $FA;X
+L002270: db $D2;X
+L002271: db $C9;X
+L002272: db $E6;X
+L002273: db $E0;X
+L002274: db $5F;X
+L002275: db $FA;X
+L002276: db $D3;X
+L002277: db $C9;X
+L002278: db $E6;X
+L002279: db $03;X
+L00227A: db $57;X
+L00227B: db $FA;X
+L00227C: db $D0;X
+L00227D: db $C9;X
+L00227E: db $E6;X
+L00227F: db $1F;X
+L002280: db $B3;X
+L002281: db $FA;X
+L002282: db $D5;X
+L002283: db $C9;X
+L002284: db $E6;X
+L002285: db $7C;X
+L002286: db $B2;X
+L002287: db $7A;X
+L002288: db $32;X
+L002289: db $73;X
+L00228A: db $C9;X
+L00228B: db $E5;X
+L00228C: db $FA;X
+L00228D: db $D0;X
+L00228E: db $C9;X
+L00228F: db $5F;X
+L002290: db $FA;X
+L002291: db $D1;X
+L002292: db $C9;X
+L002293: db $57;X
+L002294: db $06;X
+L002295: db $20;X
+L002296: db $0E;X
+L002297: db $00;X
+L002298: db $21;X
+L002299: db $00;X
+L00229A: db $40;X
+L00229B: db $7E;X
+L00229C: db $BB;X
+L00229D: db $20;X
+L00229E: db $05;X
+L00229F: db $23;X
+L0022A0: db $3A;X
+L0022A1: db $BA;X
+L0022A2: db $20;X
+L0022A3: db $07;X
+L0022A4: db $0C;X
+L0022A5: db $23;X
+L0022A6: db $23;X
+L0022A7: db $05;X
+L0022A8: db $C2;X
+L0022A9: db $9B;X
+L0022AA: db $22;X
+L0022AB: db $79;X
+L0022AC: db $21;X
+L0022AD: db $40;X
+L0022AE: db $40;X
+L0022AF: db $CD;X
+L0022B0: db $71;X
+L0022B1: db $0C;X
+L0022B2: db $7D;X
+L0022B3: db $EA;X
+L0022B4: db $D0;X
+L0022B5: db $C9;X
+L0022B6: db $7C;X
+L0022B7: db $EA;X
+L0022B8: db $D1;X
+L0022B9: db $C9;X
+L0022BA: db $FA;X
+L0022BB: db $D2;X
+L0022BC: db $C9;X
+L0022BD: db $5F;X
+L0022BE: db $FA;X
+L0022BF: db $D3;X
+L0022C0: db $C9;X
+L0022C1: db $57;X
+L0022C2: db $06;X
+L0022C3: db $20;X
+L0022C4: db $0E;X
+L0022C5: db $00;X
+L0022C6: db $21;X
+L0022C7: db $80;X
+L0022C8: db $40;X
+L0022C9: db $7E;X
+L0022CA: db $BB;X
+L0022CB: db $20;X
+L0022CC: db $05;X
+L0022CD: db $23;X
+L0022CE: db $3A;X
+L0022CF: db $BA;X
+L0022D0: db $20;X
+L0022D1: db $07;X
+L0022D2: db $0C;X
+L0022D3: db $23;X
+L0022D4: db $23;X
+L0022D5: db $05;X
+L0022D6: db $C2;X
+L0022D7: db $C9;X
+L0022D8: db $22;X
+L0022D9: db $79;X
+L0022DA: db $21;X
+L0022DB: db $C0;X
+L0022DC: db $40;X
+L0022DD: db $CD;X
+L0022DE: db $71;X
+L0022DF: db $0C;X
+L0022E0: db $7D;X
+L0022E1: db $EA;X
+L0022E2: db $D2;X
+L0022E3: db $C9;X
+L0022E4: db $7C;X
+L0022E5: db $EA;X
+L0022E6: db $D3;X
+L0022E7: db $C9;X
+L0022E8: db $FA;X
+L0022E9: db $D4;X
+L0022EA: db $C9;X
+L0022EB: db $5F;X
+L0022EC: db $FA;X
+L0022ED: db $D5;X
+L0022EE: db $C9;X
+L0022EF: db $57;X
+L0022F0: db $06;X
+L0022F1: db $20;X
+L0022F2: db $0E;X
+L0022F3: db $00;X
+L0022F4: db $21;X
+L0022F5: db $00;X
+L0022F6: db $41;X
+L0022F7: db $7E;X
+L0022F8: db $BB;X
+L0022F9: db $20;X
+L0022FA: db $05;X
+L0022FB: db $23;X
+L0022FC: db $3A;X
+L0022FD: db $BA;X
+L0022FE: db $20;X
+L0022FF: db $07;X
+L002300: db $0C;X
+L002301: db $23;X
+L002302: db $23;X
+L002303: db $05;X
+L002304: db $C2;X
+L002305: db $F7;X
+L002306: db $22;X
+L002307: db $79;X
+L002308: db $21;X
+L002309: db $40;X
+L00230A: db $41;X
+L00230B: db $CD;X
+L00230C: db $71;X
+L00230D: db $0C;X
+L00230E: db $7D;X
+L00230F: db $EA;X
+L002310: db $D4;X
+L002311: db $C9;X
+L002312: db $7C;X
+L002313: db $EA;X
+L002314: db $D5;X
+L002315: db $C9;X
+L002316: db $E1;X
+L002317: db $C9;X
+L002318:;C
+	ld   a, [$CA06]
+	and  a, $03
+	ld   hl, $2324
+	call L000C71
+	jp   hl
+L002324: db $37;X
+L002325: db $23;X
+L002326: db $2C;X
+L002327: db $23;X
+L002328: db $2C;X
+L002329: db $23;X
+L00232A: db $37
+L00232B: db $23
+L00232C: db $3E;X
+L00232D: db $FF;X
+L00232E: db $21;X
+L00232F: db $60;X
+L002330: db $92;X
+L002331: db $01;X
+L002332: db $A0;X
+L002333: db $02;X
+L002334: db $CD;X
+L002335: db $B0;X
+L002336: db $0B;X
+L002337:;I
+	ret  
+L002338:;C
+	ld   a, [$CA06]
+	and  a, $03
+	ld   hl, $2344
+	call L000C71
+	jp   hl
+L002344: db $4C;X
+L002345: db $23;X
+L002346: db $5C;X
+L002347: db $23;X
+L002348: db $5C;X
+L002349: db $23;X
+L00234A: db $4C
+L00234B: db $23
+L00234C:;I
+	ld   a, [$C9EF]
+	and  a, a
+	ret  nz
+L002351: db $AF;X
+L002352: db $21;X
+L002353: db $00;X
+L002354: db $94;X
+L002355: db $01;X
+L002356: db $00;X
+L002357: db $03;X
+L002358: db $CD;X
+L002359: db $B0;X
+L00235A: db $0B;X
+L00235B: db $C9;X
+L00235C: db $FA;X
+L00235D: db $EF;X
+L00235E: db $C9;X
+L00235F: db $A7;X
+L002360: db $C0;X
+L002361: db $AF;X
+L002362: db $21;X
+L002363: db $00;X
+L002364: db $95;X
+L002365: db $01;X
+L002366: db $00;X
+L002367: db $02;X
+L002368: db $CD;X
+L002369: db $B0;X
+L00236A: db $0B;X
+L00236B: db $C9;X
+L00236C: db $AF;X
+L00236D: db $EA;X
+L00236E: db $F0;X
+L00236F: db $C9;X
+L002370: db $EA;X
+L002371: db $EC;X
+L002372: db $C9;X
+L002373: db $EA;X
+L002374: db $ED;X
+L002375: db $C9;X
+L002376: db $EA;X
+L002377: db $F3;X
+L002378: db $C9;X
+L002379: db $EA;X
+L00237A: db $F2;X
+L00237B: db $C9;X
+L00237C: db $EA;X
+L00237D: db $F4;X
+L00237E: db $C9;X
+L00237F: db $FA;X
+L002380: db $F9;X
+L002381: db $C9;X
+L002382: db $EA;X
+L002383: db $E8;X
+L002384: db $C9;X
+L002385: db $EA;X
+L002386: db $EA;X
+L002387: db $C9;X
+L002388: db $FA;X
+L002389: db $FA;X
+L00238A: db $C9;X
+L00238B: db $EA;X
+L00238C: db $E9;X
+L00238D: db $C9;X
+L00238E: db $EA;X
+L00238F: db $EB;X
+L002390: db $C9;X
+L002391: db $FA;X
+L002392: db $E4;X
+L002393: db $C9;X
+L002394: db $EA;X
+L002395: db $EE;X
+L002396: db $C9;X
+L002397: db $3E;X
+L002398: db $01;X
+L002399: db $EA;X
+L00239A: db $F1;X
+L00239B: db $C9;X
+L00239C: db $C9;X
+L00239D:;C
+	and  a, $03
+	ld   hl, $23A6
+	call L000C71
+	jp   hl
+L0023A6: db $AE;X
+L0023A7: db $23;X
+L0023A8: db $DB;X
+L0023A9: db $23;X
+L0023AA: db $03;X
+L0023AB: db $24;X
+L0023AC: db $2B
+L0023AD: db $24
+L0023AE: db $21;X
+L0023AF: db $22;X
+L0023B0: db $9C;X
+L0023B1: db $7D;X
+L0023B2: db $EA;X
+L0023B3: db $F9;X
+L0023B4: db $C9;X
+L0023B5: db $7C;X
+L0023B6: db $EA;X
+L0023B7: db $FA;X
+L0023B8: db $C9;X
+L0023B9: db $3E;X
+L0023BA: db $10;X
+L0023BB: db $EA;X
+L0023BC: db $FE;X
+L0023BD: db $C9;X
+L0023BE: db $3E;X
+L0023BF: db $30;X
+L0023C0: db $EA;X
+L0023C1: db $FF;X
+L0023C2: db $C9;X
+L0023C3: db $21;X
+L0023C4: db $00;X
+L0023C5: db $94;X
+L0023C6: db $7D;X
+L0023C7: db $EA;X
+L0023C8: db $FB;X
+L0023C9: db $C9;X
+L0023CA: db $7C;X
+L0023CB: db $EA;X
+L0023CC: db $FC;X
+L0023CD: db $C9;X
+L0023CE: db $3E;X
+L0023CF: db $40;X
+L0023D0: db $EA;X
+L0023D1: db $FD;X
+L0023D2: db $C9;X
+L0023D3: db $3E;X
+L0023D4: db $08;X
+L0023D5: db $EA;X
+L0023D6: db $02;X
+L0023D7: db $CA;X
+L0023D8: db $C3;X
+L0023D9: db $50;X
+L0023DA: db $24;X
+L0023DB: db $21;X
+L0023DC: db $28;X
+L0023DD: db $9C;X
+L0023DE: db $7D;X
+L0023DF: db $EA;X
+L0023E0: db $F9;X
+L0023E1: db $C9;X
+L0023E2: db $7C;X
+L0023E3: db $EA;X
+L0023E4: db $FA;X
+L0023E5: db $C9;X
+L0023E6: db $3E;X
+L0023E7: db $0C;X
+L0023E8: db $EA;X
+L0023E9: db $FE;X
+L0023EA: db $C9;X
+L0023EB: db $3E;X
+L0023EC: db $20;X
+L0023ED: db $EA;X
+L0023EE: db $FF;X
+L0023EF: db $C9;X
+L0023F0: db $21;X
+L0023F1: db $00;X
+L0023F2: db $95;X
+L0023F3: db $7D;X
+L0023F4: db $EA;X
+L0023F5: db $FB;X
+L0023F6: db $C9;X
+L0023F7: db $7C;X
+L0023F8: db $EA;X
+L0023F9: db $FC;X
+L0023FA: db $C9;X
+L0023FB: db $3E;X
+L0023FC: db $50;X
+L0023FD: db $EA;X
+L0023FE: db $FD;X
+L0023FF: db $C9;X
+L002400: db $C3;X
+L002401: db $50;X
+L002402: db $24;X
+L002403: db $21;X
+L002404: db $21;X
+L002405: db $9C;X
+L002406: db $7D;X
+L002407: db $EA;X
+L002408: db $F9;X
+L002409: db $C9;X
+L00240A: db $7C;X
+L00240B: db $EA;X
+L00240C: db $FA;X
+L00240D: db $C9;X
+L00240E: db $3E;X
+L00240F: db $0C;X
+L002410: db $EA;X
+L002411: db $FE;X
+L002412: db $C9;X
+L002413: db $3E;X
+L002414: db $20;X
+L002415: db $EA;X
+L002416: db $FF;X
+L002417: db $C9;X
+L002418: db $21;X
+L002419: db $00;X
+L00241A: db $95;X
+L00241B: db $7D;X
+L00241C: db $EA;X
+L00241D: db $FB;X
+L00241E: db $C9;X
+L00241F: db $7C;X
+L002420: db $EA;X
+L002421: db $FC;X
+L002422: db $C9;X
+L002423: db $3E;X
+L002424: db $50;X
+L002425: db $EA;X
+L002426: db $FD;X
+L002427: db $C9;X
+L002428: db $C3;X
+L002429: db $50;X
+L00242A: db $24;X
+L00242B:;I
+	ld   hl, $9C21
+	ld   a, l
+	ld   [$C9F9], a
+	ld   a, h
+	ld   [$C9FA], a
+	ld   a, $12
+	ld   [$C9FE], a
+	ld   a, $30
+	ld   [$C9FF], a
+	ld   hl, $9400
+	ld   a, l
+	ld   [$C9FB], a
+	ld   a, h
+	ld   [$C9FC], a
+	ld   a, $40
+	ld   [$C9FD], a
+	ld   a, $01
+	ld   [$C9E4], a
+	ld   hl, $9C00
+	ld   a, l
+	ld   [$CA00], a
+	ld   a, h
+	ld   [$CA01], a
+	ld   a, $07
+	ld   [$CA03], a
+	ld   hl, $9CE9
+	ld   a, l
+	ld   [$CA04], a
+	ld   a, h
+	ld   [$CA05], a
+	ret  
+L002471:;C
+	ld   a, [$CA09]
+	ld   hl, $247B
+	call L000C71
+	jp   hl
+L00247B: db $7F
+L00247C: db $24
+L00247D: db $CE;X
+L00247E: db $24;X
+L00247F:;I
+	ld   a, [$CA02]
+	add  a, a
+	add  a, a
+	add  a, a
+	ld   c, a
+	ld   a, $90
+	sub  a, c
+	ld   [$CA08], a
+	ld   a, $88
+	ld   [$CA0A], a
+	ld   a, $03
+	ld   [$C882], a
+	call L000473
+	ld   a, [$CA03]
+	ldh  [rWX], a
+	ld   a, [$CA0A]
+	ldh  [rWY], a
+L0024A3:;J
+	call L0003C3
+	di   
+	ld   a, [$CA08]
+	ld   c, a
+	ld   a, [$CA0A]
+	cp   a, c
+	jr   z, $24BE
+	jr   c, $24BE
+	sub  a, $04
+	ld   [$CA0A], a
+	ldh  [rWY], a
+	ei   
+	jp   $24A3
+L0024BE:;R
+	ld   a, [$CA08]
+	ld   [$CA0A], a
+	ld   a, [$CA08]
+	ldh  [rWY], a
+	ei   
+	call L0003C3
+	ret  
+L0024CE: db $FA;X
+L0024CF: db $02;X
+L0024D0: db $CA;X
+L0024D1: db $87;X
+L0024D2: db $87;X
+L0024D3: db $87;X
+L0024D4: db $3D;X
+L0024D5: db $C6;X
+L0024D6: db $04;X
+L0024D7: db $EA;X
+L0024D8: db $08;X
+L0024D9: db $CA;X
+L0024DA: db $3E;X
+L0024DB: db $05;X
+L0024DC: db $EA;X
+L0024DD: db $0A;X
+L0024DE: db $CA;X
+L0024DF: db $3E;X
+L0024E0: db $02;X
+L0024E1: db $EA;X
+L0024E2: db $82;X
+L0024E3: db $C8;X
+L0024E4: db $CD;X
+L0024E5: db $73;X
+L0024E6: db $04;X
+L0024E7: db $CD;X
+L0024E8: db $C3;X
+L0024E9: db $03;X
+L0024EA: db $FA;X
+L0024EB: db $08;X
+L0024EC: db $CA;X
+L0024ED: db $4F;X
+L0024EE: db $FA;X
+L0024EF: db $0A;X
+L0024F0: db $CA;X
+L0024F1: db $B9;X
+L0024F2: db $30;X
+L0024F3: db $08;X
+L0024F4: db $C6;X
+L0024F5: db $04;X
+L0024F6: db $EA;X
+L0024F7: db $0A;X
+L0024F8: db $CA;X
+L0024F9: db $C3;X
+L0024FA: db $E7;X
+L0024FB: db $24;X
+L0024FC: db $FA;X
+L0024FD: db $08;X
+L0024FE: db $CA;X
+L0024FF: db $EA;X
+L002500: db $0A;X
+L002501: db $CA;X
+L002502: db $CD;X
+L002503: db $C3;X
+L002504: db $03;X
+L002505: db $C9;X
+L002506: db $FA;X
+L002507: db $0B;X
+L002508: db $CA;X
+L002509: db $A7;X
+L00250A: db $28;X
+L00250B: db $FA;X
+L00250C:;C
+	di   
+	ld   b, $A7
+	ld   c, $90
+	call L000E04
+	xor  a, a
+	ld   [$CA0A], a
+	ld   [$C882], a
+	call L000492
+	ldh  a, [rLCDC]
+	or   a, $02
+	ldh  [rLCDC], a
+	ei   
+	ret  
+L002526: db $FA;X
+L002527: db $F1;X
+L002528: db $C9;X
+L002529: db $B7;X
+L00252A: db $C8;X
+L00252B: db $FA;X
+L00252C: db $41;X
+L00252D: db $C8;X
+L00252E: db $F5;X
+L00252F: db $FA;X
+L002530: db $E5;X
+L002531: db $C9;X
+L002532: db $CD;X
+L002533: db $B9;X
+L002534: db $0C;X
+L002535: db $FA;X
+L002536: db $F0;X
+L002537: db $C9;X
+L002538: db $21;X
+L002539: db $46;X
+L00253A: db $25;X
+L00253B: db $CD;X
+L00253C: db $71;X
+L00253D: db $0C;X
+L00253E: db $CD;X
+L00253F: db $19;X
+L002540: db $08;X
+L002541: db $F1;X
+L002542: db $CD;X
+L002543: db $B9;X
+L002544: db $0C;X
+L002545: db $C9;X
+L002546: db $66;X
+L002547: db $25;X
+L002548: db $1D;X
+L002549: db $27;X
+L00254A: db $30;X
+L00254B: db $27;X
+L00254C: db $58;X
+L00254D: db $27;X
+L00254E: db $C6;X
+L00254F: db $27;X
+L002550: db $63;X
+L002551: db $28;X
+L002552: db $73;X
+L002553: db $28;X
+L002554: db $97;X
+L002555: db $28;X
+L002556: db $DD;X
+L002557: db $28;X
+L002558: db $E3;X
+L002559: db $28;X
+L00255A: db $08;X
+L00255B: db $29;X
+L00255C: db $00;X
+L00255D: db $00;X
+L00255E: db $00;X
+L00255F: db $00;X
+L002560: db $00;X
+L002561: db $00;X
+L002562: db $00;X
+L002563: db $00;X
+L002564: db $00;X
+L002565: db $00;X
+L002566: db $FA;X
+L002567: db $EE;X
+L002568: db $C9;X
+L002569: db $21;X
+L00256A: db $82;X
+L00256B: db $26;X
+L00256C: db $CD;X
+L00256D: db $95;X
+L00256E: db $0C;X
+L00256F: db $5F;X
+L002570: db $FA;X
+L002571: db $F3;X
+L002572: db $C9;X
+L002573: db $3C;X
+L002574: db $EA;X
+L002575: db $F3;X
+L002576: db $C9;X
+L002577: db $BB;X
+L002578: db $D8;X
+L002579: db $AF;X
+L00257A: db $EA;X
+L00257B: db $F3;X
+L00257C: db $C9;X
+L00257D: db $FA;X
+L00257E: db $E6;X
+L00257F: db $C9;X
+L002580: db $6F;X
+L002581: db $FA;X
+L002582: db $E7;X
+L002583: db $C9;X
+L002584: db $67;X
+L002585: db $2A;X
+L002586: db $F5;X
+L002587: db $7D;X
+L002588: db $EA;X
+L002589: db $E6;X
+L00258A: db $C9;X
+L00258B: db $7C;X
+L00258C: db $EA;X
+L00258D: db $E7;X
+L00258E: db $C9;X
+L00258F: db $F1;X
+L002590: db $FE;X
+L002591: db $F0;X
+L002592: db $38;X
+L002593: db $29;X
+L002594: db $E6;X
+L002595: db $0F;X
+L002596: db $21;X
+L002597: db $9D;X
+L002598: db $25;X
+L002599: db $CD;X
+L00259A: db $71;X
+L00259B: db $0C;X
+L00259C: db $E9;X
+L00259D: db $6F;X
+L00259E: db $26;X
+L00259F: db $70;X
+L0025A0: db $26;X
+L0025A1: db $86;X
+L0025A2: db $26;X
+L0025A3: db $96;X
+L0025A4: db $26;X
+L0025A5: db $A1;X
+L0025A6: db $26;X
+L0025A7: db $A7;X
+L0025A8: db $26;X
+L0025A9: db $AD;X
+L0025AA: db $26;X
+L0025AB: db $B2;X
+L0025AC: db $26;X
+L0025AD: db $B8;X
+L0025AE: db $26;X
+L0025AF: db $F8;X
+L0025B0: db $25;X
+L0025B1: db $DB;X
+L0025B2: db $26;X
+L0025B3: db $E5;X
+L0025B4: db $26;X
+L0025B5: db $EF;X
+L0025B6: db $26;X
+L0025B7: db $6F;X
+L0025B8: db $26;X
+L0025B9: db $66;X
+L0025BA: db $26;X
+L0025BB: db $FC;X
+L0025BC: db $26;X
+L0025BD: db $EA;X
+L0025BE: db $F5;X
+L0025BF: db $C9;X
+L0025C0: db $FE;X
+L0025C1: db $E7;X
+L0025C2: db $C2;X
+L0025C3: db $DA;X
+L0025C4: db $25;X
+L0025C5: db $FA;X
+L0025C6: db $E8;X
+L0025C7: db $C9;X
+L0025C8: db $6F;X
+L0025C9: db $FA;X
+L0025CA: db $E9;X
+L0025CB: db $C9;X
+L0025CC: db $67;X
+L0025CD: db $23;X
+L0025CE: db $7D;X
+L0025CF: db $EA;X
+L0025D0: db $E8;X
+L0025D1: db $C9;X
+L0025D2: db $7C;X
+L0025D3: db $EA;X
+L0025D4: db $E9;X
+L0025D5: db $C9;X
+L0025D6: db $CD;X
+L0025D7: db $46;X
+L0025D8: db $29;X
+L0025D9: db $C9;X
+L0025DA: db $CD;X
+L0025DB: db $AE;X
+L0025DC: db $2B;X
+L0025DD: db $3E;X
+L0025DE: db $93;X
+L0025DF: db $CD;X
+L0025E0: db $F5;X
+L0025E1: db $3D;X
+L0025E2: db $C9;X
+L0025E3: db $FA;X
+L0025E4: db $E6;X
+L0025E5: db $C9;X
+L0025E6: db $6F;X
+L0025E7: db $FA;X
+L0025E8: db $E7;X
+L0025E9: db $C9;X
+L0025EA: db $67;X
+L0025EB: db $2A;X
+L0025EC: db $FE;X
+L0025ED: db $F9;X
+L0025EE: db $20;X
+L0025EF: db $08;X
+L0025F0: db $7D;X
+L0025F1: db $EA;X
+L0025F2: db $E6;X
+L0025F3: db $C9;X
+L0025F4: db $7C;X
+L0025F5: db $EA;X
+L0025F6: db $E7;X
+L0025F7: db $C9;X
+L0025F8: db $CD;X
+L0025F9: db $04;X
+L0025FA: db $26;X
+L0025FB: db $CD;X
+L0025FC: db $5B;X
+L0025FD: db $29;X
+L0025FE: db $3E;X
+L0025FF: db $07;X
+L002600: db $EA;X
+L002601: db $F0;X
+L002602: db $C9;X
+L002603: db $C9;X
+L002604: db $FA;X
+L002605: db $EF;X
+L002606: db $C9;X
+L002607: db $21;X
+L002608: db $28;X
+L002609: db $26;X
+L00260A: db $CD;X
+L00260B: db $71;X
+L00260C: db $0C;X
+L00260D: db $FA;X
+L00260E: db $04;X
+L00260F: db $C7;X
+L002610: db $CB;X
+L002611: db $37;X
+L002612: db $E6;X
+L002613: db $01;X
+L002614: db $CD;X
+L002615: db $71;X
+L002616: db $0C;X
+L002617: db $E5;X
+L002618: db $D1;X
+L002619: db $FA;X
+L00261A: db $04;X
+L00261B: db $CA;X
+L00261C: db $6F;X
+L00261D: db $FA;X
+L00261E: db $05;X
+L00261F: db $CA;X
+L002620: db $67;X
+L002621: db $01;X
+L002622: db $02;X
+L002623: db $02;X
+L002624: db $CD;X
+L002625: db $99;X
+L002626: db $0B;X
+L002627: db $C9;X
+L002628: db $2C;X
+L002629: db $26;X
+L00262A: db $30;X
+L00262B: db $26;X
+L00262C: db $5E;X
+L00262D: db $26;X
+L00262E: db $60;X
+L00262F: db $26;X
+L002630: db $62;X
+L002631: db $26;X
+L002632: db $64;X
+L002633: db $26;X
+L002634: db $FA;X
+L002635: db $EF;X
+L002636: db $C9;X
+L002637: db $A7;X
+L002638: db $20;X
+L002639: db $12;X
+L00263A: db $FA;X
+L00263B: db $04;X
+L00263C: db $CA;X
+L00263D: db $6F;X
+L00263E: db $FA;X
+L00263F: db $05;X
+L002640: db $CA;X
+L002641: db $67;X
+L002642: db $11;X
+L002643: db $60;X
+L002644: db $26;X
+L002645: db $01;X
+L002646: db $02;X
+L002647: db $02;X
+L002648: db $CD;X
+L002649: db $99;X
+L00264A: db $0B;X
+L00264B: db $C9;X
+L00264C: db $FA;X
+L00264D: db $04;X
+L00264E: db $CA;X
+L00264F: db $6F;X
+L002650: db $FA;X
+L002651: db $05;X
+L002652: db $CA;X
+L002653: db $67;X
+L002654: db $11;X
+L002655: db $64;X
+L002656: db $26;X
+L002657: db $01;X
+L002658: db $02;X
+L002659: db $02;X
+L00265A: db $CD;X
+L00265B: db $99;X
+L00265C: db $0B;X
+L00265D: db $C9;X
+L00265E: db $7A;X
+L00265F: db $7B;X
+L002660: db $74;X
+L002661: db $74;X
+L002662: db $FA;X
+L002663: db $FB;X
+L002664: db $F4;X
+L002665: db $F4;X
+L002666: db $CD;X
+L002667: db $5B;X
+L002668: db $29;X
+L002669: db $3E;X
+L00266A: db $0A;X
+L00266B: db $EA;X
+L00266C: db $F0;X
+L00266D: db $C9;X
+L00266E: db $C9;X
+L00266F: db $C9;X
+L002670: db $FA;X
+L002671: db $EE;X
+L002672: db $C9;X
+L002673: db $21;X
+L002674: db $82;X
+L002675: db $26;X
+L002676: db $CD;X
+L002677: db $95;X
+L002678: db $0C;X
+L002679: db $EA;X
+L00267A: db $F3;X
+L00267B: db $C9;X
+L00267C: db $3E;X
+L00267D: db $01;X
+L00267E: db $EA;X
+L00267F: db $F0;X
+L002680: db $C9;X
+L002681: db $C9;X
+L002682: db $01;X
+L002683: db $01;X
+L002684: db $04;X
+L002685: db $08;X
+L002686: db $AF;X
+L002687: db $EA;X
+L002688: db $F1;X
+L002689: db $C9;X
+L00268A: db $C3;X
+L00268B: db $70;X
+L00268C: db $29;X
+L00268D: db $3E;X
+L00268E: db $01;X
+L00268F: db $EA;X
+L002690: db $EE;X
+L002691: db $C9;X
+L002692: db $CD;X
+L002693: db $5B;X
+L002694: db $29;X
+L002695: db $C9;X
+L002696: db $3E;X
+L002697: db $1E;X
+L002698: db $EA;X
+L002699: db $F3;X
+L00269A: db $C9;X
+L00269B: db $3E;X
+L00269C: db $01;X
+L00269D: db $EA;X
+L00269E: db $F0;X
+L00269F: db $C9;X
+L0026A0: db $C9;X
+L0026A1: db $3E;X
+L0026A2: db $01;X
+L0026A3: db $EA;X
+L0026A4: db $F2;X
+L0026A5: db $C9;X
+L0026A6: db $C9;X
+L0026A7: db $3E;X
+L0026A8: db $01;X
+L0026A9: db $EA;X
+L0026AA: db $F4;X
+L0026AB: db $C9;X
+L0026AC: db $C9;X
+L0026AD: db $AF;X
+L0026AE: db $EA;X
+L0026AF: db $F1;X
+L0026B0: db $C9;X
+L0026B1: db $C9;X
+L0026B2: db $3E;X
+L0026B3: db $02;X
+L0026B4: db $EA;X
+L0026B5: db $F0;X
+L0026B6: db $C9;X
+L0026B7: db $C9;X
+L0026B8: db $3E;X
+L0026B9: db $03;X
+L0026BA: db $EA;X
+L0026BB: db $F0;X
+L0026BC: db $C9;X
+L0026BD: db $AF;X
+L0026BE: db $EA;X
+L0026BF: db $F6;X
+L0026C0: db $C9;X
+L0026C1: db $CD;X
+L0026C2: db $9F;X
+L0026C3: db $27;X
+L0026C4: db $C9;X
+L0026C5: db $3E;X
+L0026C6: db $0C;X
+L0026C7: db $EA;X
+L0026C8: db $F0;X
+L0026C9: db $C9;X
+L0026CA: db $AF;X
+L0026CB: db $EA;X
+L0026CC: db $F6;X
+L0026CD: db $C9;X
+L0026CE: db $21;X
+L0026CF: db $61;X
+L0026D0: db $9C;X
+L0026D1: db $11;X
+L0026D2: db $7C;X
+L0026D3: db $00;X
+L0026D4: db $01;X
+L0026D5: db $01;X
+L0026D6: db $01;X
+L0026D7: db $CD;X
+L0026D8: db $99;X
+L0026D9: db $0B;X
+L0026DA: db $C9;X
+L0026DB: db $3E;X
+L0026DC: db $08;X
+L0026DD: db $EA;X
+L0026DE: db $F0;X
+L0026DF: db $C9;X
+L0026E0: db $AF;X
+L0026E1: db $EA;X
+L0026E2: db $0C;X
+L0026E3: db $CA;X
+L0026E4: db $C9;X
+L0026E5: db $3E;X
+L0026E6: db $09;X
+L0026E7: db $EA;X
+L0026E8: db $F0;X
+L0026E9: db $C9;X
+L0026EA: db $AF;X
+L0026EB: db $EA;X
+L0026EC: db $0C;X
+L0026ED: db $CA;X
+L0026EE: db $C9;X
+L0026EF: db $3E;X
+L0026F0: db $04;X
+L0026F1: db $EA;X
+L0026F2: db $F0;X
+L0026F3: db $C9;X
+L0026F4: db $AF;X
+L0026F5: db $EA;X
+L0026F6: db $F6;X
+L0026F7: db $C9;X
+L0026F8: db $CD;X
+L0026F9: db $31;X
+L0026FA: db $28;X
+L0026FB: db $C9;X
+L0026FC: db $FA;X
+L0026FD: db $EA;X
+L0026FE: db $C9;X
+L0026FF: db $6F;X
+L002700: db $FA;X
+L002701: db $EB;X
+L002702: db $C9;X
+L002703: db $67;X
+L002704: db $11;X
+L002705: db $20;X
+L002706: db $00;X
+L002707: db $19;X
+L002708: db $7D;X
+L002709: db $EA;X
+L00270A: db $EA;X
+L00270B: db $C9;X
+L00270C: db $7C;X
+L00270D: db $EA;X
+L00270E: db $EB;X
+L00270F: db $C9;X
+L002710: db $7D;X
+L002711: db $EA;X
+L002712: db $E8;X
+L002713: db $C9;X
+L002714: db $7C;X
+L002715: db $EA;X
+L002716: db $E9;X
+L002717: db $C9;X
+L002718: db $AF;X
+L002719: db $EA;X
+L00271A: db $ED;X
+L00271B: db $C9;X
+L00271C: db $C9;X
+L00271D: db $FA;X
+L00271E: db $F3;X
+L00271F: db $C9;X
+L002720: db $B7;X
+L002721: db $20;X
+L002722: db $08;X
+L002723: db $AF;X
+L002724: db $EA;X
+L002725: db $F0;X
+L002726: db $C9;X
+L002727: db $EA;X
+L002728: db $F2;X
+L002729: db $C9;X
+L00272A: db $C9;X
+L00272B: db $3D;X
+L00272C: db $EA;X
+L00272D: db $F3;X
+L00272E: db $C9;X
+L00272F: db $C9;X
+L002730: db $FA;X
+L002731: db $E4;X
+L002732: db $C9;X
+L002733: db $B7;X
+L002734: db $28;X
+L002735: db $0F;X
+L002736: db $FA;X
+L002737: db $EE;X
+L002738: db $C9;X
+L002739: db $B7;X
+L00273A: db $28;X
+L00273B: db $09;X
+L00273C: db $CD;X
+L00273D: db $04;X
+L00273E: db $26;X
+L00273F: db $FA;X
+L002740: db $5E;X
+L002741: db $C8;X
+L002742: db $E6;X
+L002743: db $03;X
+L002744: db $C8;X
+L002745: db $3E;X
+L002746: db $8E;X
+L002747: db $CD;X
+L002748: db $F5;X
+L002749: db $3D;X
+L00274A: db $AF;X
+L00274B: db $EA;X
+L00274C: db $F0;X
+L00274D: db $C9;X
+L00274E: db $EA;X
+L00274F: db $F3;X
+L002750: db $C9;X
+L002751: db $EA;X
+L002752: db $F2;X
+L002753: db $C9;X
+L002754: db $CD;X
+L002755: db $70;X
+L002756: db $29;X
+L002757: db $C9;X
+L002758: db $FA;X
+L002759: db $5E;X
+L00275A: db $C8;X
+L00275B: db $CB;X
+L00275C: db $47;X
+L00275D: db $20;X
+L00275E: db $0D;X
+L00275F: db $CB;X
+L002760: db $4F;X
+L002761: db $20;X
+L002762: db $15;X
+L002763: db $CB;X
+L002764: db $77;X
+L002765: db $20;X
+L002766: db $25;X
+L002767: db $CB;X
+L002768: db $7F;X
+L002769: db $20;X
+L00276A: db $21;X
+L00276B: db $C9;X
+L00276C: db $3E;X
+L00276D: db $8E;X
+L00276E: db $CD;X
+L00276F: db $F5;X
+L002770: db $3D;X
+L002771: db $AF;X
+L002772: db $EA;X
+L002773: db $F0;X
+L002774: db $C9;X
+L002775: db $C3;X
+L002776: db $9F;X
+L002777: db $27;X
+L002778: db $FA;X
+L002779: db $F2;X
+L00277A: db $C9;X
+L00277B: db $B7;X
+L00277C: db $CA;X
+L00277D: db $9F;X
+L00277E: db $27;X
+L00277F: db $3E;X
+L002780: db $01;X
+L002781: db $EA;X
+L002782: db $F6;X
+L002783: db $C9;X
+L002784: db $3E;X
+L002785: db $90;X
+L002786: db $CD;X
+L002787: db $F5;X
+L002788: db $3D;X
+L002789: db $C3;X
+L00278A: db $9F;X
+L00278B: db $27;X
+L00278C: db $3E;X
+L00278D: db $92;X
+L00278E: db $CD;X
+L00278F: db $F5;X
+L002790: db $3D;X
+L002791: db $FA;X
+L002792: db $F6;X
+L002793: db $C9;X
+L002794: db $EA;X
+L002795: db $F7;X
+L002796: db $C9;X
+L002797: db $EE;X
+L002798: db $01;X
+L002799: db $EA;X
+L00279A: db $F6;X
+L00279B: db $C9;X
+L00279C: db $C3;X
+L00279D: db $9F;X
+L00279E: db $27;X
+L00279F: db $FA;X
+L0027A0: db $F6;X
+L0027A1: db $C9;X
+L0027A2: db $21;X
+L0027A3: db $BC;X
+L0027A4: db $27;X
+L0027A5: db $CD;X
+L0027A6: db $71;X
+L0027A7: db $0C;X
+L0027A8: db $E5;X
+L0027A9: db $D1;X
+L0027AA: db $21;X
+L0027AB: db $F9;X
+L0027AC: db $C9;X
+L0027AD: db $CD;X
+L0027AE: db $DE;X
+L0027AF: db $0E;X
+L0027B0: db $2B;X
+L0027B1: db $01;X
+L0027B2: db $40;X
+L0027B3: db $00;X
+L0027B4: db $09;X
+L0027B5: db $01;X
+L0027B6: db $03;X
+L0027B7: db $01;X
+L0027B8: db $CD;X
+L0027B9: db $99;X
+L0027BA: db $0B;X
+L0027BB: db $C9;X
+L0027BC: db $C0;X
+L0027BD: db $27;X
+L0027BE: db $C3;X
+L0027BF: db $27;X
+L0027C0: db $7C;X
+L0027C1: db $7F;X
+L0027C2: db $7F;X
+L0027C3: db $7F;X
+L0027C4: db $7F;X
+L0027C5: db $7C;X
+L0027C6: db $FA;X
+L0027C7: db $5E;X
+L0027C8: db $C8;X
+L0027C9: db $CB;X
+L0027CA: db $47;X
+L0027CB: db $20;X
+L0027CC: db $0D;X
+L0027CD: db $CB;X
+L0027CE: db $4F;X
+L0027CF: db $20;X
+L0027D0: db $15;X
+L0027D1: db $CB;X
+L0027D2: db $77;X
+L0027D3: db $20;X
+L0027D4: db $25;X
+L0027D5: db $CB;X
+L0027D6: db $7F;X
+L0027D7: db $20;X
+L0027D8: db $3D;X
+L0027D9: db $C9;X
+L0027DA: db $3E;X
+L0027DB: db $8E;X
+L0027DC: db $CD;X
+L0027DD: db $F5;X
+L0027DE: db $3D;X
+L0027DF: db $AF;X
+L0027E0: db $EA;X
+L0027E1: db $F0;X
+L0027E2: db $C9;X
+L0027E3: db $C3;X
+L0027E4: db $31;X
+L0027E5: db $28;X
+L0027E6: db $FA;X
+L0027E7: db $F2;X
+L0027E8: db $C9;X
+L0027E9: db $B7;X
+L0027EA: db $CA;X
+L0027EB: db $31;X
+L0027EC: db $28;X
+L0027ED: db $3E;X
+L0027EE: db $03;X
+L0027EF: db $EA;X
+L0027F0: db $F6;X
+L0027F1: db $C9;X
+L0027F2: db $3E;X
+L0027F3: db $90;X
+L0027F4: db $CD;X
+L0027F5: db $F5;X
+L0027F6: db $3D;X
+L0027F7: db $C3;X
+L0027F8: db $31;X
+L0027F9: db $28;X
+L0027FA: db $3E;X
+L0027FB: db $92;X
+L0027FC: db $CD;X
+L0027FD: db $F5;X
+L0027FE: db $3D;X
+L0027FF: db $FA;X
+L002800: db $F6;X
+L002801: db $C9;X
+L002802: db $EA;X
+L002803: db $F7;X
+L002804: db $C9;X
+L002805: db $3D;X
+L002806: db $EA;X
+L002807: db $F6;X
+L002808: db $C9;X
+L002809: db $FE;X
+L00280A: db $FF;X
+L00280B: db $C2;X
+L00280C: db $31;X
+L00280D: db $28;X
+L00280E: db $3E;X
+L00280F: db $02;X
+L002810: db $EA;X
+L002811: db $F6;X
+L002812: db $C9;X
+L002813: db $C3;X
+L002814: db $31;X
+L002815: db $28;X
+L002816: db $3E;X
+L002817: db $92;X
+L002818: db $CD;X
+L002819: db $F5;X
+L00281A: db $3D;X
+L00281B: db $FA;X
+L00281C: db $F6;X
+L00281D: db $C9;X
+L00281E: db $EA;X
+L00281F: db $F7;X
+L002820: db $C9;X
+L002821: db $3C;X
+L002822: db $EA;X
+L002823: db $F6;X
+L002824: db $C9;X
+L002825: db $FE;X
+L002826: db $03;X
+L002827: db $C2;X
+L002828: db $31;X
+L002829: db $28;X
+L00282A: db $AF;X
+L00282B: db $EA;X
+L00282C: db $F6;X
+L00282D: db $C9;X
+L00282E: db $C3;X
+L00282F: db $31;X
+L002830: db $28;X
+L002831: db $FA;X
+L002832: db $F6;X
+L002833: db $C9;X
+L002834: db $21;X
+L002835: db $4E;X
+L002836: db $28;X
+L002837: db $CD;X
+L002838: db $71;X
+L002839: db $0C;X
+L00283A: db $E5;X
+L00283B: db $D1;X
+L00283C: db $21;X
+L00283D: db $F9;X
+L00283E: db $C9;X
+L00283F: db $CD;X
+L002840: db $DE;X
+L002841: db $0E;X
+L002842: db $2B;X
+L002843: db $01;X
+L002844: db $20;X
+L002845: db $00;X
+L002846: db $09;X
+L002847: db $01;X
+L002848: db $05;X
+L002849: db $01;X
+L00284A: db $CD;X
+L00284B: db $99;X
+L00284C: db $0B;X
+L00284D: db $C9;X
+L00284E: db $54;X
+L00284F: db $28;X
+L002850: db $59;X
+L002851: db $28;X
+L002852: db $5E;X
+L002853: db $28;X
+L002854: db $7C;X
+L002855: db $7F;X
+L002856: db $7F;X
+L002857: db $7F;X
+L002858: db $7F;X
+L002859: db $7F;X
+L00285A: db $7F;X
+L00285B: db $7C;X
+L00285C: db $7F;X
+L00285D: db $7F;X
+L00285E: db $7F;X
+L00285F: db $7F;X
+L002860: db $7F;X
+L002861: db $7F;X
+L002862: db $7C;X
+L002863: db $F0;X
+L002864: db $4A;X
+L002865: db $FE;X
+L002866: db $68;X
+L002867: db $20;X
+L002868: db $05;X
+L002869: db $AF;X
+L00286A: db $EA;X
+L00286B: db $F0;X
+L00286C: db $C9;X
+L00286D: db $C9;X
+L00286E: db $D6;X
+L00286F: db $04;X
+L002870: db $E0;X
+L002871: db $4A;X
+L002872: db $C9;X
+L002873: db $FA;X
+L002874: db $F8;X
+L002875: db $C9;X
+L002876: db $B7;X
+L002877: db $20;X
+L002878: db $16;X
+L002879: db $F0;X
+L00287A: db $4A;X
+L00287B: db $FE;X
+L00287C: db $90;X
+L00287D: db $28;X
+L00287E: db $05;X
+L00287F: db $C6;X
+L002880: db $04;X
+L002881: db $E0;X
+L002882: db $4A;X
+L002883: db $C9;X
+L002884: db $AF;X
+L002885: db $EA;X
+L002886: db $F1;X
+L002887: db $C9;X
+L002888: db $F0;X
+L002889: db $40;X
+L00288A: db $E6;X
+L00288B: db $9F;X
+L00288C: db $E0;X
+L00288D: db $40;X
+L00288E: db $C9;X
+L00288F: db $CD;X
+L002890: db $FD;X
+L002891: db $29;X
+L002892: db $AF;X
+L002893: db $EA;X
+L002894: db $F1;X
+L002895: db $C9;X
+L002896: db $C9;X
+L002897: db $FA;X
+L002898: db $E4;X
+L002899: db $C9;X
+L00289A: db $B7;X
+L00289B: db $28;X
+L00289C: db $0F;X
+L00289D: db $FA;X
+L00289E: db $EE;X
+L00289F: db $C9;X
+L0028A0: db $B7;X
+L0028A1: db $28;X
+L0028A2: db $09;X
+L0028A3: db $CD;X
+L0028A4: db $04;X
+L0028A5: db $26;X
+L0028A6: db $FA;X
+L0028A7: db $5E;X
+L0028A8: db $C8;X
+L0028A9: db $E6;X
+L0028AA: db $03;X
+L0028AB: db $C8;X
+L0028AC: db $3E;X
+L0028AD: db $8E;X
+L0028AE: db $CD;X
+L0028AF: db $F5;X
+L0028B0: db $3D;X
+L0028B1: db $FA;X
+L0028B2: db $F9;X
+L0028B3: db $C9;X
+L0028B4: db $EA;X
+L0028B5: db $E8;X
+L0028B6: db $C9;X
+L0028B7: db $EA;X
+L0028B8: db $EA;X
+L0028B9: db $C9;X
+L0028BA: db $FA;X
+L0028BB: db $FA;X
+L0028BC: db $C9;X
+L0028BD: db $EA;X
+L0028BE: db $E9;X
+L0028BF: db $C9;X
+L0028C0: db $EA;X
+L0028C1: db $EB;X
+L0028C2: db $C9;X
+L0028C3: db $AF;X
+L0028C4: db $EA;X
+L0028C5: db $EC;X
+L0028C6: db $C9;X
+L0028C7: db $EA;X
+L0028C8: db $ED;X
+L0028C9: db $C9;X
+L0028CA: db $EA;X
+L0028CB: db $F0;X
+L0028CC: db $C9;X
+L0028CD: db $EA;X
+L0028CE: db $F3;X
+L0028CF: db $C9;X
+L0028D0: db $EA;X
+L0028D1: db $F2;X
+L0028D2: db $C9;X
+L0028D3: db $FA;X
+L0028D4: db $E4;X
+L0028D5: db $C9;X
+L0028D6: db $EA;X
+L0028D7: db $EE;X
+L0028D8: db $C9;X
+L0028D9: db $CD;X
+L0028DA: db $70;X
+L0028DB: db $29;X
+L0028DC: db $C9;X
+L0028DD: db $21;X
+L0028DE: db $0D;X
+L0028DF: db $CA;X
+L0028E0: db $C3;X
+L0028E1: db $E6;X
+L0028E2: db $28;X
+L0028E3: db $21;X
+L0028E4: db $1A;X
+L0028E5: db $CA;X
+L0028E6: db $FA;X
+L0028E7: db $0C;X
+L0028E8: db $CA;X
+L0028E9: db $CD;X
+L0028EA: db $95;X
+L0028EB: db $0C;X
+L0028EC: db $FE;X
+L0028ED: db $E7;X
+L0028EE: db $CA;X
+L0028EF: db $03;X
+L0028F0: db $29;X
+L0028F1: db $EA;X
+L0028F2: db $F5;X
+L0028F3: db $C9;X
+L0028F4: db $CD;X
+L0028F5: db $AE;X
+L0028F6: db $2B;X
+L0028F7: db $FA;X
+L0028F8: db $0C;X
+L0028F9: db $CA;X
+L0028FA: db $3C;X
+L0028FB: db $EA;X
+L0028FC: db $0C;X
+L0028FD: db $CA;X
+L0028FE: db $FE;X
+L0028FF: db $0C;X
+L002900: db $28;X
+L002901: db $01;X
+L002902: db $C9;X
+L002903: db $AF;X
+L002904: db $EA;X
+L002905: db $F0;X
+L002906: db $C9;X
+L002907: db $C9;X
+L002908: db $FA;X
+L002909: db $F9;X
+L00290A: db $C9;X
+L00290B: db $EA;X
+L00290C: db $E8;X
+L00290D: db $C9;X
+L00290E: db $EA;X
+L00290F: db $EA;X
+L002910: db $C9;X
+L002911: db $FA;X
+L002912: db $FA;X
+L002913: db $C9;X
+L002914: db $EA;X
+L002915: db $E9;X
+L002916: db $C9;X
+L002917: db $EA;X
+L002918: db $EB;X
+L002919: db $C9;X
+L00291A: db $AF;X
+L00291B: db $EA;X
+L00291C: db $EC;X
+L00291D: db $C9;X
+L00291E: db $EA;X
+L00291F: db $ED;X
+L002920: db $C9;X
+L002921: db $EA;X
+L002922: db $F0;X
+L002923: db $C9;X
+L002924: db $EA;X
+L002925: db $F3;X
+L002926: db $C9;X
+L002927: db $EA;X
+L002928: db $F2;X
+L002929: db $C9;X
+L00292A: db $FA;X
+L00292B: db $E4;X
+L00292C: db $C9;X
+L00292D: db $EA;X
+L00292E: db $EE;X
+L00292F: db $C9;X
+L002930: db $CD;X
+L002931: db $70;X
+L002932: db $29;X
+L002933: db $C9;X
+L002934: db $FA;X
+L002935: db $FF;X
+L002936: db $C9;X
+L002937: db $47;X
+L002938: db $FA;X
+L002939: db $EC;X
+L00293A: db $C9;X
+L00293B: db $3C;X
+L00293C: db $B8;X
+L00293D: db $38;X
+L00293E: db $04;X
+L00293F: db $FA;X
+L002940: db $FF;X
+L002941: db $C9;X
+L002942: db $3D;X
+L002943: db $EA;X
+L002944: db $EC;X
+L002945: db $C9;X
+L002946: db $FA;X
+L002947: db $FE;X
+L002948: db $C9;X
+L002949: db $47;X
+L00294A: db $FA;X
+L00294B: db $ED;X
+L00294C: db $C9;X
+L00294D: db $3C;X
+L00294E: db $EA;X
+L00294F: db $ED;X
+L002950: db $C9;X
+L002951: db $B8;X
+L002952: db $38;X
+L002953: db $06;X
+L002954: db $CD;X
+L002955: db $FC;X
+L002956: db $26;X
+L002957: db $CD;X
+L002958: db $5B;X
+L002959: db $29;X
+L00295A: db $C9;X
+L00295B: db $FA;X
+L00295C: db $E6;X
+L00295D: db $C9;X
+L00295E: db $6F;X
+L00295F: db $FA;X
+L002960: db $E7;X
+L002961: db $C9;X
+L002962: db $67;X
+L002963: db $2A;X
+L002964: db $FE;X
+L002965: db $FF;X
+L002966: db $C0;X
+L002967: db $7D;X
+L002968: db $EA;X
+L002969: db $E6;X
+L00296A: db $C9;X
+L00296B: db $7C;X
+L00296C: db $EA;X
+L00296D: db $E7;X
+L00296E: db $C9;X
+L00296F: db $C9;X
+L002970: db $CD;X
+L002971: db $C3;X
+L002972: db $03;X
+L002973: db $CD;X
+L002974: db $34;X
+L002975: db $26;X
+L002976: db $FA;X
+L002977: db $02;X
+L002978: db $CA;X
+L002979: db $D6;X
+L00297A: db $02;X
+L00297B: db $4F;X
+L00297C: db $FA;X
+L00297D: db $FE;X
+L00297E: db $C9;X
+L00297F: db $3C;X
+L002980: db $47;X
+L002981: db $21;X
+L002982: db $F9;X
+L002983: db $C9;X
+L002984: db $2A;X
+L002985: db $66;X
+L002986: db $6F;X
+L002987: db $2B;X
+L002988: db $E5;X
+L002989: db $C5;X
+L00298A: db $FA;X
+L00298B: db $EF;X
+L00298C: db $C9;X
+L00298D: db $A7;X
+L00298E: db $20;X
+L00298F: db $07;X
+L002990: db $3E;X
+L002991: db $7F;X
+L002992: db $CD;X
+L002993: db $BD;X
+L002994: db $0B;X
+L002995: db $18;X
+L002996: db $05;X
+L002997: db $3E;X
+L002998: db $FF;X
+L002999: db $CD;X
+L00299A: db $BD;X
+L00299B: db $0B;X
+L00299C: db $CD;X
+L00299D: db $C3;X
+L00299E: db $03;X
+L00299F: db $CD;X
+L0029A0: db $38;X
+L0029A1: db $23;X
+L0029A2: db $C1;X
+L0029A3: db $E1;X
+L0029A4: db $FA;X
+L0029A5: db $34;X
+L0029A6: db $C8;X
+L0029A7: db $FE;X
+L0029A8: db $04;X
+L0029A9: db $C0;X
+L0029AA: db $3E;X
+L0029AB: db $01;X
+L0029AC: db $CD;X
+L0029AD: db $C0;X
+L0029AE: db $0C;X
+L0029AF: db $AF;X
+L0029B0: db $CD;X
+L0029B1: db $BD;X
+L0029B2: db $0B;X
+L0029B3: db $AF;X
+L0029B4: db $CD;X
+L0029B5: db $C0;X
+L0029B6: db $0C;X
+L0029B7: db $C9;X
+L0029B8:;C
+	push af
+	push bc
+	push de
+	push hl
+	ld   a, [$C834]
+	cp   $04
+	jr   nz, $2A01
+L0029C3: db $3E;X
+L0029C4: db $01;X
+L0029C5: db $E0;X
+L0029C6: db $4F;X
+L0029C7: db $FA;X
+L0029C8: db $00;X
+L0029C9: db $CA;X
+L0029CA: db $6F;X
+L0029CB: db $FA;X
+L0029CC: db $01;X
+L0029CD: db $CA;X
+L0029CE: db $67;X
+L0029CF: db $11;X
+L0029D0: db $DE;X
+L0029D1: db $2C;X
+L0029D2: db $01;X
+L0029D3: db $01;X
+L0029D4: db $14;X
+L0029D5: db $CD;X
+L0029D6: db $99;X
+L0029D7: db $0B;X
+L0029D8: db $FA;X
+L0029D9: db $02;X
+L0029DA: db $CA;X
+L0029DB: db $D6;X
+L0029DC: db $02;X
+L0029DD: db $47;X
+L0029DE: db $C5;X
+L0029DF: db $11;X
+L0029E0: db $DE;X
+L0029E1: db $2C;X
+L0029E2: db $01;X
+L0029E3: db $01;X
+L0029E4: db $14;X
+L0029E5: db $CD;X
+L0029E6: db $99;X
+L0029E7: db $0B;X
+L0029E8: db $C1;X
+L0029E9: db $05;X
+L0029EA: db $C2;X
+L0029EB: db $DE;X
+L0029EC: db $29;X
+L0029ED: db $11;X
+L0029EE: db $DE;X
+L0029EF: db $2C;X
+L0029F0: db $01;X
+L0029F1: db $01;X
+L0029F2: db $14;X
+L0029F3: db $CD;X
+L0029F4: db $99;X
+L0029F5: db $0B;X
+L0029F6: db $3E;X
+L0029F7: db $00;X
+L0029F8: db $E0;X
+L0029F9: db $4F;X
+L0029FA: db $C3;X
+L0029FB: db $01;X
+L0029FC: db $2A;X
+L0029FD: db $F5;X
+L0029FE: db $C5;X
+L0029FF: db $D5;X
+L002A00: db $E5;X
+L002A01:;R
+	ld   a, [$C9EF]
+	and  a, a
+	jr   nz, $2A38
+L002A07: db $FA;X
+L002A08: db $00;X
+L002A09: db $CA;X
+L002A0A: db $6F;X
+L002A0B: db $FA;X
+L002A0C: db $01;X
+L002A0D: db $CA;X
+L002A0E: db $67;X
+L002A0F: db $11;X
+L002A10: db $50;X
+L002A11: db $2C;X
+L002A12: db $01;X
+L002A13: db $01;X
+L002A14: db $14;X
+L002A15: db $CD;X
+L002A16: db $99;X
+L002A17: db $0B;X
+L002A18: db $FA;X
+L002A19: db $02;X
+L002A1A: db $CA;X
+L002A1B: db $D6;X
+L002A1C: db $02;X
+L002A1D: db $47;X
+L002A1E: db $C5;X
+L002A1F: db $11;X
+L002A20: db $B4;X
+L002A21: db $2C;X
+L002A22: db $01;X
+L002A23: db $01;X
+L002A24: db $14;X
+L002A25: db $CD;X
+L002A26: db $99;X
+L002A27: db $0B;X
+L002A28: db $C1;X
+L002A29: db $05;X
+L002A2A: db $C2;X
+L002A2B: db $1E;X
+L002A2C: db $2A;X
+L002A2D: db $11;X
+L002A2E: db $64;X
+L002A2F: db $2C;X
+L002A30: db $01;X
+L002A31: db $01;X
+L002A32: db $14;X
+L002A33: db $CD;X
+L002A34: db $99;X
+L002A35: db $0B;X
+L002A36: db $18;X
+L002A37: db $2F;X
+L002A38:;R
+	ld   a, [$CA00]
+	ld   l, a
+	ld   a, [$CA01]
+	ld   h, a
+	ld   de, $2C78
+	ld   bc, $1401
+	call L000B99
+	ld   a, [$CA02]
+	sub  a, $02
+	ld   b, a
+L002A4F:;J
+	push bc
+	ld   de, $2C8C
+	ld   bc, $1401
+	call L000B99
+	pop  bc
+	dec  b
+	jp   nz, $2A4F
+	ld   de, $2CA0
+	ld   bc, $1401
+	call L000B99
+	pop  hl
+	pop  de
+	pop  bc
+	pop  af
+	ret  
+L002A6C:;C
+	ld   a, [$CA00]
+	ld   l, a
+	ld   a, [$CA01]
+	ld   h, a
+	ld   a, [$C9EF]
+	and  a, a
+	jr   nz, $2AB6
+L002A7A: db $E5;X
+L002A7B: db $11;X
+L002A7C: db $50;X
+L002A7D: db $2C;X
+L002A7E: db $01;X
+L002A7F: db $01;X
+L002A80: db $14;X
+L002A81: db $CD;X
+L002A82: db $99;X
+L002A83: db $0B;X
+L002A84: db $D1;X
+L002A85: db $FA;X
+L002A86: db $02;X
+L002A87: db $CA;X
+L002A88: db $6F;X
+L002A89: db $26;X
+L002A8A: db $00;X
+L002A8B: db $2B;X
+L002A8C: db $29;X
+L002A8D: db $29;X
+L002A8E: db $29;X
+L002A8F: db $29;X
+L002A90: db $29;X
+L002A91: db $19;X
+L002A92: db $11;X
+L002A93: db $64;X
+L002A94: db $2C;X
+L002A95: db $01;X
+L002A96: db $01;X
+L002A97: db $14;X
+L002A98: db $CD;X
+L002A99: db $99;X
+L002A9A: db $0B;X
+L002A9B: db $FA;X
+L002A9C: db $F9;X
+L002A9D: db $C9;X
+L002A9E: db $6F;X
+L002A9F: db $FA;X
+L002AA0: db $FA;X
+L002AA1: db $C9;X
+L002AA2: db $67;X
+L002AA3: db $2B;X
+L002AA4: db $FA;X
+L002AA5: db $FE;X
+L002AA6: db $C9;X
+L002AA7: db $47;X
+L002AA8: db $04;X
+L002AA9: db $04;X
+L002AAA: db $FA;X
+L002AAB: db $02;X
+L002AAC: db $CA;X
+L002AAD: db $4F;X
+L002AAE: db $0D;X
+L002AAF: db $0D;X
+L002AB0: db $3E;X
+L002AB1: db $7F;X
+L002AB2: db $CD;X
+L002AB3: db $BD;X
+L002AB4: db $0B;X
+L002AB5: db $C9;X
+L002AB6:;R
+	push hl
+	ld   de, $2C78
+	ld   bc, $1401
+	call L000B99
+	pop  de
+	ld   a, [$CA02]
+	ld   l, a
+	ld   h, $00
+	dec  hl
+	add  hl, hl
+	add  hl, hl
+	add  hl, hl
+	add  hl, hl
+	add  hl, hl
+	add  hl, de
+	ld   de, $2CA0
+	ld   bc, $1401
+	call L000B99
+	ld   a, [$C9F9]
+	ld   l, a
+	ld   a, [$C9FA]
+	ld   h, a
+	dec  hl
+	ld   a, [$C9FE]
+	ld   b, a
+	inc  b
+	inc  b
+	ld   a, [$CA02]
+	ld   c, a
+	dec  c
+	dec  c
+	ld   a, $FF
+	call L000BBD
+	ret  
+L002AF2:;C
+	ld   a, [$C834]
+	cp   $04
+	ret  nz
+L002AF8: db $3E;X
+L002AF9: db $01;X
+L002AFA: db $E0;X
+L002AFB: db $4F;X
+L002AFC: db $FA;X
+L002AFD: db $00;X
+L002AFE: db $CA;X
+L002AFF: db $6F;X
+L002B00: db $FA;X
+L002B01: db $01;X
+L002B02: db $CA;X
+L002B03: db $67;X
+L002B04: db $11;X
+L002B05: db $DE;X
+L002B06: db $2C;X
+L002B07: db $01;X
+L002B08: db $01;X
+L002B09: db $14;X
+L002B0A: db $CD;X
+L002B0B: db $99;X
+L002B0C: db $0B;X
+L002B0D: db $FA;X
+L002B0E: db $00;X
+L002B0F: db $CA;X
+L002B10: db $5F;X
+L002B11: db $FA;X
+L002B12: db $01;X
+L002B13: db $CA;X
+L002B14: db $57;X
+L002B15: db $FA;X
+L002B16: db $02;X
+L002B17: db $CA;X
+L002B18: db $6F;X
+L002B19: db $26;X
+L002B1A: db $00;X
+L002B1B: db $2B;X
+L002B1C: db $29;X
+L002B1D: db $29;X
+L002B1E: db $29;X
+L002B1F: db $29;X
+L002B20: db $29;X
+L002B21: db $19;X
+L002B22: db $11;X
+L002B23: db $DE;X
+L002B24: db $2C;X
+L002B25: db $01;X
+L002B26: db $01;X
+L002B27: db $14;X
+L002B28: db $CD;X
+L002B29: db $99;X
+L002B2A: db $0B;X
+L002B2B: db $FA;X
+L002B2C: db $F9;X
+L002B2D: db $C9;X
+L002B2E: db $6F;X
+L002B2F: db $FA;X
+L002B30: db $FA;X
+L002B31: db $C9;X
+L002B32: db $67;X
+L002B33: db $2B;X
+L002B34: db $FA;X
+L002B35: db $FE;X
+L002B36: db $C9;X
+L002B37: db $47;X
+L002B38: db $04;X
+L002B39: db $04;X
+L002B3A: db $FA;X
+L002B3B: db $02;X
+L002B3C: db $CA;X
+L002B3D: db $4F;X
+L002B3E: db $0D;X
+L002B3F: db $0D;X
+L002B40: db $AF;X
+L002B41: db $CD;X
+L002B42: db $BD;X
+L002B43: db $0B;X
+L002B44: db $3E;X
+L002B45: db $00;X
+L002B46: db $E0;X
+L002B47: db $4F;X
+L002B48: db $C9;X
+L002B49:;C
+	ld   a, [$CA06]
+	and  a, $03
+	ld   hl, $2B55
+	call L000C71
+	jp   hl
+L002B55: db $AD;X
+L002B56: db $2B;X
+L002B57: db $5D;X
+L002B58: db $2B;X
+L002B59: db $85;X
+L002B5A: db $2B;X
+L002B5B: db $AD
+L002B5C: db $2B
+L002B5D: db $FA;X
+L002B5E: db $34;X
+L002B5F: db $C8;X
+L002B60: db $FE;X
+L002B61: db $04;X
+L002B62: db $20;X
+L002B63: db $10;X
+L002B64: db $3E;X
+L002B65: db $01;X
+L002B66: db $E0;X
+L002B67: db $4F;X
+L002B68: db $21;X
+L002B69: db $20;X
+L002B6A: db $9C;X
+L002B6B: db $11;X
+L002B6C: db $DE;X
+L002B6D: db $2C;X
+L002B6E: db $01;X
+L002B6F: db $06;X
+L002B70: db $07;X
+L002B71: db $CD;X
+L002B72: db $99;X
+L002B73: db $0B;X
+L002B74: db $3E;X
+L002B75: db $00;X
+L002B76: db $E0;X
+L002B77: db $4F;X
+L002B78: db $21;X
+L002B79: db $20;X
+L002B7A: db $9C;X
+L002B7B: db $11;X
+L002B7C: db $B4;X
+L002B7D: db $2C;X
+L002B7E: db $01;X
+L002B7F: db $06;X
+L002B80: db $07;X
+L002B81: db $CD;X
+L002B82: db $99;X
+L002B83: db $0B;X
+L002B84: db $C9;X
+L002B85: db $FA;X
+L002B86: db $34;X
+L002B87: db $C8;X
+L002B88: db $FE;X
+L002B89: db $04;X
+L002B8A: db $20;X
+L002B8B: db $10;X
+L002B8C: db $3E;X
+L002B8D: db $01;X
+L002B8E: db $E0;X
+L002B8F: db $4F;X
+L002B90: db $21;X
+L002B91: db $2D;X
+L002B92: db $9C;X
+L002B93: db $11;X
+L002B94: db $DE;X
+L002B95: db $2C;X
+L002B96: db $01;X
+L002B97: db $06;X
+L002B98: db $07;X
+L002B99: db $CD;X
+L002B9A: db $99;X
+L002B9B: db $0B;X
+L002B9C: db $3E;X
+L002B9D: db $00;X
+L002B9E: db $E0;X
+L002B9F: db $4F;X
+L002BA0: db $21;X
+L002BA1: db $2D;X
+L002BA2: db $9C;X
+L002BA3: db $11;X
+L002BA4: db $B4;X
+L002BA5: db $2C;X
+L002BA6: db $01;X
+L002BA7: db $06;X
+L002BA8: db $07;X
+L002BA9: db $CD;X
+L002BAA: db $99;X
+L002BAB: db $0B;X
+L002BAC: db $C9;X
+L002BAD:;I
+	ret  
+L002BAE: db $FA;X
+L002BAF: db $EF;X
+L002BB0: db $C9;X
+L002BB1: db $A7;X
+L002BB2: db $20;X
+L002BB3: db $67;X
+L002BB4: db $FA;X
+L002BB5: db $FB;X
+L002BB6: db $C9;X
+L002BB7: db $5F;X
+L002BB8: db $FA;X
+L002BB9: db $FC;X
+L002BBA: db $C9;X
+L002BBB: db $57;X
+L002BBC: db $FA;X
+L002BBD: db $EC;X
+L002BBE: db $C9;X
+L002BBF: db $6F;X
+L002BC0: db $26;X
+L002BC1: db $00;X
+L002BC2: db $29;X
+L002BC3: db $29;X
+L002BC4: db $29;X
+L002BC5: db $29;X
+L002BC6: db $19;X
+L002BC7: db $E5;X
+L002BC8: db $D1;X
+L002BC9: db $FA;X
+L002BCA: db $F5;X
+L002BCB: db $C9;X
+L002BCC: db $6F;X
+L002BCD: db $26;X
+L002BCE: db $00;X
+L002BCF: db $29;X
+L002BD0: db $29;X
+L002BD1: db $29;X
+L002BD2: db $29;X
+L002BD3: db $01;X
+L002BD4: db $00;X
+L002BD5: db $5A;X
+L002BD6: db $09;X
+L002BD7: db $E5;X
+L002BD8: db $C1;X
+L002BD9: db $21;X
+L002BDA: db $64;X
+L002BDB: db $CB;X
+L002BDC: db $3E;X
+L002BDD: db $07;X
+L002BDE: db $22;X
+L002BDF: db $79;X
+L002BE0: db $22;X
+L002BE1: db $78;X
+L002BE2: db $22;X
+L002BE3: db $7B;X
+L002BE4: db $22;X
+L002BE5: db $7A;X
+L002BE6: db $22;X
+L002BE7: db $3E;X
+L002BE8: db $10;X
+L002BE9: db $22;X
+L002BEA: db $36;X
+L002BEB: db $00;X
+L002BEC: db $FA;X
+L002BED: db $E8;X
+L002BEE: db $C9;X
+L002BEF: db $6F;X
+L002BF0: db $FA;X
+L002BF1: db $E9;X
+L002BF2: db $C9;X
+L002BF3: db $67;X
+L002BF4: db $FA;X
+L002BF5: db $FD;X
+L002BF6: db $C9;X
+L002BF7: db $47;X
+L002BF8: db $FA;X
+L002BF9: db $EC;X
+L002BFA: db $C9;X
+L002BFB: db $80;X
+L002BFC: db $7F;X
+L002BFD: db $EA;X
+L002BFE: db $6E;X
+L002BFF: db $CB;X
+L002C00: db $FA;X
+L002C01: db $E8;X
+L002C02: db $C9;X
+L002C03: db $EA;X
+L002C04: db $6C;X
+L002C05: db $CB;X
+L002C06: db $FA;X
+L002C07: db $E9;X
+L002C08: db $C9;X
+L002C09: db $EA;X
+L002C0A: db $6D;X
+L002C0B: db $CB;X
+L002C0C: db $3E;X
+L002C0D: db $01;X
+L002C0E: db $EA;X
+L002C0F: db $6B;X
+L002C10: db $CB;X
+L002C11: db $FA;X
+L002C12: db $E8;X
+L002C13: db $C9;X
+L002C14: db $6F;X
+L002C15: db $FA;X
+L002C16: db $E9;X
+L002C17: db $C9;X
+L002C18: db $67;X
+L002C19: db $18;X
+L002C1A: db $16;X
+L002C1B: db $FA;X
+L002C1C: db $E8;X
+L002C1D: db $C9;X
+L002C1E: db $6F;X
+L002C1F: db $FA;X
+L002C20: db $E9;X
+L002C21: db $C9;X
+L002C22: db $67;X
+L002C23: db $FA;X
+L002C24: db $F5;X
+L002C25: db $C9;X
+L002C26: db $CD;X
+L002C27: db $FC;X
+L002C28: db $0A;X
+L002C29: db $FA;X
+L002C2A: db $E8;X
+L002C2B: db $C9;X
+L002C2C: db $6F;X
+L002C2D: db $FA;X
+L002C2E: db $E9;X
+L002C2F: db $C9;X
+L002C30: db $67;X
+L002C31: db $FA;X
+L002C32: db $F4;X
+L002C33: db $C9;X
+L002C34: db $B7;X
+L002C35: db $C0;X
+L002C36: db $23;X
+L002C37: db $7D;X
+L002C38: db $EA;X
+L002C39: db $E8;X
+L002C3A: db $C9;X
+L002C3B: db $7C;X
+L002C3C: db $EA;X
+L002C3D: db $E9;X
+L002C3E: db $C9;X
+L002C3F: db $CD;X
+L002C40: db $34;X
+L002C41: db $29;X
+L002C42: db $FA;X
+L002C43: db $FF;X
+L002C44: db $C9;X
+L002C45: db $3D;X
+L002C46: db $47;X
+L002C47: db $FA;X
+L002C48: db $EC;X
+L002C49: db $C9;X
+L002C4A: db $B8;X
+L002C4B: db $D8;X
+L002C4C: db $C8;X
+L002C4D: db $C3;X
+L002C4E: db $E3;X
+L002C4F: db $25;X
+L002C50: db $71;X
+L002C51: db $71;X
+L002C52: db $71;X
+L002C53: db $71;X
+L002C54: db $71;X
+L002C55: db $71;X
+L002C56: db $71;X
+L002C57: db $71;X
+L002C58: db $71;X
+L002C59: db $71;X
+L002C5A: db $71;X
+L002C5B: db $71;X
+L002C5C: db $71;X
+L002C5D: db $71;X
+L002C5E: db $71;X
+L002C5F: db $71;X
+L002C60: db $71;X
+L002C61: db $71;X
+L002C62: db $71;X
+L002C63: db $71;X
+L002C64: db $74;X
+L002C65: db $74;X
+L002C66: db $74;X
+L002C67: db $74;X
+L002C68: db $74;X
+L002C69: db $74;X
+L002C6A: db $74;X
+L002C6B: db $74;X
+L002C6C: db $74;X
+L002C6D: db $74;X
+L002C6E: db $74;X
+L002C6F: db $74;X
+L002C70: db $74;X
+L002C71: db $74;X
+L002C72: db $74;X
+L002C73: db $74;X
+L002C74: db $74;X
+L002C75: db $74;X
+L002C76: db $74;X
+L002C77: db $74;X
+L002C78: db $F1
+L002C79: db $F1
+L002C7A: db $F1
+L002C7B: db $F1
+L002C7C: db $F1
+L002C7D: db $F1
+L002C7E: db $F1
+L002C7F: db $F1
+L002C80: db $F1
+L002C81: db $F1
+L002C82: db $F1
+L002C83: db $F1
+L002C84: db $F1
+L002C85: db $F1
+L002C86: db $F1
+L002C87: db $F1
+L002C88: db $F1
+L002C89: db $F1
+L002C8A: db $F1
+L002C8B: db $F1
+L002C8C: db $FF
+L002C8D: db $FF
+L002C8E: db $FF
+L002C8F: db $FF
+L002C90: db $FF
+L002C91: db $FF
+L002C92: db $FF
+L002C93: db $FF
+L002C94: db $FF
+L002C95: db $FF
+L002C96: db $FF
+L002C97: db $FF
+L002C98: db $FF
+L002C99: db $FF
+L002C9A: db $FF
+L002C9B: db $FF
+L002C9C: db $FF
+L002C9D: db $FF
+L002C9E: db $FF
+L002C9F: db $FF
+L002CA0: db $F4
+L002CA1: db $F4
+L002CA2: db $F4
+L002CA3: db $F4
+L002CA4: db $F4
+L002CA5: db $F4
+L002CA6: db $F4
+L002CA7: db $F4
+L002CA8: db $F4
+L002CA9: db $F4
+L002CAA: db $F4
+L002CAB: db $F4
+L002CAC: db $F4
+L002CAD: db $F4
+L002CAE: db $F4
+L002CAF: db $F4
+L002CB0: db $F4
+L002CB1: db $F4
+L002CB2: db $F4
+L002CB3: db $F4
+L002CB4: db $7F;X
+L002CB5: db $7F;X
+L002CB6: db $7F;X
+L002CB7: db $7F;X
+L002CB8: db $7F;X
+L002CB9: db $7F;X
+L002CBA: db $7F;X
+L002CBB: db $7F;X
+L002CBC: db $7F;X
+L002CBD: db $7F;X
+L002CBE: db $7F;X
+L002CBF: db $7F;X
+L002CC0: db $7F;X
+L002CC1: db $7F;X
+L002CC2: db $7F;X
+L002CC3: db $7F;X
+L002CC4: db $7F;X
+L002CC5: db $7F;X
+L002CC6: db $7F;X
+L002CC7: db $7F;X
+L002CC8: db $7F;X
+L002CC9: db $7F;X
+L002CCA: db $7F;X
+L002CCB: db $7F;X
+L002CCC: db $7F;X
+L002CCD: db $7F;X
+L002CCE: db $7F;X
+L002CCF: db $7F;X
+L002CD0: db $7F;X
+L002CD1: db $7F;X
+L002CD2: db $7F;X
+L002CD3: db $7F;X
+L002CD4: db $7F;X
+L002CD5: db $7F;X
+L002CD6: db $7F;X
+L002CD7: db $7F;X
+L002CD8: db $7F;X
+L002CD9: db $7F;X
+L002CDA: db $7F;X
+L002CDB: db $7F;X
+L002CDC: db $7F;X
+L002CDD: db $7F;X
+L002CDE: db $00;X
+L002CDF: db $00;X
+L002CE0: db $00;X
+L002CE1: db $00;X
+L002CE2: db $00;X
+L002CE3: db $00;X
+L002CE4: db $00;X
+L002CE5: db $00;X
+L002CE6: db $00;X
+L002CE7: db $00;X
+L002CE8: db $00;X
+L002CE9: db $00;X
+L002CEA: db $00;X
+L002CEB: db $00;X
+L002CEC: db $00;X
+L002CED: db $00;X
+L002CEE: db $00;X
+L002CEF: db $00;X
+L002CF0: db $00;X
+L002CF1: db $00;X
+L002CF2: db $00;X
+L002CF3: db $00;X
+L002CF4: db $00;X
+L002CF5: db $00;X
+L002CF6: db $00;X
+L002CF7: db $00;X
+L002CF8: db $00;X
+L002CF9: db $00;X
+L002CFA: db $00;X
+L002CFB: db $00;X
+L002CFC: db $00;X
+L002CFD: db $00;X
+L002CFE: db $00;X
+L002CFF: db $00;X
+L002D00: db $00;X
+L002D01: db $00;X
+L002D02: db $00;X
+L002D03: db $00;X
+L002D04: db $00;X
+L002D05: db $00;X
+L002D06: db $00;X
+L002D07: db $00;X
+L002D08: db $FA;X
+L002D09: db $E9;X
+L002D0A: db $C6;X
+L002D0B: db $E6;X
+L002D0C: db $FD;X
+L002D0D: db $EA;X
+L002D0E: db $E9;X
+L002D0F: db $C6;X
+L002D10: db $3E;X
+L002D11: db $00;X
+L002D12: db $C3;X
+L002D13: db $B7;X
+L002D14: db $2D;X
+L002D15: db $FA;X
+L002D16: db $E9;X
+L002D17: db $C6;X
+L002D18: db $E6;X
+L002D19: db $FE;X
+L002D1A: db $EA;X
+L002D1B: db $E9;X
+L002D1C: db $C6;X
+L002D1D: db $3E;X
+L002D1E: db $01;X
+L002D1F: db $C3;X
+L002D20: db $B7;X
+L002D21: db $2D;X
+L002D22: db $3E;X
+L002D23: db $02;X
+L002D24: db $C3;X
+L002D25: db $B7;X
+L002D26: db $2D;X
+L002D27: db $3E;X
+L002D28: db $04;X
+L002D29: db $C3;X
+L002D2A: db $B7;X
+L002D2B: db $2D;X
+L002D2C: db $3E;X
+L002D2D: db $05;X
+L002D2E: db $C3;X
+L002D2F: db $B7;X
+L002D30: db $2D;X
+L002D31: db $FA;X
+L002D32: db $E9;X
+L002D33: db $C6;X
+L002D34: db $F6;X
+L002D35: db $02;X
+L002D36: db $EA;X
+L002D37: db $E9;X
+L002D38: db $C6;X
+L002D39: db $3E;X
+L002D3A: db $3C;X
+L002D3B: db $21;X
+L002D3C: db $AF;X
+L002D3D: db $60;X
+L002D3E: db $CD;X
+L002D3F: db $1B;X
+L002D40: db $08;X
+L002D41: db $3E;X
+L002D42: db $00;X
+L002D43: db $C3;X
+L002D44: db $31;X
+L002D45: db $2F;X
+L002D46: db $FA;X
+L002D47: db $E9;X
+L002D48: db $C6;X
+L002D49: db $F6;X
+L002D4A: db $01;X
+L002D4B: db $EA;X
+L002D4C: db $E9;X
+L002D4D: db $C6;X
+L002D4E: db $3E;X
+L002D4F: db $01;X
+L002D50: db $C3;X
+L002D51: db $31;X
+L002D52: db $2F;X
+L002D53: db $3E;X
+L002D54: db $02;X
+L002D55: db $C3;X
+L002D56: db $31;X
+L002D57: db $2F;X
+L002D58: db $3E;X
+L002D59: db $04;X
+L002D5A: db $C3;X
+L002D5B: db $31;X
+L002D5C: db $2F;X
+L002D5D: db $3E;X
+L002D5E: db $05;X
+L002D5F: db $C3;X
+L002D60: db $31;X
+L002D61: db $2F;X
+L002D62: db $3E;X
+L002D63: db $00;X
+L002D64: db $C3;X
+L002D65: db $B4;X
+L002D66: db $2E;X
+L002D67: db $3E;X
+L002D68: db $01;X
+L002D69: db $C3;X
+L002D6A: db $B4;X
+L002D6B: db $2E;X
+L002D6C: db $3E;X
+L002D6D: db $02;X
+L002D6E: db $C3;X
+L002D6F: db $B4;X
+L002D70: db $2E;X
+L002D71: db $3E;X
+L002D72: db $03;X
+L002D73: db $C3;X
+L002D74: db $B4;X
+L002D75: db $2E;X
+L002D76: db $3E;X
+L002D77: db $04;X
+L002D78: db $C3;X
+L002D79: db $B4;X
+L002D7A: db $2E;X
+L002D7B: db $3E;X
+L002D7C: db $00;X
+L002D7D: db $CD;X
+L002D7E: db $A9;X
+L002D7F: db $2D;X
+L002D80: db $EA;X
+L002D81: db $F5;X
+L002D82: db $C6;X
+L002D83: db $C9;X
+L002D84: db $3E;X
+L002D85: db $01;X
+L002D86: db $CD;X
+L002D87: db $A9;X
+L002D88: db $2D;X
+L002D89: db $EA;X
+L002D8A: db $F5;X
+L002D8B: db $C6;X
+L002D8C: db $C9;X
+L002D8D: db $3E;X
+L002D8E: db $02;X
+L002D8F: db $CD;X
+L002D90: db $A9;X
+L002D91: db $2D;X
+L002D92: db $EA;X
+L002D93: db $F5;X
+L002D94: db $C6;X
+L002D95: db $C9;X
+L002D96: db $3E;X
+L002D97: db $05;X
+L002D98: db $CD;X
+L002D99: db $A9;X
+L002D9A: db $2D;X
+L002D9B: db $EA;X
+L002D9C: db $F5;X
+L002D9D: db $C6;X
+L002D9E: db $C9;X
+L002D9F: db $21;X
+L002DA0: db $27;X
+L002DA1: db $C2;X
+L002DA2: db $01;X
+L002DA3: db $E1;X
+L002DA4: db $04;X
+L002DA5: db $CD;X
+L002DA6: db $D7;X
+L002DA7: db $0F;X
+L002DA8: db $C9;X
+L002DA9: db $F5;X
+L002DAA: db $CD;X
+L002DAB: db $FF;X
+L002DAC: db $2D;X
+L002DAD: db $D1;X
+L002DAE: db $B7;X
+L002DAF: db $C8;X
+L002DB0: db $7A;X
+L002DB1: db $CD;X
+L002DB2: db $B7;X
+L002DB3: db $2D;X
+L002DB4: db $3E;X
+L002DB5: db $01;X
+L002DB6: db $C9;X
+L002DB7: db $FE;X
+L002DB8: db $01;X
+L002DB9: db $38;X
+L002DBA: db $0D;X
+L002DBB: db $28;X
+L002DBC: db $13;X
+L002DBD: db $FE;X
+L002DBE: db $02;X
+L002DBF: db $28;X
+L002DC0: db $17;X
+L002DC1: db $FE;X
+L002DC2: db $05;X
+L002DC3: db $38;X
+L002DC4: db $1B;X
+L002DC5: db $28;X
+L002DC6: db $21;X
+L002DC7: db $C9;X
+L002DC8: db $21;X
+L002DC9: db $00;X
+L002DCA: db $A0;X
+L002DCB: db $01;X
+L002DCC: db $00;X
+L002DCD: db $0C;X
+L002DCE: db $18;X
+L002DCF: db $1E;X
+L002DD0: db $21;X
+L002DD1: db $00;X
+L002DD2: db $AC;X
+L002DD3: db $01;X
+L002DD4: db $00;X
+L002DD5: db $06;X
+L002DD6: db $18;X
+L002DD7: db $16;X
+L002DD8: db $21;X
+L002DD9: db $00;X
+L002DDA: db $B3;X
+L002DDB: db $01;X
+L002DDC: db $00;X
+L002DDD: db $04;X
+L002DDE: db $18;X
+L002DDF: db $0E;X
+L002DE0: db $21;X
+L002DE1: db $00;X
+L002DE2: db $B7;X
+L002DE3: db $01;X
+L002DE4: db $00;X
+L002DE5: db $01;X
+L002DE6: db $18;X
+L002DE7: db $06;X
+L002DE8: db $21;X
+L002DE9: db $00;X
+L002DEA: db $B8;X
+L002DEB: db $01;X
+L002DEC: db $00;X
+L002DED: db $07;X
+L002DEE: db $AF;X
+L002DEF: db $EA;X
+L002DF0: db $00;X
+L002DF1: db $40;X
+L002DF2: db $3E;X
+L002DF3: db $0A;X
+L002DF4: db $EA;X
+L002DF5: db $00;X
+L002DF6: db $00;X
+L002DF7: db $CD;X
+L002DF8: db $D7;X
+L002DF9: db $0F;X
+L002DFA: db $AF;X
+L002DFB: db $EA;X
+L002DFC: db $00;X
+L002DFD: db $00;X
+L002DFE: db $C9;X
+L002DFF: db $F5;X
+L002E00: db $FE;X
+L002E01: db $01;X
+L002E02: db $38;X
+L002E03: db $0B;X
+L002E04: db $28;X
+L002E05: db $14;X
+L002E06: db $FE;X
+L002E07: db $02;X
+L002E08: db $28;X
+L002E09: db $1B;X
+L002E0A: db $FE;X
+L002E0B: db $05;X
+L002E0C: db $28;X
+L002E0D: db $22;X
+L002E0E: db $C9;X
+L002E0F: db $21;X
+L002E10: db $00;X
+L002E11: db $A0;X
+L002E12: db $11;X
+L002E13: db $FE;X
+L002E14: db $0B;X
+L002E15: db $01;X
+L002E16: db $FD;X
+L002E17: db $0B;X
+L002E18: db $18;X
+L002E19: db $1F;X
+L002E1A: db $21;X
+L002E1B: db $00;X
+L002E1C: db $AC;X
+L002E1D: db $11;X
+L002E1E: db $FE;X
+L002E1F: db $06;X
+L002E20: db $01;X
+L002E21: db $FD;X
+L002E22: db $06;X
+L002E23: db $18;X
+L002E24: db $14;X
+L002E25: db $21;X
+L002E26: db $00;X
+L002E27: db $B3;X
+L002E28: db $11;X
+L002E29: db $FE;X
+L002E2A: db $03;X
+L002E2B: db $01;X
+L002E2C: db $FD;X
+L002E2D: db $03;X
+L002E2E: db $18;X
+L002E2F: db $09;X
+L002E30: db $21;X
+L002E31: db $00;X
+L002E32: db $B8;X
+L002E33: db $11;X
+L002E34: db $FE;X
+L002E35: db $06;X
+L002E36: db $01;X
+L002E37: db $FD;X
+L002E38: db $06;X
+L002E39: db $D5;X
+L002E3A: db $3E;X
+L002E3B: db $00;X
+L002E3C: db $EA;X
+L002E3D: db $00;X
+L002E3E: db $40;X
+L002E3F: db $3E;X
+L002E40: db $0A;X
+L002E41: db $EA;X
+L002E42: db $00;X
+L002E43: db $00;X
+L002E44: db $E5;X
+L002E45: db $09;X
+L002E46: db $3A;X
+L002E47: db $5F;X
+L002E48: db $3A;X
+L002E49: db $57;X
+L002E4A: db $FA;X
+L002E4B: db $4F;X
+L002E4C: db $01;X
+L002E4D: db $BB;X
+L002E4E: db $20;X
+L002E4F: db $21;X
+L002E50: db $FA;X
+L002E51: db $4E;X
+L002E52: db $01;X
+L002E53: db $BA;X
+L002E54: db $20;X
+L002E55: db $1B;X
+L002E56: db $3A;X
+L002E57: db $1E;X
+L002E58: db $54;X
+L002E59: db $BB;X
+L002E5A: db $20;X
+L002E5B: db $15;X
+L002E5C: db $3A;X
+L002E5D: db $1E;X
+L002E5E: db $49;X
+L002E5F: db $BB;X
+L002E60: db $20;X
+L002E61: db $0F;X
+L002E62: db $3A;X
+L002E63: db $1E;X
+L002E64: db $4E;X
+L002E65: db $BB;X
+L002E66: db $20;X
+L002E67: db $09;X
+L002E68: db $7E;X
+L002E69: db $1E;X
+L002E6A: db $55;X
+L002E6B: db $BB;X
+L002E6C: db $20;X
+L002E6D: db $03;X
+L002E6E: db $E1;X
+L002E6F: db $18;X
+L002E70: db $0A;X
+L002E71: db $E1;X
+L002E72: db $D1;X
+L002E73: db $F1;X
+L002E74: db $AF;X
+L002E75: db $EA;X
+L002E76: db $00;X
+L002E77: db $00;X
+L002E78: db $3E;X
+L002E79: db $01;X
+L002E7A: db $C9;X
+L002E7B: db $E5;X
+L002E7C: db $2A;X
+L002E7D: db $5F;X
+L002E7E: db $16;X
+L002E7F: db $00;X
+L002E80: db $2A;X
+L002E81: db $83;X
+L002E82: db $5F;X
+L002E83: db $7A;X
+L002E84: db $CE;X
+L002E85: db $00;X
+L002E86: db $57;X
+L002E87: db $0B;X
+L002E88: db $79;X
+L002E89: db $B0;X
+L002E8A: db $20;X
+L002E8B: db $F4;X
+L002E8C: db $E1;X
+L002E8D: db $C1;X
+L002E8E: db $E5;X
+L002E8F: db $D5;X
+L002E90: db $09;X
+L002E91: db $2A;X
+L002E92: db $57;X
+L002E93: db $5E;X
+L002E94: db $C1;X
+L002E95: db $E1;X
+L002E96: db $78;X
+L002E97: db $BA;X
+L002E98: db $20;X
+L002E99: db $D9;X
+L002E9A: db $79;X
+L002E9B: db $BB;X
+L002E9C: db $20;X
+L002E9D: db $D5;X
+L002E9E: db $F1;X
+L002E9F: db $FE;X
+L002EA0: db $02;X
+L002EA1: db $28;X
+L002EA2: db $0B;X
+L002EA3: db $FE;X
+L002EA4: db $05;X
+L002EA5: db $28;X
+L002EA6: db $07;X
+L002EA7: db $11;X
+L002EA8: db $E3;X
+L002EA9: db $04;X
+L002EAA: db $19;X
+L002EAB: db $2A;X
+L002EAC: db $4F;X
+L002EAD: db $46;X
+L002EAE: db $AF;X
+L002EAF: db $EA;X
+L002EB0: db $00;X
+L002EB1: db $00;X
+L002EB2: db $AF;X
+L002EB3: db $C9;X
+L002EB4: db $FE;X
+L002EB5: db $01;X
+L002EB6: db $38;X
+L002EB7: db $34;X
+L002EB8: db $28;X
+L002EB9: db $11;X
+L002EBA: db $FE;X
+L002EBB: db $03;X
+L002EBC: db $38;X
+L002EBD: db $18;X
+L002EBE: db $28;X
+L002EBF: db $21;X
+L002EC0: db $21;X
+L002EC1: db $00;X
+L002EC2: db $B7;X
+L002EC3: db $11;X
+L002EC4: db $00;X
+L002EC5: db $C0;X
+L002EC6: db $01;X
+L002EC7: db $00;X
+L002EC8: db $01;X
+L002EC9: db $18;X
+L002ECA: db $4F;X
+L002ECB: db $21;X
+L002ECC: db $00;X
+L002ECD: db $AD;X
+L002ECE: db $11;X
+L002ECF: db $27;X
+L002ED0: db $C2;X
+L002ED1: db $01;X
+L002ED2: db $C6;X
+L002ED3: db $05;X
+L002ED4: db $18;X
+L002ED5: db $44;X
+L002ED6: db $21;X
+L002ED7: db $00;X
+L002ED8: db $B3;X
+L002ED9: db $11;X
+L002EDA: db $78;X
+L002EDB: db $CB;X
+L002EDC: db $01;X
+L002EDD: db $0D;X
+L002EDE: db $03;X
+L002EDF: db $18;X
+L002EE0: db $39;X
+L002EE1: db $21;X
+L002EE2: db $00;X
+L002EE3: db $AC;X
+L002EE4: db $11;X
+L002EE5: db $00;X
+L002EE6: db $DE;X
+L002EE7: db $01;X
+L002EE8: db $00;X
+L002EE9: db $01;X
+L002EEA: db $18;X
+L002EEB: db $2E;X
+L002EEC: db $21;X
+L002EED: db $00;X
+L002EEE: db $A5;X
+L002EEF: db $11;X
+L002EF0: db $00;X
+L002EF1: db $B8;X
+L002EF2: db $01;X
+L002EF3: db $F8;X
+L002EF4: db $06;X
+L002EF5: db $3E;X
+L002EF6: db $00;X
+L002EF7: db $EA;X
+L002EF8: db $00;X
+L002EF9: db $40;X
+L002EFA: db $3E;X
+L002EFB: db $0A;X
+L002EFC: db $EA;X
+L002EFD: db $00;X
+L002EFE: db $00;X
+L002EFF: db $2A;X
+L002F00: db $12;X
+L002F01: db $13;X
+L002F02: db $0B;X
+L002F03: db $79;X
+L002F04: db $B0;X
+L002F05: db $20;X
+L002F06: db $F8;X
+L002F07: db $3E;X
+L002F08: db $05;X
+L002F09: db $21;X
+L002F0A: db $00;X
+L002F0B: db $B8;X
+L002F0C: db $CD;X
+L002F0D: db $C8;X
+L002F0E: db $2F;X
+L002F0F: db $21;X
+L002F10: db $00;X
+L002F11: db $A0;X
+L002F12: db $11;X
+L002F13: db $27;X
+L002F14: db $C2;X
+L002F15: db $01;X
+L002F16: db $E1;X
+L002F17: db $04;X
+L002F18: db $18;X
+L002F19: db $0A;X
+L002F1A: db $3E;X
+L002F1B: db $00;X
+L002F1C: db $EA;X
+L002F1D: db $00;X
+L002F1E: db $40;X
+L002F1F: db $3E;X
+L002F20: db $0A;X
+L002F21: db $EA;X
+L002F22: db $00;X
+L002F23: db $00;X
+L002F24: db $2A;X
+L002F25: db $12;X
+L002F26: db $13;X
+L002F27: db $0B;X
+L002F28: db $79;X
+L002F29: db $B0;X
+L002F2A: db $20;X
+L002F2B: db $F8;X
+L002F2C: db $AF;X
+L002F2D: db $EA;X
+L002F2E: db $00;X
+L002F2F: db $00;X
+L002F30: db $C9;X
+L002F31: db $F5;X
+L002F32: db $FE;X
+L002F33: db $01;X
+L002F34: db $38;X
+L002F35: db $19;X
+L002F36: db $28;X
+L002F37: db $3D;X
+L002F38: db $FE;X
+L002F39: db $02;X
+L002F3A: db $28;X
+L002F3B: db $5C;X
+L002F3C: db $FE;X
+L002F3D: db $05;X
+L002F3E: db $38;X
+L002F3F: db $63;X
+L002F40: db $AF;X
+L002F41: db $EA;X
+L002F42: db $00;X
+L002F43: db $40;X
+L002F44: db $3E;X
+L002F45: db $0A;X
+L002F46: db $EA;X
+L002F47: db $00;X
+L002F48: db $00;X
+L002F49: db $F1;X
+L002F4A: db $21;X
+L002F4B: db $00;X
+L002F4C: db $B8;X
+L002F4D: db $18;X
+L002F4E: db $71;X
+L002F4F: db $21;X
+L002F50: db $00;X
+L002F51: db $A5;X
+L002F52: db $11;X
+L002F53: db $00;X
+L002F54: db $B8;X
+L002F55: db $01;X
+L002F56: db $F8;X
+L002F57: db $06;X
+L002F58: db $AF;X
+L002F59: db $EA;X
+L002F5A: db $00;X
+L002F5B: db $40;X
+L002F5C: db $3E;X
+L002F5D: db $0A;X
+L002F5E: db $EA;X
+L002F5F: db $00;X
+L002F60: db $00;X
+L002F61: db $1A;X
+L002F62: db $22;X
+L002F63: db $13;X
+L002F64: db $0B;X
+L002F65: db $79;X
+L002F66: db $B0;X
+L002F67: db $20;X
+L002F68: db $F8;X
+L002F69: db $21;X
+L002F6A: db $00;X
+L002F6B: db $A0;X
+L002F6C: db $E5;X
+L002F6D: db $11;X
+L002F6E: db $27;X
+L002F6F: db $C2;X
+L002F70: db $01;X
+L002F71: db $E1;X
+L002F72: db $04;X
+L002F73: db $18;X
+L002F74: db $41;X
+L002F75: db $21;X
+L002F76: db $00;X
+L002F77: db $AC;X
+L002F78: db $E5;X
+L002F79: db $11;X
+L002F7A: db $00;X
+L002F7B: db $DE;X
+L002F7C: db $01;X
+L002F7D: db $00;X
+L002F7E: db $01;X
+L002F7F: db $AF;X
+L002F80: db $EA;X
+L002F81: db $00;X
+L002F82: db $40;X
+L002F83: db $3E;X
+L002F84: db $0A;X
+L002F85: db $EA;X
+L002F86: db $00;X
+L002F87: db $00;X
+L002F88: db $1A;X
+L002F89: db $22;X
+L002F8A: db $13;X
+L002F8B: db $0B;X
+L002F8C: db $79;X
+L002F8D: db $B0;X
+L002F8E: db $20;X
+L002F8F: db $F8;X
+L002F90: db $11;X
+L002F91: db $27;X
+L002F92: db $C2;X
+L002F93: db $01;X
+L002F94: db $C6;X
+L002F95: db $05;X
+L002F96: db $18;X
+L002F97: db $1E;X
+L002F98: db $21;X
+L002F99: db $00;X
+L002F9A: db $B3;X
+L002F9B: db $11;X
+L002F9C: db $78;X
+L002F9D: db $CB;X
+L002F9E: db $01;X
+L002F9F: db $0D;X
+L002FA0: db $03;X
+L002FA1: db $18;X
+L002FA2: db $09;X
+L002FA3: db $21;X
+L002FA4: db $00;X
+L002FA5: db $B7;X
+L002FA6: db $11;X
+L002FA7: db $00;X
+L002FA8: db $C0;X
+L002FA9: db $01;X
+L002FAA: db $00;X
+L002FAB: db $01;X
+L002FAC: db $AF;X
+L002FAD: db $EA;X
+L002FAE: db $00;X
+L002FAF: db $40;X
+L002FB0: db $3E;X
+L002FB1: db $0A;X
+L002FB2: db $EA;X
+L002FB3: db $00;X
+L002FB4: db $00;X
+L002FB5: db $E5;X
+L002FB6: db $1A;X
+L002FB7: db $22;X
+L002FB8: db $13;X
+L002FB9: db $0B;X
+L002FBA: db $79;X
+L002FBB: db $B0;X
+L002FBC: db $20;X
+L002FBD: db $F8;X
+L002FBE: db $E1;X
+L002FBF: db $F1;X
+L002FC0: db $CD;X
+L002FC1: db $C8;X
+L002FC2: db $2F;X
+L002FC3: db $AF;X
+L002FC4: db $EA;X
+L002FC5: db $00;X
+L002FC6: db $00;X
+L002FC7: db $C9;X
+L002FC8: db $FE;X
+L002FC9: db $01;X
+L002FCA: db $38;X
+L002FCB: db $0D;X
+L002FCC: db $28;X
+L002FCD: db $17;X
+L002FCE: db $FE;X
+L002FCF: db $02;X
+L002FD0: db $28;X
+L002FD1: db $1F;X
+L002FD2: db $FE;X
+L002FD3: db $05;X
+L002FD4: db $38;X
+L002FD5: db $27;X
+L002FD6: db $28;X
+L002FD7: db $31;X
+L002FD8: db $C9;X
+L002FD9: db $01;X
+L002FDA: db $FE;X
+L002FDB: db $0B;X
+L002FDC: db $C5;X
+L002FDD: db $01;X
+L002FDE: db $FD;X
+L002FDF: db $0B;X
+L002FE0: db $11;X
+L002FE1: db $F8;X
+L002FE2: db $0B;X
+L002FE3: db $18;X
+L002FE4: db $2E;X
+L002FE5: db $01;X
+L002FE6: db $FE;X
+L002FE7: db $06;X
+L002FE8: db $C5;X
+L002FE9: db $01;X
+L002FEA: db $FD;X
+L002FEB: db $06;X
+L002FEC: db $11;X
+L002FED: db $F8;X
+L002FEE: db $06;X
+L002FEF: db $18;X
+L002FF0: db $22;X
+L002FF1: db $01;X
+L002FF2: db $FE;X
+L002FF3: db $03;X
+L002FF4: db $C5;X
+L002FF5: db $01;X
+L002FF6: db $FD;X
+L002FF7: db $03;X
+L002FF8: db $11;X
+L002FF9: db $F8;X
+L002FFA: db $03;X
+L002FFB: db $18;X
+L002FFC: db $16;X
+L002FFD: db $01;X
+L002FFE: db $FE;X
+L002FFF: db $00;X
+L003000: db $C5;X
+L003001: db $01;X
+L003002: db $FD;X
+L003003: db $00;X
+L003004: db $11;X
+L003005: db $F8;X
+L003006: db $00;X
+L003007: db $18;X
+L003008: db $0A;X
+L003009: db $01;X
+L00300A: db $FE;X
+L00300B: db $06;X
+L00300C: db $C5;X
+L00300D: db $01;X
+L00300E: db $FD;X
+L00300F: db $06;X
+L003010: db $11;X
+L003011: db $F8;X
+L003012: db $06;X
+L003013: db $E5;X
+L003014: db $19;X
+L003015: db $3E;X
+L003016: db $55;X
+L003017: db $22;X
+L003018: db $3E;X
+L003019: db $4E;X
+L00301A: db $22;X
+L00301B: db $3E;X
+L00301C: db $49;X
+L00301D: db $22;X
+L00301E: db $3E;X
+L00301F: db $54;X
+L003020: db $22;X
+L003021: db $FA;X
+L003022: db $4E;X
+L003023: db $01;X
+L003024: db $22;X
+L003025: db $FA;X
+L003026: db $4F;X
+L003027: db $01;X
+L003028: db $77;X
+L003029: db $E1;X
+L00302A: db $E5;X
+L00302B: db $2A;X
+L00302C: db $5F;X
+L00302D: db $16;X
+L00302E: db $00;X
+L00302F: db $2A;X
+L003030: db $83;X
+L003031: db $5F;X
+L003032: db $7A;X
+L003033: db $CE;X
+L003034: db $00;X
+L003035: db $57;X
+L003036: db $0B;X
+L003037: db $79;X
+L003038: db $B0;X
+L003039: db $20;X
+L00303A: db $F4;X
+L00303B: db $E1;X
+L00303C: db $C1;X
+L00303D: db $09;X
+L00303E: db $7A;X
+L00303F: db $22;X
+L003040: db $73;X
+L003041: db $C9;X
+L003042: db $AF;X
+L003043: db $EA;X
+L003044: db $00;X
+L003045: db $40;X
+L003046: db $3E;X
+L003047: db $0A;X
+L003048: db $EA;X
+L003049: db $00;X
+L00304A: db $00;X
+L00304B: db $3E;X
+L00304C: db $05;X
+L00304D: db $21;X
+L00304E: db $00;X
+L00304F: db $B8;X
+L003050: db $CD;X
+L003051: db $C8;X
+L003052: db $2F;X
+L003053: db $AF;X
+L003054: db $EA;X
+L003055: db $00;X
+L003056: db $00;X
+L003057: db $C9;X
+L003058:;C
+	ld   hl, $C000
+	ld   c, $08
+	ld   de, $0020
+	xor  a, a
+L003061:;R
+	ld   [hl], a
+	add  hl, de
+	dec  c
+	jr   nz, L003061
+	ret  
+L003067: db $21;X
+L003068: db $00;X
+L003069: db $C0;X
+L00306A: db $11;X
+L00306B: db $27;X
+L00306C: db $C1;X
+L00306D: db $01;X
+L00306E: db $00;X
+L00306F: db $01;X
+L003070: db $CD;X
+L003071: db $E3;X
+L003072: db $0F;X
+L003073: db $C9;X
+L003074: db $21;X
+L003075: db $00;X
+L003076: db $C0;X
+L003077: db $11;X
+L003078: db $27;X
+L003079: db $C1;X
+L00307A: db $01;X
+L00307B: db $00;X
+L00307C: db $01;X
+L00307D: db $CD;X
+L00307E: db $EC;X
+L00307F: db $0F;X
+L003080: db $C9;X
+L003081: db $21;X
+L003082: db $02;X
+L003083: db $C0;X
+L003084: db $06;X
+L003085: db $08;X
+L003086: db $11;X
+L003087: db $20;X
+L003088: db $00;X
+L003089: db $3E;X
+L00308A: db $FE;X
+L00308B: db $77;X
+L00308C: db $19;X
+L00308D: db $05;X
+L00308E: db $C2;X
+L00308F: db $8B;X
+L003090: db $30;X
+L003091: db $CD;X
+L003092: db $C3;X
+L003093: db $03;X
+L003094: db $CD;X
+L003095: db $B1;X
+L003096: db $32;X
+L003097: db $CD;X
+L003098: db $B3;X
+L003099: db $08;X
+L00309A: db $C9;X
+L00309B: db $4F;X
+L00309C: db $FA;X
+L00309D: db $41;X
+L00309E: db $C8;X
+L00309F: db $F5;X
+L0030A0: db $79;X
+L0030A1: db $CD;X
+L0030A2: db $B9;X
+L0030A3: db $0C;X
+L0030A4: db $7E;X
+L0030A5: db $47;X
+L0030A6: db $E5;X
+L0030A7: db $CD;X
+L0030A8: db $51;X
+L0030A9: db $32;X
+L0030AA: db $C1;X
+L0030AB: db $7C;X
+L0030AC: db $FE;X
+L0030AD: db $FF;X
+L0030AE: db $20;X
+L0030AF: db $03;X
+L0030B0: db $C3;X
+L0030B1: db $71;X
+L0030B2: db $31;X
+L0030B3: db $0A;X
+L0030B4: db $77;X
+L0030B5: db $B7;X
+L0030B6: db $28;X
+L0030B7: db $F8;X
+L0030B8: db $E5;X
+L0030B9: db $23;X
+L0030BA: db $3D;X
+L0030BB: db $5F;X
+L0030BC: db $03;X
+L0030BD: db $0A;X
+L0030BE: db $22;X
+L0030BF: db $03;X
+L0030C0: db $3E;X
+L0030C1: db $FF;X
+L0030C2: db $22;X
+L0030C3: db $3E;X
+L0030C4: db $00;X
+L0030C5: db $22;X
+L0030C6: db $0A;X
+L0030C7: db $22;X
+L0030C8: db $03;X
+L0030C9: db $0A;X
+L0030CA: db $22;X
+L0030CB: db $EA;X
+L0030CC: db $05;X
+L0030CD: db $C1;X
+L0030CE: db $57;X
+L0030CF: db $03;X
+L0030D0: db $0A;X
+L0030D1: db $22;X
+L0030D2: db $03;X
+L0030D3: db $D5;X
+L0030D4: db $FA;X
+L0030D5: db $41;X
+L0030D6: db $C8;X
+L0030D7: db $F5;X
+L0030D8: db $3E;X
+L0030D9: db $03;X
+L0030DA: db $CD;X
+L0030DB: db $B9;X
+L0030DC: db $0C;X
+L0030DD: db $E5;X
+L0030DE: db $16;X
+L0030DF: db $00;X
+L0030E0: db $21;X
+L0030E1: db $00;X
+L0030E2: db $40;X
+L0030E3: db $19;X
+L0030E4: db $19;X
+L0030E5: db $19;X
+L0030E6: db $19;X
+L0030E7: db $19;X
+L0030E8: db $19;X
+L0030E9: db $19;X
+L0030EA: db $19;X
+L0030EB: db $19;X
+L0030EC: db $19;X
+L0030ED: db $E5;X
+L0030EE: db $D1;X
+L0030EF: db $E1;X
+L0030F0: db $1A;X
+L0030F1: db $22;X
+L0030F2: db $EA;X
+L0030F3: db $23;X
+L0030F4: db $C1;X
+L0030F5: db $13;X
+L0030F6: db $13;X
+L0030F7: db $1A;X
+L0030F8: db $22;X
+L0030F9: db $13;X
+L0030FA: db $1A;X
+L0030FB: db $22;X
+L0030FC: db $13;X
+L0030FD: db $1A;X
+L0030FE: db $22;X
+L0030FF: db $13;X
+L003100: db $1A;X
+L003101: db $22;X
+L003102: db $13;X
+L003103: db $AF;X
+L003104: db $22;X
+L003105: db $22;X
+L003106: db $22;X
+L003107: db $22;X
+L003108: db $C5;X
+L003109: db $1A;X
+L00310A: db $4F;X
+L00310B: db $13;X
+L00310C: db $1A;X
+L00310D: db $47;X
+L00310E: db $13;X
+L00310F: db $1A;X
+L003110: db $B7;X
+L003111: db $C4;X
+L003112: db $68;X
+L003113: db $32;X
+L003114: db $C1;X
+L003115: db $F1;X
+L003116: db $CD;X
+L003117: db $B9;X
+L003118: db $0C;X
+L003119: db $3E;X
+L00311A: db $00;X
+L00311B: db $22;X
+L00311C: db $0A;X
+L00311D: db $22;X
+L00311E: db $03;X
+L00311F: db $3E;X
+L003120: db $00;X
+L003121: db $22;X
+L003122: db $0A;X
+L003123: db $22;X
+L003124: db $03;X
+L003125: db $D1;X
+L003126: db $7A;X
+L003127: db $E6;X
+L003128: db $01;X
+L003129: db $20;X
+L00312A: db $30;X
+L00312B: db $AF;X
+L00312C: db $22;X
+L00312D: db $22;X
+L00312E: db $22;X
+L00312F: db $22;X
+L003130: db $0A;X
+L003131: db $CB;X
+L003132: db $27;X
+L003133: db $CB;X
+L003134: db $27;X
+L003135: db $CB;X
+L003136: db $27;X
+L003137: db $CB;X
+L003138: db $27;X
+L003139: db $22;X
+L00313A: db $0A;X
+L00313B: db $CB;X
+L00313C: db $2F;X
+L00313D: db $CB;X
+L00313E: db $2F;X
+L00313F: db $CB;X
+L003140: db $2F;X
+L003141: db $CB;X
+L003142: db $2F;X
+L003143: db $22;X
+L003144: db $03;X
+L003145: db $0A;X
+L003146: db $CB;X
+L003147: db $27;X
+L003148: db $CB;X
+L003149: db $27;X
+L00314A: db $CB;X
+L00314B: db $27;X
+L00314C: db $CB;X
+L00314D: db $27;X
+L00314E: db $22;X
+L00314F: db $0A;X
+L003150: db $CB;X
+L003151: db $2F;X
+L003152: db $CB;X
+L003153: db $2F;X
+L003154: db $CB;X
+L003155: db $2F;X
+L003156: db $CB;X
+L003157: db $2F;X
+L003158: db $22;X
+L003159: db $18;X
+L00315A: db $10;X
+L00315B: db $3E;X
+L00315C: db $00;X
+L00315D: db $22;X
+L00315E: db $0A;X
+L00315F: db $22;X
+L003160: db $03;X
+L003161: db $3E;X
+L003162: db $00;X
+L003163: db $22;X
+L003164: db $0A;X
+L003165: db $22;X
+L003166: db $AF;X
+L003167: db $22;X
+L003168: db $22;X
+L003169: db $22;X
+L00316A: db $22;X
+L00316B: db $AF;X
+L00316C: db $22;X
+L00316D: db $22;X
+L00316E: db $22;X
+L00316F: db $77;X
+L003170: db $E1;X
+L003171: db $F1;X
+L003172: db $CD;X
+L003173: db $B9;X
+L003174: db $0C;X
+L003175: db $C9;X
+L003176: db $4F;X
+L003177: db $FA;X
+L003178: db $41;X
+L003179: db $C8;X
+L00317A: db $F5;X
+L00317B: db $79;X
+L00317C: db $CD;X
+L00317D: db $B9;X
+L00317E: db $0C;X
+L00317F: db $06;X
+L003180: db $00;X
+L003181: db $E5;X
+L003182: db $CD;X
+L003183: db $51;X
+L003184: db $32;X
+L003185: db $C1;X
+L003186: db $7C;X
+L003187: db $FE;X
+L003188: db $FF;X
+L003189: db $20;X
+L00318A: db $03;X
+L00318B: db $C3;X
+L00318C: db $4C;X
+L00318D: db $32;X
+L00318E: db $0A;X
+L00318F: db $77;X
+L003190: db $B7;X
+L003191: db $28;X
+L003192: db $F8;X
+L003193: db $E5;X
+L003194: db $23;X
+L003195: db $3D;X
+L003196: db $5F;X
+L003197: db $03;X
+L003198: db $0A;X
+L003199: db $22;X
+L00319A: db $03;X
+L00319B: db $3E;X
+L00319C: db $FF;X
+L00319D: db $22;X
+L00319E: db $3E;X
+L00319F: db $00;X
+L0031A0: db $22;X
+L0031A1: db $0A;X
+L0031A2: db $22;X
+L0031A3: db $03;X
+L0031A4: db $0A;X
+L0031A5: db $22;X
+L0031A6: db $EA;X
+L0031A7: db $05;X
+L0031A8: db $C1;X
+L0031A9: db $57;X
+L0031AA: db $03;X
+L0031AB: db $0A;X
+L0031AC: db $22;X
+L0031AD: db $03;X
+L0031AE: db $D5;X
+L0031AF: db $FA;X
+L0031B0: db $41;X
+L0031B1: db $C8;X
+L0031B2: db $F5;X
+L0031B3: db $3E;X
+L0031B4: db $03;X
+L0031B5: db $CD;X
+L0031B6: db $B9;X
+L0031B7: db $0C;X
+L0031B8: db $E5;X
+L0031B9: db $16;X
+L0031BA: db $00;X
+L0031BB: db $21;X
+L0031BC: db $00;X
+L0031BD: db $40;X
+L0031BE: db $19;X
+L0031BF: db $19;X
+L0031C0: db $19;X
+L0031C1: db $19;X
+L0031C2: db $19;X
+L0031C3: db $19;X
+L0031C4: db $19;X
+L0031C5: db $19;X
+L0031C6: db $19;X
+L0031C7: db $19;X
+L0031C8: db $E5;X
+L0031C9: db $D1;X
+L0031CA: db $E1;X
+L0031CB: db $1A;X
+L0031CC: db $22;X
+L0031CD: db $EA;X
+L0031CE: db $23;X
+L0031CF: db $C1;X
+L0031D0: db $13;X
+L0031D1: db $13;X
+L0031D2: db $1A;X
+L0031D3: db $22;X
+L0031D4: db $13;X
+L0031D5: db $1A;X
+L0031D6: db $22;X
+L0031D7: db $13;X
+L0031D8: db $1A;X
+L0031D9: db $22;X
+L0031DA: db $13;X
+L0031DB: db $1A;X
+L0031DC: db $22;X
+L0031DD: db $13;X
+L0031DE: db $AF;X
+L0031DF: db $22;X
+L0031E0: db $22;X
+L0031E1: db $22;X
+L0031E2: db $22;X
+L0031E3: db $C5;X
+L0031E4: db $1A;X
+L0031E5: db $4F;X
+L0031E6: db $13;X
+L0031E7: db $1A;X
+L0031E8: db $47;X
+L0031E9: db $13;X
+L0031EA: db $1A;X
+L0031EB: db $B7;X
+L0031EC: db $C4;X
+L0031ED: db $68;X
+L0031EE: db $32;X
+L0031EF: db $C1;X
+L0031F0: db $F1;X
+L0031F1: db $CD;X
+L0031F2: db $B9;X
+L0031F3: db $0C;X
+L0031F4: db $3E;X
+L0031F5: db $00;X
+L0031F6: db $22;X
+L0031F7: db $0A;X
+L0031F8: db $22;X
+L0031F9: db $03;X
+L0031FA: db $3E;X
+L0031FB: db $00;X
+L0031FC: db $22;X
+L0031FD: db $0A;X
+L0031FE: db $22;X
+L0031FF: db $03;X
+L003200: db $D1;X
+L003201: db $7A;X
+L003202: db $E6;X
+L003203: db $01;X
+L003204: db $20;X
+L003205: db $30;X
+L003206: db $AF;X
+L003207: db $22;X
+L003208: db $22;X
+L003209: db $22;X
+L00320A: db $22;X
+L00320B: db $0A;X
+L00320C: db $CB;X
+L00320D: db $27;X
+L00320E: db $CB;X
+L00320F: db $27;X
+L003210: db $CB;X
+L003211: db $27;X
+L003212: db $CB;X
+L003213: db $27;X
+L003214: db $22;X
+L003215: db $0A;X
+L003216: db $CB;X
+L003217: db $2F;X
+L003218: db $CB;X
+L003219: db $2F;X
+L00321A: db $CB;X
+L00321B: db $2F;X
+L00321C: db $CB;X
+L00321D: db $2F;X
+L00321E: db $22;X
+L00321F: db $03;X
+L003220: db $0A;X
+L003221: db $CB;X
+L003222: db $27;X
+L003223: db $CB;X
+L003224: db $27;X
+L003225: db $CB;X
+L003226: db $27;X
+L003227: db $CB;X
+L003228: db $27;X
+L003229: db $22;X
+L00322A: db $0A;X
+L00322B: db $CB;X
+L00322C: db $2F;X
+L00322D: db $CB;X
+L00322E: db $2F;X
+L00322F: db $CB;X
+L003230: db $2F;X
+L003231: db $CB;X
+L003232: db $2F;X
+L003233: db $22;X
+L003234: db $18;X
+L003235: db $10;X
+L003236: db $3E;X
+L003237: db $00;X
+L003238: db $22;X
+L003239: db $0A;X
+L00323A: db $22;X
+L00323B: db $03;X
+L00323C: db $3E;X
+L00323D: db $00;X
+L00323E: db $22;X
+L00323F: db $0A;X
+L003240: db $22;X
+L003241: db $AF;X
+L003242: db $22;X
+L003243: db $22;X
+L003244: db $22;X
+L003245: db $22;X
+L003246: db $AF;X
+L003247: db $22;X
+L003248: db $22;X
+L003249: db $22;X
+L00324A: db $77;X
+L00324B: db $E1;X
+L00324C: db $F1;X
+L00324D: db $CD;X
+L00324E: db $B9;X
+L00324F: db $0C;X
+L003250: db $C9;X
+L003251: db $21;X
+L003252: db $00;X
+L003253: db $C0;X
+L003254: db $0E;X
+L003255: db $08;X
+L003256: db $11;X
+L003257: db $20;X
+L003258: db $00;X
+L003259: db $7E;X
+L00325A: db $B7;X
+L00325B: db $28;X
+L00325C: db $0A;X
+L00325D: db $B8;X
+L00325E: db $28;X
+L00325F: db $07;X
+L003260: db $19;X
+L003261: db $0D;X
+L003262: db $20;X
+L003263: db $F5;X
+L003264: db $3E;X
+L003265: db $FF;X
+L003266: db $67;X
+L003267: db $C9;X
+L003268: db $E5;X
+L003269: db $D5;X
+L00326A: db $FA;X
+L00326B: db $05;X
+L00326C: db $C1;X
+L00326D: db $E6;X
+L00326E: db $10;X
+L00326F: db $20;X
+L003270: db $1A;X
+L003271: db $1A;X
+L003272: db $13;X
+L003273: db $F5;X
+L003274: db $C5;X
+L003275: db $1A;X
+L003276: db $4F;X
+L003277: db $06;X
+L003278: db $00;X
+L003279: db $21;X
+L00327A: db $E4;X
+L00327B: db $C8;X
+L00327C: db $09;X
+L00327D: db $E5;X
+L00327E: db $D1;X
+L00327F: db $E1;X
+L003280: db $09;X
+L003281: db $F1;X
+L003282: db $4F;X
+L003283: db $06;X
+L003284: db $00;X
+L003285: db $FA;X
+L003286: db $23;X
+L003287: db $C1;X
+L003288: db $CD;X
+L003289: db $F5;X
+L00328A: db $0F;X
+L00328B: db $D1;X
+L00328C: db $E1;X
+L00328D: db $C9;X
+L00328E: db $CD;X
+L00328F: db $98;X
+L003290: db $32;X
+L003291: db $FE;X
+L003292: db $FF;X
+L003293: db $28;X
+L003294: db $02;X
+L003295: db $AF;X
+L003296: db $77;X
+L003297: db $C9;X
+L003298: db $C5;X
+L003299: db $D5;X
+L00329A: db $47;X
+L00329B: db $21;X
+L00329C: db $00;X
+L00329D: db $C0;X
+L00329E: db $0E;X
+L00329F: db $08;X
+L0032A0: db $11;X
+L0032A1: db $20;X
+L0032A2: db $00;X
+L0032A3: db $7E;X
+L0032A4: db $B8;X
+L0032A5: db $28;X
+L0032A6: db $07;X
+L0032A7: db $19;X
+L0032A8: db $0D;X
+L0032A9: db $20;X
+L0032AA: db $F8;X
+L0032AB: db $3E;X
+L0032AC: db $FF;X
+L0032AD: db $7F;X
+L0032AE: db $D1;X
+L0032AF: db $C1;X
+L0032B0: db $C9;X
+L0032B1:;C
+	ld   a, [$C122]
+	and  a, a
+	ret  nz
+	ld   a, $01
+	ld   [$DFA0], a
+	ld   de, $DF00
+	ld   a, e
+	ld   [$C120], a
+	ld   a, d
+	ld   [$C121], a
+	ld   c, $08
+	ld   hl, $C000
+L0032CB:;R
+	ld   a, [hl]
+	or   a, a
+	jr   z, L0032FD
+L0032CF: db $C5;X
+L0032D0: db $E5;X
+L0032D1: db $11;X
+L0032D2: db $05;X
+L0032D3: db $00;X
+L0032D4: db $19;X
+L0032D5: db $7E;X
+L0032D6: db $E6;X
+L0032D7: db $06;X
+L0032D8: db $20;X
+L0032D9: db $21;X
+L0032DA: db $E1;X
+L0032DB: db $E5;X
+L0032DC: db $11;X
+L0032DD: db $00;X
+L0032DE: db $C1;X
+L0032DF: db $01;X
+L0032E0: db $20;X
+L0032E1: db $00;X
+L0032E2: db $CD;X
+L0032E3: db $E3;X
+L0032E4: db $0F;X
+L0032E5: db $FA;X
+L0032E6: db $41;X
+L0032E7: db $C8;X
+L0032E8: db $F5;X
+L0032E9: db $CD;X
+L0032EA: db $20;X
+L0032EB: db $33;X
+L0032EC: db $F1;X
+L0032ED: db $CD;X
+L0032EE: db $B9;X
+L0032EF: db $0C;X
+L0032F0: db $E1;X
+L0032F1: db $E5;X
+L0032F2: db $11;X
+L0032F3: db $00;X
+L0032F4: db $C1;X
+L0032F5: db $01;X
+L0032F6: db $20;X
+L0032F7: db $00;X
+L0032F8: db $CD;X
+L0032F9: db $EC;X
+L0032FA: db $0F;X
+L0032FB: db $E1;X
+L0032FC: db $C1;X
+L0032FD:;R
+	ld   de, $0020
+	add  hl, de
+	dec  c
+	jr   nz, L0032CB
+	ld   a, [$C120]
+	ld   l, a
+	ld   a, [$C121]
+	ld   h, a
+	ld   de, $DFA0
+L00330F:;R
+	call $176B
+	cp   $01
+	jr   nz, L00331A
+	xor  a, a
+	ldi  [hl], a
+	jr   L00330F
+L00331A:;R
+	ld   a, $00
+	ld   [$DFA0], a
+	ret  
+L003320: db $FA;X
+L003321: db $07;X
+L003322: db $C1;X
+L003323: db $CD;X
+L003324: db $B9;X
+L003325: db $0C;X
+L003326: db $CD;X
+L003327: db $96;X
+L003328: db $33;X
+L003329: db $FA;X
+L00332A: db $01;X
+L00332B: db $C1;X
+L00332C: db $4F;X
+L00332D: db $FA;X
+L00332E: db $02;X
+L00332F: db $C1;X
+L003330: db $B9;X
+L003331: db $C4;X
+L003332: db $0D;X
+L003333: db $34;X
+L003334: db $FA;X
+L003335: db $02;X
+L003336: db $C1;X
+L003337: db $FE;X
+L003338: db $FF;X
+L003339: db $C8;X
+L00333A: db $FA;X
+L00333B: db $0C;X
+L00333C: db $C1;X
+L00333D: db $6F;X
+L00333E: db $FA;X
+L00333F: db $0D;X
+L003340: db $C1;X
+L003341: db $67;X
+L003342: db $2A;X
+L003343: db $FE;X
+L003344: db $FF;X
+L003345: db $20;X
+L003346: db $0D;X
+L003347: db $2A;X
+L003348: db $66;X
+L003349: db $6F;X
+L00334A: db $7D;X
+L00334B: db $EA;X
+L00334C: db $0C;X
+L00334D: db $C1;X
+L00334E: db $7C;X
+L00334F: db $EA;X
+L003350: db $0D;X
+L003351: db $C1;X
+L003352: db $18;X
+L003353: db $EE;X
+L003354: db $4F;X
+L003355: db $FA;X
+L003356: db $03;X
+L003357: db $C1;X
+L003358: db $B9;X
+L003359: db $20;X
+L00335A: db $10;X
+L00335B: db $AF;X
+L00335C: db $EA;X
+L00335D: db $03;X
+L00335E: db $C1;X
+L00335F: db $23;X
+L003360: db $23;X
+L003361: db $7D;X
+L003362: db $EA;X
+L003363: db $0C;X
+L003364: db $C1;X
+L003365: db $7C;X
+L003366: db $EA;X
+L003367: db $0D;X
+L003368: db $C1;X
+L003369: db $18;X
+L00336A: db $D7;X
+L00336B: db $C5;X
+L00336C: db $FA;X
+L00336D: db $03;X
+L00336E: db $C1;X
+L00336F: db $B7;X
+L003370: db $CC;X
+L003371: db $2E;X
+L003372: db $34;X
+L003373: db $C1;X
+L003374: db $79;X
+L003375: db $FE;X
+L003376: db $7F;X
+L003377: db $20;X
+L003378: db $07;X
+L003379: db $3E;X
+L00337A: db $01;X
+L00337B: db $EA;X
+L00337C: db $03;X
+L00337D: db $C1;X
+L00337E: db $18;X
+L00337F: db $07;X
+L003380: db $FA;X
+L003381: db $03;X
+L003382: db $C1;X
+L003383: db $3C;X
+L003384: db $EA;X
+L003385: db $03;X
+L003386: db $C1;X
+L003387: db $FA;X
+L003388: db $05;X
+L003389: db $C1;X
+L00338A: db $E6;X
+L00338B: db $08;X
+L00338C: db $20;X
+L00338D: db $04;X
+L00338E: db $CD;X
+L00338F: db $94;X
+L003390: db $34;X
+L003391: db $C9;X
+L003392: db $CD;X
+L003393: db $EA;X
+L003394: db $34;X
+L003395: db $C9;X
+L003396: db $FA;X
+L003397: db $06;X
+L003398: db $C1;X
+L003399: db $FE;X
+L00339A: db $FF;X
+L00339B: db $28;X
+L00339C: db $08;X
+L00339D: db $FE;X
+L00339E: db $00;X
+L00339F: db $28;X
+L0033A0: db $11;X
+L0033A1: db $3D;X
+L0033A2: db $EA;X
+L0033A3: db $06;X
+L0033A4: db $C1;X
+L0033A5: db $FA;X
+L0033A6: db $05;X
+L0033A7: db $C1;X
+L0033A8: db $E6;X
+L0033A9: db $01;X
+L0033AA: db $20;X
+L0033AB: db $00;X
+L0033AC: db $CD;X
+L0033AD: db $B3;X
+L0033AE: db $33;X
+L0033AF: db $CD;X
+L0033B0: db $E0;X
+L0033B1: db $33;X
+L0033B2: db $C9;X
+L0033B3: db $FA;X
+L0033B4: db $1C;X
+L0033B5: db $C1;X
+L0033B6: db $4F;X
+L0033B7: db $FA;X
+L0033B8: db $18;X
+L0033B9: db $C1;X
+L0033BA: db $81;X
+L0033BB: db $EA;X
+L0033BC: db $18;X
+L0033BD: db $C1;X
+L0033BE: db $FA;X
+L0033BF: db $1D;X
+L0033C0: db $C1;X
+L0033C1: db $4F;X
+L0033C2: db $FA;X
+L0033C3: db $19;X
+L0033C4: db $C1;X
+L0033C5: db $89;X
+L0033C6: db $EA;X
+L0033C7: db $19;X
+L0033C8: db $C1;X
+L0033C9: db $FA;X
+L0033CA: db $1E;X
+L0033CB: db $C1;X
+L0033CC: db $4F;X
+L0033CD: db $FA;X
+L0033CE: db $1A;X
+L0033CF: db $C1;X
+L0033D0: db $81;X
+L0033D1: db $EA;X
+L0033D2: db $1A;X
+L0033D3: db $C1;X
+L0033D4: db $FA;X
+L0033D5: db $1F;X
+L0033D6: db $C1;X
+L0033D7: db $4F;X
+L0033D8: db $FA;X
+L0033D9: db $1B;X
+L0033DA: db $C1;X
+L0033DB: db $89;X
+L0033DC: db $EA;X
+L0033DD: db $1B;X
+L0033DE: db $C1;X
+L0033DF: db $C9;X
+L0033E0: db $FA;X
+L0033E1: db $10;X
+L0033E2: db $C1;X
+L0033E3: db $4F;X
+L0033E4: db $FA;X
+L0033E5: db $18;X
+L0033E6: db $C1;X
+L0033E7: db $81;X
+L0033E8: db $EA;X
+L0033E9: db $10;X
+L0033EA: db $C1;X
+L0033EB: db $FA;X
+L0033EC: db $11;X
+L0033ED: db $C1;X
+L0033EE: db $4F;X
+L0033EF: db $FA;X
+L0033F0: db $19;X
+L0033F1: db $C1;X
+L0033F2: db $89;X
+L0033F3: db $EA;X
+L0033F4: db $11;X
+L0033F5: db $C1;X
+L0033F6: db $FA;X
+L0033F7: db $12;X
+L0033F8: db $C1;X
+L0033F9: db $4F;X
+L0033FA: db $FA;X
+L0033FB: db $1A;X
+L0033FC: db $C1;X
+L0033FD: db $81;X
+L0033FE: db $EA;X
+L0033FF: db $12;X
+L003400: db $C1;X
+L003401: db $FA;X
+L003402: db $13;X
+L003403: db $C1;X
+L003404: db $4F;X
+L003405: db $FA;X
+L003406: db $1B;X
+L003407: db $C1;X
+L003408: db $89;X
+L003409: db $EA;X
+L00340A: db $13;X
+L00340B: db $C1;X
+L00340C: db $C9;X
+L00340D: db $79;X
+L00340E: db $EA;X
+L00340F: db $02;X
+L003410: db $C1;X
+L003411: db $FE;X
+L003412: db $FF;X
+L003413: db $C8;X
+L003414: db $26;X
+L003415: db $00;X
+L003416: db $69;X
+L003417: db $29;X
+L003418: db $FA;X
+L003419: db $09;X
+L00341A: db $C1;X
+L00341B: db $47;X
+L00341C: db $FA;X
+L00341D: db $08;X
+L00341E: db $C1;X
+L00341F: db $4F;X
+L003420: db $09;X
+L003421: db $2A;X
+L003422: db $EA;X
+L003423: db $0C;X
+L003424: db $C1;X
+L003425: db $7E;X
+L003426: db $EA;X
+L003427: db $0D;X
+L003428: db $C1;X
+L003429: db $AF;X
+L00342A: db $EA;X
+L00342B: db $03;X
+L00342C: db $C1;X
+L00342D: db $C9;X
+L00342E: db $2A;X
+L00342F: db $66;X
+L003430: db $6F;X
+L003431: db $7D;X
+L003432: db $EA;X
+L003433: db $0E;X
+L003434: db $C1;X
+L003435: db $7C;X
+L003436: db $EA;X
+L003437: db $0F;X
+L003438: db $C1;X
+L003439: db $FA;X
+L00343A: db $05;X
+L00343B: db $C1;X
+L00343C: db $E6;X
+L00343D: db $08;X
+L00343E: db $C0;X
+L00343F: db $FA;X
+L003440: db $04;X
+L003441: db $C1;X
+L003442: db $CB;X
+L003443: db $37;X
+L003444: db $E6;X
+L003445: db $F0;X
+L003446: db $EA;X
+L003447: db $23;X
+L003448: db $C1;X
+L003449: db $FA;X
+L00344A: db $04;X
+L00344B: db $C1;X
+L00344C: db $CB;X
+L00344D: db $37;X
+L00344E: db $E6;X
+L00344F: db $0F;X
+L003450: db $C6;X
+L003451: db $80;X
+L003452: db $EA;X
+L003453: db $24;X
+L003454: db $C1;X
+L003455: db $2A;X
+L003456: db $FE;X
+L003457: db $FF;X
+L003458: db $C8;X
+L003459: db $23;X
+L00345A: db $2A;X
+L00345B: db $E5;X
+L00345C: db $6F;X
+L00345D: db $26;X
+L00345E: db $00;X
+L00345F: db $29;X
+L003460: db $29;X
+L003461: db $29;X
+L003462: db $29;X
+L003463: db $FA;X
+L003464: db $0A;X
+L003465: db $C1;X
+L003466: db $4F;X
+L003467: db $FA;X
+L003468: db $0B;X
+L003469: db $C1;X
+L00346A: db $47;X
+L00346B: db $09;X
+L00346C: db $FA;X
+L00346D: db $23;X
+L00346E: db $C1;X
+L00346F: db $5F;X
+L003470: db $FA;X
+L003471: db $24;X
+L003472: db $C1;X
+L003473: db $57;X
+L003474: db $06;X
+L003475: db $00;X
+L003476: db $0E;X
+L003477: db $20;X
+L003478: db $FA;X
+L003479: db $07;X
+L00347A: db $C1;X
+L00347B: db $CD;X
+L00347C: db $74;X
+L00347D: db $08;X
+L00347E: db $E1;X
+L00347F: db $23;X
+L003480: db $FA;X
+L003481: db $23;X
+L003482: db $C1;X
+L003483: db $C6;X
+L003484: db $20;X
+L003485: db $EA;X
+L003486: db $23;X
+L003487: db $C1;X
+L003488: db $FA;X
+L003489: db $24;X
+L00348A: db $C1;X
+L00348B: db $06;X
+L00348C: db $00;X
+L00348D: db $88;X
+L00348E: db $EA;X
+L00348F: db $24;X
+L003490: db $C1;X
+L003491: db $C3;X
+L003492: db $55;X
+L003493: db $34;X
+L003494: db $FA;X
+L003495: db $20;X
+L003496: db $C1;X
+L003497: db $5F;X
+L003498: db $FA;X
+L003499: db $21;X
+L00349A: db $C1;X
+L00349B: db $57;X
+L00349C: db $FA;X
+L00349D: db $0E;X
+L00349E: db $C1;X
+L00349F: db $6F;X
+L0034A0: db $FA;X
+L0034A1: db $0F;X
+L0034A2: db $C1;X
+L0034A3: db $67;X
+L0034A4: db $FA;X
+L0034A5: db $04;X
+L0034A6: db $C1;X
+L0034A7: db $47;X
+L0034A8: db $7E;X
+L0034A9: db $FE;X
+L0034AA: db $FF;X
+L0034AB: db $20;X
+L0034AC: db $08;X
+L0034AD: db $23;X
+L0034AE: db $3A;X
+L0034AF: db $FE;X
+L0034B0: db $FF;X
+L0034B1: db $20;X
+L0034B2: db $02;X
+L0034B3: db $18;X
+L0034B4: db $2B;X
+L0034B5: db $FA;X
+L0034B6: db $13;X
+L0034B7: db $C1;X
+L0034B8: db $4F;X
+L0034B9: db $2A;X
+L0034BA: db $81;X
+L0034BB: db $C6;X
+L0034BC: db $10;X
+L0034BD: db $12;X
+L0034BE: db $13;X
+L0034BF: db $FA;X
+L0034C0: db $11;X
+L0034C1: db $C1;X
+L0034C2: db $4F;X
+L0034C3: db $2A;X
+L0034C4: db $81;X
+L0034C5: db $C6;X
+L0034C6: db $08;X
+L0034C7: db $12;X
+L0034C8: db $13;X
+L0034C9: db $2A;X
+L0034CA: db $78;X
+L0034CB: db $12;X
+L0034CC: db $13;X
+L0034CD: db $04;X
+L0034CE: db $04;X
+L0034CF: db $2A;X
+L0034D0: db $12;X
+L0034D1: db $13;X
+L0034D2: db $E5;X
+L0034D3: db $21;X
+L0034D4: db $A0;X
+L0034D5: db $DF;X
+L0034D6: db $CD;X
+L0034D7: db $6B;X
+L0034D8: db $17;X
+L0034D9: db $FE;X
+L0034DA: db $FF;X
+L0034DB: db $20;X
+L0034DC: db $03;X
+L0034DD: db $E1;X
+L0034DE: db $18;X
+L0034DF: db $C8;X
+L0034E0: db $E1;X
+L0034E1: db $7B;X
+L0034E2: db $EA;X
+L0034E3: db $20;X
+L0034E4: db $C1;X
+L0034E5: db $7A;X
+L0034E6: db $EA;X
+L0034E7: db $21;X
+L0034E8: db $C1;X
+L0034E9: db $C9;X
+L0034EA: db $FA;X
+L0034EB: db $0E;X
+L0034EC: db $C1;X
+L0034ED: db $6F;X
+L0034EE: db $FA;X
+L0034EF: db $0F;X
+L0034F0: db $C1;X
+L0034F1: db $67;X
+L0034F2: db $FA;X
+L0034F3: db $20;X
+L0034F4: db $C1;X
+L0034F5: db $5F;X
+L0034F6: db $FA;X
+L0034F7: db $21;X
+L0034F8: db $C1;X
+L0034F9: db $57;X
+L0034FA: db $7E;X
+L0034FB: db $FE;X
+L0034FC: db $FF;X
+L0034FD: db $20;X
+L0034FE: db $08;X
+L0034FF: db $23;X
+L003500: db $3A;X
+L003501: db $FE;X
+L003502: db $FF;X
+L003503: db $20;X
+L003504: db $02;X
+L003505: db $18;X
+L003506: db $28;X
+L003507: db $FA;X
+L003508: db $13;X
+L003509: db $C1;X
+L00350A: db $4F;X
+L00350B: db $2A;X
+L00350C: db $81;X
+L00350D: db $C6;X
+L00350E: db $10;X
+L00350F: db $12;X
+L003510: db $13;X
+L003511: db $FA;X
+L003512: db $11;X
+L003513: db $C1;X
+L003514: db $4F;X
+L003515: db $2A;X
+L003516: db $81;X
+L003517: db $C6;X
+L003518: db $08;X
+L003519: db $12;X
+L00351A: db $13;X
+L00351B: db $2A;X
+L00351C: db $12;X
+L00351D: db $13;X
+L00351E: db $2A;X
+L00351F: db $12;X
+L003520: db $13;X
+L003521: db $E5;X
+L003522: db $21;X
+L003523: db $A0;X
+L003524: db $DF;X
+L003525: db $CD;X
+L003526: db $6B;X
+L003527: db $17;X
+L003528: db $FE;X
+L003529: db $FF;X
+L00352A: db $20;X
+L00352B: db $03;X
+L00352C: db $E1;X
+L00352D: db $18;X
+L00352E: db $CB;X
+L00352F: db $E1;X
+L003530: db $7B;X
+L003531: db $EA;X
+L003532: db $20;X
+L003533: db $C1;X
+L003534: db $7A;X
+L003535: db $EA;X
+L003536: db $21;X
+L003537: db $C1;X
+L003538: db $C9;X
+L003539: db $01;X
+L00353A: db $88;X
+L00353B: db $00;X
+L00353C: db $21;X
+L00353D: db $62;X
+L00353E: db $C7;X
+L00353F: db $CD;X
+L003540: db $D7;X
+L003541: db $0F;X
+L003542: db $CD;X
+L003543: db $58;X
+L003544: db $30;X
+L003545: db $3E;X
+L003546: db $01;X
+L003547: db $EA;X
+L003548: db $A0;X
+L003549: db $DF;X
+L00354A: db $21;X
+L00354B: db $00;X
+L00354C: db $DF;X
+L00354D: db $01;X
+L00354E: db $A0;X
+L00354F: db $00;X
+L003550: db $CD;X
+L003551: db $D7;X
+L003552: db $0F;X
+L003553: db $3E;X
+L003554: db $00;X
+L003555: db $EA;X
+L003556: db $A0;X
+L003557: db $DF;X
+L003558: db $CD;X
+L003559: db $C3;X
+L00355A: db $03;X
+L00355B: db $C9;X
+L00355C: db $C5;X
+L00355D: db $D5;X
+L00355E: db $47;X
+L00355F: db $21;X
+L003560: db $62;X
+L003561: db $C7;X
+L003562: db $0E;X
+L003563: db $08;X
+L003564: db $11;X
+L003565: db $11;X
+L003566: db $00;X
+L003567: db $7E;X
+L003568: db $B8;X
+L003569: db $28;X
+L00356A: db $06;X
+L00356B: db $19;X
+L00356C: db $0D;X
+L00356D: db $20;X
+L00356E: db $F8;X
+L00356F: db $3E;X
+L003570: db $FF;X
+L003571: db $D1;X
+L003572: db $C1;X
+L003573: db $C9;X
+L003574: db $21;X
+L003575: db $62;X
+L003576: db $C7;X
+L003577: db $0E;X
+L003578: db $08;X
+L003579: db $11;X
+L00357A: db $11;X
+L00357B: db $00;X
+L00357C: db $7E;X
+L00357D: db $A7;X
+L00357E: db $28;X
+L00357F: db $06;X
+L003580: db $19;X
+L003581: db $0D;X
+L003582: db $20;X
+L003583: db $F8;X
+L003584: db $26;X
+L003585: db $FF;X
+L003586: db $C9;X
+L003587:;J
+	ld   hl, $014E
+	ldi  a, [hl]
+	or   a, [hl]
+	ld   [$C7EA], a
+	call L0035B7
+	ld   a, $00
+	ld   [$C708], a
+	ld   a, $40
+	ld   [$C709], a
+	ld   a, $01
+	ld   [$C70A], a
+	ld   a, $00
+	ld   [$C70B], a
+	ld   a, $02
+	ld   [$C9E4], a
+	ld   [$C760], sp
+L0035AE:;J
+	call L003636
+	call L003690
+	jp   L0035AE
+L0035B7:;C
+	ld   bc, $0040
+	ld   hl, $C70C
+	call L000FD7
+	xor  a, a
+	ld   [$C74C], a
+	ld   [$C708], a
+	ld   [$C709], a
+	ld   [$C70A], a
+	ld   [$C70B], a
+	ld   [$C6F7], a
+	ld   [$C6F8], a
+	ld   [$C6F9], a
+	ld   [$C6FA], a
+	ld   [$C6F2], a
+	ld   [$C6F3], a
+	ld   [$C6F4], a
+	ld   [$C6F5], a
+	ld   [$C6F6], a
+	ld   [$C6FB], a
+	ld   [$C6FC], a
+	ld   [$C6FD], a
+	ld   [$C6FE], a
+	ret  
+L0035F8:;C
+	call $36F5
+	cp   $01
+	jr   z, $360E
+	call L003636
+	call L003690
+	call L00379E
+	and  a, a
+	jr   nz, $35FF
+	call L003760
+	ret  
+L00360F: db $3E;X
+L003610: db $00;X
+L003611: db $EA;X
+L003612: db $F7;X
+L003613: db $C6;X
+L003614: db $3E;X
+L003615: db $40;X
+L003616: db $EA;X
+L003617: db $F8;X
+L003618: db $C6;X
+L003619: db $CD;X
+L00361A: db $F8;X
+L00361B: db $35;X
+L00361C: db $C9;X
+L00361D:;C
+	ld   a, b
+	or   a, c
+	jr   z, L003635
+	dec  bc
+	ld   a, c
+	ld   [$C6F9], a
+	ld   a, b
+	ld   [$C6FA], a
+	ld   a, e
+	ld   [$C6F7], a
+	ld   a, d
+	ld   [$C6F8], a
+	call L0035F8
+L003635:;R
+	ret  
+L003636:;C
+	ld   a, [$C841]
+	push af
+	push bc
+	push de
+	push hl
+	ld   a, $01
+	call L000CB9
+	ld   a, [$C708]
+	ld   e, a
+	ld   a, [$C709]
+	ld   d, a
+	ld   a, [$C70A]
+	ld   l, a
+	ld   a, [$C70B]
+	ld   h, a
+	push hl
+	pop  bc
+	add  hl, hl
+	add  hl, hl
+	add  hl, bc
+	add  hl, de
+	ldi  a, [hl]
+	ld   c, a
+	ldi  a, [hl]
+	ld   b, a
+	ldi  a, [hl]
+	ld   e, a
+	ldi  a, [hl]
+	ld   d, a
+	ld   a, b
+	cp   $06
+	jr   c, L00367C
+L003665: db $3E;X
+L003666: db $00;X
+L003667: db $EA;X
+L003668: db $08;X
+L003669: db $C7;X
+L00366A: db $3E;X
+L00366B: db $40;X
+L00366C: db $EA;X
+L00366D: db $09;X
+L00366E: db $C7;X
+L00366F: db $3E;X
+L003670: db $00;X
+L003671: db $EA;X
+L003672: db $0A;X
+L003673: db $C7;X
+L003674: db $3E;X
+L003675: db $00;X
+L003676: db $EA;X
+L003677: db $0B;X
+L003678: db $C7;X
+L003679: db $C3;X
+L00367A: db $3D;X
+L00367B: db $36;X
+L00367C:;R
+	ld   a, [hl]
+	push de
+	pop  hl
+	ld   de, $D300
+	call L000CB9
+	call L000FE3
+	pop  hl
+	pop  de
+	pop  bc
+	pop  af
+	call L000CB9
+	ret  
+L003690:;C
+	ld   a, [$C841]
+	push af
+	push bc
+	push de
+	push hl
+	ld   hl, $D300
+L00369A:;J
+	ld   a, [$C7F1]
+	cp   $02
+	jr   z, L0036CD
+	ldi  a, [hl]
+	cp   $00
+	jr   z, L0036ED
+	push hl
+	pop  bc
+	dec  a
+	ld   hl, $36C4
+	push hl
+	ld   e, a
+	ld   d, $00
+	sla  e
+	rl   d
+	ld   a, $01
+	call L000CB9
+	ld   hl, $5CED
+	add  hl, de
+	ldi  a, [hl]
+	ld   e, a
+	ld   d, [hl]
+	push de
+	push bc
+	pop  hl
+	ret  
+	add  a, l
+	ld   l, a
+	ld   a, h
+	adc  a, $00
+	ld   h, a
+	jp   L00369A
+L0036CD:;R
+	ld   a, $00
+	ld   [$C708], a
+	ld   a, $40
+	ld   [$C709], a
+	ld   a, $08
+	nop  
+	ld   [$C70A], a
+	ld   a, $00
+	nop  
+	ld   [$C70B], a
+	xor  a, a
+	ld   [$C7F1], a
+	ld   [$C7F2], a
+	ld   [$C7F3], a
+L0036ED:;R
+	pop  hl
+	pop  de
+	pop  bc
+	pop  af
+	call L000CB9
+	ret  
+L0036F5:;C
+	ld   a, [$C74C]
+	cp   $08
+	jr   nz, L0036FF
+L0036FC: db $3E;X
+L0036FD: db $01;X
+L0036FE: db $C9;X
+L0036FF:;R
+	ld   a, [$C74C]
+	ld   l, a
+	ld   h, $00
+	add  hl, hl
+	add  hl, hl
+	add  hl, hl
+	ld   bc, $C70C
+	add  hl, bc
+	push hl
+	pop  bc
+	ld   hl, $0000
+	add  hl, bc
+	ld   a, [$C70A]
+	ldi  [hl], a
+	ld   a, [$C70B]
+	ld   [hl], a
+	ld   hl, $0002
+	add  hl, bc
+	ld   a, [$C708]
+	ldi  [hl], a
+	ld   a, [$C709]
+	ld   [hl], a
+	ld   hl, $0006
+	add  hl, bc
+	ld   a, [$C6F7]
+	ldi  [hl], a
+	ld   a, [$C6F8]
+	ld   [hl], a
+	ld   hl, $0004
+	add  hl, bc
+	ld   a, [$C6F9]
+	ldi  [hl], a
+	ld   a, [$C6FA]
+	ld   [hl], a
+	ld   a, [$C6F7]
+	ld   [$C708], a
+	ld   a, [$C6F8]
+	ld   [$C709], a
+	ld   a, [$C6F9]
+	ld   [$C70A], a
+	ld   a, [$C6FA]
+	ld   [$C70B], a
+	ld   a, [$C74C]
+	inc  a
+	ld   [$C74C], a
+	ld   a, $00
+	ret  
+L003760:;C
+	ld   a, [$C74C]
+	cp   $00
+	jr   nz, L00376A
+L003767: db $3E;X
+L003768: db $01;X
+L003769: db $C9;X
+L00376A:;R
+	ld   a, [$C74C]
+	dec  a
+	ld   [$C74C], a
+	ld   a, [$C74C]
+	ld   l, a
+	ld   h, $00
+	add  hl, hl
+	add  hl, hl
+	add  hl, hl
+	ld   bc, $C70C
+	add  hl, bc
+	push hl
+	pop  bc
+	ld   hl, $0000
+	add  hl, bc
+	ldi  a, [hl]
+	ld   [$C70A], a
+	ld   a, [hl]
+	ld   [$C70B], a
+	ld   hl, $0002
+	add  hl, bc
+	ldi  a, [hl]
+	ld   [$C708], a
+	ld   a, [hl]
+	ld   [$C709], a
+	call L003636
+	ld   a, $00
+	ret  
+L00379E:;C
+	ld   a, [$C74C]
+	ld   l, a
+	ld   h, $00
+	dec  hl
+	add  hl, hl
+	add  hl, hl
+	add  hl, hl
+	ld   bc, $C70C
+	add  hl, bc
+	push hl
+	pop  bc
+	ld   hl, $0004
+	add  hl, bc
+	ldi  a, [hl]
+	ld   e, a
+	ld   d, [hl]
+	ld   a, [$C70A]
+	ld   l, a
+	ld   a, [$C70B]
+	ld   h, a
+	call $176B
+	and  a, a
+	jr   nz, L0037C6
+	ld   a, $00
+	ret  
+L0037C6: db $FA;X
+L0037C7: db $4C;X
+L0037C8: db $C7;X
+L0037C9: db $6F;X
+L0037CA: db $26;X
+L0037CB: db $00;X
+L0037CC: db $2B;X
+L0037CD: db $29;X
+L0037CE: db $29;X
+L0037CF: db $29;X
+L0037D0: db $01;X
+L0037D1: db $0C;X
+L0037D2: db $C7;X
+L0037D3: db $09;X
+L0037D4: db $E5;X
+L0037D5: db $C1;X
+L0037D6: db $21;X
+L0037D7: db $04;X
+L0037D8: db $00;X
+L0037D9: db $09;X
+L0037DA: db $FA;X
+L0037DB: db $0A;X
+L0037DC: db $C7;X
+L0037DD: db $22;X
+L0037DE: db $FA;X
+L0037DF: db $0B;X
+L0037E0: db $C7;X
+L0037E1: db $77;X
+L0037E2: db $21;X
+L0037E3: db $06;X
+L0037E4: db $00;X
+L0037E5: db $09;X
+L0037E6: db $FA;X
+L0037E7: db $08;X
+L0037E8: db $C7;X
+L0037E9: db $22;X
+L0037EA: db $FA;X
+L0037EB: db $09;X
+L0037EC: db $C7;X
+L0037ED: db $77;X
+L0037EE: db $3E;X
+L0037EF: db $01;X
+L0037F0: db $C9;X
+L0037F1: db $C3;X
+L0037F2: db $54;X
+L0037F3: db $01;X
+L0037F4: db $FA;X
+L0037F5: db $FD;X
+L0037F6: db $C7;X
+L0037F7: db $FE;X
+L0037F8: db $FF;X
+L0037F9: db $C0;X
+L0037FA: db $CD;X
+L0037FB: db $C3;X
+L0037FC: db $03;X
+L0037FD: db $C9;X
+L0037FE: db $FA;X
+L0037FF: db $41;X
+L003800: db $C8;X
+L003801: db $F5;X
+L003802: db $3E;X
+L003803: db $17;X
+L003804: db $CD;X
+L003805: db $B9;X
+L003806: db $0C;X
+L003807: db $CD;X
+L003808: db $00;X
+L003809: db $47;X
+L00380A: db $47;X
+L00380B: db $F1;X
+L00380C: db $CD;X
+L00380D: db $B9;X
+L00380E: db $0C;X
+L00380F: db $78;X
+L003810: db $C9;X
+L003811: db $FA;X
+L003812: db $41;X
+L003813: db $C8;X
+L003814: db $F5;X
+L003815: db $3E;X
+L003816: db $23;X
+L003817: db $CD;X
+L003818: db $B9;X
+L003819: db $0C;X
+L00381A: db $CD;X
+L00381B: db $32;X
+L00381C: db $4D;X
+L00381D: db $F1;X
+L00381E: db $CD;X
+L00381F: db $B9;X
+L003820: db $0C;X
+L003821: db $C9;X
+L003822: db $FA;X
+L003823: db $41;X
+L003824: db $C8;X
+L003825: db $F5;X
+L003826: db $3E;X
+L003827: db $23;X
+L003828: db $CD;X
+L003829: db $B9;X
+L00382A: db $0C;X
+L00382B: db $CD;X
+L00382C: db $0B;X
+L00382D: db $44;X
+L00382E: db $F1;X
+L00382F: db $CD;X
+L003830: db $B9;X
+L003831: db $0C;X
+L003832: db $C9;X
+L003833: db $FA;X
+L003834: db $41;X
+L003835: db $C8;X
+L003836: db $F5;X
+L003837: db $3E;X
+L003838: db $23;X
+L003839: db $CD;X
+L00383A: db $B9;X
+L00383B: db $0C;X
+L00383C: db $CD;X
+L00383D: db $AC;X
+L00383E: db $44;X
+L00383F: db $F1;X
+L003840: db $CD;X
+L003841: db $B9;X
+L003842: db $0C;X
+L003843: db $C9;X
+L003844: db $FA;X
+L003845: db $41;X
+L003846: db $C8;X
+L003847: db $F5;X
+L003848: db $3E;X
+L003849: db $23;X
+L00384A: db $CD;X
+L00384B: db $B9;X
+L00384C: db $0C;X
+L00384D: db $CD;X
+L00384E: db $60;X
+L00384F: db $45;X
+L003850: db $F1;X
+L003851: db $CD;X
+L003852: db $B9;X
+L003853: db $0C;X
+L003854: db $C9;X
+L003855: db $FA;X
+L003856: db $41;X
+L003857: db $C8;X
+L003858: db $F5;X
+L003859: db $3E;X
+L00385A: db $23;X
+L00385B: db $CD;X
+L00385C: db $B9;X
+L00385D: db $0C;X
+L00385E: db $CD;X
+L00385F: db $81;X
+L003860: db $49;X
+L003861: db $F1;X
+L003862: db $CD;X
+L003863: db $B9;X
+L003864: db $0C;X
+L003865: db $C9;X
+L003866: db $FA;X
+L003867: db $41;X
+L003868: db $C8;X
+L003869: db $F5;X
+L00386A: db $3E;X
+L00386B: db $23;X
+L00386C: db $CD;X
+L00386D: db $B9;X
+L00386E: db $0C;X
+L00386F: db $CD;X
+L003870: db $37;X
+L003871: db $4B;X
+L003872: db $F1;X
+L003873: db $CD;X
+L003874: db $B9;X
+L003875: db $0C;X
+L003876: db $C9;X
+L003877: db $FA;X
+L003878: db $41;X
+L003879: db $C8;X
+L00387A: db $F5;X
+L00387B: db $3E;X
+L00387C: db $23;X
+L00387D: db $CD;X
+L00387E: db $B9;X
+L00387F: db $0C;X
+L003880: db $CD;X
+L003881: db $E1;X
+L003882: db $4A;X
+L003883: db $F1;X
+L003884: db $CD;X
+L003885: db $B9;X
+L003886: db $0C;X
+L003887: db $C9;X
+L003888: db $FA;X
+L003889: db $41;X
+L00388A: db $C8;X
+L00388B: db $F5;X
+L00388C: db $3E;X
+L00388D: db $23;X
+L00388E: db $CD;X
+L00388F: db $B9;X
+L003890: db $0C;X
+L003891: db $CD;X
+L003892: db $EE;X
+L003893: db $49;X
+L003894: db $F1;X
+L003895: db $CD;X
+L003896: db $B9;X
+L003897: db $0C;X
+L003898: db $C9;X
+L003899: db $47;X
+L00389A: db $FA;X
+L00389B: db $41;X
+L00389C: db $C8;X
+L00389D: db $F5;X
+L00389E: db $3E;X
+L00389F: db $19;X
+L0038A0: db $CD;X
+L0038A1: db $B9;X
+L0038A2: db $0C;X
+L0038A3: db $78;X
+L0038A4: db $CD;X
+L0038A5: db $05;X
+L0038A6: db $41;X
+L0038A7: db $47;X
+L0038A8: db $F1;X
+L0038A9: db $CD;X
+L0038AA: db $B9;X
+L0038AB: db $0C;X
+L0038AC: db $78;X
+L0038AD: db $C9;X
+L0038AE: db $FA;X
+L0038AF: db $41;X
+L0038B0: db $C8;X
+L0038B1: db $F5;X
+L0038B2: db $3E;X
+L0038B3: db $19;X
+L0038B4: db $CD;X
+L0038B5: db $B9;X
+L0038B6: db $0C;X
+L0038B7: db $CD;X
+L0038B8: db $02;X
+L0038B9: db $65;X
+L0038BA: db $F1;X
+L0038BB: db $CD;X
+L0038BC: db $B9;X
+L0038BD: db $0C;X
+L0038BE: db $C9;X
+L0038BF: db $FA;X
+L0038C0: db $41;X
+L0038C1: db $C8;X
+L0038C2: db $F5;X
+L0038C3: db $3E;X
+L0038C4: db $21;X
+L0038C5: db $CD;X
+L0038C6: db $B9;X
+L0038C7: db $0C;X
+L0038C8: db $CD;X
+L0038C9: db $00;X
+L0038CA: db $40;X
+L0038CB: db $F1;X
+L0038CC: db $CD;X
+L0038CD: db $B9;X
+L0038CE: db $0C;X
+L0038CF: db $C9;X
+L0038D0: db $E5;X
+L0038D1: db $3E;X
+L0038D2: db $25;X
+L0038D3: db $21;X
+L0038D4: db $15;X
+L0038D5: db $40;X
+L0038D6: db $CD;X
+L0038D7: db $1B;X
+L0038D8: db $08;X
+L0038D9: db $E1;X
+L0038DA: db $C9;X
+L0038DB: db $FA;X
+L0038DC: db $41;X
+L0038DD: db $C8;X
+L0038DE: db $F5;X
+L0038DF: db $3E;X
+L0038E0: db $1A;X
+L0038E1: db $CD;X
+L0038E2: db $B9;X
+L0038E3: db $0C;X
+L0038E4: db $CD;X
+L0038E5: db $95;X
+L0038E6: db $40;X
+L0038E7: db $F1;X
+L0038E8: db $CD;X
+L0038E9: db $B9;X
+L0038EA: db $0C;X
+L0038EB: db $C9;X
+L0038EC: db $E5;X
+L0038ED: db $3E;X
+L0038EE: db $25;X
+L0038EF: db $21;X
+L0038F0: db $2C;X
+L0038F1: db $40;X
+L0038F2: db $CD;X
+L0038F3: db $1B;X
+L0038F4: db $08;X
+L0038F5: db $E1;X
+L0038F6: db $C9;X
+L0038F7: db $E5;X
+L0038F8: db $3E;X
+L0038F9: db $25;X
+L0038FA: db $21;X
+L0038FB: db $55;X
+L0038FC: db $40;X
+L0038FD: db $CD;X
+L0038FE: db $1B;X
+L0038FF: db $08;X
+L003900: db $E1;X
+L003901: db $C9;X
+L003902: db $21;X
+L003903: db $00;X
+L003904: db $AC;X
+L003905: db $19;X
+L003906: db $3E;X
+L003907: db $0A;X
+L003908: db $EA;X
+L003909: db $00;X
+L00390A: db $00;X
+L00390B: db $7E;X
+L00390C: db $EA;X
+L00390D: db $8B;X
+L00390E: db $CB;X
+L00390F: db $97;X
+L003910: db $EA;X
+L003911: db $00;X
+L003912: db $00;X
+L003913: db $C9;X
+L003914: db $FA;X
+L003915: db $41;X
+L003916: db $C8;X
+L003917: db $F5;X
+L003918: db $3E;X
+L003919: db $25;X
+L00391A: db $CD;X
+L00391B: db $B9;X
+L00391C: db $0C;X
+L00391D: db $CD;X
+L00391E: db $6C;X
+L00391F: db $40;X
+L003920: db $CD;X
+L003921: db $B9;X
+L003922: db $0C;X
+L003923: db $21;X
+L003924: db $08;X
+L003925: db $B1;X
+L003926: db $0E;X
+L003927: db $10;X
+L003928: db $C5;X
+L003929: db $06;X
+L00392A: db $10;X
+L00392B: db $1A;X
+L00392C: db $13;X
+L00392D: db $22;X
+L00392E: db $05;X
+L00392F: db $20;X
+L003930: db $FA;X
+L003931: db $01;X
+L003932: db $10;X
+L003933: db $00;X
+L003934: db $09;X
+L003935: db $C1;X
+L003936: db $0D;X
+L003937: db $20;X
+L003938: db $EF;X
+L003939: db $F1;X
+L00393A: db $CD;X
+L00393B: db $B9;X
+L00393C: db $0C;X
+L00393D: db $C9;X
+L00393E: db $FA;X
+L00393F: db $41;X
+L003940: db $C8;X
+L003941: db $F5;X
+L003942: db $3E;X
+L003943: db $25;X
+L003944: db $CD;X
+L003945: db $B9;X
+L003946: db $0C;X
+L003947: db $CD;X
+L003948: db $6C;X
+L003949: db $40;X
+L00394A: db $CD;X
+L00394B: db $B9;X
+L00394C: db $0C;X
+L00394D: db $21;X
+L00394E: db $00;X
+L00394F: db $AC;X
+L003950: db $06;X
+L003951: db $00;X
+L003952: db $1A;X
+L003953: db $13;X
+L003954: db $22;X
+L003955: db $05;X
+L003956: db $20;X
+L003957: db $FA;X
+L003958: db $F1;X
+L003959: db $CD;X
+L00395A: db $B9;X
+L00395B: db $0C;X
+L00395C: db $C9;X
+L00395D: db $FA;X
+L00395E: db $41;X
+L00395F: db $C8;X
+L003960: db $F5;X
+L003961: db $3E;X
+L003962: db $17;X
+L003963: db $CD;X
+L003964: db $B9;X
+L003965: db $0C;X
+L003966: db $CD;X
+L003967: db $92;X
+L003968: db $44;X
+L003969: db $F1;X
+L00396A: db $CD;X
+L00396B: db $B9;X
+L00396C: db $0C;X
+L00396D: db $C9;X
+L00396E: db $FA;X
+L00396F: db $41;X
+L003970: db $C8;X
+L003971: db $F5;X
+L003972: db $3E;X
+L003973: db $16;X
+L003974: db $CD;X
+L003975: db $B9;X
+L003976: db $0C;X
+L003977: db $FA;X
+L003978: db $94;X
+L003979: db $CB;X
+L00397A: db $3D;X
+L00397B: db $5F;X
+L00397C: db $16;X
+L00397D: db $00;X
+L00397E: db $21;X
+L00397F: db $3D;X
+L003980: db $CC;X
+L003981: db $19;X
+L003982: db $7E;X
+L003983: db $16;X
+L003984: db $00;X
+L003985: db $3D;X
+L003986: db $CB;X
+L003987: db $27;X
+L003988: db $CB;X
+L003989: db $12;X
+L00398A: db $5F;X
+L00398B: db $21;X
+L00398C: db $01;X
+L00398D: db $72;X
+L00398E: db $19;X
+L00398F: db $2A;X
+L003990: db $EA;X
+L003991: db $B8;X
+L003992: db $CB;X
+L003993: db $7E;X
+L003994: db $EA;X
+L003995: db $B9;X
+L003996: db $CB;X
+L003997: db $F1;X
+L003998: db $CD;X
+L003999: db $B9;X
+L00399A: db $0C;X
+L00399B: db $C9;X
+L00399C: db $EA;X
+L00399D: db $4F;X
+L00399E: db $C8;X
+L00399F: db $FA;X
+L0039A0: db $41;X
+L0039A1: db $C8;X
+L0039A2: db $F5;X
+L0039A3: db $3E;X
+L0039A4: db $16;X
+L0039A5: db $CD;X
+L0039A6: db $B9;X
+L0039A7: db $0C;X
+L0039A8: db $16;X
+L0039A9: db $00;X
+L0039AA: db $FA;X
+L0039AB: db $4F;X
+L0039AC: db $C8;X
+L0039AD: db $CB;X
+L0039AE: db $27;X
+L0039AF: db $5F;X
+L0039B0: db $21;X
+L0039B1: db $A9;X
+L0039B2: db $67;X
+L0039B3: db $19;X
+L0039B4: db $2A;X
+L0039B5: db $EA;X
+L0039B6: db $83;X
+L0039B7: db $CE;X
+L0039B8: db $7E;X
+L0039B9: db $EA;X
+L0039BA: db $84;X
+L0039BB: db $CE;X
+L0039BC: db $FA;X
+L0039BD: db $94;X
+L0039BE: db $CB;X
+L0039BF: db $3D;X
+L0039C0: db $5F;X
+L0039C1: db $16;X
+L0039C2: db $00;X
+L0039C3: db $21;X
+L0039C4: db $3D;X
+L0039C5: db $CC;X
+L0039C6: db $19;X
+L0039C7: db $16;X
+L0039C8: db $00;X
+L0039C9: db $7E;X
+L0039CA: db $3D;X
+L0039CB: db $5F;X
+L0039CC: db $CB;X
+L0039CD: db $27;X
+L0039CE: db $CB;X
+L0039CF: db $12;X
+L0039D0: db $83;X
+L0039D1: db $5F;X
+L0039D2: db $3E;X
+L0039D3: db $00;X
+L0039D4: db $8A;X
+L0039D5: db $57;X
+L0039D6: db $FA;X
+L0039D7: db $83;X
+L0039D8: db $CE;X
+L0039D9: db $6F;X
+L0039DA: db $FA;X
+L0039DB: db $84;X
+L0039DC: db $CE;X
+L0039DD: db $67;X
+L0039DE: db $19;X
+L0039DF: db $2A;X
+L0039E0: db $EA;X
+L0039E1: db $BC;X
+L0039E2: db $CB;X
+L0039E3: db $2A;X
+L0039E4: db $EA;X
+L0039E5: db $BD;X
+L0039E6: db $CB;X
+L0039E7: db $7E;X
+L0039E8: db $EA;X
+L0039E9: db $BE;X
+L0039EA: db $CB;X
+L0039EB: db $F1;X
+L0039EC: db $CD;X
+L0039ED: db $B9;X
+L0039EE: db $0C;X
+L0039EF: db $C9;X
+L0039F0: db $FA;X
+L0039F1: db $41;X
+L0039F2: db $C8;X
+L0039F3: db $F5;X
+L0039F4: db $3E;X
+L0039F5: db $16;X
+L0039F6: db $CD;X
+L0039F7: db $B9;X
+L0039F8: db $0C;X
+L0039F9: db $FA;X
+L0039FA: db $94;X
+L0039FB: db $CB;X
+L0039FC: db $3D;X
+L0039FD: db $5F;X
+L0039FE: db $16;X
+L0039FF: db $00;X
+L003A00: db $21;X
+L003A01: db $3D;X
+L003A02: db $CC;X
+L003A03: db $19;X
+L003A04: db $16;X
+L003A05: db $00;X
+L003A06: db $7E;X
+L003A07: db $3D;X
+L003A08: db $CB;X
+L003A09: db $27;X
+L003A0A: db $CB;X
+L003A0B: db $12;X
+L003A0C: db $5F;X
+L003A0D: db $21;X
+L003A0E: db $B9;X
+L003A0F: db $73;X
+L003A10: db $19;X
+L003A11: db $2A;X
+L003A12: db $EA;X
+L003A13: db $30;X
+L003A14: db $D1;X
+L003A15: db $7E;X
+L003A16: db $EA;X
+L003A17: db $31;X
+L003A18: db $D1;X
+L003A19: db $F1;X
+L003A1A: db $CD;X
+L003A1B: db $B9;X
+L003A1C: db $0C;X
+L003A1D: db $C9;X
+L003A1E: db $EA;X
+L003A1F: db $4F;X
+L003A20: db $C8;X
+L003A21: db $FA;X
+L003A22: db $41;X
+L003A23: db $C8;X
+L003A24: db $F5;X
+L003A25: db $3E;X
+L003A26: db $16;X
+L003A27: db $CD;X
+L003A28: db $B9;X
+L003A29: db $0C;X
+L003A2A: db $FA;X
+L003A2B: db $4F;X
+L003A2C: db $C8;X
+L003A2D: db $3D;X
+L003A2E: db $6F;X
+L003A2F: db $26;X
+L003A30: db $00;X
+L003A31: db $29;X
+L003A32: db $11;X
+L003A33: db $11;X
+L003A34: db $7A;X
+L003A35: db $19;X
+L003A36: db $2A;X
+L003A37: db $EA;X
+L003A38: db $F9;X
+L003A39: db $C6;X
+L003A3A: db $7E;X
+L003A3B: db $EA;X
+L003A3C: db $FA;X
+L003A3D: db $C6;X
+L003A3E: db $F1;X
+L003A3F: db $CD;X
+L003A40: db $B9;X
+L003A41: db $0C;X
+L003A42: db $C9;X
+L003A43: db $EA;X
+L003A44: db $4F;X
+L003A45: db $C8;X
+L003A46: db $FA;X
+L003A47: db $41;X
+L003A48: db $C8;X
+L003A49: db $F5;X
+L003A4A: db $3E;X
+L003A4B: db $16;X
+L003A4C: db $CD;X
+L003A4D: db $B9;X
+L003A4E: db $0C;X
+L003A4F: db $FA;X
+L003A50: db $4F;X
+L003A51: db $C8;X
+L003A52: db $3D;X
+L003A53: db $21;X
+L003A54: db $71;X
+L003A55: db $75;X
+L003A56: db $CD;X
+L003A57: db $71;X
+L003A58: db $0C;X
+L003A59: db $06;X
+L003A5A: db $06;X
+L003A5B: db $11;X
+L003A5C: db $30;X
+L003A5D: db $D1;X
+L003A5E: db $2A;X
+L003A5F: db $12;X
+L003A60: db $13;X
+L003A61: db $05;X
+L003A62: db $C2;X
+L003A63: db $5E;X
+L003A64: db $3A;X
+L003A65: db $F1;X
+L003A66: db $CD;X
+L003A67: db $B9;X
+L003A68: db $0C;X
+L003A69: db $C9;X
+L003A6A: db $FA;X
+L003A6B: db $41;X
+L003A6C: db $C8;X
+L003A6D: db $F5;X
+L003A6E: db $3E;X
+L003A6F: db $16;X
+L003A70: db $CD;X
+L003A71: db $B9;X
+L003A72: db $0C;X
+L003A73: db $FA;X
+L003A74: db $94;X
+L003A75: db $CB;X
+L003A76: db $3D;X
+L003A77: db $5F;X
+L003A78: db $16;X
+L003A79: db $00;X
+L003A7A: db $21;X
+L003A7B: db $3D;X
+L003A7C: db $CC;X
+L003A7D: db $19;X
+L003A7E: db $7E;X
+L003A7F: db $3D;X
+L003A80: db $5F;X
+L003A81: db $21;X
+L003A82: db $59;X
+L003A83: db $62;X
+L003A84: db $19;X
+L003A85: db $7E;X
+L003A86: db $5F;X
+L003A87: db $16;X
+L003A88: db $00;X
+L003A89: db $CB;X
+L003A8A: db $23;X
+L003A8B: db $CB;X
+L003A8C: db $12;X
+L003A8D: db $CB;X
+L003A8E: db $23;X
+L003A8F: db $CB;X
+L003A90: db $12;X
+L003A91: db $CB;X
+L003A92: db $23;X
+L003A93: db $CB;X
+L003A94: db $12;X
+L003A95: db $21;X
+L003A96: db $D9;X
+L003A97: db $60;X
+L003A98: db $19;X
+L003A99: db $06;X
+L003A9A: db $08;X
+L003A9B: db $11;X
+L003A9C: db $B4;X
+L003A9D: db $CB;X
+L003A9E: db $2A;X
+L003A9F: db $12;X
+L003AA0: db $13;X
+L003AA1: db $05;X
+L003AA2: db $20;X
+L003AA3: db $FA;X
+L003AA4: db $F1;X
+L003AA5: db $CD;X
+L003AA6: db $B9;X
+L003AA7: db $0C;X
+L003AA8: db $CD;X
+L003AA9: db $E7;X
+L003AAA: db $3B;X
+L003AAB: db $16;X
+L003AAC: db $B4;X
+L003AAD: db $CB;X
+L003AAE: db $50;X
+L003AAF: db $08;X
+L003AB0: db $3E;X
+L003AB1: db $02;X
+L003AB2: db $EA;X
+L003AB3: db $9D;X
+L003AB4: db $C8;X
+L003AB5: db $CD;X
+L003AB6: db $4F;X
+L003AB7: db $43;X
+L003AB8: db $C9;X
+L003AB9: db $5F;X
+L003ABA: db $C5;X
+L003ABB: db $E5;X
+L003ABC: db $3E;X
+L003ABD: db $25;X
+L003ABE: db $21;X
+L003ABF: db $78;X
+L003AC0: db $40;X
+L003AC1: db $CD;X
+L003AC2: db $1B;X
+L003AC3: db $08;X
+L003AC4: db $E1;X
+L003AC5: db $C1;X
+L003AC6: db $C9;X
+L003AC7: db $C9;X
+L003AC8: db $FA;X
+L003AC9: db $41;X
+L003ACA: db $C8;X
+L003ACB: db $F5;X
+L003ACC: db $3E;X
+L003ACD: db $19;X
+L003ACE: db $CD;X
+L003ACF: db $B9;X
+L003AD0: db $0C;X
+L003AD1: db $CD;X
+L003AD2: db $76;X
+L003AD3: db $41;X
+L003AD4: db $F1;X
+L003AD5: db $CD;X
+L003AD6: db $B9;X
+L003AD7: db $0C;X
+L003AD8: db $C9;X
+L003AD9: db $FA;X
+L003ADA: db $41;X
+L003ADB: db $C8;X
+L003ADC: db $F5;X
+L003ADD: db $3E;X
+L003ADE: db $02;X
+L003ADF: db $CD;X
+L003AE0: db $B9;X
+L003AE1: db $0C;X
+L003AE2: db $CD;X
+L003AE3: db $BE;X
+L003AE4: db $5B;X
+L003AE5: db $F1;X
+L003AE6: db $CD;X
+L003AE7: db $B9;X
+L003AE8: db $0C;X
+L003AE9: db $C9;X
+L003AEA: db $FA;X
+L003AEB: db $41;X
+L003AEC: db $C8;X
+L003AED: db $F5;X
+L003AEE: db $3E;X
+L003AEF: db $02;X
+L003AF0: db $CD;X
+L003AF1: db $B9;X
+L003AF2: db $0C;X
+L003AF3: db $CD;X
+L003AF4: db $49;X
+L003AF5: db $54;X
+L003AF6: db $F1;X
+L003AF7: db $CD;X
+L003AF8: db $B9;X
+L003AF9: db $0C;X
+L003AFA: db $C9;X
+L003AFB: db $FA;X
+L003AFC: db $41;X
+L003AFD: db $C8;X
+L003AFE: db $F5;X
+L003AFF: db $3E;X
+L003B00: db $19;X
+L003B01: db $CD;X
+L003B02: db $B9;X
+L003B03: db $0C;X
+L003B04: db $CD;X
+L003B05: db $A7;X
+L003B06: db $56;X
+L003B07: db $CD;X
+L003B08: db $35;X
+L003B09: db $45;X
+L003B0A: db $F1;X
+L003B0B: db $CD;X
+L003B0C: db $B9;X
+L003B0D: db $0C;X
+L003B0E: db $C9;X
+L003B0F: db $FA;X
+L003B10: db $41;X
+L003B11: db $C8;X
+L003B12: db $F5;X
+L003B13: db $3E;X
+L003B14: db $19;X
+L003B15: db $CD;X
+L003B16: db $B9;X
+L003B17: db $0C;X
+L003B18: db $CD;X
+L003B19: db $98;X
+L003B1A: db $59;X
+L003B1B: db $F1;X
+L003B1C: db $CD;X
+L003B1D: db $B9;X
+L003B1E: db $0C;X
+L003B1F: db $C9;X
+L003B20: db $FA;X
+L003B21: db $41;X
+L003B22: db $C8;X
+L003B23: db $F5;X
+L003B24: db $3E;X
+L003B25: db $19;X
+L003B26: db $CD;X
+L003B27: db $B9;X
+L003B28: db $0C;X
+L003B29: db $CD;X
+L003B2A: db $C1;X
+L003B2B: db $5C;X
+L003B2C: db $F1;X
+L003B2D: db $CD;X
+L003B2E: db $B9;X
+L003B2F: db $0C;X
+L003B30: db $C9;X
+L003B31: db $FA;X
+L003B32: db $41;X
+L003B33: db $C8;X
+L003B34: db $F5;X
+L003B35: db $3E;X
+L003B36: db $19;X
+L003B37: db $CD;X
+L003B38: db $B9;X
+L003B39: db $0C;X
+L003B3A: db $CD;X
+L003B3B: db $AD;X
+L003B3C: db $5C;X
+L003B3D: db $F1;X
+L003B3E: db $CD;X
+L003B3F: db $B9;X
+L003B40: db $0C;X
+L003B41: db $C9;X
+L003B42: db $FA;X
+L003B43: db $41;X
+L003B44: db $C8;X
+L003B45: db $F5;X
+L003B46: db $3E;X
+L003B47: db $19;X
+L003B48: db $CD;X
+L003B49: db $B9;X
+L003B4A: db $0C;X
+L003B4B: db $CD;X
+L003B4C: db $99;X
+L003B4D: db $5C;X
+L003B4E: db $F1;X
+L003B4F: db $CD;X
+L003B50: db $B9;X
+L003B51: db $0C;X
+L003B52: db $C9;X
+L003B53: db $FA;X
+L003B54: db $41;X
+L003B55: db $C8;X
+L003B56: db $F5;X
+L003B57: db $3E;X
+L003B58: db $19;X
+L003B59: db $CD;X
+L003B5A: db $B9;X
+L003B5B: db $0C;X
+L003B5C: db $CD;X
+L003B5D: db $A3;X
+L003B5E: db $5C;X
+L003B5F: db $F1;X
+L003B60: db $CD;X
+L003B61: db $B9;X
+L003B62: db $0C;X
+L003B63: db $C9;X
+L003B64: db $FA;X
+L003B65: db $41;X
+L003B66: db $C8;X
+L003B67: db $F5;X
+L003B68: db $3E;X
+L003B69: db $19;X
+L003B6A: db $CD;X
+L003B6B: db $B9;X
+L003B6C: db $0C;X
+L003B6D: db $CD;X
+L003B6E: db $8E;X
+L003B6F: db $59;X
+L003B70: db $F1;X
+L003B71: db $CD;X
+L003B72: db $B9;X
+L003B73: db $0C;X
+L003B74: db $C9;X
+L003B75: db $FA;X
+L003B76: db $41;X
+L003B77: db $C8;X
+L003B78: db $F5;X
+L003B79: db $3E;X
+L003B7A: db $19;X
+L003B7B: db $CD;X
+L003B7C: db $B9;X
+L003B7D: db $0C;X
+L003B7E: db $CD;X
+L003B7F: db $84;X
+L003B80: db $59;X
+L003B81: db $F1;X
+L003B82: db $CD;X
+L003B83: db $B9;X
+L003B84: db $0C;X
+L003B85: db $C9;X
+L003B86: db $FA;X
+L003B87: db $41;X
+L003B88: db $C8;X
+L003B89: db $F5;X
+L003B8A: db $3E;X
+L003B8B: db $19;X
+L003B8C: db $CD;X
+L003B8D: db $B9;X
+L003B8E: db $0C;X
+L003B8F: db $CD;X
+L003B90: db $B7;X
+L003B91: db $5C;X
+L003B92: db $F1;X
+L003B93: db $CD;X
+L003B94: db $B9;X
+L003B95: db $0C;X
+L003B96: db $C9;X
+L003B97: db $FA;X
+L003B98: db $41;X
+L003B99: db $C8;X
+L003B9A: db $F5;X
+L003B9B: db $3E;X
+L003B9C: db $19;X
+L003B9D: db $CD;X
+L003B9E: db $B9;X
+L003B9F: db $0C;X
+L003BA0: db $CD;X
+L003BA1: db $60;X
+L003BA2: db $5F;X
+L003BA3: db $F1;X
+L003BA4: db $CD;X
+L003BA5: db $B9;X
+L003BA6: db $0C;X
+L003BA7: db $C9;X
+L003BA8: db $3E;X
+L003BA9: db $16;X
+L003BAA: db $EA;X
+L003BAB: db $4F;X
+L003BAC: db $C8;X
+L003BAD: db $01;X
+L003BAE: db $20;X
+L003BAF: db $00;X
+L003BB0: db $18;X
+L003BB1: db $1E;X
+L003BB2: db $E1;X
+L003BB3: db $2A;X
+L003BB4: db $EA;X
+L003BB5: db $4F;X
+L003BB6: db $C8;X
+L003BB7: db $2A;X
+L003BB8: db $EA;X
+L003BB9: db $50;X
+L003BBA: db $C8;X
+L003BBB: db $2A;X
+L003BBC: db $EA;X
+L003BBD: db $51;X
+L003BBE: db $C8;X
+L003BBF: db $2A;X
+L003BC0: db $5F;X
+L003BC1: db $2A;X
+L003BC2: db $57;X
+L003BC3: db $2A;X
+L003BC4: db $4F;X
+L003BC5: db $2A;X
+L003BC6: db $47;X
+L003BC7: db $E5;X
+L003BC8: db $FA;X
+L003BC9: db $50;X
+L003BCA: db $C8;X
+L003BCB: db $6F;X
+L003BCC: db $FA;X
+L003BCD: db $51;X
+L003BCE: db $C8;X
+L003BCF: db $67;X
+L003BD0: db $F0;X
+L003BD1: db $40;X
+L003BD2: db $CB;X
+L003BD3: db $7F;X
+L003BD4: db $28;X
+L003BD5: db $0A;X
+L003BD6: db $FA;X
+L003BD7: db $4F;X
+L003BD8: db $C8;X
+L003BD9: db $CD;X
+L003BDA: db $74;X
+L003BDB: db $08;X
+L003BDC: db $CD;X
+L003BDD: db $B3;X
+L003BDE: db $08;X
+L003BDF: db $C9;X
+L003BE0: db $FA;X
+L003BE1: db $4F;X
+L003BE2: db $C8;X
+L003BE3: db $CD;X
+L003BE4: db $F5;X
+L003BE5: db $0F;X
+L003BE6: db $C9;X
+L003BE7: db $E1;X
+L003BE8: db $E5;X
+L003BE9: db $FA;X
+L003BEA: db $34;X
+L003BEB: db $C8;X
+L003BEC: db $FE;X
+L003BED: db $04;X
+L003BEE: db $20;X
+L003BEF: db $2A;X
+L003BF0: db $2A;X
+L003BF1: db $EA;X
+L003BF2: db $4F;X
+L003BF3: db $C8;X
+L003BF4: db $2A;X
+L003BF5: db $EA;X
+L003BF6: db $50;X
+L003BF7: db $C8;X
+L003BF8: db $2A;X
+L003BF9: db $EA;X
+L003BFA: db $51;X
+L003BFB: db $C8;X
+L003BFC: db $2A;X
+L003BFD: db $5F;X
+L003BFE: db $16;X
+L003BFF: db $00;X
+L003C00: db $E5;X
+L003C01: db $21;X
+L003C02: db $A4;X
+L003C03: db $C8;X
+L003C04: db $19;X
+L003C05: db $E5;X
+L003C06: db $D1;X
+L003C07: db $E1;X
+L003C08: db $2A;X
+L003C09: db $4F;X
+L003C0A: db $06;X
+L003C0B: db $00;X
+L003C0C: db $FA;X
+L003C0D: db $50;X
+L003C0E: db $C8;X
+L003C0F: db $6F;X
+L003C10: db $FA;X
+L003C11: db $51;X
+L003C12: db $C8;X
+L003C13: db $67;X
+L003C14: db $FA;X
+L003C15: db $4F;X
+L003C16: db $C8;X
+L003C17: db $CD;X
+L003C18: db $F5;X
+L003C19: db $0F;X
+L003C1A: db $CD;X
+L003C1B: db $C0;X
+L003C1C: db $0D;X
+L003C1D: db $E1;X
+L003C1E: db $11;X
+L003C1F: db $05;X
+L003C20: db $00;X
+L003C21: db $19;X
+L003C22: db $E5;X
+L003C23: db $C9;X
+L003C24: db $FA;X
+L003C25: db $FD;X
+L003C26: db $C7;X
+L003C27: db $FE;X
+L003C28: db $FF;X
+L003C29: db $C2;X
+L003C2A: db $1F;X
+L003C2B: db $10;X
+L003C2C: db $C3;X
+L003C2D: db $33;X
+L003C2E: db $11;X
+L003C2F: db $3E;X
+L003C30: db $3C;X
+L003C31: db $CD;X
+L003C32: db $B8;X
+L003C33: db $03;X
+L003C34: db $C9;X
+L003C35: db $FA;X
+L003C36: db $41;X
+L003C37: db $C8;X
+L003C38: db $F5;X
+L003C39: db $3E;X
+L003C3A: db $22;X
+L003C3B: db $CD;X
+L003C3C: db $B9;X
+L003C3D: db $0C;X
+L003C3E: db $CD;X
+L003C3F: db $64;X
+L003C40: db $5C;X
+L003C41: db $F1;X
+L003C42: db $CD;X
+L003C43: db $B9;X
+L003C44: db $0C;X
+L003C45: db $C9;X
+L003C46: db $FA;X
+L003C47: db $41;X
+L003C48: db $C8;X
+L003C49: db $F5;X
+L003C4A: db $3E;X
+L003C4B: db $22;X
+L003C4C: db $CD;X
+L003C4D: db $B9;X
+L003C4E: db $0C;X
+L003C4F: db $CD;X
+L003C50: db $50;X
+L003C51: db $5C;X
+L003C52: db $F1;X
+L003C53: db $CD;X
+L003C54: db $B9;X
+L003C55: db $0C;X
+L003C56: db $C9;X
+L003C57: db $78;X
+L003C58: db $CB;X
+L003C59: db $37;X
+L003C5A: db $E6;X
+L003C5B: db $F0;X
+L003C5C: db $5F;X
+L003C5D: db $16;X
+L003C5E: db $00;X
+L003C5F: db $21;X
+L003C60: db $00;X
+L003C61: db $87;X
+L003C62: db $19;X
+L003C63: db $E5;X
+L003C64: db $79;X
+L003C65: db $CB;X
+L003C66: db $37;X
+L003C67: db $E6;X
+L003C68: db $F0;X
+L003C69: db $5F;X
+L003C6A: db $16;X
+L003C6B: db $00;X
+L003C6C: db $21;X
+L003C6D: db $00;X
+L003C6E: db $64;X
+L003C6F: db $19;X
+L003C70: db $D1;X
+L003C71: db $3E;X
+L003C72: db $07;X
+L003C73: db $EA;X
+L003C74: db $4F;X
+L003C75: db $C8;X
+L003C76: db $01;X
+L003C77: db $10;X
+L003C78: db $00;X
+L003C79: db $F0;X
+L003C7A: db $40;X
+L003C7B: db $CB;X
+L003C7C: db $7F;X
+L003C7D: db $28;X
+L003C7E: db $0A;X
+L003C7F: db $FA;X
+L003C80: db $4F;X
+L003C81: db $C8;X
+L003C82: db $CD;X
+L003C83: db $74;X
+L003C84: db $08;X
+L003C85: db $CD;X
+L003C86: db $B3;X
+L003C87: db $08;X
+L003C88: db $C9;X
+L003C89: db $FA;X
+L003C8A: db $4F;X
+L003C8B: db $C8;X
+L003C8C: db $CD;X
+L003C8D: db $F5;X
+L003C8E: db $0F;X
+L003C8F: db $C9;X
+L003C90: db $3D;X
+L003C91: db $CB;X
+L003C92: db $27;X
+L003C93: db $5F;X
+L003C94: db $16;X
+L003C95: db $00;X
+L003C96: db $FA;X
+L003C97: db $41;X
+L003C98: db $C8;X
+L003C99: db $F5;X
+L003C9A: db $3E;X
+L003C9B: db $23;X
+L003C9C: db $CD;X
+L003C9D: db $B9;X
+L003C9E: db $0C;X
+L003C9F: db $21;X
+L003CA0: db $E9;X
+L003CA1: db $46;X
+L003CA2: db $19;X
+L003CA3: db $2A;X
+L003CA4: db $66;X
+L003CA5: db $6F;X
+L003CA6: db $AF;X
+L003CA7: db $EA;X
+L003CA8: db $0A;X
+L003CA9: db $D1;X
+L003CAA: db $11;X
+L003CAB: db $80;X
+L003CAC: db $D1;X
+L003CAD: db $01;X
+L003CAE: db $C0;X
+L003CAF: db $D1;X
+L003CB0: db $7E;X
+L003CB1: db $FE;X
+L003CB2: db $EE;X
+L003CB3: db $28;X
+L003CB4: db $10;X
+L003CB5: db $12;X
+L003CB6: db $23;X
+L003CB7: db $13;X
+L003CB8: db $7E;X
+L003CB9: db $02;X
+L003CBA: db $23;X
+L003CBB: db $03;X
+L003CBC: db $FA;X
+L003CBD: db $0A;X
+L003CBE: db $D1;X
+L003CBF: db $3C;X
+L003CC0: db $EA;X
+L003CC1: db $0A;X
+L003CC2: db $D1;X
+L003CC3: db $18;X
+L003CC4: db $EB;X
+L003CC5: db $3E;X
+L003CC6: db $FF;X
+L003CC7: db $12;X
+L003CC8: db $02;X
+L003CC9: db $F1;X
+L003CCA: db $CD;X
+L003CCB: db $B9;X
+L003CCC: db $0C;X
+L003CCD: db $C9;X
+L003CCE: db $FA;X
+L003CCF: db $94;X
+L003CD0: db $CB;X
+L003CD1: db $3D;X
+L003CD2: db $5F;X
+L003CD3: db $16;X
+L003CD4: db $00;X
+L003CD5: db $21;X
+L003CD6: db $50;X
+L003CD7: db $D0;X
+L003CD8: db $19;X
+L003CD9: db $7E;X
+L003CDA: db $3D;X
+L003CDB: db $CB;X
+L003CDC: db $37;X
+L003CDD: db $E6;X
+L003CDE: db $F0;X
+L003CDF: db $4F;X
+L003CE0: db $06;X
+L003CE1: db $00;X
+L003CE2: db $E5;X
+L003CE3: db $3E;X
+L003CE4: db $25;X
+L003CE5: db $21;X
+L003CE6: db $4B;X
+L003CE7: db $41;X
+L003CE8: db $CD;X
+L003CE9: db $1B;X
+L003CEA: db $08;X
+L003CEB: db $E1;X
+L003CEC: db $21;X
+L003CED: db $00;X
+L003CEE: db $40;X
+L003CEF: db $19;X
+L003CF0: db $09;X
+L003CF1: db $1E;X
+L003CF2: db $00;X
+L003CF3: db $E5;X
+L003CF4: db $16;X
+L003CF5: db $AC;X
+L003CF6: db $1A;X
+L003CF7: db $4F;X
+L003CF8: db $06;X
+L003CF9: db $00;X
+L003CFA: db $09;X
+L003CFB: db $7E;X
+L003CFC: db $E1;X
+L003CFD: db $16;X
+L003CFE: db $AF;X
+L003CFF: db $12;X
+L003D00: db $1C;X
+L003D01: db $C2;X
+L003D02: db $F3;X
+L003D03: db $3C;X
+L003D04: db $C9;X
+L003D05: db $FA;X
+L003D06: db $41;X
+L003D07: db $C8;X
+L003D08: db $F5;X
+L003D09: db $3E;X
+L003D0A: db $15;X
+L003D0B: db $CD;X
+L003D0C: db $B9;X
+L003D0D: db $0C;X
+L003D0E: db $3E;X
+L003D0F: db $0A;X
+L003D10: db $EA;X
+L003D11: db $00;X
+L003D12: db $00;X
+L003D13: db $CD;X
+L003D14: db $CE;X
+L003D15: db $3C;X
+L003D16: db $97;X
+L003D17: db $EA;X
+L003D18: db $00;X
+L003D19: db $00;X
+L003D1A: db $3E;X
+L003D1B: db $30;X
+L003D1C: db $21;X
+L003D1D: db $0F;X
+L003D1E: db $41;X
+L003D1F: db $CD;X
+L003D20: db $1B;X
+L003D21: db $08;X
+L003D22: db $21;X
+L003D23: db $40;X
+L003D24: db $D0;X
+L003D25: db $FA;X
+L003D26: db $94;X
+L003D27: db $CB;X
+L003D28: db $3D;X
+L003D29: db $5F;X
+L003D2A: db $16;X
+L003D2B: db $00;X
+L003D2C: db $19;X
+L003D2D: db $7E;X
+L003D2E: db $EA;X
+L003D2F: db $82;X
+L003D30: db $CE;X
+L003D31: db $FA;X
+L003D32: db $91;X
+L003D33: db $CB;X
+L003D34: db $CB;X
+L003D35: db $37;X
+L003D36: db $5F;X
+L003D37: db $FA;X
+L003D38: db $90;X
+L003D39: db $CB;X
+L003D3A: db $83;X
+L003D3B: db $5F;X
+L003D3C: db $3E;X
+L003D3D: db $30;X
+L003D3E: db $21;X
+L003D3F: db $6A;X
+L003D40: db $43;X
+L003D41: db $CD;X
+L003D42: db $1B;X
+L003D43: db $08;X
+L003D44: db $F1;X
+L003D45: db $CD;X
+L003D46: db $B9;X
+L003D47: db $0C;X
+L003D48: db $C9;X
+L003D49: db $FA;X
+L003D4A: db $41;X
+L003D4B: db $C8;X
+L003D4C: db $F5;X
+L003D4D: db $3E;X
+L003D4E: db $15;X
+L003D4F: db $CD;X
+L003D50: db $B9;X
+L003D51: db $0C;X
+L003D52: db $CD;X
+L003D53: db $5A;X
+L003D54: db $3D;X
+L003D55: db $F1;X
+L003D56: db $CD;X
+L003D57: db $B9;X
+L003D58: db $0C;X
+L003D59: db $C9;X
+L003D5A: db $3E;X
+L003D5B: db $0A;X
+L003D5C: db $EA;X
+L003D5D: db $00;X
+L003D5E: db $00;X
+L003D5F: db $CD;X
+L003D60: db $CE;X
+L003D61: db $3C;X
+L003D62: db $21;X
+L003D63: db $00;X
+L003D64: db $AE;X
+L003D65: db $11;X
+L003D66: db $00;X
+L003D67: db $AD;X
+L003D68: db $3E;X
+L003D69: db $FF;X
+L003D6A: db $22;X
+L003D6B: db $12;X
+L003D6C: db $1C;X
+L003D6D: db $20;X
+L003D6E: db $FB;X
+L003D6F: db $97;X
+L003D70: db $EA;X
+L003D71: db $00;X
+L003D72: db $00;X
+L003D73: db $21;X
+L003D74: db $40;X
+L003D75: db $D0;X
+L003D76: db $FA;X
+L003D77: db $94;X
+L003D78: db $CB;X
+L003D79: db $3D;X
+L003D7A: db $5F;X
+L003D7B: db $16;X
+L003D7C: db $00;X
+L003D7D: db $19;X
+L003D7E: db $7E;X
+L003D7F: db $EA;X
+L003D80: db $82;X
+L003D81: db $CE;X
+L003D82: db $EA;X
+L003D83: db $83;X
+L003D84: db $CE;X
+L003D85: db $EA;X
+L003D86: db $84;X
+L003D87: db $CE;X
+L003D88: db $3E;X
+L003D89: db $30;X
+L003D8A: db $21;X
+L003D8B: db $0F;X
+L003D8C: db $41;X
+L003D8D: db $CD;X
+L003D8E: db $1B;X
+L003D8F: db $08;X
+L003D90: db $FA;X
+L003D91: db $91;X
+L003D92: db $CB;X
+L003D93: db $CB;X
+L003D94: db $37;X
+L003D95: db $5F;X
+L003D96: db $FA;X
+L003D97: db $90;X
+L003D98: db $CB;X
+L003D99: db $83;X
+L003D9A: db $5F;X
+L003D9B: db $FA;X
+L003D9C: db $94;X
+L003D9D: db $CB;X
+L003D9E: db $FE;X
+L003D9F: db $06;X
+L003DA0: db $38;X
+L003DA1: db $11;X
+L003DA2: db $3E;X
+L003DA3: db $30;X
+L003DA4: db $21;X
+L003DA5: db $EA;X
+L003DA6: db $43;X
+L003DA7: db $CD;X
+L003DA8: db $1B;X
+L003DA9: db $08;X
+L003DAA: db $3E;X
+L003DAB: db $30;X
+L003DAC: db $21;X
+L003DAD: db $64;X
+L003DAE: db $41;X
+L003DAF: db $CD;X
+L003DB0: db $1B;X
+L003DB1: db $08;X
+L003DB2: db $C9;X
+L003DB3: db $3E;X
+L003DB4: db $30;X
+L003DB5: db $21;X
+L003DB6: db $6A;X
+L003DB7: db $43;X
+L003DB8: db $CD;X
+L003DB9: db $1B;X
+L003DBA: db $08;X
+L003DBB: db $3E;X
+L003DBC: db $30;X
+L003DBD: db $21;X
+L003DBE: db $64;X
+L003DBF: db $41;X
+L003DC0: db $CD;X
+L003DC1: db $1B;X
+L003DC2: db $08;X
+L003DC3: db $C9;X
+L003DC4: db $E0;X
+L003DC5: db $80;X
+L003DC6: db $C3;X
+L003DC7: db $B9;X
+L003DC8: db $0C;X
+L003DC9:;C
+	push bc
+	push de
+	push hl
+	ld   a, [$C841]
+	push af
+	ld   a, $0D
+	ld   [$DB3A], a
+	call L000CB9
+	call SoundInt_Init
+	pop  af
+	call L000CB9
+	pop  hl
+	pop  de
+	pop  bc
+	ret  
+L003DE3:;C
+	ld   a, [$C841]
+	push af
+	ld   a, [$DB3A]
+	call L000CB9
+	call SoundInt_Do
+	pop  af
+	call L000CB9
+	ret  
+L003DF5:;C
+	push bc
+	push de
+	push hl
+	call L003E02
+	call L003E11
+	pop  hl
+	pop  de
+	pop  bc
+	ret  
+L003E02:;C
+	ld   [$DB3B], a
+	ld   b, $04
+	ld   hl, $5BF2
+	call L000C9D
+	ld   [$DB3A], a
+	ret  
+L003E11:;C
+	ld   a, [$C841]
+	push af
+	ld   a, [$DB3A]
+	call L000CB9
+	ld   a, [$DB3B]
+	call SoundInt_ReqPlayId
+	pop  af
+	call L000CB9
+	ret  
+L003E26: db $EA;X
+L003E27: db $4F;X
+L003E28: db $C8;X
+L003E29: db $FA;X
+L003E2A: db $41;X
+L003E2B: db $C8;X
+L003E2C: db $F5;X
+L003E2D: db $FA;X
+L003E2E: db $3A;X
+L003E2F: db $DB;X
+L003E30: db $CD;X
+L003E31: db $B9;X
+L003E32: db $0C;X
+L003E33: db $FA;X
+L003E34: db $4F;X
+L003E35: db $C8;X
+L003E36: db $CD;X
+L003E37: db $09;X
+L003E38: db $40;X
+L003E39: db $F1;X
+L003E3A: db $CD;X
+L003E3B: db $B9;X
+L003E3C: db $0C;X
+L003E3D: db $C9;X
+L003E3E: db $EA;X
+L003E3F: db $4F;X
+L003E40: db $C8;X
+L003E41: db $FA;X
+L003E42: db $41;X
+L003E43: db $C8;X
+L003E44: db $F5;X
+L003E45: db $FA;X
+L003E46: db $3A;X
+L003E47: db $DB;X
+L003E48: db $CD;X
+L003E49: db $B9;X
+L003E4A: db $0C;X
+L003E4B: db $FA;X
+L003E4C: db $4F;X
+L003E4D: db $C8;X
+L003E4E: db $CD;X
+L003E4F: db $0C;X
+L003E50: db $40;X
+L003E51: db $F1;X
+L003E52: db $CD;X
+L003E53: db $B9;X
+L003E54: db $0C;X
+L003E55: db $C9;X
+L003E56: db $FF;X
+L003E57: db $FF;X
+L003E58: db $FF;X
+L003E59: db $FF;X
+L003E5A: db $FF;X
+L003E5B: db $FF;X
+L003E5C: db $FF;X
+L003E5D: db $FF;X
+L003E5E: db $FF;X
+L003E5F: db $FF;X
+L003E60: db $FF;X
+L003E61: db $FF;X
+L003E62: db $FF;X
+L003E63: db $FF;X
+L003E64: db $FF;X
+L003E65: db $FF;X
+L003E66: db $FF;X
+L003E67: db $FF;X
+L003E68: db $FF;X
+L003E69: db $FF;X
+L003E6A: db $FF;X
+L003E6B: db $FF;X
+L003E6C: db $FF;X
+L003E6D: db $FF;X
+L003E6E: db $FF;X
+L003E6F: db $FF;X
+L003E70: db $FF;X
+L003E71: db $FF;X
+L003E72: db $FF;X
+L003E73: db $FF;X
+L003E74: db $FF;X
+L003E75: db $FF;X
+L003E76: db $FF;X
+L003E77: db $FF;X
+L003E78: db $FF;X
+L003E79: db $FF;X
+L003E7A: db $FF;X
+L003E7B: db $FF;X
+L003E7C: db $FF;X
+L003E7D: db $FF;X
+L003E7E: db $FF;X
+L003E7F: db $FF;X
+L003E80: db $FF;X
+L003E81: db $FF;X
+L003E82: db $FF;X
+L003E83: db $FF;X
+L003E84: db $FF;X
+L003E85: db $FF;X
+L003E86: db $FF;X
+L003E87: db $FF;X
+L003E88: db $FF;X
+L003E89: db $FF;X
+L003E8A: db $FF;X
+L003E8B: db $FF;X
+L003E8C: db $FF;X
+L003E8D: db $FF;X
+L003E8E: db $FF;X
+L003E8F: db $FF;X
+L003E90: db $FF;X
+L003E91: db $FF;X
+L003E92: db $FF;X
+L003E93: db $FF;X
+L003E94: db $FF;X
+L003E95: db $FF;X
+L003E96: db $FF;X
+L003E97: db $FF;X
+L003E98: db $FF;X
+L003E99: db $FF;X
+L003E9A: db $FF;X
+L003E9B: db $FF;X
+L003E9C: db $FF;X
+L003E9D: db $FF;X
+L003E9E: db $FF;X
+L003E9F: db $FF;X
+L003EA0: db $FF;X
+L003EA1: db $FF;X
+L003EA2: db $FF;X
+L003EA3: db $FF;X
+L003EA4: db $FF;X
+L003EA5: db $FF;X
+L003EA6: db $FF;X
+L003EA7: db $FF;X
+L003EA8: db $FF;X
+L003EA9: db $FF;X
+L003EAA: db $FF;X
+L003EAB: db $FF;X
+L003EAC: db $FF;X
+L003EAD: db $FF;X
+L003EAE: db $FF;X
+L003EAF: db $FF;X
+L003EB0: db $FF;X
+L003EB1: db $FF;X
+L003EB2: db $FF;X
+L003EB3: db $FF;X
+L003EB4: db $FF;X
+L003EB5: db $FF;X
+L003EB6: db $FF;X
+L003EB7: db $FF;X
+L003EB8: db $FF;X
+L003EB9: db $FF;X
+L003EBA: db $FF;X
+L003EBB: db $FF;X
+L003EBC: db $FF;X
+L003EBD: db $FF;X
+L003EBE: db $FF;X
+L003EBF: db $FF;X
+L003EC0: db $FF;X
+L003EC1: db $FF;X
+L003EC2: db $FF;X
+L003EC3: db $FF;X
+L003EC4: db $FF;X
+L003EC5: db $FF;X
+L003EC6: db $FF;X
+L003EC7: db $FF;X
+L003EC8: db $FF;X
+L003EC9: db $FF;X
+L003ECA: db $FF;X
+L003ECB: db $FF;X
+L003ECC: db $FF;X
+L003ECD: db $FF;X
+L003ECE: db $FF;X
+L003ECF: db $FF;X
+L003ED0: db $FF;X
+L003ED1: db $FF;X
+L003ED2: db $FF;X
+L003ED3: db $FF;X
+L003ED4: db $FF;X
+L003ED5: db $FF;X
+L003ED6: db $FF;X
+L003ED7: db $FF;X
+L003ED8: db $FF;X
+L003ED9: db $FF;X
+L003EDA: db $FF;X
+L003EDB: db $FF;X
+L003EDC: db $FF;X
+L003EDD: db $FF;X
+L003EDE: db $FF;X
+L003EDF: db $FF;X
+L003EE0: db $FF;X
+L003EE1: db $FF;X
+L003EE2: db $FF;X
+L003EE3: db $FF;X
+L003EE4: db $FF;X
+L003EE5: db $FF;X
+L003EE6: db $FF;X
+L003EE7: db $FF;X
+L003EE8: db $FF;X
+L003EE9: db $FF;X
+L003EEA: db $FF;X
+L003EEB: db $FF;X
+L003EEC: db $FF;X
+L003EED: db $FF;X
+L003EEE: db $FF;X
+L003EEF: db $FF;X
+L003EF0: db $FF;X
+L003EF1: db $FF;X
+L003EF2: db $FF;X
+L003EF3: db $FF;X
+L003EF4: db $FF;X
+L003EF5: db $FF;X
+L003EF6: db $FF;X
+L003EF7: db $FF;X
+L003EF8: db $FF;X
+L003EF9: db $FF;X
+L003EFA: db $FF;X
+L003EFB: db $FF;X
+L003EFC: db $FF;X
+L003EFD: db $FF;X
+L003EFE: db $FF;X
+L003EFF: db $FF;X
+L003F00: db $FF;X
+L003F01: db $FF;X
+L003F02: db $FF;X
+L003F03: db $FF;X
+L003F04: db $FF;X
+L003F05: db $FF;X
+L003F06: db $FF;X
+L003F07: db $FF;X
+L003F08: db $FF;X
+L003F09: db $FF;X
+L003F0A: db $FF;X
+L003F0B: db $FF;X
+L003F0C: db $FF;X
+L003F0D: db $FF;X
+L003F0E: db $FF;X
+L003F0F: db $FF;X
+L003F10: db $FF;X
+L003F11: db $FF;X
+L003F12: db $FF;X
+L003F13: db $FF;X
+L003F14: db $FF;X
+L003F15: db $FF;X
+L003F16: db $FF;X
+L003F17: db $FF;X
+L003F18: db $FF;X
+L003F19: db $FF;X
+L003F1A: db $FF;X
+L003F1B: db $FF;X
+L003F1C: db $FF;X
+L003F1D: db $FF;X
+L003F1E: db $FF;X
+L003F1F: db $FF;X
+L003F20: db $FF;X
+L003F21: db $FF;X
+L003F22: db $FF;X
+L003F23: db $FF;X
+L003F24: db $FF;X
+L003F25: db $FF;X
+L003F26: db $FF;X
+L003F27: db $FF;X
+L003F28: db $FF;X
+L003F29: db $FF;X
+L003F2A: db $FF;X
+L003F2B: db $FF;X
+L003F2C: db $FF;X
+L003F2D: db $FF;X
+L003F2E: db $FF;X
+L003F2F: db $FF;X
+L003F30: db $FF;X
+L003F31: db $FF;X
+L003F32: db $FF;X
+L003F33: db $FF;X
+L003F34: db $FF;X
+L003F35: db $FF;X
+L003F36: db $FF;X
+L003F37: db $FF;X
+L003F38: db $FF;X
+L003F39: db $FF;X
+L003F3A: db $FF;X
+L003F3B: db $FF;X
+L003F3C: db $FF;X
+L003F3D: db $FF;X
+L003F3E: db $FF;X
+L003F3F: db $FF;X
+L003F40: db $FF;X
+L003F41: db $FF;X
+L003F42: db $FF;X
+L003F43: db $FF;X
+L003F44: db $FF;X
+L003F45: db $FF;X
+L003F46: db $FF;X
+L003F47: db $FF;X
+L003F48: db $FF;X
+L003F49: db $FF;X
+L003F4A: db $FF;X
+L003F4B: db $FF;X
+L003F4C: db $FF;X
+L003F4D: db $FF;X
+L003F4E: db $FF;X
+L003F4F: db $FF;X
+L003F50: db $FF;X
+L003F51: db $FF;X
+L003F52: db $FF;X
+L003F53: db $FF;X
+L003F54: db $FF;X
+L003F55: db $FF;X
+L003F56: db $FF;X
+L003F57: db $FF;X
+L003F58: db $FF;X
+L003F59: db $FF;X
+L003F5A: db $FF;X
+L003F5B: db $FF;X
+L003F5C: db $FF;X
+L003F5D: db $FF;X
+L003F5E: db $FF;X
+L003F5F: db $FF;X
+L003F60: db $FF;X
+L003F61: db $FF;X
+L003F62: db $FF;X
+L003F63: db $FF;X
+L003F64: db $FF;X
+L003F65: db $FF;X
+L003F66: db $FF;X
+L003F67: db $FF;X
+L003F68: db $FF;X
+L003F69: db $FF;X
+L003F6A: db $FF;X
+L003F6B: db $FF;X
+L003F6C: db $FF;X
+L003F6D: db $FF;X
+L003F6E: db $FF;X
+L003F6F: db $FF;X
+L003F70: db $FF;X
+L003F71: db $FF;X
+L003F72: db $FF;X
+L003F73: db $FF;X
+L003F74: db $FF;X
+L003F75: db $FF;X
+L003F76: db $FF;X
+L003F77: db $FF;X
+L003F78: db $FF;X
+L003F79: db $FF;X
+L003F7A: db $FF;X
+L003F7B: db $FF;X
+L003F7C: db $FF;X
+L003F7D: db $FF;X
+L003F7E: db $FF;X
+L003F7F: db $FF;X
+L003F80: db $FF;X
+L003F81: db $FF;X
+L003F82: db $FF;X
+L003F83: db $FF;X
+L003F84: db $FF;X
+L003F85: db $FF;X
+L003F86: db $FF;X
+L003F87: db $FF;X
+L003F88: db $FF;X
+L003F89: db $FF;X
+L003F8A: db $FF;X
+L003F8B: db $FF;X
+L003F8C: db $FF;X
+L003F8D: db $FF;X
+L003F8E: db $FF;X
+L003F8F: db $FF;X
+L003F90: db $FF;X
+L003F91: db $FF;X
+L003F92: db $FF;X
+L003F93: db $FF;X
+L003F94: db $FF;X
+L003F95: db $FF;X
+L003F96: db $FF;X
+L003F97: db $FF;X
+L003F98: db $FF;X
+L003F99: db $FF;X
+L003F9A: db $FF;X
+L003F9B: db $FF;X
+L003F9C: db $FF;X
+L003F9D: db $FF;X
+L003F9E: db $FF;X
+L003F9F: db $FF;X
+L003FA0: db $FF;X
+L003FA1: db $FF;X
+L003FA2: db $FF;X
+L003FA3: db $FF;X
+L003FA4: db $FF;X
+L003FA5: db $FF;X
+L003FA6: db $FF;X
+L003FA7: db $FF;X
+L003FA8: db $FF;X
+L003FA9: db $FF;X
+L003FAA: db $FF;X
+L003FAB: db $FF;X
+L003FAC: db $FF;X
+L003FAD: db $FF;X
+L003FAE: db $FF;X
+L003FAF: db $FF;X
+L003FB0: db $FF;X
+L003FB1: db $FF;X
+L003FB2: db $FF;X
+L003FB3: db $FF;X
+L003FB4: db $FF;X
+L003FB5: db $FF;X
+L003FB6: db $FF;X
+L003FB7: db $FF;X
+L003FB8: db $FF;X
+L003FB9: db $FF;X
+L003FBA: db $FF;X
+L003FBB: db $FF;X
+L003FBC: db $FF;X
+L003FBD: db $FF;X
+L003FBE: db $FF;X
+L003FBF: db $FF;X
+L003FC0: db $FF;X
+L003FC1: db $FF;X
+L003FC2: db $FF;X
+L003FC3: db $FF;X
+L003FC4: db $FF;X
+L003FC5: db $FF;X
+L003FC6: db $FF;X
+L003FC7: db $FF;X
+L003FC8: db $FF;X
+L003FC9: db $FF;X
+L003FCA: db $FF;X
+L003FCB: db $FF;X
+L003FCC: db $FF;X
+L003FCD: db $FF;X
+L003FCE: db $FF;X
+L003FCF: db $FF;X
+L003FD0: db $FF;X
+L003FD1: db $FF;X
+L003FD2: db $FF;X
+L003FD3: db $FF;X
+L003FD4: db $FF;X
+L003FD5: db $FF;X
+L003FD6: db $FF;X
+L003FD7: db $FF;X
+L003FD8: db $FF;X
+L003FD9: db $FF;X
+L003FDA: db $FF;X
+L003FDB: db $FF;X
+L003FDC: db $FF;X
+L003FDD: db $FF;X
+L003FDE: db $FF;X
+L003FDF: db $FF;X
+L003FE0: db $FF;X
+L003FE1: db $FF;X
+L003FE2: db $FF;X
+L003FE3: db $FF;X
+L003FE4: db $FF;X
+L003FE5: db $FF;X
+L003FE6: db $FF;X
+L003FE7: db $FF;X
+L003FE8: db $FF;X
+L003FE9: db $FF;X
+L003FEA: db $FF;X
+L003FEB: db $FF;X
+L003FEC: db $FF;X
+L003FED: db $FF;X
+L003FEE: db $FF;X
+L003FEF: db $FF;X
+L003FF0: db $FF;X
+L003FF1: db $FF;X
+L003FF2: db $FF;X
+L003FF3: db $FF;X
+Int_Bankswitch:;C
+	di   
+	ldh  [hROMBank], a
+	ld   [MBC1RomBank], a
+	xor  a, a
+	ld   [MBC5RomBankHi], a
+	ei   
+	ret  

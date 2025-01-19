@@ -1,0 +1,2 @@
+; ================ Configuration ================
+INCLUDE "main.asm"

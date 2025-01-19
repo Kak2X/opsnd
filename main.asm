@@ -85,7 +85,11 @@ INCLUDE "src/bank0C.asm"
 ; BANK $0D - ???
 ; 
 SECTION "bank0D", ROMX, BANK[$0D]
-INCLUDE "src/bank0D.asm"
+INCLUDE "driver/driver.asm"
+INCLUDE "driver/data/song_headers.asm"
+INCLUDE "driver/data/frequencies.asm"
+INCLUDE "driver/data/waves.asm"
+INCLUDE "driver/data/vibrato.asm"
 INCLUDE "driver/bgm/bgm_4a.asm"
 INCLUDE "driver/bgm/bgm_40.asm"
 INCLUDE "driver/bgm/bgm_3e.asm"

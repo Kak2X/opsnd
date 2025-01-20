@@ -28,7 +28,7 @@ SndData_BGM_0B_Ch1:
 	envelope $A8
 	panning $11
 	duty_cycle 3
-	vibrato_on $03
+	vibrato_on $01
 	snd_call SndCall_BGM_0B_Ch1_0
 	snd_call SndCall_BGM_0B_Ch1_1
 	snd_call SndCall_BGM_0B_Ch1_0
@@ -327,7 +327,7 @@ SndData_BGM_0B_Ch2:
 	envelope $A8
 	panning $22
 	duty_cycle 1
-	vibrato_on $03
+	vibrato_on $01
 	snd_call SndCall_BGM_0B_Ch2_0
 	snd_call SndCall_BGM_0B_Ch2_1
 	snd_call SndCall_BGM_0B_Ch2_0

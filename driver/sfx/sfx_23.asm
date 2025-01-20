@@ -29,7 +29,7 @@ SndData_SFX_23_Ch1:
 	panning $11
 	duty_cycle 3
 SndCall_SFX_23_Ch3_0:
-	vibrato_on $03
+	vibrato_on $01
 	note C#,4, 7
 	note C_,4
 	note B_,3

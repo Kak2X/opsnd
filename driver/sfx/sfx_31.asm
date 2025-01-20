@@ -26,7 +26,7 @@ SndData_SFX_31_Ch2:
 	envelope $A2
 	panning $22
 	duty_cycle 0
-	vibrato_on $18
+	vibrato_on $08
 	silence 12
 .loop0:
 	note C_,7, 8

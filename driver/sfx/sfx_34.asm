@@ -28,7 +28,7 @@ SndData_SFX_34_Ch1:
 	envelope $F8
 	panning $11
 	duty_cycle 3
-	vibrato_on $1B
+	vibrato_on $09
 	note G#,4, 1
 	note A_,4
 	note A#,4
@@ -48,7 +48,7 @@ SndData_SFX_34_Ch2:
 	envelope $A8
 	panning $22
 	duty_cycle 3
-	vibrato_on $1B
+	vibrato_on $09
 	silence 6
 	note G#,4, 1
 	note A_,4
@@ -69,7 +69,7 @@ SndData_SFX_34_Ch3:
 	wave_vol $40
 	panning $44
 	wave_id $06
-	vibrato_on $1B
+	vibrato_on $09
 	note G#,4, 1
 	note A_,4
 	note A#,4

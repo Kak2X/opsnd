@@ -29,7 +29,7 @@ SndData_BGM_01_Ch1:
 	panning $11
 	duty_cycle 0
 	silence 20
-	vibrato_on $03
+	vibrato_on $01
 	snd_call SndCall_BGM_01_Ch2_0
 	snd_call SndCall_BGM_01_Ch2_1
 	snd_call SndCall_BGM_01_Ch2_0
@@ -581,7 +581,7 @@ SndData_BGM_01_Ch2:
 	panning $22
 	duty_cycle 0
 	silence 20
-	vibrato_on $03
+	vibrato_on $01
 	silence 80
 	silence 80
 	silence 80

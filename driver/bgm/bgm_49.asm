@@ -28,7 +28,7 @@ SndData_BGM_49_Ch1:
 	envelope $A8
 	panning $11
 	duty_cycle 3
-	vibrato_on $03
+	vibrato_on $01
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
@@ -188,7 +188,7 @@ SndData_BGM_49_Ch2:
 	envelope $88
 	panning $22
 	duty_cycle 1
-	vibrato_on $03
+	vibrato_on $01
 	fine_tune -5
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune -1

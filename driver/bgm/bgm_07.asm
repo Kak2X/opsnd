@@ -28,7 +28,7 @@ SndData_BGM_07_Ch1:
 	envelope $A8
 	panning $11
 	duty_cycle 2
-	vibrato_on $03
+	vibrato_on $01
 	note F#,3, 4
 	note G_,3
 	note G#,3

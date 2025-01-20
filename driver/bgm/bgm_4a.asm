@@ -28,7 +28,7 @@ SndData_BGM_4A_Ch1:
 	envelope $A8
 	panning $11
 	duty_cycle 2
-	vibrato_on $03
+	vibrato_on $01
 	envelope $88
 	note A_,4, 2
 	envelope $A8
@@ -118,7 +118,7 @@ SndData_BGM_4A_Ch2:
 	envelope $A8
 	panning $22
 	duty_cycle 1
-	vibrato_on $03
+	vibrato_on $01
 	envelope $A8
 	note F_,4, 20
 	envelope $A8
@@ -243,7 +243,7 @@ SndData_BGM_4A_Ch3:
 	panning $44
 	wave_id $03
 	wave_cutoff 0
-	vibrato_on $03
+	vibrato_on $01
 	note F_,4, 10
 	note A#,3
 	note D#,3, 8

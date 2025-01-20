@@ -217,7 +217,7 @@ ENDM
 ; IN
 ; - 1: Vibrato set ID
 MACRO vibrato_on
-	db SNDCMD_BASE + $11, \1
+	db SNDCMD_BASE + $11, (\1 * 3) ; 3 bytes - length of each vibrato table entry
 ENDM
 
 ; =============== vibrato_off ===============

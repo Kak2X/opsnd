@@ -1423,10 +1423,8 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	ld   e, l
 	ld   d, h
 	
-	; [POI] With neither Vibrato or Slide active, it could have jumped directly to Sound_DoChSndInfo_Main.
-	;       The code below is only useful to apply the frequency changes from the pitch slide to the registers,
-	;       it's worthless doing it all the time (while in 96 none of this code existed).
-	; jp   Sound_DoChSndInfo_Main_\1
+	; With neither Vibrato or Slide active, jump directly to Sound_DoChSndInfo_Main.
+	jp   Sound_DoChSndInfo_Main_\1
 	
 .tryUpdateRegs:
 	

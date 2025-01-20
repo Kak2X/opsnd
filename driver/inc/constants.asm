@@ -72,7 +72,7 @@ DEF B_                    EQU 11
 ;--------------
 
 ; DMG Sound List
-DEF SND_MUTE              EQU $00
+DEF SND_MUTE              EQU $7F
 DEF SND_BASE              EQU $80
 DEF SND_NONE              EQU SND_BASE+$00
 DEF BGM_CHARSELECT        EQU SND_BASE+$01

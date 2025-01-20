@@ -5,23 +5,19 @@
 ; - 1: Ptr to a vibrato table.
 ;      This is a list of frequency offsets applied every frame, one after the other.
 ; - 2: Loop point
-MACRO mVbDef
-	dw \1
-	db \2
-ENDM
-Sound_VibratoSetTable: 
-	mVbDef Sound_VibratoSet_Unused_0, $00 ; $00 ;X
-	mVbDef Sound_VibratoSet1, $10 ; $01 
-	mVbDef Sound_VibratoSet_Unused_2, $08 ; $02 ;X
-	mVbDef Sound_VibratoSet_Unused_3, $20 ; $03 ;X
-	mVbDef Sound_VibratoSet_Unused_4, $07 ; $04 ;X
-	mVbDef Sound_VibratoSet_Unused_5, $10 ; $05 ;X
-	mVbDef Sound_VibratoSet_Unused_6, $18 ; $06 ;X
-	mVbDef Sound_VibratoSet_Unused_7, $17 ; $07 ;X
-	mVbDef Sound_VibratoSet8, $00 ; $08 
-	mVbDef Sound_VibratoSet9, $00 ; $09 
+Sound_VibratoSetTable_\1: 
+	mVbDef Sound_VibratoSet_Unused_0_\1, $00 ; $00 ;X
+	mVbDef Sound_VibratoSet1_\1, $10 ; $01 
+	mVbDef Sound_VibratoSet_Unused_2_\1, $08 ; $02 ;X
+	mVbDef Sound_VibratoSet_Unused_3_\1, $20 ; $03 ;X
+	mVbDef Sound_VibratoSet_Unused_4_\1, $07 ; $04 ;X
+	mVbDef Sound_VibratoSet_Unused_5_\1, $10 ; $05 ;X
+	mVbDef Sound_VibratoSet_Unused_6_\1, $18 ; $06 ;X
+	mVbDef Sound_VibratoSet_Unused_7_\1, $17 ; $07 ;X
+	mVbDef Sound_VibratoSet8_\1, $00 ; $08 
+	mVbDef Sound_VibratoSet9_\1, $00 ; $09 
 	
-Sound_VibratoSet_Unused_0: 
+Sound_VibratoSet_Unused_0_\1: 
 ;.loop: ; $00
 	db 0
 	db +1
@@ -36,7 +32,7 @@ Sound_VibratoSet_Unused_0:
 	db -2
 	db -1
 	db VIBCMD_LOOP
-Sound_VibratoSet1: 
+Sound_VibratoSet1_\1: 
 	db 0
 	db 0
 	db 0
@@ -65,7 +61,7 @@ Sound_VibratoSet1:
 	db -2
 	db -1
 	db VIBCMD_LOOP
-Sound_VibratoSet_Unused_2: 
+Sound_VibratoSet_Unused_2_\1: 
 	db 0
 	db 0
 	db 0
@@ -98,7 +94,7 @@ Sound_VibratoSet_Unused_2:
 	db -1
 	db -1
 	db VIBCMD_LOOP
-Sound_VibratoSet_Unused_3:
+Sound_VibratoSet_Unused_3_\1:
 	db 0
 	db 0
 	db 0
@@ -146,7 +142,7 @@ Sound_VibratoSet_Unused_3:
 	db 0
 	db 0
 	db VIBCMD_LOOP
-Sound_VibratoSet_Unused_4:
+Sound_VibratoSet_Unused_4_\1:
 	db 0
 	db 0
 	db 0
@@ -164,7 +160,7 @@ Sound_VibratoSet_Unused_4:
 	db -2
 	db -1
 	db VIBCMD_LOOP
-Sound_VibratoSet_Unused_5:
+Sound_VibratoSet_Unused_5_\1:
 	db -7
 	db -6
 	db -5
@@ -197,7 +193,7 @@ Sound_VibratoSet_Unused_5:
 	db -1
 	db -1
 	db VIBCMD_LOOP
-Sound_VibratoSet_Unused_6:
+Sound_VibratoSet_Unused_6_\1:
 	db 0
 	db 0
 	db 0
@@ -236,7 +232,7 @@ Sound_VibratoSet_Unused_6:
 	db -2
 	db -1
 	db VIBCMD_LOOP
-Sound_VibratoSet_Unused_7:
+Sound_VibratoSet_Unused_7_\1:
 	db 0
 	db 0
 	db 0
@@ -291,7 +287,7 @@ Sound_VibratoSet_Unused_7:
 	db 0
 	db 0
 	db VIBCMD_LOOP
-Sound_VibratoSet8:
+Sound_VibratoSet8_\1:
 ;.loop: ; $00
 	db 0
 	db +6
@@ -310,7 +306,7 @@ Sound_VibratoSet8:
 	db +12
 	db +6
 	db VIBCMD_LOOP
-Sound_VibratoSet9:
+Sound_VibratoSet9_\1:
 ;.loop: ; $00
 	db 0
 	db +3

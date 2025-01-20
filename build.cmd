@@ -1,1 +1,1 @@
-@_build config_rom op original.gb
+@_build config_rom op

@@ -1,7 +1,7 @@
-; =============== Sound_SndHeaderPtrTable ===============
+; =============== Sound_SndHeaderPtrTable_\1 ===============
 ; Table of sound headers, ordered by ID.
 ; Each of the valid ones follows the format as specified in iSndHeader_*
-Sound_SndHeaderPtrTable:
+Sound_SndHeaderPtrTable_\1:
 	dw SndHeader_BGM_01  ;
 	dw SndHeader_BGM_01  ; 130
 	dw SndHeader_BGM_02  ; 131
@@ -136,7 +136,7 @@ Sound_SndHeaderPtrTable:
 	dw SndHeader_BGM_01  ; 260
 	dw SndHeader_BGM_01  ; 261
 	dw SndHeader_BGM_01  ; 262
-Sound_SndBankPtrTable: 
+Sound_SndBankPtrTable_\1: 
 	db BANK(SndHeader_BGM_01)  ;
 	db BANK(SndHeader_BGM_01)  ; 130
 	db BANK(SndHeader_BGM_02)  ; 131
@@ -271,3 +271,4 @@ Sound_SndBankPtrTable:
 	db BANK(SndHeader_BGM_01)  ; 260
 	db BANK(SndHeader_BGM_01)  ; 261
 	db BANK(SndHeader_BGM_01)  ; 262
+.end:

@@ -1,7 +1,7 @@
-; =============== Sound_FreqDataTbl ===============
+; =============== Sound_FreqDataTbl_\1 ===============
 ; Table with pairs of frequency values for the frequency registers (sound channels 1-2-3).
 ; Essentially these are "musical notes" ordered from lowest to highest.
-Sound_FreqDataTbl:
+Sound_FreqDataTbl_\1:
 	dw $0000 ; N/A | $00 | $80
 	dw $002C ; C-2 | $01 | $81
 	dw $009C ; C#2 | $02 | $82

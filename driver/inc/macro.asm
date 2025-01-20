@@ -6,12 +6,14 @@
 ; - 1: A label from a BANK != $00.
 MACRO mHomeCallRet
 	; Save currently loaded bank
+	ld   c, a
 	ldh  a, [hROMBank]
 	push af
 	
 		ld   a, BANK(\1) 		; Calculate the bank the label points to
 		ld   [hROMBank], a		; Save it
 		ld   [MBC1RomBank], a	; Perform the bankswitch
+		ld   a, c
 		call \1
 	
 	; Restore the previous bank
@@ -28,6 +30,13 @@ MACRO dp
 	dw \1
 ENDM
 
+; =============== mVbDef ===============
+; Defines a vibrato table, see vibrato.asm.
+MACRO mVbDef
+	dw \1
+	db \2
+ENDM
+
 ; =============== mSOUNDBANK ===============
 ; Defines the necessary includes for a sound bank.
 ; IN
@@ -40,6 +49,12 @@ IF _NARG > 1
 ELSE
 	mSound_Do \1, 0
 ENDC
+
+INCLUDE "driver/data/song_headers.asm"
+INCLUDE "driver/data/frequencies.asm"
+INCLUDE "driver/data/waves.asm"
+INCLUDE "driver/data/vibrato.asm"
+
 SECTION "Sound Data - Bank \1", ROMX, BANK[\1]
 	; Sound data below
 ENDM

@@ -6,21 +6,30 @@
 ; - 1: A label from a BANK != $00.
 MACRO mHomeCallRet
 	; Save currently loaded bank
-	ld   c, a
 	ldh  a, [hROMBank]
 	push af
-	
 		ld   a, BANK(\1) 		; Calculate the bank the label points to
-		ld   [hROMBank], a		; Save it
-		ld   [MBC1RomBank], a	; Perform the bankswitch
-		ld   a, c
+		mBankswitch
 		call \1
-	
 	; Restore the previous bank
 	pop  af
-	ldh  [hROMBank], a
-	ld   [MBC1RomBank], a
+	mBankswitch
 	ret
+ENDM
+
+; =============== mHomeCallRet ===============
+; Default bankswitch implementation.
+; IN
+; - A: Bank number
+MACRO mBankswitch
+	di
+	ldh  [hROMBank], a
+	ld   [MBC1RomBank], a 
+IF MODE_MBC5
+	xor  a
+	ld   [MBC5RomBank], a
+ENDC 
+	ei
 ENDM
 
 ; =============== dp ===============

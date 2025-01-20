@@ -5,8 +5,10 @@ SoundInt_Do: mHomeCallRet Sound_Do_Main
 SoundInt_ReqPlayId:	mHomeCallRet Sound_ReqPlayId_Main
 SoundInt_SetVolume: mHomeCallRet Sound_SetVolume_Main
 SoundInt_StartSlide: mHomeCallRet Sound_StartSlide_Main
-; Bankswitch code left to the caller.
-
+Bankswitch:
+	mBankswitch
+	ret  
+	
 ;================ mSound_Do ================
 ; Sound Driver, as a macro to get around double inclusion restrictions.
 ; IN
@@ -78,13 +80,11 @@ ENDC
 ; =============== Sound_ReqPlayId ===============
 ; Requests playback for a new sound ID.
 ; IN
-; - A: Sound ID to play
+; - C: Sound ID to play
 Sound_ReqPlayId_\1:
 IF \2
 Sound_ReqPlayId_Main:
 ENDC
-	ld   c, a				; C = Sound ID
-	
 	; Increment request counter (circular buffer index)
 	ld   hl, hSndPlaySetCnt
 	ld   a, [hl]			; A = hSndPlaySetCnt+1 % 8
@@ -131,7 +131,7 @@ Sound_CmdS_StartSlide_\1:
 ; the sound registers and gets priority (Sound_DoChSndInfo_ChkSlide gets skipped over).
 ;
 ; IN
-; - A: SndChInfo ID
+; - D: SndChInfo ID
 ;      Index to Sound_SndChInfoPtrTable.
 ; - E: Slide length, in frames
 ; - BC: Target frequency
@@ -151,7 +151,7 @@ ENDC
 	;
 	push bc ; Save dest frequency
 		push de		; Save timer from E...
-			ld   c, a
+			ld   c, d
 			ld   b, $00
 			ld   hl, Sound_SndChInfoPtrTable_\1
 			add  hl, bc
@@ -316,7 +316,7 @@ Sound_SndChInfoPtrTable_\1:
 ; =============== Sound_SetVolume ===============
 ; Updates the global volume.
 ; IN
-; - A: Volume, in the NR50 format:
+; - C: Volume, in the NR50 format:
 ;      -LLL-RRR
 ;      L -> Left speaker volume
 ;      R -> Right speaker volume
@@ -324,6 +324,7 @@ Sound_SetVolume_\1:
 IF \2
 Sound_SetVolume_Main:
 ENDC
+	ld   a, c
 	ldh  [rNR50], a
 	ld   [wSndVolume], a
 	ret
@@ -928,11 +929,11 @@ Sound_StartNewBGM_Unused_Copy_\1:
 ; =============== Sound_FastSlideSFXtoC_8 ===============
 ; Slides the two SFX pulse channels to note C-8 over 1 second.
 Sound_FastSlideSFXtoC_8_\1:
-	ld   a, SCI_SFXCH1	; SFX - Pulse 1
+	ld   d, SCI_SFXCH1	; SFX - Pulse 1
 	ld   e, 60 			; 1 sec
 	ld   bc, $07E1		; C-8
 	call Sound_StartSlide_\1
-	ld   a, SCI_SFXCH2	; SFX - Pulse 2
+	ld   d, SCI_SFXCH2	; SFX - Pulse 2
 	ld   e, 60 			; 1 sec
 	ld   bc, $07E1		; C-8
 	call Sound_StartSlide_\1
@@ -941,11 +942,11 @@ Sound_FastSlideSFXtoC_8_\1:
 ; =============== Sound_SlowSlideSFXtoF#4 ===============
 ; Slides the two SFX pulse channels to note F#4 over 4 seconds.	
 Sound_SlowSlideSFXtoF#4_\1: 
-	ld   a, SCI_SFXCH1	; SFX - Pulse 1
+	ld   d, SCI_SFXCH1	; SFX - Pulse 1
 	ld   e, 4*60		; 4 secs
 	ld   bc, $069E		; F#4
 	call Sound_StartSlide_\1
-	ld   a, SCI_SFXCH2	; SFX - Pulse 2
+	ld   d, SCI_SFXCH2	; SFX - Pulse 2
 	ld   e, 4*60		; 4 secs
 	ld   bc, $069E		; F#4
 	call Sound_StartSlide_\1

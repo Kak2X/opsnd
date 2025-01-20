@@ -271,19 +271,20 @@ MainLoop:
 	
 .play:
 	ldh  a, [hCursorOpt]
+	ld   c, a
 	call SoundInt_ReqPlayId
 	jr   .callDrv
 .stop:
-	ld   a, SND_MUTE
+	ld   c, SND_MUTE
 	call SoundInt_ReqPlayId
 	jr   .callDrv
 	
 .fadeIn:
-	ld   a, SNDCMD_FADEIN|$0F
+	ld   c, SNDCMD_FADEIN|$0F
 	call SoundInt_ReqPlayId
 	jr   .callDrv
 .fadeOut:
-	ld   a, SNDCMD_FADEOUT|$0F
+	ld   c, SNDCMD_FADEOUT|$0F
 	call SoundInt_ReqPlayId
 	jr   .callDrv
 	
@@ -299,16 +300,6 @@ MainLoop:
 SetSelInTilemap:
 	ld   de, $992B
 	jp   NumberPrinter_Instant
-
-SECTION "Required Sound Driver implementation", ROM0
-Bankswitch:
-	;di   
-	ldh  [hROMBank], a
-	ld   [MBC1RomBank], a
-	;xor  a
-	;ld   [MBC5RomBankHi], a
-	;ei   
-	ret  
 	
 SECTION "Helpers", ROM0
 

@@ -631,7 +631,7 @@ Sound_ChkNewSnd:
 	; Increase the sound playback index/counter, looping it back to $00 if it would index past the end of the table
 	; hSndPlayCnt = (hSndPlayCnt + 1) & $07
 	inc  a						; TblId++
-	and  (SNDIDREQ_SIZE-1)	; Keep range
+	and  (SNDIDREQ_SIZE-1)		; Keep range
 	dec  hl						; Seek back to hSndPlayCnt
 	ld   [hl], a				; Write there
 	
@@ -2072,7 +2072,7 @@ Sound_CmdPtrTbl:
 	dw Sound_DecDataPtr;X					; $00
 	dw Sound_DecDataPtr;X
 	dw Sound_DecDataPtr;X
-	dw Sound_Cmd_ChanStop;X
+	dw Sound_Cmd_ChanStop
 	dw Sound_Cmd_WriteToNRx2
 	dw Sound_Cmd_JpFromLoop
 	dw Sound_Cmd_AddToBaseFreqId
@@ -2084,8 +2084,8 @@ Sound_CmdPtrTbl:
 	dw Sound_Cmd_Call
 	dw Sound_Cmd_Ret
 	dw Sound_Cmd_WriteToNRx1
-	dw Sound_Cmd_LockNRx2;X
-	dw Sound_Cmd_UnlockNRx2;X				; $10
+	dw Sound_Cmd_LockNRx2
+	dw Sound_Cmd_UnlockNRx2					; $10
 	dw Sound_Cmd_SetVibrato
 	dw Sound_Cmd_ClrVibrato;X
 	dw Sound_Cmd_SetWaveData
@@ -2626,7 +2626,7 @@ Sound_Cmd_JpFromLoopByTimer:
 	.incDone0:
 	pop  hl
 
-	dec  [hl]							; Decrement loop timer
+	dec  [hl]						; Decrement loop timer
 	jr   nz, Sound_Cmd_JpFromLoop	; Is it 0 now? If not, jump
 
 	; Otherwise, the looping is over. Seek past the end of the data for this command.
@@ -2807,13 +2807,13 @@ Sound_Cmd_SetWaveData:
 	jr   nz, .loop							; If not, loop
 	ret
 	
-; =============== Sound_Unused_SetWaveDataCustom ===============
+; =============== Sound_SetWaveDataCustom ===============
 ; Writes a complete set of wave data. This will disable ch3 playback.
 ; [TCRF] Unused in this game.
 ;
 ; IN
 ; - HL: Ptr to a wave set id
-Sound_Unused_SetWaveDataCustom:
+Sound_SetWaveDataCustom:
 	; Disable wave ch
 	ld   a, SNDCH3_OFF
 	ldh  [rNR30], a
@@ -3070,7 +3070,7 @@ Sound_Cmd_ChanStop:
 	; Restore the BGM wave set
 	;
 	inc  hl					; Seek to iSndInfo_WaveSetId
-	call Sound_Unused_SetWaveDataCustom
+	call Sound_SetWaveDataCustom
 
 	; Prevent Sound_IncDataPtr from being executed
 	pop  hl

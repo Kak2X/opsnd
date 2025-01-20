@@ -330,20 +330,6 @@ MACRO silence
 	ENDC
 ENDM
 
-; =============== dnote ===============
-; Formats a raw note ID.
-; IN:
-; - 1: Note (C_ to B)
-; - 2: Octave (2-8)
-MACRO dnote
-	IF _NARG > 1
-		_mknote \#
-		db DNOTE
-	ELSE
-		db 0
-	ENDC
-ENDM
-
 ; =============== _mknote ===============
 ; Formats a raw note ID.
 ; IN:

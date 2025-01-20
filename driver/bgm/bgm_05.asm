@@ -4,25 +4,25 @@ SndHeader_BGM_05:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_BGM_05_Ch1 ; Data ptr
-	dnote C#,2 ; Base note
+	db 2 ; Initial fine tune
 	db $81 ; Unused
 .ch2:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_BGM_05_Ch2 ; Data ptr
-	dnote C#,2 ; Base note
+	db 2 ; Initial fine tune
 	db $81 ; Unused
 .ch3:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH3_PTR ; Sound channel ptr
 	dw SndData_BGM_05_Ch3 ; Data ptr
-	dnote C#,2 ; Base note
+	db 2 ; Initial fine tune
 	db $81 ; Unused
 .ch4:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_BGM_05_Ch4 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_BGM_05_Ch1:
 	envelope $A8

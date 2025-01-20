@@ -4,25 +4,25 @@ SndHeader_BGM_0A:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_BGM_0A_Ch1 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch2:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_BGM_0A_Ch2 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch3:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH3_PTR ; Sound channel ptr
 	dw SndData_BGM_0A_Ch3 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch4:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_BGM_0A_Ch4 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_BGM_0A_Ch1:
 	envelope $A8
@@ -34,7 +34,7 @@ SndData_BGM_0A_Ch1:
 	snd_call SndCall_BGM_0A_Ch1_3
 	fine_tune 5
 	snd_call SndCall_BGM_0A_Ch1_3
-	fine_tune 251
+	fine_tune -5
 	snd_call SndCall_BGM_0A_Ch1_4
 	snd_call SndCall_BGM_0A_Ch2_3
 	snd_call SndCall_BGM_0A_Ch2_0
@@ -124,7 +124,7 @@ SndCall_BGM_0A_Ch2_0:
 	note E_,5
 	note F_,5, 20
 	snd_call SndCall_BGM_0A_Ch2_2
-	fine_tune 251
+	fine_tune -5
 	snd_call SndCall_BGM_0A_Ch2_2
 	fine_tune 5
 	envelope $A8
@@ -147,11 +147,11 @@ SndCall_BGM_0A_Ch2_0:
 	silence 2
 	envelope $88
 	note C#,4, 3
-	fine_tune 244
+	fine_tune -12
 	snd_call SndCall_BGM_0A_Ch2_2
 	fine_tune 12
 	snd_call SndCall_BGM_0A_Ch2_2
-	fine_tune 251
+	fine_tune -5
 	snd_call SndCall_BGM_0A_Ch2_2
 	fine_tune 5
 	envelope $A8
@@ -174,7 +174,7 @@ SndCall_BGM_0A_Ch2_0:
 	silence 2
 	envelope $88
 	note C#,4, 3
-	fine_tune 244
+	fine_tune -12
 	envelope $A8
 	note C#,5, 5
 	silence 2
@@ -562,14 +562,14 @@ SndData_BGM_0A_Ch2:
 	snd_call SndCall_BGM_0A_Ch2_5
 	fine_tune 1
 	snd_call SndCall_BGM_0A_Ch2_5
-	fine_tune 254
+	fine_tune -2
 	snd_call SndCall_BGM_0A_Ch2_6
 	snd_call SndCall_BGM_0A_Ch2_5
 	fine_tune 1
 	snd_call SndCall_BGM_0A_Ch2_5
 	fine_tune 1
 	snd_call SndCall_BGM_0A_Ch2_5
-	fine_tune 254
+	fine_tune -2
 	snd_call SndCall_BGM_0A_Ch2_6
 	snd_call SndCall_BGM_0A_Ch2_7
 	snd_call SndCall_BGM_0A_Ch2_8
@@ -577,8 +577,8 @@ SndData_BGM_0A_Ch2:
 	duty_cycle 3
 	fine_tune 3
 	snd_call SndCall_BGM_0A_Ch2_3
-	fine_tune 253
-	fine_tune 251
+	fine_tune -3
+	fine_tune -5
 	snd_call SndCall_BGM_0A_Ch2_0
 	fine_tune 5
 	snd_loop SndData_BGM_0A_Ch2

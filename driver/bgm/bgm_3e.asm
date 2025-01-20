@@ -4,25 +4,25 @@ SndHeader_BGM_3E:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_BGM_3E_Ch1 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch2:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_BGM_3E_Ch2 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch3:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH3_PTR ; Sound channel ptr
 	dw SndData_BGM_3E_Ch3 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch4:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_BGM_3E_Ch4 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_BGM_3E_Ch1:
 	envelope $A8
@@ -409,7 +409,7 @@ SndData_BGM_3E_Ch2:
 	snd_call SndCall_BGM_3E_Ch2_1
 	snd_call SndCall_BGM_3E_Ch2_0
 	snd_call SndCall_BGM_3E_Ch2_2
-	fine_tune 244
+	fine_tune -12
 	snd_call SndCall_BGM_3E_Ch2_3
 	snd_call SndCall_BGM_3E_Ch2_4
 	snd_call SndCall_BGM_3E_Ch2_3

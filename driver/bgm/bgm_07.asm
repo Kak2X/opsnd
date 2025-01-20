@@ -4,25 +4,25 @@ SndHeader_BGM_07:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_BGM_07_Ch1 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch2:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_BGM_07_Ch2 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch3:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH3_PTR ; Sound channel ptr
 	dw SndData_BGM_07_Ch3 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch4:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_BGM_07_Ch4 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_BGM_07_Ch1:
 	envelope $A8
@@ -54,7 +54,7 @@ SndData_BGM_07_Ch1:
 	snd_call SndCall_BGM_07_Ch1_0
 	fine_tune 1
 	snd_call SndCall_BGM_07_Ch1_1
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_07_Ch1_2
 	note C_,5, 24
 	envelope $88
@@ -74,7 +74,7 @@ SndData_BGM_07_Ch1:
 	snd_call SndCall_BGM_07_Ch1_0
 	fine_tune 1
 	snd_call SndCall_BGM_07_Ch1_1
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_07_Ch1_2
 	note E_,4, 12
 	note A#,3
@@ -264,7 +264,7 @@ SndData_BGM_07_Ch2:
 	snd_call SndCall_BGM_07_Ch2_3
 	snd_call SndCall_BGM_07_Ch2_3
 	snd_call SndCall_BGM_07_Ch2_4
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_07_Ch2_4
 	fine_tune 1
 	snd_call SndCall_BGM_07_Ch2_4
@@ -301,7 +301,7 @@ SndData_BGM_07_Ch2:
 	note D_,7
 	note E_,7
 	snd_call SndCall_BGM_07_Ch2_4
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_07_Ch2_4
 	fine_tune 1
 	snd_call SndCall_BGM_07_Ch2_4
@@ -606,7 +606,7 @@ SndData_BGM_07_Ch3:
 	snd_call SndCall_BGM_07_Ch3_0
 	snd_call SndCall_BGM_07_Ch3_2
 	snd_call SndCall_BGM_07_Ch3_3
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_07_Ch3_3
 	fine_tune 1
 	snd_call SndCall_BGM_07_Ch3_3
@@ -617,7 +617,7 @@ SndData_BGM_07_Ch3:
 	snd_call SndCall_BGM_07_Ch3_0
 	snd_call SndCall_BGM_07_Ch3_2
 	snd_call SndCall_BGM_07_Ch3_3
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_07_Ch3_3
 	fine_tune 1
 	snd_call SndCall_BGM_07_Ch3_3

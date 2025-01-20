@@ -4,19 +4,19 @@ SndHeader_SFX_36:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_SFX_36_Ch2 ; Data ptr
-	dnote D#,2 ; Base note
+	db 4 ; Initial fine tune
 	db $81 ; Unused
 .ch3:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH3_PTR ; Sound channel ptr
 	dw SndData_SFX_36_Ch3 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch4:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_SFX_36_Ch4 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_SFX_36_Ch2:
 	envelope $F8

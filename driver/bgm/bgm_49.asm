@@ -4,25 +4,25 @@ SndHeader_BGM_49:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_BGM_49_Ch1 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch2:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_BGM_49_Ch2 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch3:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH3_PTR ; Sound channel ptr
 	dw SndData_BGM_49_Ch3 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch4:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_Unused_0003E6AD ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_BGM_49_Ch1:
 	envelope $A8
@@ -30,32 +30,32 @@ SndData_BGM_49_Ch1:
 	duty_cycle 3
 	vibrato_on $03
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 1
 	snd_call SndCall_BGM_49_Ch2_1
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 4
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_1
 	fine_tune 3
 	duty_cycle 2
 	snd_call SndCall_BGM_49_Ch1_2
 	duty_cycle 3
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 1
 	snd_call SndCall_BGM_49_Ch2_1
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 4
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_1
 	fine_tune 3
 	duty_cycle 2
@@ -189,34 +189,34 @@ SndData_BGM_49_Ch2:
 	panning $22
 	duty_cycle 1
 	vibrato_on $03
-	fine_tune 251
+	fine_tune -5
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 1
 	snd_call SndCall_BGM_49_Ch2_1
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 4
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_1
 	fine_tune 3
 	fine_tune 5
 	snd_call SndCall_BGM_49_Ch2_2
-	fine_tune 251
+	fine_tune -5
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 1
 	snd_call SndCall_BGM_49_Ch2_1
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_0
-	fine_tune 255
+	fine_tune -1
 	snd_call SndCall_BGM_49_Ch2_0
 	fine_tune 4
-	fine_tune 253
+	fine_tune -3
 	snd_call SndCall_BGM_49_Ch2_1
 	fine_tune 3
 	fine_tune 5

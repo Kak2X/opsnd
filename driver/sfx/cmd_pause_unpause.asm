@@ -4,7 +4,7 @@ SndHeader_Pause:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_Pause_Ch1 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndHeader_Unpause:
 	db $01 ; Number of channels
@@ -12,7 +12,7 @@ SndHeader_Unpause:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_Unpause_Ch1 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_Pause_Ch1:
 	envelope $B1

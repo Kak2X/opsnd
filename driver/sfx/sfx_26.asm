@@ -4,7 +4,7 @@ SndHeader_SFX_26:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_SFX_26_Ch2 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_SFX_26_Ch2:
 	envelope $F8
@@ -13,27 +13,27 @@ SndData_SFX_26_Ch2:
 	note C_,8, 7
 	snd_call SndCall_SFX_26_Ch2_0
 	snd_call SndCall_SFX_26_Ch2_1
-	fine_tune 244
+	fine_tune -12
 	envelope $E8
 	snd_call SndCall_SFX_26_Ch2_0
 	envelope $D8
 	snd_call SndCall_SFX_26_Ch2_1
-	fine_tune 244
+	fine_tune -12
 	envelope $C8
 	snd_call SndCall_SFX_26_Ch2_0
 	envelope $B8
 	snd_call SndCall_SFX_26_Ch2_1
-	fine_tune 244
+	fine_tune -12
 	envelope $A8
 	snd_call SndCall_SFX_26_Ch2_0
 	envelope $98
 	snd_call SndCall_SFX_26_Ch2_1
-	fine_tune 244
+	fine_tune -12
 	envelope $88
 	snd_call SndCall_SFX_26_Ch2_0
 	envelope $68
 	snd_call SndCall_SFX_26_Ch2_1
-	fine_tune 244
+	fine_tune -12
 	envelope $48
 	snd_call SndCall_SFX_26_Ch2_0
 	envelope $28

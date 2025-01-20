@@ -4,7 +4,7 @@ SndHeader_SFX_10:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_SFX_10_Ch2 ; Data ptr
-	dnote A#,1 ; Base note
+	db -2 ; Initial fine tune
 	db $81 ; Unused
 SndData_SFX_10_Ch2:
 	envelope $F8

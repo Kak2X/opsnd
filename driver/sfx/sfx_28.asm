@@ -4,7 +4,7 @@ SndHeader_SFX_28:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_SFX_28_Ch2 ; Data ptr
-	dnote B_,2 ; Base note
+	db 12 ; Initial fine tune
 	db $81 ; Unused
 SndData_SFX_28_Ch2:
 	envelope $D1

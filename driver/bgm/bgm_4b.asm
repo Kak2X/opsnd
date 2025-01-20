@@ -4,25 +4,25 @@ SndHeader_BGM_4B:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH1_PTR ; Sound channel ptr
 	dw SndData_BGM_4B_Ch1 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch2:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH2_PTR ; Sound channel ptr
 	dw SndData_BGM_4B_Ch2 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch3:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH3_PTR ; Sound channel ptr
 	dw SndData_BGM_4B_Ch3 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 .ch4:
 	db SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_Unused_00039346 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_BGM_4B_Ch1:
 	envelope $A8
@@ -101,29 +101,29 @@ SndData_BGM_4B_Ch1:
 .loop1:
 	snd_call SndCall_BGM_4B_Ch1_3
 	snd_loop .loop1, $00, 4
-	fine_tune 244
+	fine_tune -12
 	snd_call SndCall_BGM_4B_Ch1_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch1_4
 	fine_tune 5
 	snd_call SndCall_BGM_4B_Ch1_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch1_4
 	fine_tune 7
 	snd_call SndCall_BGM_4B_Ch1_5
 	fine_tune 2
 	snd_call SndCall_BGM_4B_Ch1_3
-	fine_tune 254
+	fine_tune -2
 	snd_call SndCall_BGM_4B_Ch1_5
 	fine_tune 2
 	snd_call SndCall_BGM_4B_Ch1_3
-	fine_tune 254
+	fine_tune -2
 	snd_call SndCall_BGM_4B_Ch1_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch1_4
 	fine_tune 5
 	snd_call SndCall_BGM_4B_Ch1_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch1_4
 	fine_tune 7
 	snd_loop .loop2
@@ -304,7 +304,7 @@ SndData_BGM_4B_Ch2:
 	panning $22
 	duty_cycle 1
 	vibrato_on $03
-	fine_tune 251
+	fine_tune -5
 	snd_call SndCall_BGM_4B_Ch2_0
 	fine_tune 5
 .loop0:
@@ -356,25 +356,25 @@ SndData_BGM_4B_Ch2:
 	snd_call SndCall_BGM_4B_Ch2_3
 	fine_tune 12
 	snd_call SndCall_BGM_4B_Ch2_3
-	fine_tune 244
+	fine_tune -12
 	envelope $A8
 	snd_call SndCall_BGM_4B_Ch2_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch2_4
 	fine_tune 5
 	snd_call SndCall_BGM_4B_Ch2_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch2_4
 	fine_tune 7
-	fine_tune 246
+	fine_tune -10
 	snd_call SndCall_BGM_4B_Ch2_3
 	fine_tune 10
 	snd_call SndCall_BGM_4B_Ch2_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch2_4
 	fine_tune 5
 	snd_call SndCall_BGM_4B_Ch2_4
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch2_4
 	fine_tune 7
 	snd_loop .loop0
@@ -494,27 +494,27 @@ SndData_BGM_4B_Ch3:
 	snd_call SndCall_BGM_4B_Ch3_2
 	snd_loop .loop0, $00, 8
 	snd_call SndCall_BGM_4B_Ch3_3
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch3_3
 	fine_tune 5
 	snd_call SndCall_BGM_4B_Ch3_3
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch3_3
 	fine_tune 7
 	snd_call SndCall_BGM_4B_Ch3_4
 	fine_tune 2
 	snd_call SndCall_BGM_4B_Ch3_2
-	fine_tune 254
+	fine_tune -2
 	snd_call SndCall_BGM_4B_Ch3_4
 	fine_tune 2
 	snd_call SndCall_BGM_4B_Ch3_2
-	fine_tune 254
+	fine_tune -2
 	snd_call SndCall_BGM_4B_Ch3_3
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch3_3
 	fine_tune 5
 	snd_call SndCall_BGM_4B_Ch3_3
-	fine_tune 250
+	fine_tune -6
 	snd_call SndCall_BGM_4B_Ch3_3
 	fine_tune 7
 	snd_loop .loop1

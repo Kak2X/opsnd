@@ -4,7 +4,7 @@ SndHeader_SFX_2F:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
 	dw SndData_SFX_2F_Ch4 ; Data ptr
-	dnote 0 ; Base note
+	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_SFX_2F_Ch4:
 	envelope $79

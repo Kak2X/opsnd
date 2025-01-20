@@ -1,7 +1,7 @@
 INCLUDE "driver/inc/constants.asm"
 INCLUDE "driver/inc/macro.asm"
 INCLUDE "driver/inc/memory.asm"
-INCLUDE "driver/driver.asm"
+INCLUDE "driver/interface.asm"
 
 	mSOUNDBANK 07, 1 ; Main bank, as the last one for GBS compat
 INCLUDE "driver/bgm/bgm_4a.asm"

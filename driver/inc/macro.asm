@@ -52,14 +52,19 @@ ENDM
 ; - 1: Bank number (in DECIMAL format due to limitations)
 ; - 2: If 1, this is the main bank
 MACRO mSOUNDBANK
-SECTION "Sound Driver - Bank \1", ROMX[$4000], BANK[\1]
 IF _NARG > 1
-	mSound_Do \1, \2
+	_mSOUNDBANK \1, \2
 ELSE
-	mSound_Do \1, 0
+	_mSOUNDBANK \1, 0
 ENDC
+ENDM
 
+MACRO _mSOUNDBANK
+
+SECTION "Sound Driver - Bank \1", ROMX[$4000], BANK[\1]
+INCLUDE "driver/driver.asm"
 INCLUDE "driver/data/song_headers.asm"
+INCLUDE "driver/data/song_start_actions.asm"
 INCLUDE "driver/data/frequencies.asm"
 INCLUDE "driver/data/waves.asm"
 INCLUDE "driver/data/vibrato.asm"

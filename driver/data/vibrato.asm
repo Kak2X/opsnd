@@ -1,10 +1,5 @@
 ; =============== Sound_VibratoSetTable ===============
 ; Sets of vibrato data, usable by all channels.
-
-; IN
-; - 1: Ptr to a vibrato table.
-;      This is a list of frequency offsets applied every frame, one after the other.
-; - 2: Loop point
 Sound_VibratoSetTable_\1: 
 	mVbDef Sound_VibratoSet_Unused_0_\1, $00 ; $00 ;X
 	mVbDef Sound_VibratoSet1_\1, $10 ; $01 

@@ -40,10 +40,24 @@ MACRO dp
 ENDM
 
 ; =============== mVbDef ===============
-; Defines a vibrato table, see vibrato.asm.
+; Defines a vibrato table.
+; IN
+; - 1: Ptr to a vibrato table.
+;      This is a list of frequency offsets applied every frame, one after the other.
+; - 2: Loop point
 MACRO mVbDef
 	dw \1
 	db \2
+ENDM
+
+; =============== dsong ===============
+; Defines an entry in the song pointer table.
+; IN
+; - 1: Ptr to sound header
+; - 2: Ptr to start action/init code
+MACRO dsong
+	dp \1
+	dw \2
 ENDM
 
 ; =============== mSOUNDBANK ===============
@@ -60,15 +74,12 @@ ENDC
 ENDM
 
 MACRO _mSOUNDBANK
-
 SECTION "Sound Driver - Bank \1", ROMX[$4000], BANK[\1]
 INCLUDE "driver/driver.asm"
-INCLUDE "driver/data/song_headers.asm"
-INCLUDE "driver/data/song_start_actions.asm"
 INCLUDE "driver/data/frequencies.asm"
 INCLUDE "driver/data/waves.asm"
 INCLUDE "driver/data/vibrato.asm"
-
+INCLUDE "driver/data/song_list.asm"
 SECTION "Sound Data - Bank \1", ROMX, BANK[\1]
 	; Sound data below
 ENDM

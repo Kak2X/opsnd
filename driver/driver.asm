@@ -677,14 +677,23 @@ Sound_ChkNewSnd_\1:
 	; Range validation
 	bit  7, a						; SndId < $80?
 	jp   z, Sound_StopAll_\1		; If so, jump
-	cp   SND_LAST_VALID+1			; SndId >= $C6?
+	cp   SND_BASE+(Sound_SndListTable_\1.end-Sound_SndListTable_\1)/5	; SndId >= EOL?
 	jp   nc, Sound_StopAll_\1		; If so, jump
-	; Calculate the index to the next tables
-	; DE = SndId - $80
+	
+	; Index the sound list, where each entry is 5 bytes long.
+	; HL = Sound_SndHeaderTable[SndId - $80]
 	sub  a, SND_BASE				; Remove SND_BASE from the id
 	ret  z							; Is it $00? (SND_NONE) If so, return
-	ld   e, a
-	ld   d, $00
+	ld   e, a	; DE = A
+	ld   l, a	; HL = A
+	xor  a
+	ld   d, a
+	ld   h, a
+	add  hl, hl ; HL *= 2 (2)
+	add  hl, hl ;    *= 2 (4)
+	add  hl, de ;     + 1 (5)
+	ld   de, Sound_SndListTable_\1
+	add  hl, de
 
 	;--
 	; Disable existing fades
@@ -701,44 +710,21 @@ Sound_ChkNewSnd_\1:
 	
 	;--
 	;
-	; 0: Perform the bankswitch to Sound_SndBankPtrTable[DE]
-	;	
-	ld   hl, Sound_SndBankPtrTable_\1
-	add  hl, de
-	ld   a, [hl]
-	call Bankswitch
-
-	;--
+	; Read data off the sound list entry.
 	;
-	; 1: BC = Sound_SndHeaderPtrTable[DE*2]
-	;
-
-	; HL = Ptr table to song header
-	ld   hl, Sound_SndHeaderPtrTable_\1
-	; Add index twice (each entry is 2 bytes)
-	add  hl, de
-	add  hl, de
-	; Read out the ptr to BC
+	
+	; 0: Bank number to hROMBank
 	ldi  a, [hl]
-	ld   b, [hl]
+	call Bankswitch
+	; 1-2: Song header ptr to BC
+	ldi  a, [hl]
 	ld   c, a
-
-	;--
-	;
-	; Get the code ptr for the init code for the sound.
-	; 2: HL = Sound_SndStartActionPtrTable[DE*2]
-	;
-
-	; HL = Ptr table to code
-	ld   hl, Sound_SndStartActionPtrTable_\1
-	; Add index twice (each entry is 2 bytes)
-	add  hl, de
-	add  hl, de
-	; Read out the ptr to HL
+	ldi  a, [hl]
+	ld   b, a
+	; 3-4: Init code to HL
 	ldi  a, [hl]
 	ld   h, [hl]
 	ld   l, a
-
 	; Jump there
 	jp   hl
 .noReq:

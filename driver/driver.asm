@@ -624,7 +624,7 @@ Sound_ChkNewSnd_\1:
 	ld   hl, hSndPlayCnt
 	ldi  a, [hl]		; Read request counter
 	cp   a, [hl]		; Does it match the playback counter?
-	jr   z, .noReq		; If so, there's nothing new to play (could have been ret z)
+	ret  z				; If so, there's nothing new to play
 	
 	; Increase the sound playback index/counter, looping it back to $00 if it would index past the end of the table
 	; hSndPlayCnt = (hSndPlayCnt + 1) & $07
@@ -642,7 +642,6 @@ Sound_ChkNewSnd_\1:
 	add  hl, de
 	ld   a, [hl]
 	
-.chkId:
 	;--
 	; Sounds with ID < $70 are special commands that did not exist in 96's version.
 	;
@@ -727,10 +726,6 @@ Sound_ChkNewSnd_\1:
 	ld   l, a
 	; Jump there
 	jp   hl
-.noReq:
-	; This forces .chkId to return early without doing anything.
-	ld   a, SND_NONE
-	jr   .chkId
                                           
 ; =============== Sound_StartNewBGM ===============
 ; Starts playback of a new BGM.           

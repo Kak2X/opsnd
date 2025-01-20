@@ -22,14 +22,12 @@ ENDM
 ; IN
 ; - A: Bank number
 MACRO mBankswitch
-	di
 	ldh  [hROMBank], a
 	ld   [MBC1RomBank], a 
 IF MODE_MBC5
 	xor  a
 	ld   [MBC5RomBank], a
 ENDC 
-	ei
 ENDM
 
 ; =============== dp ===============

@@ -53,8 +53,8 @@ SndData_SFX_17_Ch3:
 	chan_stop
 SndData_SFX_17_Ch4:
 	panning $88
-	note4x $80, 28 ; Nearest: B_,3
-	note4x $80 ; Nearest: B_,3
-	note4x $80 ; Nearest: B_,3
-	note4x $80, 112 ; Nearest: B_,3
+	note4x $80, 28 ; Nearest: B_,3,0
+	note4x $80 ; Nearest: B_,3,0
+	note4x $80 ; Nearest: B_,3,0
+	note4x $80, 112 ; Nearest: B_,3,0
 	chan_stop

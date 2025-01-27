@@ -51,11 +51,11 @@ SndData_SFX_3B_Ch4:
 	panning $88
 	snd_call SndCall_SFX_3B_Ch4_0
 	snd_call SndCall_SFX_3B_Ch4_1
-	note4x $80, 15 ; Nearest: B_,3
+	note4x $80, 15 ; Nearest: B_,3,0
 	snd_call SndCall_SFX_3B_Ch4_0
 	snd_call SndCall_SFX_3B_Ch4_0
 	snd_call SndCall_SFX_3B_Ch4_1
-	note4x $80, 5 ; Nearest: B_,3
+	note4x $80, 5 ; Nearest: B_,3,0
 	snd_call SndCall_SFX_3B_Ch4_0
 	chan_stop
 SndCall_SFX_3B_Ch4_0:

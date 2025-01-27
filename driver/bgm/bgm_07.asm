@@ -745,7 +745,7 @@ SndCall_BGM_07_Ch3_4:
 	snd_ret
 SndData_BGM_07_Ch4:
 	panning $88
-	note4x $80, 24 ; Nearest: B_,3
+	note4x $80, 24 ; Nearest: B_,3,0
 .loop0:
 	snd_call SndCall_BGM_07_Ch4_0
 	snd_call SndCall_BGM_07_Ch4_1
@@ -852,7 +852,7 @@ SndData_BGM_07_Ch4:
 	snd_call SndCall_BGM_07_Ch4_6
 	snd_call SndCall_BGM_07_Ch4_8
 	snd_call SndCall_BGM_07_Ch4_9
-	note4x $80, 96 ; Nearest: B_,3
+	note4x $80, 96 ; Nearest: B_,3,0
 	snd_loop .loop0
 SndCall_BGM_07_Ch4_0:
 	envelope $A1

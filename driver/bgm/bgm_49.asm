@@ -323,7 +323,7 @@ SndCall_BGM_49_Ch2_3:
 	snd_loop SndCall_BGM_49_Ch2_3, $00, 2
 	snd_ret
 SndData_BGM_49_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $03
 	wave_cutoff 0

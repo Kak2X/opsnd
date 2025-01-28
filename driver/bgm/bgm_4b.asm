@@ -483,7 +483,7 @@ SndCall_BGM_4B_Ch2_4:
 	silence
 	snd_ret
 SndData_BGM_4B_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $03
 	wave_cutoff 0

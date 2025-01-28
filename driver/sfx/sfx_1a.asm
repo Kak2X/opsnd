@@ -48,7 +48,7 @@ SndData_SFX_1A_Ch2:
 	note B_,4
 	chan_stop
 SndData_SFX_1A_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $03
 	chan_stop

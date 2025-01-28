@@ -1257,7 +1257,7 @@ SndCall_BGM_09_Ch2_6:
 	snd_loop SndCall_BGM_09_Ch2_6, $00, 2
 	snd_ret
 SndData_BGM_09_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $03
 	wave_cutoff 0
@@ -1507,7 +1507,7 @@ SndData_BGM_09_Ch3:
 	silence 4
 	note F#,5, 8
 	silence 4
-	wave_vol $C0
+	wave_vol $40
 	note F#,5, 4
 	note F#,5
 	snd_loop SndData_BGM_09_Ch3

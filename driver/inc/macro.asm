@@ -132,7 +132,7 @@ ENDM
 ; - 1: Raw NR32 data, shifted left once.
 ;      This is to make the volume representation consistent with envelope command.
 MACRO wave_vol
-	db SNDCMD_BASE + $04, (\1 >> 1)
+	db SNDCMD_BASE + $04, (((((\1 >> 6) ^ 3) + 1) & 3) << 5)
 ENDM
 
 ; =============== snd_loop ===============

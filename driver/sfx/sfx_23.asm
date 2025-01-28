@@ -47,7 +47,7 @@ SndData_SFX_23_Ch2:
 	snd_call SndCall_SFX_23_Ch3_0
 	chan_stop
 SndData_SFX_23_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	snd_call SndCall_SFX_23_Ch3_0
 	chan_stop

@@ -66,7 +66,7 @@ SndData_SFX_34_Ch2:
 	note G#,5, 120
 	chan_stop
 SndData_SFX_34_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $06
 	vibrato_on $09

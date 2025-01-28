@@ -47,7 +47,7 @@ SndData_SFX_1E_Ch2:
 	continue 120
 	chan_stop
 SndData_SFX_1E_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $03
 	chan_stop

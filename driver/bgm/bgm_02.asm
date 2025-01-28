@@ -1306,7 +1306,7 @@ SndCall_BGM_02_Ch2_2:
 	note A#,3, 3
 	snd_ret
 SndData_BGM_02_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $03
 	wave_cutoff 0

@@ -1612,7 +1612,7 @@ SndCall_BGM_02_Ch2_1:
 	note D_,4, 3
 	snd_ret
 SndData_BGM_01_Ch3:
-	wave_vol $40
+	wave_vol $C0
 	panning $44
 	wave_id $03
 	wave_cutoff 0
@@ -1674,7 +1674,7 @@ SndData_BGM_01_Ch3:
 	note D#,6
 	note A#,5
 	note F_,5
-	wave_vol $40
+	wave_vol $C0
 	snd_call SndCall_BGM_01_Ch3_0
 	note A#,3, 30
 	note C#,4

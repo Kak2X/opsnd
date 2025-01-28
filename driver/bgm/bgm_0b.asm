@@ -52,7 +52,7 @@ SndData_BGM_0B_Ch1:
 	note D#,6
 	silence
 	note E_,6, 56
-	wait2 7
+	continue 7
 	envelope $88
 	note E_,6, 7
 	silence 3

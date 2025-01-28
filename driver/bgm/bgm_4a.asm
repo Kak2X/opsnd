@@ -58,7 +58,7 @@ SndData_BGM_4A_Ch1:
 	note A#,4, 18
 	note D#,5, 10
 	note F_,5, 40
-	wait2 10
+	continue 10
 	envelope $88
 	note F_,5, 5
 	silence 2

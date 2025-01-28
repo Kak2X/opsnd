@@ -47,8 +47,8 @@ SndData_BGM_07_Ch1:
 	envelope $38
 	note C_,4
 	silence 48
-	wait2 12
-	wait2 96
+	continue 12
+	continue 96
 	snd_call SndCall_BGM_07_Ch1_0
 	snd_call SndCall_BGM_07_Ch1_1
 	snd_call SndCall_BGM_07_Ch1_0
@@ -68,7 +68,7 @@ SndData_BGM_07_Ch1:
 	envelope $38
 	note C_,5
 	silence 48
-	wait2 96
+	continue 96
 	snd_call SndCall_BGM_07_Ch1_0
 	snd_call SndCall_BGM_07_Ch1_1
 	snd_call SndCall_BGM_07_Ch1_0

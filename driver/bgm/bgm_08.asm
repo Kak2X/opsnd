@@ -45,7 +45,7 @@ SndData_BGM_08_Ch1:
 	note C_,4
 	note G_,3, 16
 	note A_,3, 64
-	wait2 16
+	continue 16
 	envelope $88
 	note A_,3, 8
 	silence 4
@@ -137,7 +137,7 @@ SndData_BGM_08_Ch1:
 	note F_,4, 4
 	envelope $A8
 	note A_,4, 64
-	wait2 16
+	continue 16
 	envelope $88
 	note A_,4, 8
 	silence 4

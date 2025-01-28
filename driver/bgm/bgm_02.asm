@@ -113,7 +113,7 @@ SndData_BGM_02_Ch1:
 	envelope $28
 	note A#,4
 	silence 40
-	wait2 5
+	continue 5
 	snd_call SndCall_BGM_02_Ch1_1
 	envelope $A8
 	note D_,4, 2
@@ -147,7 +147,7 @@ SndData_BGM_02_Ch1:
 	envelope $28
 	note G#,4
 	silence 30
-	wait2 5
+	continue 5
 	snd_call SndCall_BGM_02_Ch1_1
 	silence 20
 	envelope $A8
@@ -361,9 +361,9 @@ SndData_BGM_02_Ch1:
 	envelope $C8
 	note G#,5, 8
 	vibrato_on $01
-	wait2 60
+	continue 60
 	vibrato_on $01
-	wait2 10
+	continue 10
 	envelope $98
 	note G#,5, 5
 	envelope $78

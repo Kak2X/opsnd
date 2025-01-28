@@ -112,7 +112,7 @@ SndData_BGM_09_Ch1:
 	duty_cycle 2
 	snd_call SndCall_BGM_09_Ch1_2
 	note E_,5, 64
-	wait2 8
+	continue 8
 	envelope $88
 	note E_,5
 	silence 4
@@ -150,7 +150,7 @@ SndData_BGM_09_Ch1:
 	note D_,4
 	snd_call SndCall_BGM_09_Ch1_2
 	note G_,5, 64
-	wait2 8
+	continue 8
 	envelope $88
 	note G_,5
 	silence 4
@@ -1269,7 +1269,7 @@ SndData_BGM_09_Ch3:
 	note F#,4
 	note G#,4
 	note C#,4, 32
-	wait2 6
+	continue 6
 	silence 2
 	note C#,4, 6
 	silence 2

@@ -33,7 +33,7 @@ SndData_SFX_1E_Ch1:
 	note C_,3, 6
 	vibrato_on $08
 	note C_,5, 120
-	wait2 120
+	continue 120
 	chan_stop
 SndData_SFX_1E_Ch2:
 	envelope $F7
@@ -44,7 +44,7 @@ SndData_SFX_1E_Ch2:
 	note G_,3, 6
 	vibrato_on $08
 	note G_,4, 120
-	wait2 120
+	continue 120
 	chan_stop
 SndData_SFX_1E_Ch3:
 	wave_vol $40

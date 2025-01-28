@@ -215,7 +215,7 @@ SndData_BGM_3E_Ch1:
 	note D_,5
 	note F#,5
 	note G_,5, 28
-	wait2 7
+	continue 7
 	envelope $88
 	note G_,5, 7
 	silence 3
@@ -383,7 +383,7 @@ SndCall_BGM_3E_Ch1_4:
 	note G_,4
 	note A_,4
 	note G_,4, 28
-	wait2 7
+	continue 7
 	envelope $88
 	note G_,4, 7
 	silence 3

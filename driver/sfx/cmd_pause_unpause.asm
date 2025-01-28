@@ -21,10 +21,10 @@ SndData_Pause_Ch1:
 	note C_,5, 5
 	note E_,5
 	note G_,5, 20
-	wait2 100
-	wait2 100
-	wait2 100
-	wait2 100
+	continue 100
+	continue 100
+	continue 100
+	continue 100
 	chan_stop
 SndData_Unpause_Ch1:
 	chan_stop

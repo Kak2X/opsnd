@@ -49,7 +49,7 @@ SndData_SFX_17_Ch3:
 	panning $44
 	vibrato_on $01
 	note C_,4, 84
-	wait2 112
+	continue 112
 	chan_stop
 SndData_SFX_17_Ch4:
 	panning $88

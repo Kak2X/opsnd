@@ -60,7 +60,7 @@ SndData_BGM_05_Ch1:
 	note C#,5, 4
 	snd_call SndCall_BGM_05_Ch1_2
 	note A#,4, 56
-	wait2 14
+	continue 14
 	envelope $88
 	note A#,4, 7
 	silence 3
@@ -86,7 +86,7 @@ SndData_BGM_05_Ch1:
 	note C#,4, 4
 	snd_call SndCall_BGM_05_Ch1_2
 	note G_,4, 56
-	wait2 14
+	continue 14
 	envelope $88
 	note G_,4, 7
 	silence 3
@@ -149,7 +149,7 @@ SndData_BGM_05_Ch1:
 	note A#,4, 14
 	note G#,4
 	note G_,4, 56
-	wait2 14
+	continue 14
 	envelope $88
 	note G_,4, 7
 	silence 3
@@ -275,7 +275,7 @@ SndCall_BGM_05_Ch1_1:
 	note G#,5
 	note G_,5
 	note D#,5, 56
-	wait2 14
+	continue 14
 	envelope $88
 	note D#,5, 7
 	silence 3

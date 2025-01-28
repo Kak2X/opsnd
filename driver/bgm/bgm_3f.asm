@@ -90,7 +90,7 @@ SndData_BGM_3F_Ch1:
 	note G_,4, 3
 	envelope $A8
 	note A#,4, 40
-	wait2 10
+	continue 10
 	envelope $88
 	note A#,4, 10
 	envelope $68
@@ -353,7 +353,7 @@ SndCall_BGM_3F_Ch1_A:
 	note C#,5
 	note D_,5, 3
 	note D#,5, 20
-	wait2 5
+	continue 5
 	note E_,5, 2
 	note F_,5, 3
 	note F#,5, 10

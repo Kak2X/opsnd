@@ -51,7 +51,7 @@ SndData_BGM_01_Ch1:
 	note D#,5, 10
 	note F_,5
 	note D#,5, 40
-	wait2 10
+	continue 10
 	envelope $98
 	note D#,5, 5
 	envelope $78
@@ -120,7 +120,7 @@ SndData_BGM_01_Ch1:
 	envelope $C8
 	note A#,4, 17
 	note C_,5, 40
-	wait2 10
+	continue 10
 	envelope $A8
 	note C_,5, 5
 	envelope $88
@@ -318,7 +318,7 @@ SndCall_BGM_02_Ch1_0:
 	note A#,4, 18
 	note D#,5, 10
 	note F_,5, 40
-	wait2 10
+	continue 10
 	envelope $98
 	note F_,5, 5
 	envelope $78
@@ -509,7 +509,7 @@ SndCall_BGM_01_Ch1_3:
 	note D#,4, 2
 	envelope $C8
 	note A#,4, 40
-	wait2 10
+	continue 10
 	envelope $A8
 	note A#,4
 	envelope $98
@@ -1618,10 +1618,10 @@ SndData_BGM_01_Ch3:
 	wave_cutoff 0
 	silence 20
 	silence 80
-	wait2 80
-	wait2 60
-	wait2 10
-	wait2 2
+	continue 80
+	continue 60
+	continue 10
+	continue 2
 	note C_,4, 3
 	note C#,4, 2
 	note D_,4, 3
@@ -1713,7 +1713,7 @@ SndData_BGM_01_Ch3:
 	note A#,3, 28
 	silence 2
 	note A#,3, 40
-	wait2 8
+	continue 8
 	silence 2
 	note G_,3, 28
 	silence 2

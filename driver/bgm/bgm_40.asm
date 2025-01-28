@@ -51,7 +51,7 @@ SndData_BGM_40_Ch1:
 	note F_,3
 	note A_,3
 	note A#,3, 56
-	wait2 14
+	continue 14
 	envelope $88
 	note A#,3, 7
 	silence 3
@@ -137,7 +137,7 @@ SndData_BGM_40_Ch2:
 	note F_,4, 4
 	envelope $88
 	note G_,4, 56
-	wait2 14
+	continue 14
 	silence 3
 	envelope $68
 	note G_,4, 7
@@ -164,7 +164,7 @@ SndData_BGM_40_Ch3:
 	wave_cutoff 0
 	vibrato_on $01
 	note D_,3, 112
-	wait2 14
+	continue 14
 	note G_,3, 42
 	note F_,3
 	note D_,3

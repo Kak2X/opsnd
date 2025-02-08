@@ -3,7 +3,7 @@ INCLUDE "driver/inc/macro.asm"
 INCLUDE "driver/inc/memory.asm"
 INCLUDE "driver/interface.asm"
 
-	mSOUNDBANK 07, 1 ; Main bank, as the last one for GBS compat
+	mSOUNDBANK 03, 1 ; Main bank, as the last one for GBS compat
 INCLUDE "driver/bgm/bgm_4a.asm"
 INCLUDE "driver/bgm/bgm_40.asm"
 INCLUDE "driver/bgm/bgm_3e.asm"
@@ -11,14 +11,14 @@ INCLUDE "driver/bgm/bgm_0b.asm"
 INCLUDE "driver/bgm/bgm_0a.asm"
 INCLUDE "driver/bgm/bgm_09.asm"
 
-	mSOUNDBANK 06
+	mSOUNDBANK 02
 INCLUDE "driver/bgm/bgm_4b.asm"
 INCLUDE "driver/bgm/bgm_04.asm"
 INCLUDE "driver/bgm/bgm_08.asm"
 INCLUDE "driver/bgm/bgm_01.asm"
 INCLUDE "driver/bgm/bgm_02.asm"
 
-	mSOUNDBANK 05
+	mSOUNDBANK 01
 INCLUDE "driver/bgm/bgm_06.asm"
 INCLUDE "driver/bgm/bgm_03.asm"
 INCLUDE "driver/bgm/bgm_05.asm"

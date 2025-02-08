@@ -41,10 +41,10 @@ echo Error while linking.
 echo ==========================
 echo   Build failure.
 echo ==========================
+exit /b 1
 
 :end
-pause
-exit /b
+exit /b 0
 
 :inStr
 	set args=%*

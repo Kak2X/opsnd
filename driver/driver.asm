@@ -676,7 +676,7 @@ Sound_ChkNewSnd_\1:
 	; Range validation
 	bit  7, a						; SndId < $80?
 	jp   z, Sound_StopAll_\1		; If so, jump
-	cp   SND_BASE+(Sound_SndListTable_\1.end-Sound_SndListTable_\1)/5	; SndId >= EOL?
+	cp   SND_BASE+(Sound_SndListTable_Main.end-Sound_SndListTable_Main)/5	; SndId >= EOL?
 	jp   nc, Sound_StopAll_\1		; If so, jump
 	
 	; Index the sound list, where each entry is 5 bytes long.
@@ -691,7 +691,7 @@ Sound_ChkNewSnd_\1:
 	add  hl, hl ; HL *= 2 (2)
 	add  hl, hl ;    *= 2 (4)
 	add  hl, de ;     + 1 (5)
-	ld   de, Sound_SndListTable_\1
+	ld   de, Sound_SndListTable_Main
 	add  hl, de
 
 	;--

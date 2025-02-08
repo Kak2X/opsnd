@@ -1,6 +1,9 @@
 ; =============== Sound_SndListTable ===============
 ; Table of sound assignments, ordered by ID.
 Sound_SndListTable_\1:
+IF \2
+Sound_SndListTable_Main:
+ENDC
 	;     SONG HEADER         INIT CODE                          ID
 	dsong SndHeader_BGM_01  , Sound_StartNothing_\1            ; $80
 	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $81

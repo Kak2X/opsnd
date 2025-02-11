@@ -57,7 +57,52 @@ ENDC
 	call Sound_UpdateVolPredict_\1
 	ld   hl, wBGMCh4Info + iSndInfo_VolPredict
 	ld   de, wBGMCh4Info + iSndInfo_RegNRx2Data
-	jp   Sound_UpdateVolPredict_\1
+	; Fall-through
+	
+; =============== Sound_UpdateVolPredict ===============
+; Updates the volume prediction value.
+; This is used to guess the volume to set when restoring BGM after a SFX ends.
+;
+; Every frame, the timer in the low nybble of iSndInfo_VolPredict ticks up from $00 until
+; it matches the low nybble of iSndInfo_RegNRx2Data (essentially the amount of envelope sweeps + dir flag).
+;
+; Once the timer/sweep count matches, the predicted volume level is decreased with a decreasing envelope sweep,
+; or increased with an increasing one.
+;
+; IN
+; - HL: Ptr to iSndInfo_VolPredict field
+; - DE: Ptr to iSndInfo_RegNRx2Data field
+Sound_UpdateVolPredict_\1:
+	inc  [hl]			; iSndInfo_VolPredict++
+
+	; If the timers don't match yet, return
+	ld   a, [hl]		; C = iSndInfo_VolPredict & $0F
+	and  $0F
+	ld   c, a
+	ld   a, [de]		; A = iSndInfo_RegNRx2Data & $0F
+	and  $0F
+	cp   a, c			; A != C?
+	ret  nz				; If so, return
+
+	; Either increase or decrease the volume depending on the envelope direction
+	bit  SNDENVB_INC, a	; Is bit 3 set?
+	jr   z, .dec		; If not, decrease the volume
+.inc:
+	; Reset the timer and increase the volume by 1
+	ld   a, [hl]		; A = (iSndInfo_VolPredict & $F0) + $10
+	and  $F0
+	add  $10
+	ret  c				; If we overflowed, return
+	ld   [hl], a		; Save it to iSndInfo_VolPredict
+	ret
+.dec:
+	; Reset the timer and decrease the volume by 1
+	ld   a, [hl]		; A = (iSndInfo_VolPredict & $F0)
+	and  $F0
+	ret  z				; If it's already 0, return
+	sub  a, $10			; A -= $10
+	ld   [hl], a		; Save it to iSndInfo_VolPredict
+	ret
 	
 ; =============== Sound_ReqPlayId ===============
 ; Requests playback for a new sound ID.
@@ -726,7 +771,7 @@ Sound_ChkNewSnd_\1:
 	ld   l, a
 	; Jump there
 	jp   hl
-                                          
+  
 ; =============== Sound_StartNewBGM ===============
 ; Starts playback of a new BGM.           
 ; IN                                      
@@ -757,19 +802,6 @@ Sound_UnpauseAll_\1:
 	; No purpose here.
 	jp   Sound_StartNewSFX1234_\1
 	
-; =============== Sound_StartNewBGM_Unused_Copy ===============
-; [TCRF] Duplicate of Sound_StartNewBGM, filling in as action for unused sound IDs.
-; IN
-; - BC: Ptr to song data
-Sound_StartNewBGM_Unused_Copy_\1:
-	xor  a
-	ld   [wSnd_Unused_SfxPriority], a
-	push bc
-		call Sound_StopAll_\1
-	pop  bc
-	ld   de, wBGMCh1Info
-	jp   Sound_InitSongFromHeader_\1
-	
 ; =============== Sound_FastSlideSFXtoC_8 ===============
 ; Slides the two SFX pulse channels to note C-8 over 1 second.
 Sound_FastSlideSFXtoC_8_\1:
@@ -780,8 +812,7 @@ Sound_FastSlideSFXtoC_8_\1:
 	ld   d, SCI_SFXCH2	; SFX - Pulse 2
 	ld   e, 60 			; 1 sec
 	ld   bc, $07E1		; C-8
-	call Sound_StartSlide_\1
-	jp   Sound_StartNothing_\1
+	jp   Sound_StartSlide_\1
 	
 ; =============== Sound_SlowSlideSFXtoF#4 ===============
 ; Slides the two SFX pulse channels to note F#4 over 4 seconds.	
@@ -793,8 +824,7 @@ Sound_SlowSlideSFXtoF#4_\1:
 	ld   d, SCI_SFXCH2	; SFX - Pulse 2
 	ld   e, 4*60		; 4 secs
 	ld   bc, $069E		; F#4
-	call Sound_StartSlide_\1
-	jp   Sound_StartNothing_\1
+	jp   Sound_StartSlide_\1
 
 ; =============== Sound_PauseChPlayback ===============
 ; Pauses sound playback.
@@ -871,7 +901,7 @@ Sound_Unused_StartNewSFX1234Hi_\1:
 Sound_Unused_StartNewSFX1234Lo_\1:
 	ld   a, [wSnd_Unused_SfxPriority]
 	bit  SNPB_SFXMULTI, a				; High priority multi-channel SFX playing?
-	jp   nz, Sound_StartNothing_\1		; If so, don't replace it
+	ret  nz								; If so, don't replace it
 	; Fall-through
 
 ; =============== Sound_StartNewSFX1234 ===============
@@ -888,8 +918,7 @@ Sound_Unused_StopSFXCh1_\1:
 	xor  a
 	ldh  [rNR10], a
 	ld   [wSFXCh1Info], a
-	call Sound_StopAll_Main.initNR
-	jr   Sound_StartNothing_\1
+	jp   Sound_StopAll_Main.initNR
 
 ; =============== Sound_Unused_StartNewSFX234Hi ===============
 ; [TCRF] Unreferenced code.
@@ -905,7 +934,7 @@ Sound_Unused_StartNewSFX234Hi_\1:
 Sound_StartNewSFX234_\1:
 	ld   a, [wSnd_Unused_SfxPriority]
 	bit  SNPB_SFXMULTI, a				; High priority multi-channel SFX playing?
-	jp   nz, Sound_StartNothing_\1		; If so, don't replace it
+	ret  nz								; If so, don't replace it
 .initSong:
 	ld   de, wSFXCh2Info
 	jr   Sound_InitSongFromHeader_\1
@@ -931,7 +960,7 @@ Sound_StartNewSFX4_\1:
 	; [TCRF] Bit never set
 	ld   a, [wSnd_Unused_SfxPriority]
 	bit  SNPB_SFX4, a					; High priority SFX4 playing?
-	jp   nz, Sound_StartNothing_\1		; If so, don't replace it
+	ret  nz								; If so, don't replace it
 .initSong:
 	ld   de, wSFXCh4Info
 	jr   Sound_InitSongFromHeader_\1
@@ -1003,15 +1032,8 @@ ENDR
 
 	dec  b				; Finished all loops?
 	jr   nz, .chLoop	; If not, jump
-
-	; Fall-through
 	
-; =============== Sound_StartNothing ===============
-; Does absolutely nothing.
 Sound_StartNothing_\1:
-	; [TCRF] Leftover from 95 to clear the requested sound ID, does nothing here.
-	ld   a, SND_NONE
-	ld   [wSnd_Unused_Set], a
 	ret
 	
 ; =============== Sound_DoChSndInfo ===============
@@ -1664,9 +1686,9 @@ ENDC
 	; If we're a BGM SndInfo and the channel is in use by a sound effect, 
 	; return immediately to avoid interfering.
 	;
-	ld   a, [de]						; Read iSndInfo_Status
-	bit  SISB_USEDBYSFX, a				; Is a sound effect playing on the channel?
-	jp   nz, Sound_DoChSndInfo_End_\1	; If so, return (jumps to ret)
+	ld   a, [de]				; Read iSndInfo_Status
+	bit  SISB_USEDBYSFX, a		; Is a sound effect playing on the channel?
+	ret  nz						; If so, return 
 
 	;
 	; If both frequency bytes are zero, mute the sound channel.
@@ -1740,17 +1762,16 @@ ENDC
 	ld   hl, iSndInfo_Status
 	add  hl, de
 	bit  SISB_SFX, [hl]			; Are we a BGM?
-	jr   nz, .muteNoBgm			; If not, we're done
+	ret  nz						; If not, we're done
 	ld   [wSndEnaChBGM], a
-.muteNoBgm:
-	jp   Sound_DoChSndInfo_End_\1
+	ret
 	;---------------------------
 
 .chkReinit:
 	; If we skipped the NRx2 update (volume + env), return immediately
 	ld   a, [de]
 	bit  SISB_LOCKNRx2, a
-	jp   nz, Sound_DoChSndInfo_End_\1
+	ret  nz
 
 	;
 	; Determine which sound channel has to be re-initialized (rNR51 status + extra registers).
@@ -1877,8 +1898,8 @@ ENDC
 	set  SNDCHFB_RESTART, a			; Restart channel
 	or   a, SNDCHF_LENSTOP			; Stop channel playback when length expires
 	ld   [c], a
-
-	jr   Sound_DoChSndInfo_End_\1
+	ret
+	
 .noStop:
 	; Restart the sound channel playback
 	ld   hl, iSndInfo_RegNRx4Data
@@ -1886,10 +1907,6 @@ ENDC
 	ld   a, [hl]
 	set  SNDCHFB_RESTART, a			; Restart channel
 	ld   [c], a
-	
-; =============== Sound_DoChSndInfo_End ===============
-; Just returns... in this game.
-Sound_DoChSndInfo_End_\1:
 	ret
 	
 ; =============== Sound_DoCommandId ===============
@@ -2034,8 +2051,7 @@ ENDR
 	add  hl, de
 	ld   [hl], $00
 	
-	; ret
-	jp   Sound_DoChSndInfo_End_\1
+	ret
 
 ; =============== Sound_DecDataPtr ===============
 ; Decrements the data ptr by 1.
@@ -2209,8 +2225,7 @@ Sound_Cmd_ExtendNote_\1:
 	add  hl, de
 	ld   [hl], $00
 
-	; ret
-	jp   Sound_DoChSndInfo_End_\1
+	ret
 	
 ; =============== Sound_Cmd_SetPanning ===============
 ; Sets the channel's stereo panning.
@@ -2465,7 +2480,7 @@ Sound_Cmd_JpFromLoopByTimer_\1:
 	ldh  [hSndInfoCurDataPtr_High], a
 
 	dec  [hl]							; Decrement loop timer
-	jp   nz, Sound_Cmd_JpFromLoop_\1	; Is it 0 now? If not, jump
+	jr   nz, Sound_Cmd_JpFromLoop_\1	; Is it 0 now? If not, jump
 	;--
 	; [TCRF] Seemingly unreachable failsafe code, in case the loop timer was 1.
 	; hSndInfoCurDataPtr++
@@ -2939,53 +2954,6 @@ Sound_Cmd_ChanStop_\1:
 	; Prevent Sound_IncDataPtr from being executed
 	pop  hl
 	ret
-	
-
-; =============== Sound_UpdateVolPredict ===============
-; Updates the volume prediction value.
-; This is used to guess the volume to set when restoring BGM after a SFX ends.
-;
-; Every frame, the timer in the low nybble of iSndInfo_VolPredict ticks up from $00 until
-; it matches the low nybble of iSndInfo_RegNRx2Data (essentially the amount of envelope sweeps + dir flag).
-;
-; Once the timer/sweep count matches, the predicted volume level is decreased with a decreasing envelope sweep,
-; or increased with an increasing one.
-;
-; IN
-; - HL: Ptr to iSndInfo_VolPredict field
-; - DE: Ptr to iSndInfo_RegNRx2Data field
-Sound_UpdateVolPredict_\1:
-	inc  [hl]			; iSndInfo_VolPredict++
-
-	; If the timers don't match yet, return
-	ld   a, [hl]		; C = iSndInfo_VolPredict & $0F
-	and  $0F
-	ld   c, a
-	ld   a, [de]		; A = iSndInfo_RegNRx2Data & $0F
-	and  $0F
-	cp   a, c			; A != C?
-	ret  nz				; If so, return
-
-	; Either increase or decrease the volume depending on the envelope direction
-	bit  SNDENVB_INC, a	; Is bit 3 set?
-	jr   z, .dec		; If not, decrease the volume
-.inc:
-	; Reset the timer and increase the volume by 1
-	ld   a, [hl]		; A = (iSndInfo_VolPredict & $F0) + $10
-	and  $F0
-	add  $10
-	ret  c				; If we overflowed, return
-	ld   [hl], a		; Save it to iSndInfo_VolPredict
-	ret
-.dec:
-	; Reset the timer and decrease the volume by 1
-	ld   a, [hl]		; A = (iSndInfo_VolPredict & $F0)
-	and  $F0
-	ret  z				; If it's already 0, return
-	sub  a, $10			; A -= $10
-	ld   [hl], a		; Save it to iSndInfo_VolPredict
-	ret
-	
 
 ; =============== Sound_SilenceCh ===============
 ; Writes $00 to the sound register NRx2, which silences the volume the sound channel (but doesn't disable it).
@@ -3151,36 +3119,6 @@ ENDR
 	ldi  [hl], a
 	ldi  [hl], a
 	
-	; [TCRF] Leftover from 95's sound driver.
-	ld   a, SND_NONE
-	ld   [wSnd_Unused_Set], a
-	ldh  [rNR52], a			; SNDCTRL_ON a second time, for good measure
-	ret
-
-; =============== Sound_Unused_InitCh1Regs ===============
-; [TCRF] Unreferenced code.
-Sound_Unused_InitCh1Regs_\1:
-	ld   a, $FF
-	ldh  [rNR51], a
-	ld   a, $80
-	ldh  [rNR11], a
-	ld   a, $F7
-	ldh  [rNR12], a
-	ld   a, $D6
-	ldh  [rNR13], a
-	ld   a, $86
-	ldh  [rNR14], a
-	ret
-
-; =============== Sound_Unused_InitCh2Regs ===============
-; [TCRF] Unreferenced code.
-Sound_Unused_InitCh2Regs_\1:
-	ld   a, $F7
-	ldh  [rNR22], a
-	ld   a, $14
-	ldh  [rNR23], a
-	ld   a, $87
-	ldh  [rNR24], a
 	ret
 	
 ; =============== Sound_ChRegAddrTable ===============

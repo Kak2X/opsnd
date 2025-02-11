@@ -98,28 +98,28 @@ ENDC
 	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $DA
 	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $DB
 	dsong SndHeader_BGM_01  , Sound_StartNewSFX1234_\1         ; $DC
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $DD
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $DE
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $DF
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E0
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E1
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E2
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E3
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E4
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E5
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E6
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E7
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E8
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $E9
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $EA
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $EB
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $EC
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $ED
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $EE
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $EF
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $F0
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $F1
-	dsong SndHeader_BGM_01  , Sound_StartNewBGM_Unused_Copy_\1 ; $F2
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $DD
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $DE
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $DF
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E0
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E1
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E2
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E3
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E4
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E5
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E6
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E7
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E8
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $E9
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $EA
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $EB
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $EC
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $ED
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $EE
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $EF
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $F0
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $F1
+	dsong SndHeader_BGM_01  , Sound_StartNewBGM_\1             ; $F2
 	dsong SndHeader_BGM_01  , Sound_FastSlideSFXtoC_8_\1       ; $F3
 	dsong SndHeader_BGM_01  , Sound_SlowSlideSFXtoF#4_\1       ; $F4
 .end:

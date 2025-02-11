@@ -490,7 +490,124 @@ Sound_DoFade_\1:
 	ld   [wSFXCh4Info+iSndChHeader_Status], a
 	;--
 	ret
+
+; =============== Sound_ChkNewSnd ===============
+; Checks if we're trying to start a new BGM or SFX.
+Sound_ChkNewSnd_\1:
+	; The first counter is updated every time a new music track is started,
+	; while the second one is increased when the new music track is requested.
+	; If these values don't match, we know that we should play a new music track.
+	ld   hl, hSndPlayCnt
+	ldi  a, [hl]		; Read request counter
+	cp   a, [hl]		; Does it match the playback counter?
+	ret  z				; If so, there's nothing new to play
 	
+	; Increase the sound playback index/counter, looping it back to $00 if it would index past the end of the table
+	; hSndPlayCnt = (hSndPlayCnt + 1) & $07
+	inc  a						; TblId++
+	and  (SNDIDREQ_SIZE-1)		; Keep range
+	dec  hl						; Seek back to hSndPlayCnt
+	ld   [hl], a				; Write there
+	
+	; To determine the ID of the music track to play, use the counter as index to the table at wSndIdReqTbl.
+	; The value written there is treated as the sound ID.
+	; A = wSndIdReqTbl[hSndPlayCnt]
+	ld   hl, wSndIdReqTbl
+	ld   e, a
+	ld   d, $00
+	add  hl, de
+	ld   a, [hl]
+	
+	;--
+	bit  7, a						; SndId < $80?
+	jr   z, .checkSpecialCmd		; If so, jump
+	;--
+	
+	; In the master sound list, the valid sounds have IDs >= $00 && < $74.
+	; The entries written into the sound id request table have the MSB set, so the actual range check
+	; is ID >= $80 && ID < $F4. Everything outside the range is rejected and stops all currently playing BGM/SFX.
+	;
+	; Only after the range check, these values are subtracted by $80 (SND_BASE).
+	
+	; Range validation
+	cp   SND_BASE+(Sound_SndListTable_Main.end-Sound_SndListTable_Main)/5	; SndId >= EOL?
+	jp   nc, Sound_StopAll_\1		; If so, jump
+	
+	; Index the sound list, where each entry is 5 bytes long.
+	; HL = Sound_SndHeaderTable[SndId - $80]
+	sub  a, SND_BASE				; Remove SND_BASE from the id
+	ret  z							; Is it $00? (SND_NONE) If so, return
+	ld   e, a	; DE = A
+	ld   l, a	; HL = A
+	xor  a
+	ld   d, a
+	ld   h, a
+	add  hl, hl ; HL *= 2 (2)
+	add  hl, hl ;    *= 2 (4)
+	add  hl, de ;     + 1 (5)
+	ld   de, Sound_SndListTable_Main
+	add  hl, de
+
+	;--
+	; Disable existing fades
+	xor  a
+	ld   [wSndFadeStatus], a
+	
+	; Set max volume for both left/right speakers, resetting wSndVolume too
+	ld   a, [wSndVolume]
+	and  %10001000
+	or   %01110111
+	ld   [wSndVolume], a
+	ldh  [rNR50], a
+	;--
+	
+	;--
+	;
+	; Read data off the sound list entry.
+	;
+	
+	; 0: Bank number to hROMBank
+	ldi  a, [hl]
+	call Bankswitch
+	; 1-2: Song header ptr to BC
+	ldi  a, [hl]
+	ld   c, a
+	ldi  a, [hl]
+	ld   b, a
+	; 3-4: Init code to HL
+	ldi  a, [hl]
+	ld   h, [hl]
+	ld   l, a
+	; Jump there
+	jp   hl
+	
+.checkSpecialCmd:
+	;
+	; Sounds with ID < $70 are special commands that did not exist in 96's version.
+	;
+	; These commands affect multiple channels at once and can be requested by the game
+	; in a saner way that doesn't involve having to create a pair of a dummy sound &
+	; sound data command, which is how these would be done in previous versions
+	; of the driver (ie: see how pausing/unpausing works).
+	;
+	; These use an unique format that splits the ID in two nybbles:
+	; - Upper nybble -> Command ID
+	; - Lower nybble -> Arguments
+	;
+	ld   e, a					; Preserve source
+	and  $F0					; Check the upper nybble
+	
+	cp   SNDCMD_FADEIN			; $1x -> Fade in
+	jr   z, Sound_Cmd_FadeIn_\1
+	cp   SNDCMD_FADEOUT			; $2x -> Fade out
+	jr   z, Sound_Cmd_FadeOut_\1
+	
+	cp   SNDCMD_CH4VOL + $10	; $3x to $6x -> Set single channel volume
+	jr   c, Sound_Cmd_ChkSetChVol_\1
+	
+	; Fallback
+	jp   Sound_StopAll_\1
+
 ; =============== Sound_Cmd_FadeIn ===============
 ; Starts a fade-in.
 ; IN
@@ -658,120 +775,7 @@ Sound_Cmd_SetChVol_\1:
 	ld   [c], a
 	;--
 	ret
-
-; =============== Sound_ChkNewSnd ===============
-; Checks if we're trying to start a new BGM or SFX.
-Sound_ChkNewSnd_\1:
-
-	; The first counter is updated every time a new music track is started,
-	; while the second one is increased when the new music track is requested.
-	; If these values don't match, we know that we should play a new music track.
-	ld   hl, hSndPlayCnt
-	ldi  a, [hl]		; Read request counter
-	cp   a, [hl]		; Does it match the playback counter?
-	ret  z				; If so, there's nothing new to play
 	
-	; Increase the sound playback index/counter, looping it back to $00 if it would index past the end of the table
-	; hSndPlayCnt = (hSndPlayCnt + 1) & $07
-	inc  a						; TblId++
-	and  (SNDIDREQ_SIZE-1)		; Keep range
-	dec  hl						; Seek back to hSndPlayCnt
-	ld   [hl], a				; Write there
-	
-	; To determine the ID of the music track to play, use the counter as index to the table at wSndIdReqTbl.
-	; The value written there is treated as the sound ID.
-	; A = wSndIdReqTbl[hSndPlayCnt]
-	ld   hl, wSndIdReqTbl
-	ld   e, a
-	ld   d, $00
-	add  hl, de
-	ld   a, [hl]
-	
-	;--
-	; Sounds with ID < $70 are special commands that did not exist in 96's version.
-	;
-	; These commands affect multiple channels at once and can be requested by the game
-	; in a saner way that doesn't involve having to create a pair of a dummy sound &
-	; sound data command, which is how these would be done in previous versions
-	; of the driver (ie: see how pausing/unpausing works).
-	;
-	; These use an unique format that splits the ID in two nybbles:
-	; - Upper nybble -> Command ID
-	; - Lower nybble -> Arguments
-	;
-	ld   e, a
-		and  $F0					; Check the upper nybble
-		
-		cp   SNDCMD_FADEIN			; $1x -> Fade in
-		jp   z, Sound_Cmd_FadeIn_\1
-		cp   SNDCMD_FADEOUT			; $2x -> Fade out
-		jp   z, Sound_Cmd_FadeOut_\1
-		
-		cp   SNDCMD_CH4VOL + $10	; $3x to $6x -> Set single channel volume
-		jp   c, Sound_Cmd_ChkSetChVol_\1
-	ld   a, e
-	;--
-	
-	; In the master sound list, the valid sounds have IDs >= $00 && < $74.
-	; The entries written into the sound id request table have the MSB set, so the actual range check
-	; is ID >= $80 && ID < $F4. Everything outside the range is rejected and stops all currently playing BGM/SFX.
-	;
-	; Only after the range check, these values are subtracted by $80 (SND_BASE).
-	
-	; Range validation
-	bit  7, a						; SndId < $80?
-	jp   z, Sound_StopAll_\1		; If so, jump
-	cp   SND_BASE+(Sound_SndListTable_Main.end-Sound_SndListTable_Main)/5	; SndId >= EOL?
-	jp   nc, Sound_StopAll_\1		; If so, jump
-	
-	; Index the sound list, where each entry is 5 bytes long.
-	; HL = Sound_SndHeaderTable[SndId - $80]
-	sub  a, SND_BASE				; Remove SND_BASE from the id
-	ret  z							; Is it $00? (SND_NONE) If so, return
-	ld   e, a	; DE = A
-	ld   l, a	; HL = A
-	xor  a
-	ld   d, a
-	ld   h, a
-	add  hl, hl ; HL *= 2 (2)
-	add  hl, hl ;    *= 2 (4)
-	add  hl, de ;     + 1 (5)
-	ld   de, Sound_SndListTable_Main
-	add  hl, de
-
-	;--
-	; Disable existing fades
-	xor  a
-	ld   [wSndFadeStatus], a
-	
-	; Set max volume for both left/right speakers, resetting wSndVolume too
-	ld   a, [wSndVolume]
-	and  %10001000
-	or   %01110111
-	ld   [wSndVolume], a
-	ldh  [rNR50], a
-	;--
-	
-	;--
-	;
-	; Read data off the sound list entry.
-	;
-	
-	; 0: Bank number to hROMBank
-	ldi  a, [hl]
-	call Bankswitch
-	; 1-2: Song header ptr to BC
-	ldi  a, [hl]
-	ld   c, a
-	ldi  a, [hl]
-	ld   b, a
-	; 3-4: Init code to HL
-	ldi  a, [hl]
-	ld   h, [hl]
-	ld   l, a
-	; Jump there
-	jp   hl
-  
 ; =============== Sound_StartNewBGM ===============
 ; Starts playback of a new BGM.           
 ; IN                                      

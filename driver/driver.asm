@@ -1341,11 +1341,13 @@ Sound_DoChSndInfo_Main_\1:
 	ret  nz			; If not, return
 	;------------	
 	
+IF !VIBRATO_NOTE
 	; Each new command resets the vibrato
 	ld   hl, iSndInfo_VibratoDataOffset
 	add  hl, de
 	ld   [hl], $00
-	
+ENDC
+
 	; Save a copy of the SndInfo ptr to RAM.
 	; This used to be done in Sound_Do before, which was a waste of time.
 	ld   a, e
@@ -1638,7 +1640,10 @@ Sound_DoChSndInfo_Loop_\1:
 	ld   hl, iSndInfo_LengthTimer
 	add  hl, de
 	xor  a
-	ld   [hl], a
+	ldi  [hl], a	; iSndInfo_LengthTimer
+IF VIBRATO_NOTE
+	ld   [hl], a	; iSndInfo_VibratoDataOffset
+ENDC
 	
 	; The rest of these actions wouldn't be executed when using the explicit Sound_Cmd_ExtendNote command.
 
@@ -1650,6 +1655,8 @@ Sound_DoChSndInfo_Loop_\1:
 	ld   a, [hl]		; Read the byte
 	and  $F0			; Remove low nybble
 	ld   [hl], a		; Write it back
+	
+
 
 	;
 	; The remainder of the subroutine involves checks for muting the sound channel.

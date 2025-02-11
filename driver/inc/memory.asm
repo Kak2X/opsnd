@@ -71,3 +71,6 @@ DEF iSndInfo_SlideFreqOffsetLow        EQU $16 ; Frequency offset (low byte) app
 DEF iSndInfo_SlideFreqOffsetHigh       EQU $17 ; "" (high byte) ""
 DEF iSndInfo_SlideTimer                EQU $18 ; When this elapses, the pitch slide ends.
 DEF iSndInfo_End                       EQU $20 ; Pointer stack moving up
+
+; ldi requirements
+ASSERT iSndInfo_LengthTimer + 1 == iSndInfo_VibratoDataOffset

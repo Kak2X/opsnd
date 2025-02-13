@@ -82,6 +82,42 @@ SECTION "Sound Data - Bank \1", ROMX, BANK[\1]
 	; Sound data below
 ENDM
 
+; =============== mSndReadNextByte ===============
+; Reads the current byte from the sound data, and advances the data pointer.
+; OUT
+; - A: Current sound data byte
+; - BC: Ptr to current sound data byte (not incremented)
+MACRO mSndReadNextByte
+	; A = *hSndInfoCurDataPtr
+	ld   hl, hSndInfoCurDataPtr_High	; Read out hSndInfoCurDataPtr to BC
+	ldd  a, [hl]
+	ld   c, [hl]
+	ld   b, a
+	ld   a, [bc]						; Read value off current data ptr
+	
+	; hSndInfoCurDataPtr++
+	inc  [hl]
+	jr   nz, .noHi_\@
+	inc  l
+	inc  [hl]
+.noHi_\@:
+ENDM
+
+; =============== mSndSeek ===============
+; Advances the sound data pointer by the specified amount.
+; IN
+; - 1: Number of bytes
+; OUT
+; - A: Current sound data byte
+MACRO mSndSeek
+	ld   hl, hSndInfoCurDataPtr_Low
+	ld   a, [hl]
+	add  \1								; LowByte += \1
+	ldi  [hl], a
+	jr   nc, .noHi_\@					; Overflowed? If not, jump
+	inc  [hl]							; HighByte++
+.noHi_\@:
+ENDM
 
 ; =============== Sound driver macros ===============
 ; For command IDs, their code will be specified in a comment.
@@ -143,8 +179,12 @@ ENDM
 ; - 1: Ptr to song data
 ; - 2: [Optional] Timer ID (should be unique as to not overwrite other loops)
 ; - 3: [Optional] Times to loop (Initial timer value)
+;                 This is pre-decremented, so ie: a loop counter of 2 will loop once.
 MACRO snd_loop
 	IF _NARG > 1
+		IF !LOOP1_CHECK
+			ASSERT \3 > 1, "Improper loop count"
+		ENDC
 		; Conditional
 		db SNDCMD_BASE + $07
 		db \2, \3

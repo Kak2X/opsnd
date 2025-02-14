@@ -24,23 +24,24 @@ ENDC
 
 	;
 	; Handle all of the sound channels.
+	; By convention, the SndInfo pointer should go to DE and never ever get altered
+	; inside Sound_DoChSndInfo without getting restored by the end.
 	;
-	ld   hl, wBGMCh1Info	; HL = Ptr to first SndInfo structure
+	ld   de, wBGMCh1Info	; DE = Ptr to first SndInfo structure
 	ld   a, $08				; Remaining SndInfo (4 channels, 2 sets (BGM + SFX))
 	ld   [wSndChProcLeft], a
 .loop:
-	push hl						; Save ptr to SndInfo
-		ld   a, [hl]			; Read iSndInfo_Status
-		bit  SISB_ENABLED, a	; Processing for the channel enabled?
-		call nz, Sound_DoChSndInfo_\1	; If so, call
-		ld   hl, wSndChProcLeft ; SndInfoLeft--
-		dec  [hl]				;
-	pop  hl						; Restore SndInfo ptr
+	ld   a, [de]			; Read iSndInfo_Status
+	bit  SISB_ENABLED, a	; Processing for the channel enabled?
+	call nz, Sound_DoChSndInfo_\1	; If so, call
+	ld   hl, wSndChProcLeft ; SndInfoLeft--
+	dec  [hl]				;
 
 	; Seek to the next channel
-	ld   de, SNDINFO_SIZE	; Ptr += SNDINFO_SIZE
+	ld   hl, SNDINFO_SIZE	; Ptr += SNDINFO_SIZE
 	add  hl, de
-
+	ld   d, h
+	ld   e, l
 	jr   nz, .loop			; If there are channels left to process, jump
 	
 	; Handle (global) fade in/out if requested
@@ -1042,12 +1043,12 @@ Sound_StartNothing_\1:
 	
 ; =============== Sound_DoChSndInfo ===============
 ; IN
-; - HL: Ptr to start of the current sound channel info (iSndInfo_Status)
+; - DE: Ptr to start of the current sound channel info (iSndInfo_Status)
 Sound_DoChSndInfo_\1:
 	; If the sound channel is paused, return immediately
 	bit  SISB_PAUSE, a
 	ret  nz
-		
+	
 	;
 	; VIBRATO
 	;
@@ -1069,160 +1070,148 @@ Sound_DoChSndInfo_Vibrato_\1:
 	; As the feature directly modifies the registers.
 	; Skip this if the BGM is muted by another SFX.
 	bit  SISB_USEDBYSFX, a
-	jr   nz, .skipped
+	jp   nz, Sound_DoChSndInfo_Main_\1
 	
-	push hl
+	;--
+	;
+	; Read the data for the current Vibrato Set.
+	; BC = Ptr to Vibrato table.
+	;      This is the list of frequency offsets.
+	; A  = Loop point
+	;      When the data loops, the index will reset to this value.
+	;      Note that the initial index is always 0, even if the loop isn't.
+	;
 	
-		;--
-		;
-		; Read the data for the current Vibrato Set.
-		; BC = Ptr to Vibrato table.
-		;      This is the list of frequency offsets.
-		; A  = Loop point
-		;      When the data loops, the index will reset to this value.
-		;      Note that the initial index is always 0, even if the loop isn't.
-		;
-		push hl
-		
-			; Index the table of settings.
-			; Each table entry is 3 bytes long, but the index already accounts for it.
-			ld   de, iSndInfo_VibratoId			; BC = Table offset
-			add  hl, de
-			ld   c, [hl]
-			ld   b, $00
-			
-			; Index this table with it
-			ld   hl, Sound_VibratoSetTable_\1	; HL = Table base
-			add  hl, bc
-			
-			; BC = Vibrato Table ptr [byte0-1]
-			ldi  a, [hl]
-			ld   c, a
-			ldi  a, [hl]
-			ld   b, a
-			; A = Initial table index [byte2]
-			ld   a, [hl]
-		pop  hl
-		
-		;--
-		;
-		; Seek to the current vibrato data, handling loops if needed.
-		;
-		ld   de, iSndInfo_VibratoDataOffset
-		add  hl, de
-	.getData:
-		ld   e, a			; Save for later, in case we're looping
-		
-		; A = VibratoTable[iSndInfo_VibratoDataOffset++]
-		push bc				; Save Vibrato Table ptr
-			ld   c, [hl]	; HL = iSndInfo_VibratoDataOffset
-			inc  [hl]		; iSndInfo_VibratoDataOffset++
-			ld   h, $00
-			ld   l, c
-		pop  bc				; Restore Vibrato Table ptr
-		add  hl, bc			; Index it with iSndInfo_VibratoDataOffset
-		ld   a, [hl]
-		
-		; If the value we got out is $80, we reached a loop command.
-		cp   VIBCMD_LOOP	; A == $80?
-		jr   nz, .calcFreq	; If not, jump
-	.resetIdx:
-	pop  hl
-	push hl
-		; Reset iSndInfo_VibratoDataOffset to the loop point.
-		ld   a, e
-		ld   de, iSndInfo_VibratoDataOffset
-		add  hl, de
-		ld   [hl], a
-		
-		; Then try again.
-		; The loop point should never point to a loop command, otherwise we're stuck in an infinite loop.
-		jr   .getData
-		;--
-		
-	.calcFreq:
-		;
-		; Calculate the sound channel's frequency.
-		; This involves adding a signed number to a capped word value, which is not ideal.
-		; The caps are a bit half-hearted, since they only affect the high byte.
-		;
-		
-		ld   c, a		; C = Frequency offset (signed)
-	pop  hl				; Restore base channel ptr
-	push hl
+	; Index the table of settings.
+	; Each table entry is 3 bytes long, but the index already accounts for it.
+	ld   hl, iSndInfo_VibratoId
+	add  hl, de
+	ld   c, [hl]						; BC = Table offset
+	ld   b, $00
 	
-		; Low byte.
-		; E = iSndInfo_RegNRx3Data + C
-		ld   de, iSndInfo_RegNRx3Data
-		add  hl, de
-		ldi  a, [hl]		; A = NRx3, seek to NRx4
-		add  c				; += C
-		ld   e, a		
-		
-		; High byte.
-		bit  7, c			; C >= 0?
-		jr   z, .offPos		; If so, jump
-	.offNeg:
-		; Adding a negative number as positive almost certainly caused an underflow (carry set).
-		; The carry and $FF balance themselves out, unless the former isn't set, ie:
-		; $0180 + $FF -> $017F -> $017F (c)
-		; $0100 + $FF -> $01FF -> $00FF (nc)
-		ld   a, [hl]		; A = NRx4
-		adc  a, -1			; + carry - 1
-		; If the high byte underflowed, force it back to 0.
-		bit  7, a			; NRx4's MSB set?
-		jr   z, .writeReg	; If not, skip
-		xor  a
-		jr   .writeReg
-	.offPos:
-		ld   a, [hl]		; A = NRx4
-		adc  a, $00			; + carry
-		; Enforce the cap, as the max valid frequency is $07FF before it overflows into unrelated bits.
-		cp   $07			; NRx4 >= $07?
-		jr   c, .writeReg	; If not, skip
-		ld   a, $07
-		
-	.writeReg:
+	; Index this table with it
+	ld   hl, Sound_VibratoSetTable_\1	; HL = Table base
+	add  hl, bc
 	
-		;
-		; Apply the updated frequency to the registers.
-		;
-		ld   b, a			; B = Edited iSndInfo_RegNRx4Data
-		ld   a, e			; A = Edited iSndInfo_RegNRx3Data
-	pop  hl
-	push hl
-		; NRx3 = A
-		ld   de, iSndInfo_RegPtr
-		add  hl, de
-		ld   c, [hl]
-		ld   [c], a
-		inc  c
-		
-		; NRx4 = B
-		ld   a, b
-		ld   [c], a
-		
-		;--
-		; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
-		; clear the length timer in NRx1.
-		bit  SNDCHFB_LENSTOP, a
-		jr   nz, .end
-		dec  c						; C -= 3, to NRx1
-		dec  c
-		dec  c
-		ld   a, [c]
-		and  $C0					; Only keep wave duty
-		ld   [c], a
-		;--
-	.end:
+	; BC = Vibrato Table ptr [byte0-1]
+	ldi  a, [hl]
+	ld   c, a
+	ldi  a, [hl]
+	ld   b, a
+	; A = Initial table index [byte2]
+	; This isn't used unless we're looping, so store it somewhere else.
+	; Storing it here frees up A, preventing a back and forth with push/pop.
+	ld   a, [hl]
+	ldh  [hTemp], a
 	
-	; DE = Ptr to sound channel info
-	pop  hl
-.skipped:
-	ld   e, l
-	ld   d, h
+	;--
+	;
+	; Seek to the current vibrato data, handling loops if needed.
+	;
+	ld   hl, iSndInfo_VibratoDataOffset
+	add  hl, de
+	ld   a, [hl]	; HL = iSndInfo_VibratoDataOffset
+.getData:
+	inc  [hl]		; iSndInfo_VibratoDataOffset++
+	ld   h, $00
+	ld   l, a
+	add  hl, bc		; A = VibratoTable[iSndInfo_VibratoDataOffset]
+	ld   a, [hl]
+	; If the offset is 0, there's nothing to do
+	and  a
+	jp   z, Sound_DoChSndInfo_Main_\1	
+	; If the value we got out is $80, we reached a loop command
+	cp   VIBCMD_LOOP	; A == $80?
+	jr   nz, .calcFreq	; If not, jump
+.resetIdx:
+	; Reset iSndInfo_VibratoDataOffset to the loop point.
+	ld   hl, iSndInfo_VibratoDataOffset
+	add  hl, de
+	ldh  a, [hTemp]
+	ld   [hl], a
 	
-	; Vibrato has priority over pitch slides, skip them.
+	; Then try again.
+	; The loop point should never point to a loop command, otherwise we're stuck in an infinite loop.
+	jr   .getData
+	;--
+	
+.calcFreq:
+	;
+	; Calculate the sound channel's frequency.
+	; This involves adding a signed number to a capped word value, which is not ideal.
+	; The caps are a bit half-hearted, since they only affect the high byte.
+	;
+	
+	ld   c, a		; C = Frequency offset (signed)
+	
+	; Low byte.
+	; B = iSndInfo_RegNRx3Data + C
+	ld   hl, iSndInfo_RegNRx3Data
+	add  hl, de
+	ldi  a, [hl]		; A = NRx3, seek to NRx4
+	add  c				; += C
+	ld   b, a		
+	
+	; High byte.
+	bit  7, c			; C >= 0?
+	jr   z, .offPos		; If so, jump
+.offNeg:
+	; Adding a negative number as positive almost certainly caused an underflow (carry set).
+	; The carry and $FF balance themselves out, unless the former isn't set, ie:
+	; $0180 + $FF -> $017F -> $017F (c)
+	; $0100 + $FF -> $01FF -> $00FF (nc)
+	ld   a, [hl]		; A = NRx4
+	adc  a, -1			; + carry - 1
+	; If the high byte underflowed, force it back to 0.
+	bit  7, a			; NRx4's MSB set?
+	jr   z, .writeReg	; If not, skip
+	xor  a
+	jr   .writeReg
+.offPos:
+	ld   a, [hl]		; A = NRx4
+	adc  a, $00			; + carry
+	; Enforce the cap, as the max valid frequency is $07FF before it overflows into unrelated bits.
+	cp   $07			; NRx4 >= $07?
+	jr   c, .writeReg	; If not, skip
+	ld   a, $07
+	
+.writeReg:
+
+	;
+	; Apply the updated frequency to the registers.
+	;
+	
+	; B -> Edited iSndInfo_RegNRx3Data
+	; A -> Edited iSndInfo_RegNRx4Data
+	ld   c, b
+	ld   b, a	; switching around...
+	ld   a, c
+	; A -> Edited iSndInfo_RegNRx3Data
+	; B -> Edited iSndInfo_RegNRx4Data
+
+	; NRx3 = A
+	ld   hl, iSndInfo_RegPtr
+	add  hl, de
+	ld   c, [hl]
+	ld   [c], a
+	inc  c
+	
+	; NRx4 = B
+	ld   a, b
+	ld   [c], a
+	
+	;--
+	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
+	; clear the length timer in NRx1.
+	bit  SNDCHFB_LENSTOP, a
+	jr   nz, Sound_DoChSndInfo_Main_\1
+	dec  c						; C -= 3, to NRx1
+	dec  c
+	dec  c
+	ld   a, [c]
+	and  $C0					; Only keep wave duty
+	ld   [c], a
+	;--
 	jr   Sound_DoChSndInfo_Main_\1
 	
 Sound_DoChSndInfo_ChkSlide_\1:
@@ -1239,13 +1228,9 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	
 	; Not applicable if the feature is off
 	bit  SISB_SLIDE, a
-	jr   z, .skipped
+	jp   z, Sound_DoChSndInfo_Main_\1
 	
-.slideOk:
-	; DE = Ptr to sound channel info
-	ld   e, l
-	ld   d, h
-	
+.slideOk:	
 	; Disable the feature when its timer elapses
 	ld   hl, iSndInfo_SlideTimer
 	add  hl, de
@@ -1288,14 +1273,6 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	; Reread the status
 	ld   a, [de]	; A = iSndInfo_Status
 	jr   .tryUpdateRegs
-	
-.skipped:
-	; DE = Ptr to sound channel info
-	ld   e, l
-	ld   d, h
-	
-	; With neither Vibrato or Slide active, jump directly to Sound_DoChSndInfo_Main.
-	jp   Sound_DoChSndInfo_Main_\1
 	
 .tryUpdateRegs:
 	
@@ -2825,7 +2802,7 @@ Sound_MarkSFXChUse_\1:
 	ret
 	
 ; =============== Sound_IndexPtrTable ===============
-; Indexes a pointer table.
+; Indexes a (wave) pointer table.
 ;
 ; IN
 ; - HL: Ptr to ptr table
@@ -2834,12 +2811,12 @@ Sound_MarkSFXChUse_\1:
 ; - HL: Indexed value
 Sound_IndexPtrTable_\1:
 	; Offset the table
-	; BC = A - 1
+	; BC = (A - 1) * 2
 	dec  a
+	add  a
 	ld   c, a
 	ld   b, $00
-	; HL += BC * 2
-	add  hl, bc
+	; HL += BC
 	add  hl, bc
 	; Read out ptr to HL
 	ldi  a, [hl]

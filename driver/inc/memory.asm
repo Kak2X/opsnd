@@ -31,7 +31,7 @@ hSndPlaySetCnt              :db ; EQU $FFC3 ; Sound Req Counter (bits3-0) (if !=
 hSndInfoCurDataPtr_Low      :db ; EQU $FFC4 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
 hSndInfoCurDataPtr_High     :db ; EQU $FFC5 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
 hSndChEnaMask               :db ; EQU $FFC6 ; rNR51 bitmask. This is a global version of iSndInfo_ChEnaMask which operates in mono (only the lower nybble is used)
-ds 1
+hTemp                       :db ; EQU $FFC7
 hROMBank                    :db ; EQU $FFC8
 
 ; Sound channel data header (ROM)

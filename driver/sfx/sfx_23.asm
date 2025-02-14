@@ -28,7 +28,7 @@ SndData_SFX_23_Ch1:
 	envelope $A8
 	panning $11
 	duty_cycle 3
-SndCall_SFX_23_Ch3_0:
+SndCall_SFX_23_Ch2_0:
 	vibrato_on $01
 	note C#,4, 7
 	note C_,4
@@ -44,12 +44,12 @@ SndData_SFX_23_Ch2:
 	envelope $A8
 	panning $22
 	duty_cycle 3
-	snd_call SndCall_SFX_23_Ch3_0
+	snd_call SndCall_SFX_23_Ch2_0
 	chan_stop
 SndData_SFX_23_Ch3:
 	wave_vol $C0
 	panning $44
-	snd_call SndCall_SFX_23_Ch3_0
+	snd_call SndCall_SFX_23_Ch2_0
 	chan_stop
 SndData_SFX_23_Ch4:
 	panning $88

@@ -29,62 +29,62 @@ SndData_BGM_06_Ch1:
 	panning $11
 	duty_cycle 3
 SndCall_BGM_06_Ch2_0:
-	snd_call SndCall_BGM_06_Ch3_0
+	snd_call SndCall_BGM_06_Ch1_0
 	envelope $88
-	snd_call SndCall_BGM_06_Ch2_3
+	snd_call SndCall_BGM_06_Ch1_2
 	envelope $78
-	snd_call SndCall_BGM_06_Ch2_3
+	snd_call SndCall_BGM_06_Ch1_2
 	envelope $68
-	snd_call SndCall_BGM_06_Ch2_3
+	snd_call SndCall_BGM_06_Ch1_2
 	envelope $58
-	snd_call SndCall_BGM_06_Ch2_3
+	snd_call SndCall_BGM_06_Ch1_2
 	envelope $48
-	snd_call SndCall_BGM_06_Ch2_3
+	snd_call SndCall_BGM_06_Ch1_2
 	envelope $38
-	snd_call SndCall_BGM_06_Ch2_3
+	snd_call SndCall_BGM_06_Ch1_2
 	envelope $28
-	snd_call SndCall_BGM_06_Ch2_3
+	snd_call SndCall_BGM_06_Ch1_2
 	chan_stop
-SndCall_BGM_06_Ch3_0:
-	snd_call SndCall_BGM_06_Ch3_1
+SndCall_BGM_06_Ch1_0:
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	fine_tune 3
-	snd_call SndCall_BGM_06_Ch3_1
+	snd_call SndCall_BGM_06_Ch1_1
 	snd_ret
-SndCall_BGM_06_Ch3_1:
+SndCall_BGM_06_Ch1_1:
 	note C_,2, 3
 	note D#,2
 	note F#,2
 	note A_,2
 	snd_ret
-SndCall_BGM_06_Ch2_3:
+SndCall_BGM_06_Ch1_2:
 	note C_,2, 3
 	note D#,2
 	note F#,2
@@ -102,7 +102,7 @@ SndData_BGM_06_Ch3:
 	panning $44
 	wave_id $02
 	wave_cutoff 0
-	snd_call SndCall_BGM_06_Ch3_0
+	snd_call SndCall_BGM_06_Ch1_0
 	chan_stop
 SndData_Unused_0003D053:
 	panning $88

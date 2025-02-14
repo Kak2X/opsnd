@@ -56,23 +56,15 @@ SndData_SFX_20_Ch3:
 SndData_SFX_20_Ch4:
 	envelope $F8
 	panning $88
-	wait 87
-	wait 6
+	note4 G#,4,0, 6
 	lock_envelope
-	wait 86
-	wait 6
-	wait 85
-	wait 6
-	wait 84
-	wait 6
-	wait 83
-	wait 6
-	wait 82
-	wait 6
-	wait 81
-	wait 6
+	note4 A_,4,0, 6
+	note4 A#,4,0, 6
+	note4 B_,4,0, 6
+	note4x $53, 6 ; Nearest: G#,4,0
+	note4x $52, 6 ; Nearest: A_,4,0
+	note4x $51, 6 ; Nearest: A#,4,0
 	unlock_envelope
 	envelope $F3
-	wait 80
-	wait 40
+	note4x $50, 40 ; Nearest: B_,4,0
 	chan_stop

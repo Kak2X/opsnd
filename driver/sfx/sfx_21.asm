@@ -9,12 +9,9 @@ SndHeader_SFX_21:
 SndData_SFX_21_Ch4:
 	envelope $A7
 	panning $88
-	wait 71
-	wait 1
+	note4 C_,5,0, 1
 	lock_envelope
-	wait 52
-	wait 1
-	wait 85
-	wait 1
+	note4 G_,5,0, 1
+	note4 A#,4,0, 1
 	unlock_envelope
 	chan_stop

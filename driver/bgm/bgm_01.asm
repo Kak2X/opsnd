@@ -30,10 +30,10 @@ SndData_BGM_01_Ch1:
 	duty_cycle 0
 	silence 20
 	vibrato_on $01
-	snd_call SndCall_BGM_01_Ch2_0
-	snd_call SndCall_BGM_01_Ch2_1
-	snd_call SndCall_BGM_01_Ch2_0
-	snd_call SndCall_BGM_01_Ch2_2
+	snd_call SndCall_BGM_01_Ch1_7
+	snd_call SndCall_BGM_01_Ch1_8
+	snd_call SndCall_BGM_01_Ch1_7
+	snd_call SndCall_BGM_01_Ch1_9
 	snd_call SndCall_BGM_01_Ch1_1
 	snd_call SndCall_BGM_01_Ch1_2
 	snd_call SndCall_BGM_01_Ch1_1
@@ -43,7 +43,7 @@ SndData_BGM_01_Ch1:
 	snd_call SndCall_BGM_01_Ch1_4
 	snd_call SndCall_BGM_01_Ch1_6
 .loop0:
-	snd_call SndCall_BGM_02_Ch1_0
+	snd_call SndCall_BGM_01_Ch1_0
 	envelope $A8
 	note E_,5, 2
 	envelope $C8
@@ -288,7 +288,7 @@ SndData_BGM_01_Ch1:
 	envelope $68
 	note D#,5
 	snd_loop .loop0
-SndCall_BGM_02_Ch1_0:
+SndCall_BGM_01_Ch1_0:
 	duty_cycle 2
 	envelope $A8
 	note A_,4, 2
@@ -586,12 +586,12 @@ SndData_BGM_01_Ch2:
 	silence 80
 	silence 80
 	silence 80
-	snd_call SndCall_BGM_01_Ch2_0
-	snd_call SndCall_BGM_01_Ch2_1
-	snd_call SndCall_BGM_01_Ch2_0
-	snd_call SndCall_BGM_01_Ch2_2
-	snd_call SndCall_BGM_01_Ch2_0
-	snd_call SndCall_BGM_01_Ch2_1
+	snd_call SndCall_BGM_01_Ch1_7
+	snd_call SndCall_BGM_01_Ch1_8
+	snd_call SndCall_BGM_01_Ch1_7
+	snd_call SndCall_BGM_01_Ch1_9
+	snd_call SndCall_BGM_01_Ch1_7
+	snd_call SndCall_BGM_01_Ch1_8
 	envelope $87
 	duty_cycle 2
 	note G#,4, 30
@@ -617,7 +617,7 @@ SndData_BGM_01_Ch2:
 	note C_,5, 3
 	note C#,6
 	note D_,6, 2
-	snd_call SndCall_BGM_02_Ch2_0
+	snd_call SndCall_BGM_01_Ch2_3
 	note D#,5, 10
 	envelope $68
 	note D#,5, 5
@@ -652,7 +652,7 @@ SndData_BGM_01_Ch2:
 	duty_cycle 1
 	note G#,4, 20
 .loop1:
-	snd_call SndCall_BGM_02_Ch2_1
+	snd_call SndCall_BGM_01_Ch2_4
 	envelope $A8
 	note G_,4, 5
 	silence 2
@@ -1145,7 +1145,7 @@ SndData_BGM_01_Ch2:
 	envelope $48
 	note C#,6
 	snd_loop .loop1
-SndCall_BGM_01_Ch2_0:
+SndCall_BGM_01_Ch1_7:
 	envelope $42
 	note D#,5, 2
 	envelope $22
@@ -1211,7 +1211,7 @@ SndCall_BGM_01_Ch2_0:
 	envelope $22
 	note A#,5, 3
 	snd_ret
-SndCall_BGM_01_Ch2_1:
+SndCall_BGM_01_Ch1_8:
 	envelope $42
 	note D#,5, 2
 	envelope $22
@@ -1277,7 +1277,7 @@ SndCall_BGM_01_Ch2_1:
 	envelope $22
 	note A#,5, 3
 	snd_ret
-SndCall_BGM_01_Ch2_2:
+SndCall_BGM_01_Ch1_9:
 	envelope $42
 	note D#,5, 2
 	envelope $22
@@ -1343,7 +1343,7 @@ SndCall_BGM_01_Ch2_2:
 	envelope $52
 	note A#,5, 3
 	snd_ret
-SndCall_BGM_02_Ch2_0:
+SndCall_BGM_01_Ch2_3:
 	note D#,6, 15
 	note D_,6, 2
 	note C#,6, 3
@@ -1395,7 +1395,7 @@ SndCall_BGM_02_Ch2_0:
 	note F_,5, 10
 	note E_,5
 	snd_ret
-SndCall_BGM_02_Ch2_1:
+SndCall_BGM_01_Ch2_4:
 	envelope $A8
 	note G_,3, 5
 	silence 2
@@ -1695,7 +1695,7 @@ SndData_BGM_01_Ch3:
 	note F_,4
 	snd_call SndCall_BGM_01_Ch3_1
 .loop1:
-	snd_call SndCall_BGM_02_Ch3_0
+	snd_call SndCall_BGM_01_Ch3_2
 	note A#,3, 20
 	note F_,4, 10
 	note A#,3
@@ -1875,7 +1875,7 @@ SndCall_BGM_01_Ch3_1:
 	note F_,4, 10
 	note A#,3
 	snd_ret
-SndCall_BGM_02_Ch3_0:
+SndCall_BGM_01_Ch3_2:
 	note D#,3, 10
 	note D#,3
 	note D#,4, 8
@@ -1956,8 +1956,7 @@ SndCall_BGM_02_Ch3_0:
 SndData_BGM_01_Ch4:
 	panning $88
 	envelope $91
-	wait 53
-	wait 20
+	note4 F#,5,0, 20
 	snd_call SndCall_BGM_01_Ch4_0
 	snd_call SndCall_BGM_01_Ch4_1
 	snd_call SndCall_BGM_01_Ch4_2
@@ -1965,529 +1964,355 @@ SndData_BGM_01_Ch4:
 	snd_call SndCall_BGM_01_Ch4_1
 	snd_call SndCall_BGM_01_Ch4_2
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 30
-	wait 87
-	wait 10
+	note4 G#,4,0, 30
+	note4 G#,4,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 20
+	note4 G#,4,0, 20
 	envelope $A1
-	wait 38
-	wait 5
-	wait 38
-	wait 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
 	envelope $91
-	wait 52
-	wait 10
+	note4 G_,5,0, 10
 	envelope $91
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
 	envelope $91
-	wait 55
-	wait 10
+	note4 E_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 30
+	note4 G#,4,0, 30
 	envelope $C1
-	wait 87
-	wait 5
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
+	note4 G#,4,0, 5
 .loop0:
 	envelope $A1
-	wait 38
-	wait 5
+	note4 A_,5,0, 5
 	snd_loop .loop0, $00, 10
 .loop1:
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $53
-	wait 19
-	wait 15
+	note4x $13, 15 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	snd_loop .loop1, $00, 5
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $53
-	wait 19
-	wait 15
+	note4x $13, 15 ; Nearest: G#,6,0
 	envelope $91
-	wait 52
-	wait 10
+	note4 G_,5,0, 10
 	envelope $91
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
 	envelope $91
-	wait 55
-	wait 10
+	note4 E_,5,0, 10
 .loop2:
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	snd_loop .loop2, $00, 4
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $53
-	wait 19
-	wait 15
-	wait 19
-	wait 20
+	note4x $13, 15 ; Nearest: G#,6,0
+	note4x $13, 20 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 5
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
+	note4 G#,4,0, 5
 	envelope $A1
-	wait 38
-	wait 5
-	wait 38
-	wait 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
 	envelope $91
-	wait 53
-	wait 5
+	note4 F#,5,0, 5
 	envelope $91
-	wait 55
-	wait 5
+	note4 E_,5,0, 5
 .loop3:
-	snd_call SndCall_BGM_02_Ch4_0
+	snd_call SndCall_BGM_01_Ch4_4
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
+	note4 G#,4,0, 5
 	envelope $91
-	wait 52
-	wait 10
+	note4 G_,5,0, 10
 	envelope $91
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
 	envelope $91
-	wait 52
-	wait 5
+	note4 G_,5,0, 5
 	envelope $91
-	wait 53
-	wait 5
+	note4 F#,5,0, 5
 	envelope $91
-	wait 55
-	wait 10
-	snd_call SndCall_BGM_02_Ch4_0
+	note4 E_,5,0, 10
+	snd_call SndCall_BGM_01_Ch4_4
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $51
-	wait 23
-	wait 5
+	note4 C_,6,0, 5
 	envelope $53
-	wait 19
-	wait 5
+	note4x $13, 5 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 5
-	wait 38
-	wait 5
-	wait 38
-	wait 5
-	wait 38
-	wait 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
 	envelope $91
-	wait 55
-	wait 10
+	note4 E_,5,0, 10
 	snd_call SndCall_BGM_01_Ch4_5
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
-	wait 38
-	wait 5
-	wait 38
-	wait 5
+	note4 A_,5,0, 10
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
+	note4 G#,4,0, 5
 	envelope $A1
-	wait 38
-	wait 50
+	note4 A_,5,0, 50
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $91
-	wait 53
-	wait 20
+	note4 F#,5,0, 20
 	snd_call SndCall_BGM_01_Ch4_6
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $53
-	wait 19
-	wait 5
+	note4x $13, 5 ; Nearest: G#,6,0
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 5
-	wait 38
-	wait 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $91
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
 	envelope $91
-	wait 52
-	wait 5
-	wait 52
-	wait 5
+	note4 G_,5,0, 5
+	note4 G_,5,0, 5
 	envelope $91
-	wait 55
-	wait 10
+	note4 E_,5,0, 10
 	snd_loop .loop3
 SndCall_BGM_01_Ch4_0:
 	envelope $91
-	wait 55
-	wait 10
+	note4 E_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $91
-	wait 55
-	wait 5
+	note4 E_,5,0, 5
 	envelope $91
-	wait 52
-	wait 10
+	note4 G_,5,0, 10
 	envelope $91
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $91
-	wait 53
-	wait 10
-	wait 53
-	wait 10
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
+	note4 F#,5,0, 10
+	note4 F#,5,0, 10
 	snd_loop SndCall_BGM_01_Ch4_0, $00, 3
 	snd_ret
 SndCall_BGM_01_Ch4_1:
 	envelope $91
-	wait 55
-	wait 10
+	note4 E_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $91
-	wait 55
-	wait 5
+	note4 E_,5,0, 5
 	envelope $91
-	wait 52
-	wait 10
+	note4 G_,5,0, 10
 	envelope $91
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $91
-	wait 52
-	wait 5
-	wait 52
-	wait 5
+	note4 G_,5,0, 5
+	note4 G_,5,0, 5
 	envelope $91
-	wait 53
-	wait 5
-	wait 53
-	wait 5
+	note4 F#,5,0, 5
+	note4 F#,5,0, 5
 	envelope $91
-	wait 55
-	wait 5
-	wait 55
-	wait 5
+	note4 E_,5,0, 5
+	note4 E_,5,0, 5
 	snd_ret
 SndCall_BGM_01_Ch4_2:
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	snd_loop SndCall_BGM_01_Ch4_2, $00, 8
 	snd_ret
 SndCall_BGM_01_Ch4_3:
 	envelope $91
-	wait 55
-	wait 10
+	note4 E_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $91
-	wait 55
-	wait 5
+	note4 E_,5,0, 5
 	envelope $91
-	wait 52
-	wait 10
+	note4 G_,5,0, 10
 	envelope $91
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $91
-	wait 53
-	wait 10
-	wait 53
-	wait 10
-	wait 53
-	wait 10
+	note4 F#,5,0, 10
+	note4 F#,5,0, 10
+	note4 F#,5,0, 10
 	snd_ret
-SndCall_BGM_02_Ch4_0:
+SndCall_BGM_01_Ch4_4:
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $51
-	wait 23
-	wait 5
+	note4 C_,6,0, 5
 	envelope $53
-	wait 19
-	wait 5
+	note4x $13, 5 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $51
-	wait 23
-	wait 10
-	snd_loop SndCall_BGM_02_Ch4_0, $00, 3
+	note4 C_,6,0, 10
+	snd_loop SndCall_BGM_01_Ch4_4, $00, 3
 	snd_ret
 SndCall_BGM_01_Ch4_5:
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $53
-	wait 19
-	wait 5
+	note4x $13, 5 ; Nearest: G#,6,0
 	envelope $51
-	wait 23
-	wait 5
+	note4 C_,6,0, 5
 	envelope $53
-	wait 19
-	wait 5
+	note4x $13, 5 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	snd_loop SndCall_BGM_01_Ch4_5, $00, 4
 	snd_ret
 SndCall_BGM_01_Ch4_6:
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $53
-	wait 19
-	wait 5
+	note4x $13, 5 ; Nearest: G#,6,0
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	snd_loop SndCall_BGM_01_Ch4_6, $00, 2
 	snd_ret

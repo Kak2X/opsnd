@@ -54,10 +54,7 @@ SndData_SFX_1E_Ch3:
 SndData_SFX_1E_Ch4:
 	envelope $F8
 	panning $88
-	wait 113
-	wait 5
-	wait 0
-	wait 1
-	wait 53
-	wait 6
+	note4x $71, 5 ; Nearest: A#,4,0
+	note4 B_,6,0, 1
+	note4 F#,5,0, 6
 	chan_stop

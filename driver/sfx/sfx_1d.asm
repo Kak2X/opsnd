@@ -28,14 +28,14 @@ SndData_SFX_1D_Ch1:
 	envelope $F8
 	panning $11
 	duty_cycle 3
-	snd_call SndCall_SFX_1D_Ch2_0
+	snd_call SndCall_SFX_1D_Ch1_0
 	chan_stop
 SndData_SFX_1D_Ch2:
 	envelope $A8
 	panning $22
 	duty_cycle 3
 	silence 8
-	snd_call SndCall_SFX_1D_Ch2_0
+	snd_call SndCall_SFX_1D_Ch1_0
 	chan_stop
 SndData_SFX_1D_Ch3:
 	wave_vol $C0
@@ -45,108 +45,66 @@ SndData_SFX_1D_Ch3:
 SndData_SFX_1D_Ch4:
 	envelope $F8
 	panning $88
-	wait 87
-	wait 2
+	note4 G#,4,0, 2
 	lock_envelope
-	wait 86
-	wait 2
-	wait 85
-	wait 2
-	wait 84
-	wait 2
-	wait 83
-	wait 2
-	wait 82
-	wait 2
-	wait 81
-	wait 2
-	wait 80
-	wait 2
-	wait 55
-	wait 2
-	wait 54
-	wait 2
-	wait 53
-	wait 2
-	wait 52
-	wait 2
-	wait 51
-	wait 2
-	wait 50
-	wait 2
-	wait 49
-	wait 2
+	note4 A_,4,0, 2
+	note4 A#,4,0, 2
+	note4 B_,4,0, 2
+	note4x $53, 2 ; Nearest: G#,4,0
+	note4x $52, 2 ; Nearest: A_,4,0
+	note4x $51, 2 ; Nearest: A#,4,0
+	note4x $50, 2 ; Nearest: B_,4,0
+	note4 E_,5,0, 2
+	note4 F_,5,0, 2
+	note4 F#,5,0, 2
+	note4 G_,5,0, 2
+	note4x $33, 2 ; Nearest: G#,5,0
+	note4x $32, 2 ; Nearest: A_,5,0
+	note4x $31, 2 ; Nearest: A#,5,0
 	unlock_envelope
 	envelope $F3
-	wait 48
-	wait 20
+	note4x $30, 20 ; Nearest: B_,5,0
 	envelope $F2
 	panning $88
-	wait 64
-	wait 1
+	note4x $40, 1 ; Nearest: B_,5,0
 	lock_envelope
-	wait 65
-	wait 1
-	wait 66
-	wait 1
-	wait 67
-	wait 1
-	wait 68
-	wait 1
-	wait 69
-	wait 1
-	wait 70
-	wait 1
-	wait 71
-	wait 1
+	note4x $41, 1 ; Nearest: A#,5,0
+	note4x $42, 1 ; Nearest: A_,5,0
+	note4x $43, 1 ; Nearest: G#,5,0
+	note4 D#,5,0, 1
+	note4 D_,5,0, 1
+	note4 C#,5,0, 1
+	note4 C_,5,0, 1
 	unlock_envelope
-	wait 53
-	wait 1
+	note4 F#,5,0, 1
 	lock_envelope
-	wait 52
-	wait 1
-	wait 51
-	wait 1
-	wait 50
-	wait 1
-	wait 49
-	wait 1
-	wait 48
+	note4 G_,5,0, 1
+	note4x $33, 1 ; Nearest: G#,5,0
+	note4x $32, 1 ; Nearest: A_,5,0
+	note4x $31, 1 ; Nearest: A#,5,0
+	note4x $30 ; Nearest: B_,5,0
 	unlock_envelope
 	envelope $62
-	wait 64
-	wait 1
+	note4x $40, 1 ; Nearest: B_,5,0
 	lock_envelope
-	wait 65
-	wait 1
-	wait 66
-	wait 1
-	wait 67
-	wait 1
-	wait 68
-	wait 1
-	wait 69
-	wait 1
-	wait 70
-	wait 1
-	wait 71
-	wait 1
+	note4x $41, 1 ; Nearest: A#,5,0
+	note4x $42, 1 ; Nearest: A_,5,0
+	note4x $43, 1 ; Nearest: G#,5,0
+	note4 D#,5,0, 1
+	note4 D_,5,0, 1
+	note4 C#,5,0, 1
+	note4 C_,5,0, 1
 	unlock_envelope
-	wait 53
-	wait 1
+	note4 F#,5,0, 1
 	lock_envelope
-	wait 52
-	wait 1
-	wait 51
-	wait 1
-	wait 50
-	wait 1
-	wait 49
-	wait 1
-	wait 48
+	note4 G_,5,0, 1
+	note4x $33, 1 ; Nearest: G#,5,0
+	note4x $32, 1 ; Nearest: A_,5,0
+	note4x $31, 1 ; Nearest: A#,5,0
+	note4x $30 ; Nearest: B_,5,0
 	unlock_envelope
 	chan_stop
-SndCall_SFX_1D_Ch2_0:
+SndCall_SFX_1D_Ch1_0:
 	note C_,3, 1
 	note C#,3
 	note D_,3

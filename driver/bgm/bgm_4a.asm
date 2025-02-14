@@ -93,9 +93,9 @@ SndData_BGM_4A_Ch1:
 	envelope $A8
 	note E_,5, 2
 	note F_,5, 20
-	snd_call SndCall_BGM_4A_Ch2_0
+	snd_call SndCall_BGM_4A_Ch1_0
 	chan_stop
-SndCall_BGM_4A_Ch2_0:
+SndCall_BGM_4A_Ch1_0:
 	note D#,5, 20
 	envelope $88
 	note D#,5, 5
@@ -217,7 +217,7 @@ SndData_BGM_4A_Ch2:
 	note G_,5, 2
 	note G#,5, 20
 	fine_tune 4
-	snd_call SndCall_BGM_4A_Ch2_0
+	snd_call SndCall_BGM_4A_Ch1_0
 	fine_tune -4
 	chan_stop
 SndCall_BGM_4A_Ch2_1:
@@ -277,98 +277,64 @@ SndData_BGM_4A_Ch3:
 SndData_BGM_4A_Ch4:
 	panning $88
 	envelope $A1
-	wait 38
-	wait 5
-	wait 38
-	wait 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
 	envelope $91
-	wait 53
-	wait 5
+	note4 F#,5,0, 5
 	envelope $91
-	wait 55
-	wait 5
+	note4 E_,5,0, 5
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $53
-	wait 19
-	wait 10
+	note4x $13, 10 ; Nearest: G#,6,0
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $51
-	wait 23
-	wait 10
+	note4 C_,6,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 5
+	note4 G#,4,0, 5
 	envelope $53
-	wait 19
-	wait 15
+	note4x $13, 15 ; Nearest: G#,6,0
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 5
-	wait 38
-	wait 5
-	wait 38
-	wait 5
-	wait 38
-	wait 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
+	note4 A_,5,0, 5
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	envelope $C1
-	wait 87
-	wait 10
+	note4 G#,4,0, 10
 	envelope $A1
-	wait 38
-	wait 50
-	wait 38
-	wait 10
+	note4 A_,5,0, 50
+	note4 A_,5,0, 10
 	envelope $91
-	wait 55
-	wait 20
+	note4 E_,5,0, 20
 	envelope $A1
-	wait 38
-	wait 10
+	note4 A_,5,0, 10
 	chan_stop

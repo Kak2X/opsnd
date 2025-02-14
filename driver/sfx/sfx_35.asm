@@ -9,34 +9,20 @@ SndHeader_SFX_35:
 SndData_SFX_35_Ch4:
 	envelope $29
 	panning $88
-	wait 48
-	wait 1
+	note4x $30, 1 ; Nearest: B_,5,0
 	lock_envelope
-	wait 49
-	wait 1
-	wait 50
-	wait 1
-	wait 51
-	wait 1
-	wait 52
-	wait 1
-	wait 53
-	wait 1
-	wait 54
-	wait 2
-	wait 55
-	wait 1
-	wait 54
-	wait 1
-	wait 53
-	wait 1
-	wait 52
-	wait 1
-	wait 51
-	wait 1
-	wait 50
-	wait 1
-	wait 49
-	wait 1
+	note4x $31, 1 ; Nearest: A#,5,0
+	note4x $32, 1 ; Nearest: A_,5,0
+	note4x $33, 1 ; Nearest: G#,5,0
+	note4 G_,5,0, 1
+	note4 F#,5,0, 1
+	note4 F_,5,0, 2
+	note4 E_,5,0, 1
+	note4 F_,5,0, 1
+	note4 F#,5,0, 1
+	note4 G_,5,0, 1
+	note4x $33, 1 ; Nearest: G#,5,0
+	note4x $32, 1 ; Nearest: A_,5,0
+	note4x $31, 1 ; Nearest: A#,5,0
 	unlock_envelope
 	chan_stop

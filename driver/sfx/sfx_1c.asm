@@ -21,7 +21,7 @@ SndHeader_SFX_1C:
 .ch4:
 	db SIS_SFX|SIS_ENABLED ; Initial playback status
 	db SND_CH4_PTR ; Sound channel ptr
-	dw SndData_SFX_2F_Ch4 ; Data ptr
+	dw SndData_SFX_1C_Ch4 ; Data ptr
 	db 0 ; Initial fine tune
 	db $81 ; Unused
 SndData_SFX_1C_Ch1:

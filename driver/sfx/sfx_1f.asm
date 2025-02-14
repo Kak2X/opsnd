@@ -9,66 +9,36 @@ SndHeader_SFX_1F:
 SndData_SFX_1F_Ch4:
 	envelope $F8
 	panning $88
-	wait 87
-	wait 2
+	note4 G#,4,0, 2
 	lock_envelope
-	wait 86
-	wait 2
-	wait 85
-	wait 2
-	wait 84
-	wait 2
-	wait 83
-	wait 2
-	wait 82
-	wait 2
-	wait 81
-	wait 2
-	wait 80
-	wait 2
-	wait 55
-	wait 2
-	wait 54
-	wait 2
-	wait 53
-	wait 2
-	wait 52
-	wait 2
-	wait 51
-	wait 2
-	wait 50
-	wait 2
-	wait 49
-	wait 2
-	wait 48
-	wait 8
-	wait 49
-	wait 8
-	wait 50
-	wait 8
-	wait 51
-	wait 8
-	wait 52
-	wait 8
-	wait 53
-	wait 8
-	wait 54
-	wait 8
-	wait 55
-	wait 8
-	wait 54
-	wait 8
-	wait 53
-	wait 8
-	wait 52
-	wait 8
-	wait 51
-	wait 8
-	wait 50
-	wait 8
-	wait 49
-	wait 8
-	wait 48
-	wait 8
+	note4 A_,4,0, 2
+	note4 A#,4,0, 2
+	note4 B_,4,0, 2
+	note4x $53, 2 ; Nearest: G#,4,0
+	note4x $52, 2 ; Nearest: A_,4,0
+	note4x $51, 2 ; Nearest: A#,4,0
+	note4x $50, 2 ; Nearest: B_,4,0
+	note4 E_,5,0, 2
+	note4 F_,5,0, 2
+	note4 F#,5,0, 2
+	note4 G_,5,0, 2
+	note4x $33, 2 ; Nearest: G#,5,0
+	note4x $32, 2 ; Nearest: A_,5,0
+	note4x $31, 2 ; Nearest: A#,5,0
+	note4x $30, 8 ; Nearest: B_,5,0
+	note4x $31, 8 ; Nearest: A#,5,0
+	note4x $32, 8 ; Nearest: A_,5,0
+	note4x $33, 8 ; Nearest: G#,5,0
+	note4 G_,5,0, 8
+	note4 F#,5,0, 8
+	note4 F_,5,0, 8
+	note4 E_,5,0, 8
+	note4 F_,5,0, 8
+	note4 F#,5,0, 8
+	note4 G_,5,0, 8
+	note4x $33, 8 ; Nearest: G#,5,0
+	note4x $32, 8 ; Nearest: A_,5,0
+	note4x $31, 8 ; Nearest: A#,5,0
+	note4x $30, 8 ; Nearest: B_,5,0
 	unlock_envelope
 	chan_stop

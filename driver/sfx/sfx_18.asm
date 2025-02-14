@@ -9,25 +9,17 @@ SndHeader_SFX_18:
 SndData_SFX_18_Ch4:
 	envelope $F6
 	panning $88
-	wait 85
-	wait 3
-	wait 71
-	wait 3
-	wait 85
-	wait 3
+	note4 A#,4,0, 3
+	note4 C_,5,0, 3
+	note4 A#,4,0, 3
 	lock_envelope
-	wait 55
-	wait 3
-	wait 71
-	wait 8
+	note4 E_,5,0, 3
+	note4 C_,5,0, 8
 	unlock_envelope
 	envelope $F3
-	wait 71
-	wait 10
+	note4 C_,5,0, 10
 	envelope $83
-	wait 71
-	wait 10
+	note4 C_,5,0, 10
 	envelope $33
-	wait 71
-	wait 10
+	note4 C_,5,0, 10
 	chan_stop

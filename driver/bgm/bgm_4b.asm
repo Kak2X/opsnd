@@ -29,14 +29,14 @@ SndData_BGM_4B_Ch1:
 	panning $11
 	duty_cycle 2
 	vibrato_on $01
-	snd_call SndCall_BGM_4B_Ch2_0
+	snd_call SndCall_BGM_4B_Ch1_0
 .loop2:
 	envelope $A2
 	duty_cycle 0
-	snd_call SndCall_BGM_4B_Ch2_1
+	snd_call SndCall_BGM_4B_Ch1_1
 	note B_,5
 	note G_,5
-	snd_call SndCall_BGM_4B_Ch2_1
+	snd_call SndCall_BGM_4B_Ch1_1
 	envelope $A8
 	duty_cycle 2
 	note G_,4
@@ -127,7 +127,7 @@ SndData_BGM_4B_Ch1:
 	snd_call SndCall_BGM_4B_Ch1_4
 	fine_tune 7
 	snd_loop .loop2
-SndCall_BGM_4B_Ch2_0:
+SndCall_BGM_4B_Ch1_0:
 	note C_,4, 72
 	note E_,4, 3
 	note F_,4
@@ -175,7 +175,7 @@ SndCall_BGM_4B_Ch2_0:
 	note A#,4
 	note A_,4
 	snd_ret
-SndCall_BGM_4B_Ch2_1:
+SndCall_BGM_4B_Ch1_1:
 	note A#,5, 6
 	note G_,5
 	note G#,5
@@ -305,16 +305,16 @@ SndData_BGM_4B_Ch2:
 	duty_cycle 1
 	vibrato_on $01
 	fine_tune -5
-	snd_call SndCall_BGM_4B_Ch2_0
+	snd_call SndCall_BGM_4B_Ch1_0
 	fine_tune 5
 .loop0:
 	envelope $62
 	duty_cycle 0
 	silence 9
-	snd_call SndCall_BGM_4B_Ch2_1
+	snd_call SndCall_BGM_4B_Ch1_1
 	note B_,5
 	note G_,5
-	snd_call SndCall_BGM_4B_Ch2_1
+	snd_call SndCall_BGM_4B_Ch1_1
 	note B_,5, 3
 	envelope $A8
 	duty_cycle 1

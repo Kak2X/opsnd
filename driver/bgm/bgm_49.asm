@@ -29,41 +29,41 @@ SndData_BGM_49_Ch1:
 	panning $11
 	duty_cycle 3
 	vibrato_on $01
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 1
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 4
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune 3
 	duty_cycle 2
 	snd_call SndCall_BGM_49_Ch1_2
 	duty_cycle 3
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 1
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 4
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune 3
 	duty_cycle 2
 	snd_call SndCall_BGM_49_Ch1_2
 	snd_call SndCall_BGM_49_Ch1_3
 	snd_call SndCall_BGM_49_Ch1_2
 	snd_loop SndData_BGM_49_Ch1
-SndCall_BGM_49_Ch2_0:
+SndCall_BGM_49_Ch1_0:
 	envelope $A8
 	note A#,5, 32
 	envelope $88
@@ -84,7 +84,7 @@ SndCall_BGM_49_Ch2_0:
 	envelope $38
 	note F_,5
 	snd_ret
-SndCall_BGM_49_Ch2_1:
+SndCall_BGM_49_Ch1_1:
 	envelope $A8
 	note G#,5, 16
 	envelope $88
@@ -190,34 +190,34 @@ SndData_BGM_49_Ch2:
 	duty_cycle 1
 	vibrato_on $01
 	fine_tune -5
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 1
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 4
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune 3
 	fine_tune 5
 	snd_call SndCall_BGM_49_Ch2_2
 	fine_tune -5
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 1
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune -1
-	snd_call SndCall_BGM_49_Ch2_0
+	snd_call SndCall_BGM_49_Ch1_0
 	fine_tune 4
 	fine_tune -3
-	snd_call SndCall_BGM_49_Ch2_1
+	snd_call SndCall_BGM_49_Ch1_1
 	fine_tune 3
 	fine_tune 5
 	snd_call SndCall_BGM_49_Ch2_2

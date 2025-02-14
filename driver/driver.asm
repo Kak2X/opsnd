@@ -777,36 +777,6 @@ Sound_Cmd_SetChVol_\1:
 	;--
 	ret
 	
-; =============== Sound_StartNewBGM ===============
-; Starts playback of a new BGM.           
-; IN                                      
-; - BC: Ptr to song data                  
-Sound_StartNewBGM_\1:                        
-	xor  a                                
-	ld   [wSnd_Unused_SfxPriority], a          
-	push bc                               
-		call Sound_StopAll_\1                
-	pop  bc                               
-	ld   de, wBGMCh1Info                  
-	jp   Sound_InitSongFromHeader_\1         
-                                          
-; =============== Sound_PauseAll ===============
-; Handles the sound pause command during gameplay.
-Sound_PauseAll_\1:                           
-	; Pause everything except SFXCh1 and SFXCh2
-	call Sound_PauseChPlayback_\1
-	; Kill SFXCh1 and SFXCh2 with a silent SFX (SndHeader_Pause) that overrides whatever's still playing.
-	; This SFX doesn't play notes, all it does is set the sound length to 0, then end itself.
-	; It also pretends to be a BGM, so that once it ends, the game will mute the channel instead of attempting to resume the BGM.
-	jp   Sound_StartNewSFX1234_\1
-
-; =============== Sound_UnpauseAll ===============
-; Handles the sound unpause command during gameplay.
-Sound_UnpauseAll_\1:
-	call Sound_UnpauseChPlayback_\1
-	; No purpose here.
-	jp   Sound_StartNewSFX1234_\1
-	
 ; =============== Sound_FastSlideSFXtoC_8 ===============
 ; Slides the two SFX pulse channels to note C-8 over 1 second.
 Sound_FastSlideSFXtoC_8_\1:
@@ -829,48 +799,73 @@ Sound_SlowSlideSFXtoF#4_\1:
 	ld   d, SCI_SFXCH2	; SFX - Pulse 2
 	ld   e, 4*60		; 4 secs
 	ld   bc, $069E		; F#4
-	jp   Sound_StartSlide_\1
-
-; =============== Sound_PauseChPlayback ===============
-; Pauses sound playback.
-Sound_PauseChPlayback_\1:
+	jp   Sound_StartSlide_\1      
+                                          
+; =============== Sound_PauseAll ===============
+; Handles the sound pause command during gameplay.
+Sound_PauseAll_\1:                           
 	; Disable all sound channels
 	xor  a
 	ldh  [rNR51], a
-	; Pause music and sound effect channels (but not SFXCh1 and SFXCh2, for some reason)
+	
+	; Pause *most* music and sound effect channels.
+	; A pause sound may play on SFXCh1 & SFXCh2, so those are left untouched.
+	ld   de, SNDINFO_SIZE
 	ld   hl, wBGMCh1Info
 	set  SISB_PAUSE, [hl]
-	ld   hl, wBGMCh2Info
+	add  hl, de
 	set  SISB_PAUSE, [hl]
-	ld   hl, wBGMCh3Info
+	add  hl, de
 	set  SISB_PAUSE, [hl]
-	ld   hl, wBGMCh4Info
+	add  hl, de
 	set  SISB_PAUSE, [hl]
+	
 	ld   hl, wSFXCh3Info
 	set  SISB_PAUSE, [hl]
-	ld   hl, wSFXCh4Info
+	add  hl, de
 	set  SISB_PAUSE, [hl]
-	ret
+	
+	; Play the pause sound
+	jr   Sound_StartNewSFX1234_\1
 
-; =============== Sound_UnpauseChPlayback ===============
-Sound_UnpauseChPlayback_\1:
+; =============== Sound_UnpauseAll ===============
+; Handles the sound unpause command during gameplay.
+Sound_UnpauseAll_\1:
 	; Restore enabled channels
 	ld   a, [wSndEnaChBGM]
 	ldh  [rNR51], a
+	
 	; Resume music and sound effect channels
+	ld   de, SNDINFO_SIZE
 	ld   hl, wBGMCh1Info
 	res  SISB_PAUSE, [hl]
-	ld   hl, wBGMCh2Info
+	add  hl, de
 	res  SISB_PAUSE, [hl]
-	ld   hl, wBGMCh3Info
+	add  hl, de
 	res  SISB_PAUSE, [hl]
-	ld   hl, wBGMCh4Info
+	add  hl, de
 	res  SISB_PAUSE, [hl]
+	
 	ld   hl, wSFXCh3Info
 	res  SISB_PAUSE, [hl]
-	ld   hl, wSFXCh4Info
+	add  hl, de
 	res  SISB_PAUSE, [hl]
-	ret 
+	
+	; Play the unpause sound
+	jr   Sound_StartNewSFX1234_\1
+	
+; =============== Sound_StartNewBGM ===============
+; Starts playback of a new BGM.           
+; IN                                      
+; - BC: Ptr to song data                  
+Sound_StartNewBGM_\1:                        
+	xor  a                                
+	ld   [wSnd_Unused_SfxPriority], a          
+	push bc                               
+		call Sound_StopAll_\1                
+	pop  bc                               
+	ld   de, wBGMCh1Info                  
+	jr   Sound_InitSongFromHeader_\1 
 	
 ; =============== Sound_Unused_StartNewSFX1234Hi ===============
 ; [TCRF] Unreferenced code. The priority system isn't used.
@@ -917,13 +912,28 @@ Sound_StartNewSFX1234_\1:
 	ld   de, wSFXCh1Info
 	jr   Sound_InitSongFromHeader_\1
 	
-; =============== Sound_Unused_StopSFXCh1 ===============
-; [TCRF] Unreferenced code.
-Sound_Unused_StopSFXCh1_\1:
-	xor  a
-	ldh  [rNR10], a
-	ld   [wSFXCh1Info], a
-	jp   Sound_StopAll_Main.initNR
+;; =============== Sound_Unused_StopSFXCh1 ===============
+;; [TCRF] Unreferenced code.
+;Sound_Unused_StopSFXCh1_\1:
+;	xor  a
+;	ldh  [rNR51], a			; Silence all channels
+;	ldh  [rNR30], a			; Stop Ch3
+;	ld   [wSFXCh1Info], a 	; Stop Ch1
+;	ld   [wSndEnaChBGM], a
+;	ld   [wSndCh3DelayCut], a
+;	; Clear circular buffer of sound requests.
+;	ld   hl, wSndIdReqTbl
+;REPT 8
+;	ldi  [hl], a
+;ENDR
+;	ld   hl, hSndPlayCnt
+;	ldi  [hl], a
+;	ldi  [hl], a
+;	ld   a, SNDCTRL_ON	; Enable sound hardware
+;	ldh  [rNR52], a		
+;	ld   a, $08			; Use downwards sweep for ch1 (standard)
+;	ldh  [rNR10], a
+;	ret
 
 ; =============== Sound_Unused_StartNewSFX234Hi ===============
 ; [TCRF] Unreferenced code.
@@ -977,15 +987,19 @@ Sound_StartNewSFX4_\1:
 ; - DE: Ptr to the initial SndInfo (destination)
 Sound_InitSongFromHeader_\1:
 
-	; HL = BC
-	ld   l, c
-	ld   h, b
+	; HL = DE (Destination)
+	ld   l, e
+	ld   h, d
+	; DE = BC (Source)
+	ld   e, c
+	ld   d, b
 
 	; A sound can take up multiple channels -- and channel info is stored into a $20 byte struct.
 	; The first byte from the sound header marks how many channels ($20 byte blocks) need to be initialized.
 
 	; B = Channels used
-	ldi  a, [hl]
+	ld   a, [de]
+	inc  de
 	ld   b, a
 .chLoop:
 	;
@@ -993,20 +1007,19 @@ Sound_InitSongFromHeader_\1:
 	; These map directly to the first four bytes of the SndInfo structure.
 	;
 REPT 4
-	ldi  a, [hl]	; Read byte
-	ld   [de], a	; Copy it over
+	ld   a, [de]	; Read byte
+	ldi  [hl], a	; Copy it over
 	inc  de
 ENDR
 	
 	; The bank number we previously bankswitched to goes to iSndInfo_DataPtr_Bank
 	ldh  a, [hROMBank]
-	ld   [de], a
-	inc  de
+	ldi  [hl], a
 
 	; Then the remaining 2 original bytes
 REPT 2
-	ldi  a, [hl]
-	ld   [de], a
+	ld   a, [de]
+	ldi  [hl], a
 	inc  de
 ENDR
 
@@ -1014,26 +1027,22 @@ ENDR
 	; Then initialize other fields
 	;
 
+	
 	; Point data "stack index" to the very end of the SndInfo structure
 	ld   a, iSndInfo_End
-	ld   [de], a			; Write to iSndInfo_DataPtrStackIdx
-	inc  de
+	ldi  [hl], a			; Write to iSndInfo_DataPtrStackIdx
 
 	; Set the lowest possible length target to handle new sound commands as soon as possible.
 	ld   a, $01
-	ld   [de], a			; Write to iSndInfo_LengthTarget
-	inc  de
+	ldi  [hl], a			; Write to iSndInfo_LengthTarget
 
 	;
 	; Clear rest of the SndInfo ($18 bytes)
 	;
 	xor  a
-	ld   c, SNDINFO_SIZE-iSndInfo_LengthTimer	; C = Bytes left
-.clrLoop:
-	ld   [de], a		; Clear
-	inc  de
-	dec  c				; Cleared all bytes?
-	jr   nz, .clrLoop	; If not, loop
+REPT SNDINFO_SIZE-iSndInfo_LengthTimer
+	ldi  [hl], a
+ENDR
 
 	dec  b				; Finished all loops?
 	jr   nz, .chLoop	; If not, jump
@@ -2836,66 +2845,43 @@ ENDC
 	ldh  [hSndChEnaMask], a
 	
 	; Enable sound hardware
+	ld   hl, rNR52
 	ld   a, SNDCTRL_ON
-	ldh  [rNR52], a
+	ldd  [hl], a ; rNR52
 	
-	; Silence all channels
-	xor  a
-	ldh  [rNR51], a
-	
-	;
-	; Clear channel registers.
-	; This zeroes out addresses in the list at Sound_ChRegAddrTable.
-	;
-	ld   hl, Sound_ChRegAddrTable_\1		; HL = Start of table
-	ld   b, (Sound_ChRegAddrTable_\1.end-Sound_ChRegAddrTable_\1)	; B = Bytes to overwrite (table size)
-	xor  a								; A = Value copied
-.loop:
-	ld   c, [hl]		; Read the ptr to C
-	ld   [c], a			; Write $00 to $FF00+C
-	inc  hl				; Ptr++
-	dec  b				; Copied all bytes?
-	jr   nz, .loop		; If not, loop
-	
-	;
-	; Clear the entire memory range used by the sound driver (wBGMCh1Info-$D5C5)
-	;
-	ld   hl, wBGMCh1Info; HL = Initial addr
-	xor  a				; A = $00
-	ld   c, $08			; BC = ($09*$20)
-.loopH:
-	ld   b, $20
-.loopL:
-	ldi  [hl], a		; Clear byte
-	dec  b				; B == 0?
-	jr   nz, .loopL		; If not, loop
-	dec  c				; C == 0?
-	jr   nz, .loopH		; If not, loop
-	
-	;
-	; Initialize other regs
-	;
-	ld   a, %1110111	; Set max volume for both left/right speakers
-	ld   [wSndVolume], a
-	ldh  [rNR50], a
-	
+	; Wipe default priority
 	xor  a
 	ld   [wSnd_Unused_SfxPriority], a
-.initNR:
-	ld   a, $08			; Use downwards sweep for ch1 (standard)
-	ldh  [rNR10], a
-	xor  a
-	ldh  [rNR30], a		; Stop Ch3
-	ldh  [rNR51], a		; Silence all channels
-	
 	; These weren't initialized in the older version of the driver.
 	; It matters more here due to conditional updates.
 	ld   [wSndEnaChBGM], a
 	ld   [wSndCh3DelayCut], a
 	
+	; Silence all channels in preparation for the wipe
+	ldd  [hl], a ; rNR51
+	; Skip rNR50 for now
+	
+	; Clear channel registers.
+	ldd  [hl], a ; rNR44
+	ldd  [hl], a ; rNR43
+	ldd  [hl], a ; rNR42
+	ldd  [hl], a ; rNR41
+	ldd  [hl], a ; rNR34
+	ldd  [hl], a ; rNR33
+	ldd  [hl], a ; rNR32
+	ldd  [hl], a ; rNR31
+	ldd  [hl], a ; rNR30
+	ldd  [hl], a ; rNR24
+	ldd  [hl], a ; rNR23
+	ldd  [hl], a ; rNR22
+	ldd  [hl], a ; rNR21
+	ldd  [hl], a ; rNR14
+	ldd  [hl], a ; rNR13
+	ldd  [hl], a ; rNR12
+	ldd  [hl], a ; rNR11
+	; Skip rNR10 for now
+	
 	; Clear circular buffer of sound requests.
-	; This used to be done during the previous loop in 96, but memory rearrangements
-	; necessitated this change.
 	ld   hl, wSndIdReqTbl
 REPT 8
 	ldi  [hl], a
@@ -2903,28 +2889,26 @@ ENDR
 	ld   hl, hSndPlayCnt
 	ldi  [hl], a
 	ldi  [hl], a
+
+	;
+	; Disable all sound slots.
+	; It's not necessary to fully wipe them, since initializing a slot wipes it.
+	;
+	ld   hl, wBGMCh1Info
+	ld   bc, SNDINFO_SIZE
+	xor  a
+	ld   [hl], a
+REPT 7
+	add  hl, bc
+	ld   [hl], a
+ENDR
+
+	; Use downwards sweep for ch1 (standard)
+	ld   a, $08			
+	ldh  [rNR10], a
 	
+	; Set max volume for both left/right speakers
+	ld   a, %1110111	
+	ld   [wSndVolume], a
+	ldh  [rNR50], a
 	ret
-	
-; =============== Sound_ChRegAddrTable ===============
-; List of memory adddresses cleared by Sound_Init.
-Sound_ChRegAddrTable_\1:
-	db LOW(rNR10)
-	db LOW(rNR14)
-	db LOW(rNR12)
-	db LOW(rNR13)
-	db LOW(rNR11)
-	db LOW(rNR24)
-	db LOW(rNR22)
-	db LOW(rNR23)
-	db LOW(rNR21)
-	db LOW(rNR30)
-	db LOW(rNR34)
-	db LOW(rNR32)
-	db LOW(rNR33)
-	db LOW(rNR31)
-	db LOW(rNR44)
-	db LOW(rNR42)
-	db LOW(rNR43)
-	db LOW(rNR41)
-.end:

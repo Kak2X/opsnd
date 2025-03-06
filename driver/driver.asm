@@ -1584,38 +1584,32 @@ Sound_DoChSndInfo_Loop_\1:
 .chkNewLength:
 
 	;
-	; HL = Song data ptr
-	;
-	ld   hl, hSndInfoCurDataPtr_Low
-	ldi  a, [hl]
-	ld   h, [hl]
-	ld   l, a
-
-
-	;
 	; NOTE: At the start of the loop, we incremented the data byte.
 	;
 	; After passing through the custom register update, an additional byte
-	; may be used to specify a new length target.
+	; may be used to specify a new note length.
 	;
-
+	ld   hl, hSndInfoCurDataPtr_High
+	ldd  a, [hl]
+	ld   c, [hl]
+	ld   b, a
+	
 	;
 	; If the (new) data byte is < $80, treat it as a new length target.
 	; Otherwise, ignore it completely.
 	;
 
-	ld   a, [hl]			; Read data byte
+	ld   a, [bc]			; Read data byte
 	cp   $80				; A >= $80?
 	jr   nc, .saveDataPtr	; If so, skip
 
 	;
 	; ++
 	;
-	ld   hl, hSndInfoCurDataPtr_Low
-	inc  [hl]				; LowByte++
-	jr   nz, .setLength		; If no overflow, skip
+	inc  [hl]
+	jr   nz, .setLength
 	inc  l
-	inc  [hl]				; HighByte++
+	inc  [hl]
 
 	;------
 .setLength:

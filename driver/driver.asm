@@ -1654,8 +1654,6 @@ ENDC
 	and  $F0			; Remove low nybble
 	ld   [hl], a		; Write it back
 	
-
-
 	;
 	; The remainder of the subroutine involves checks for muting the sound channel.
 	;
@@ -1679,166 +1677,25 @@ ENDC
 .chkMuteCh:
 
 	; Depending on the currently modified channel, decide which channel to mute.
-	;
-	; This is done by checking at the register ptr, which doubles as channel marker.
-	; It will only ever point to the 4th register (rNRx3) of any given sound channel, thankfully.
-
 	ld   hl, iSndInfo_RegPtr
 	add  hl, de
+	ld   c, [hl] ; C = Ptr to NRx3
+	
+	dec  c						; to rNRx2
+	ld   a, $08					; Clear volume
+	ld   [c], a				
+	inc  c						; to rNRx3
+	inc  c						; to rNRx4
+	ld   a, SNDCHF_RESTART		; Apply changes
+	ld   [c], a
 
-	; Depending on the source address...
-	ld   a, [hl]
-	cp   SND_CH1_PTR
-	jr   z, .muteCh1
-	cp   SND_CH2_PTR
-	jr   z, .muteCh2
-	cp   SND_CH3_PTR
-	jr   z, .muteCh3
-.muteCh4:
-	ldh  a, [rNR51]
-	and  %01110111
-	jr   .muteEnd
-.muteCh3:
-	xor  a				; ch3 has also its own mute register
-	ldh  [rNR30], a
-	ldh  a, [rNR51]
-	and  %10111011
-	jr   .muteEnd
-.muteCh2:
-	ldh  a, [rNR51]
-	and  %11011101
-	jr   .muteEnd
-.muteCh1:
-	ldh  a, [rNR51]
-	and  %11101110
-.muteEnd:
-	;##
-	; Before writing to the register, mask the finalized NR51 value against the global mask (hSndChEnaMask).
-	
-	; C = Updated NR51 value
-	ld   c, a
-	
-	; B = Global mask
-	; Unlike other NR51 masks, this one operates in mono.
-	; Only the lower nybble is used, and it gets duplicated into the upper one.
-	ldh  a, [hSndChEnaMask]
-	and  $0F
-	ld   b, a					; H = hSndChEnaMask & $0F
-	swap a						; A = H << 4
-	or   b						
-	ld   b, a			
-	
-	; Mask the new NR51 against C
-	ld   a, c					; Restore NR51 value
-	and  b						; Mask it against
-	;##
-	ldh  [rNR51], a
-	
-	; If we did this for a BGM, save a copy of this elsewhere.
-	ld   hl, iSndInfo_Status
-	add  hl, de
-	bit  SISB_SFX, [hl]			; Are we a BGM?
-	ret  nz						; If not, we're done
-	ld   [wSndEnaChBGM], a
 	ret
-	;---------------------------
 
 .chkReinit:
 	; If we skipped the NRx2 update (volume + env), return immediately
 	ld   a, [de]
 	bit  SISB_LOCKNRx2, a
 	ret  nz
-
-	;
-	; Determine which sound channel has to be re-initialized (rNR51 status + extra registers).
-	;
-	; The default status when enabling a sound channel is stored at iSndInfo_ChEnaMask,
-	; so seek to that for later.
-	;
-	ld   hl, iSndInfo_ChEnaMask
-	add  hl, de
-
-	; Seek BC to iSndInfo_RegPtr
-	ld   bc, iSndInfo_RegPtr
-	ldh  a, [hSndInfoCurPtr_Low]	; LowByte += 1
-	add  c
-	ld   c, a
-	ldh  a, [hSndInfoCurPtr_High]	; HighByte += (Carry)
-	adc  b
-	ld   b, a
-
-	; Read iSndInfo_RegPtr to A for the upcoming check
-	ld   a, [bc]
-	; C = A+1 for later
-	; Increased by 1 since the high byte of the frequency is what contains extra flags
-	ld   c, a
-	inc  c
-
-	; Depending on the source address enable the correct sound registers
-	cp   SND_CH1_PTR	; A == SND_CH1_PTR? Handling channel 1?
-	jr   z, .setCh1Ena	; If so, jump
-	cp   SND_CH2_PTR	; Handling channel 2?
-	jr   z, .setCh2Ena	; If so, jump
-	cp   SND_CH4_PTR	; Handling channel 4?
-	jr   z, .setCh4Ena	; If so, jump
-.setCh3Ena:
-	; Clear and re-enable channel 3
-	xor  a ; SNDCH3_OFF
-	ldh  [rNR30], a
-	ld   a, SNDCH3_ON
-	ldh  [rNR30], a
-
-	; Get the bits to OR over rNR51 from the initial sound output status
-	; A = iSndInfo_ChEnaMask & $44
-	ld   a, [hl]		; Read iSndInfo_ChEnaMask
-	and  %01000100	; Filter away bits for the other channel numbers
-	jr   .setChEna
-.setCh4Ena:
-	ld   a, [hl]
-	and  %10001000
-	jr   .setChEna
-.setCh2Ena:
-	ld   a, [hl]
-	and  %00100010
-	jr   .setChEna
-.setCh1Ena:
-	ld   a, [hl]
-	and  %00010001
-
-.setChEna:
-	; OR the bits from before with rNR51 to re-enable (if needed) the sound channel playback
-	ld   b, a
-	ldh  a, [rNR51]
-	or   b
-	;##
-	; Before writing to the register, mask the finalized NR51 value against the global mask (hSndChEnaMask).
-	
-	; L = Updated NR51 value
-	ld   l, a
-	
-	; H = Global mask
-	; Unlike other NR51 masks, this one operates in mono.
-	; Only the lower nybble is used, and it gets duplicated into the upper one.
-	ldh  a, [hSndChEnaMask]
-	and  $0F
-	ld   h, a					; H = hSndChEnaMask & $0F
-	swap a						; A = H << 4
-	or   h						
-	ld   h, a			
-	
-	; Mask the new NR51 against H
-	ld   a, l					; Restore NR51 value
-	and  h						; Mask it against
-	;##
-	
-	ldh  [rNR51], a
-
-	; If we did this for a BGM, save a copy of this elsewhere.
-	ld   hl, iSndInfo_Status
-	add  hl, de
-	bit  SISB_SFX, [hl]			; Are we a BGM?
-	jr   nz, .chkCh3EndType		; If not, we're done
-	ld   [wSndEnaChBGM], a
 
 .chkCh3EndType:
 	;
@@ -1850,6 +1707,11 @@ ENDC
 	ld   hl, iSndInfo_RegPtr
 	add  hl, de					; Seek to register ptr
 	ld   a, [hl]				; Read it
+	;--
+	; Save a copy of this pointing to NRx4 for when we retrigger later on
+	ld   c, a
+	inc  c
+	;--
 	cp   SND_CH3_PTR			; Does it point to ch3?
 	jr   nz, .noStop			; If not, jump
 
@@ -2479,6 +2341,10 @@ Sound_Cmd_SetWaveData_\1:
 	inc  c									; Ptr++
 	dec  b									; Copied all bytes?
 	jr   nz, .loop							; If not, loop
+	
+	ld   a, SNDCH3_ON
+	ldh  [rNR30], a
+	
 	jp   Sound_DoChSndInfo_Loop_\1
 	
 ; =============== Sound_Cmd_ChanStopHiSFX4 ===============
@@ -2741,6 +2607,9 @@ Sound_SetWaveDataCustom_\1:
 	inc  c									; Ptr++
 	dec  b									; Copied all bytes?
 	jr   nz, .loop							; If not, loop
+	
+	ld   a, SNDCH3_ON
+	ldh  [rNR30], a
 	ret
 
 ; =============== Sound_SilenceCh ===============

@@ -68,6 +68,8 @@ DEF iSndInfo_LoopTimerTbl              EQU $13 ; Table with timers counting down
 DEF iSndInfo_SlideFreqOffsetLow        EQU $16 ; Frequency offset (low byte) applied each active frame of a pitch slide.
 DEF iSndInfo_SlideFreqOffsetHigh       EQU $17 ; "" (high byte) ""
 DEF iSndInfo_SlideTimer                EQU $18 ; When this elapses, the pitch slide ends.
+DEF iSndInfo_FreqOffsetLow             EQU $19 ; Offset applied to the current frequency value.
+DEF iSndInfo_FreqOffsetHigh            EQU $1A ; "" (high byte) ""
 DEF iSndInfo_End                       EQU $20 ; Pointer stack moving up
 
 ; ldi requirements

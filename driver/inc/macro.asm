@@ -197,7 +197,7 @@ MACRO snd_loop
 ENDM
 
 ; =============== fine_tune ===============
-; Adjusts the pitch offset for the track.
+; Adjusts the note ID offset for the track.
 ; Note IDs will be shifted by this amount relative to the current offset.
 ; Code: Sound_Cmd_AddToBaseFreqId
 ; IN:
@@ -223,6 +223,16 @@ ENDM
 ;      Only the bits for the current channel should be set.
 MACRO panning
 	db SNDCMD_BASE + $09, \1
+ENDM
+
+; =============== fine_tune_value ===============
+; Adjusts the pitch offset for the track.
+; The frequency value will be shifted by this amount relative to the current offset.
+; Code: Sound_Cmd_AddToBaseFreqOff
+; IN:
+; - 1: Tune offsets
+MACRO fine_tune_value
+	db SNDCMD_BASE + $0A, \1
 ENDM
 
 ; =============== snd_call ===============

@@ -1492,10 +1492,33 @@ Sound_DoChSndInfo_Loop_\1:
 	; Read the entries from the table in ROM
 	ldi  a, [hl]		; Read out iSndInfo_RegNRx3Data
 	ld   b, [hl]		; Read out iSndInfo_RegNRx4Data
+	
+	; Add the 16-bit frequency offset at iSndInfo_FreqOffset* to it
+	ld   hl, iSndInfo_FreqOffsetLow
+	add  hl, de
+	add  a, [hl]	; iSndInfo_RegNRx3Data += iSndInfo_FreqOffsetLow
+	ld   c, a
+	inc  l			
+	ld   a, b		
+	adc  a, [hl]	; iSndInfo_RegNRx4Data += iSndInfo_FreqOffsetHigh + Carry
+	ld   b, a
+	
+.chkRegDataMax:
+	; Enforce the $07FF cap
+	bit  7, a					; iSndInfo_RegNRx4Data < 0?
+	jr   z, .chkRegDataMin		; If not, skip
+	ld   bc, $0000
+	jr   .readRegDataOk
+.chkRegDataMin:
+	cp   $08					; iSndInfo_RegNRx4Data < $08?
+	jr   c, .readRegDataOk		; If not, skip
+	ld   bc, $07FF
+.readRegDataOk:
 	; and write them over to the Frequency SndInfo in RAM
 	ld   hl, iSndInfo_RegNRx3Data
 	add  hl, de
-	ldi  [hl], a		; Save iSndInfo_RegNRx3Data
+	ld   [hl], c		; Save iSndInfo_RegNRx3Data
+	inc  l
 	ld   [hl], b		; Save iSndInfo_RegNRx4Data
 	;------
 
@@ -1758,7 +1781,7 @@ Sound_CmdPtrTbl_\1:
 	dw Sound_Cmd_JpFromLoopByTimer_\1
 	dw Sound_Cmd_WriteToNR10_\1;X				; $08
 	dw Sound_Cmd_SetPanning_\1
-	dw Sound_DoChSndInfo_Loop_\1;X
+	dw Sound_Cmd_AddToBaseFreqOff_\1;X
 	dw Sound_DoChSndInfo_Loop_\1;X
 	dw Sound_Cmd_Call_\1
 	dw Sound_Cmd_Ret_\1
@@ -1865,6 +1888,32 @@ Sound_Cmd_AddToBaseFreqId_\1:
 	add  hl, de				; Seek to the value
 	add  [hl]				; A += iSndInfo_FreqDataIdBase
 	ld   [hl], a			; Save it back
+	jp   Sound_DoChSndInfo_Loop_\1
+	
+; =============== Sound_Cmd_AddToBaseFreqOff ===============
+; Increases the base frequency offset by the read amount.
+; Equivalent to TB's PXX command.
+; Command data format:
+; - 0: Frequency value offset (signed)
+Sound_Cmd_AddToBaseFreqOff_\1:
+	; Read a value off the data ptr.
+	mSndReadNextByte
+	ld   b, a
+	ld   c, -1
+	
+	; Add the value to iSndInfo_FreqOffset
+	ld   hl, iSndInfo_FreqOffsetLow
+	add  hl, de				; Seek to the value
+	add  [hl]				; A += iSndInfo_FreqOffsetLow
+	ldi  [hl], a			; Save it back, seek to high
+	; good thing bit ops don't alter the C flag
+	bit  7, b				; Offset < 0? (MSB set)
+	jr   nz, .offNeg		; If so, jump
+	inc  c					; adc a, -1 for negative offset, a + 0 for positive
+.offNeg:
+	ld   a, [hl]
+	adc  a, c
+	ld   [hl], a
 	jp   Sound_DoChSndInfo_Loop_\1
 	
 ; =============== Sound_Cmd_SetVibrato ===============

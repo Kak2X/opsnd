@@ -226,9 +226,9 @@ MACRO panning
 ENDM
 
 ; =============== fine_tune_value ===============
-; Adjusts the pitch offset for the track.
+; Sets the pitch offset for the track.
 ; The frequency value will be shifted by this amount relative to the current offset.
-; Code: Sound_Cmd_AddToBaseFreqOff
+; Code: Sound_Cmd_SetBaseFreqOff
 ; IN:
 ; - 1: Tune offsets
 MACRO fine_tune_value

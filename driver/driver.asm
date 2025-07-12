@@ -1781,7 +1781,7 @@ Sound_CmdPtrTbl_\1:
 	dw Sound_Cmd_JpFromLoopByTimer_\1
 	dw Sound_Cmd_WriteToNR10_\1;X				; $08
 	dw Sound_Cmd_SetPanning_\1
-	dw Sound_Cmd_AddToBaseFreqOff_\1;X
+	dw Sound_Cmd_SetBaseFreqOff_\1;X
 	dw Sound_DoChSndInfo_Loop_\1;X
 	dw Sound_Cmd_Call_\1
 	dw Sound_Cmd_Ret_\1
@@ -1890,30 +1890,25 @@ Sound_Cmd_AddToBaseFreqId_\1:
 	ld   [hl], a			; Save it back
 	jp   Sound_DoChSndInfo_Loop_\1
 	
-; =============== Sound_Cmd_AddToBaseFreqOff ===============
-; Increases the base frequency offset by the read amount.
+; =============== Sound_Cmd_SetBaseFreqOff ===============
+; Sets the base frequency offset to the specified value.
 ; Equivalent to TB's PXX command.
 ; Command data format:
 ; - 0: Frequency value offset (signed)
-Sound_Cmd_AddToBaseFreqOff_\1:
+Sound_Cmd_SetBaseFreqOff_\1:
 	; Read a value off the data ptr.
 	mSndReadNextByte
-	ld   b, a
-	ld   c, -1
 	
-	; Add the value to iSndInfo_FreqOffset
+	; Convert signed 8-bit to signed 16-bit
 	ld   hl, iSndInfo_FreqOffsetLow
 	add  hl, de				; Seek to the value
-	add  [hl]				; A += iSndInfo_FreqOffsetLow
 	ldi  [hl], a			; Save it back, seek to high
-	; good thing bit ops don't alter the C flag
-	bit  7, b				; Offset < 0? (MSB set)
+	ld   c, -1
+	bit  7, a				; Offset < 0? (MSB set)
 	jr   nz, .offNeg		; If so, jump
-	inc  c					; adc a, -1 for negative offset, a + 0 for positive
+	inc  c					; -1 for negative offset, +0 for positive
 .offNeg:
-	ld   a, [hl]
-	adc  a, c
-	ld   [hl], a
+	ld   [hl], c			; iSndInfo_FreqOffsetHigh
 	jp   Sound_DoChSndInfo_Loop_\1
 	
 ; =============== Sound_Cmd_SetVibrato ===============

@@ -995,18 +995,24 @@ Sound_InitSongFromHeader_\1:
 	ld   d, b
 
 	; A sound can take up multiple channels -- and channel info is stored into a $20 byte struct.
-	; The first byte from the sound header marks how many channels ($20 byte blocks) need to be initialized.
+	; The first byte from the sound header marks how many channels ($20 byte blocks) may need to be initialized.
 
 	; B = Channels used
 	ld   a, [de]
 	inc  de
 	ld   b, a
 .chLoop:
+
 	;
-	; Copy over next 4 bytes
+	; Copy over next 4 bytes if the channel is enabled.
 	; These map directly to the first four bytes of the SndInfo structure.
 	;
-REPT 4
+	ld   a, [de]			; Read status byte
+	inc  de					; Src++
+	bit  SISB_ENABLED, a	; Is the channel enabled?
+	jr   z, .skip			; If not, skip it
+	ldi  [hl], a			; Copy it over
+REPT 3
 	ld   a, [de]	; Read byte
 	ldi  [hl], a	; Copy it over
 	inc  de
@@ -1026,7 +1032,6 @@ ENDR
 	;
 	; Then initialize other fields
 	;
-
 	
 	; Point data "stack index" to the very end of the SndInfo structure
 	ld   a, iSndInfo_End
@@ -1046,6 +1051,20 @@ ENDR
 
 	dec  b				; Finished all loops?
 	jr   nz, .chLoop	; If not, jump
+	ret
+	
+.skip:
+	ld  a, b
+		; HL += SNDINFO_SIZE
+		ld   bc, SNDINFO_SIZE
+		add  hl, bc
+		; DE += 5 (+ 1 from before)
+		REPT 5
+			inc  de
+		ENDR
+	ld   b, a
+	dec  b				; Finished all loops?
+	jr   nz, .chLoop	; If not, jump	
 	
 Sound_StartNothing_\1:
 	ret

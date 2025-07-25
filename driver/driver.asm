@@ -1740,12 +1740,11 @@ ENDC
 	ret  nz
 
 .chkCh3EndType:
-	;
-	; Determine how we want to handle the end of channel playback when the length in ch3 expires.
-	; If the checks all pass, wSndCh3DelayCut is used as channel length (after which, the channel mutes itself).
-	;
 
-	; Not applicable if we aren't editing ch3
+	;
+	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
+	;
+	
 	ld   hl, iSndInfo_RegPtr
 	add  hl, de					; Seek to register ptr
 	ld   a, [hl]				; Read it
@@ -1756,6 +1755,15 @@ ENDC
 	;--
 	cp   SND_CH3_PTR			; Does it point to ch3?
 	jr   nz, .noStop			; If not, jump
+	
+	ld   hl, rNR30				; Do the fix
+	ld   [hl], $00
+	ld   [hl], SNDCH3_ON
+	
+	;
+	; Also specific to the wave, determine how we want to handle the end of channel playback when the length expires.
+	; If the checks all pass, wSndCh3DelayCut is used as channel length (after which, the channel mutes itself).
+	;
 
 	; If we're processing a sound effect, jump
 	ld   a, [de]				; Read iOBJInfo_Status

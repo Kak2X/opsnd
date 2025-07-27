@@ -1488,8 +1488,9 @@ Sound_DoChSndInfo_Loop_\1:
 	; If the index is != 0, add the contents of iSndInfo_FreqDataIdBase to the index.
 	;
 
+	ld   bc, $0000			; Initialize blank value in case the index is 0
 	sub  a, SNDNOTE_BASE	; Clear MSB
-	jr   z, .readRegData	; If the index is $00, don't add anything else
+	jr   z, .readRegDataOk	; If the index is $00, don't add anything else
 	ld   hl, iSndInfo_FreqDataIdBase
 	add  hl, de				; Seek to iSndInfo_FreqDataIdBase
 	add  [hl]				; A += *iSndInfo_FreqDataIdBase

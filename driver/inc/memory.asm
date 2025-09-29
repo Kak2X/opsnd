@@ -2,37 +2,37 @@ SECTION "Sound RAM", WRAM0[$DA00]
 ;
 ; SOUND DRIVER
 ;
-wSnd_Unused_Set             :db ; EQU $DA00 ; [TCRF] Leftover from 95, where it was set to play new a sound ID.
-wSnd_Unused_SfxPriority     :db ; EQU $DA01 ; [TCRF] Keeps track of high priority sound being played.
-wSndEnaChBGM                :db ; EQU $DA02 ; Keeps track of the last rNR51 value used modified by a BGM SndInfo.
-wSndCh3DelayCut             :db ; EQU $DA03 ; Keeps track of the last rNR31 wave cutoff value (wave_cutoff).
-wSndChProcLeft              :db ; EQU $DA04 ; Number of remaining wBGMCh*Info/wSFXCh*Info structs to process
-wSndFadeStatus              :db ; EQU $DA05 ; Fade control
-wSndFadeTimer               :db ; EQU $DA06 ; Fade timer. When it elapses, the global volume is altered by 1.
-wSndVolume                  :db ; EQU $DA07 ; Global volume. Copied directly to rNR50.
+wSnd_Unused_Set:             db ; EQU $DA00 ; [TCRF] Leftover from 95, where it was set to play new a sound ID.
+wSnd_Unused_SfxPriority:     db ; EQU $DA01 ; [TCRF] Keeps track of high priority sound being played.
+wSndEnaChBGM:                db ; EQU $DA02 ; Keeps track of the last rNR51 value used modified by a BGM SndInfo.
+wSndCh3DelayCut:             db ; EQU $DA03 ; Keeps track of the last rNR31 wave cutoff value (wave_cutoff).
+wSndChProcLeft:              db ; EQU $DA04 ; Number of remaining wBGMCh*Info/wSFXCh*Info structs to process
+wSndFadeStatus:              db ; EQU $DA05 ; Fade control
+wSndFadeTimer:               db ; EQU $DA06 ; Fade timer. When it elapses, the global volume is altered by 1.
+wSndVolume:                  db ; EQU $DA07 ; Global volume. Copied directly to rNR50.
 
-wSndIdReqTbl                :ds $08 ; EQU $DA08 ; Sound IDs to play are written here
+wSndIdReqTbl:                ds $08 ; EQU $DA08 ; Sound IDs to play are written here
 ds $10
-wBGMCh1Info                 :ds $20 ; EQU $DA20
-wBGMCh2Info                 :ds $20 ; EQU $DA40
-wBGMCh3Info                 :ds $20 ; EQU $DA60
-wBGMCh4Info                 :ds $20 ; EQU $DA80
-wSFXCh1Info                 :ds $20 ; EQU $DAA0
-wSFXCh2Info                 :ds $20 ; EQU $DAC0
-wSFXCh3Info                 :ds $20 ; EQU $DAE0
-wSFXCh4Info                 :ds $20 ; EQU $DB00
+wBGMCh1Info:                 ds $20 ; EQU $DA20
+wBGMCh2Info:                 ds $20 ; EQU $DA40
+wBGMCh3Info:                 ds $20 ; EQU $DA60
+wBGMCh4Info:                 ds $20 ; EQU $DA80
+wSFXCh1Info:                 ds $20 ; EQU $DAA0
+wSFXCh2Info:                 ds $20 ; EQU $DAC0
+wSFXCh3Info:                 ds $20 ; EQU $DAE0
+wSFXCh4Info:                 ds $20 ; EQU $DB00
 
 SECTION "Sound RAM High", HRAM[$FFC0]
-hSndInfoCurPtr_Low          :db ; EQU $FFC0 ; Ptr to Currently processed SNDInfo structure
-hSndInfoCurPtr_High         :db ; EQU $FFC1 ; Ptr to Currently processed SNDInfo structure
+hSndInfoCurPtr_Low:          db ; EQU $FFC0 ; Ptr to Currently processed SNDInfo structure
+hSndInfoCurPtr_High:         db ; EQU $FFC1 ; Ptr to Currently processed SNDInfo structure
 
-hSndPlayCnt                 :db ; EQU $FFC2 ; Sound Played Counter (bits3-0)
-hSndPlaySetCnt              :db ; EQU $FFC3 ; Sound Req Counter (bits3-0) (if != hSndPlaySetCnt, start a new track)
-hSndInfoCurDataPtr_Low      :db ; EQU $FFC4 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
-hSndInfoCurDataPtr_High     :db ; EQU $FFC5 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
-hSndChEnaMask               :db ; EQU $FFC6 ; rNR51 bitmask. This is a global version of iSndInfo_ChEnaMask which operates in mono (only the lower nybble is used)
-hTemp                       :db ; EQU $FFC7
-hROMBank                    :db ; EQU $FFC8
+hSndPlayCnt:                 db ; EQU $FFC2 ; Sound Played Counter (bits3-0)
+hSndPlaySetCnt:              db ; EQU $FFC3 ; Sound Req Counter (bits3-0) (if != hSndPlaySetCnt, start a new track)
+hSndInfoCurDataPtr_Low:      db ; EQU $FFC4 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
+hSndInfoCurDataPtr_High:     db ; EQU $FFC5 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
+hSndChEnaMask:               db ; EQU $FFC6 ; rNR51 bitmask. This is a global version of iSndInfo_ChEnaMask which operates in mono (only the lower nybble is used)
+hTemp:                       db ; EQU $FFC7
+hROMBank:                    db ; EQU $FFC8
 
 ; Sound channel data header (ROM)
 ; =============== SONG FORMAT ===============

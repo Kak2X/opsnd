@@ -3,13 +3,13 @@
 ;
 
 SECTION "Stub Program", HRAM[$FF80]
-hVBlankDone               :db   ; EQU $FF80 ; Marks if the VBlank loop is done
-hJoyKeys                  :db   ; EQU $FF81 ; Held keys
-hJoyNewKeys               :db   ; EQU $FF82 ; Newly pressed keys
-hCursorOpt                :db   ; EQU $FF83 ; Selected Sound ID
-wFontLoadBit0Col          :db   ; EQU $FF84 ; Font Color 0
-wFontLoadBit1Col          :db   ; EQU $FF85 ; Font Color 1
-wFontLoadTmpGFX           :ds 2 ; EQU $FF86 ; Line drawing buffer
+hVBlankDone:               db   ; EQU $FF80 ; Marks if the VBlank loop is done
+hJoyKeys:                  db   ; EQU $FF81 ; Held keys
+hJoyNewKeys:               db   ; EQU $FF82 ; Newly pressed keys
+hCursorOpt:                db   ; EQU $FF83 ; Selected Sound ID
+wFontLoadBit0Col:          db   ; EQU $FF84 ; Font Color 0
+wFontLoadBit1Col:          db   ; EQU $FF85 ; Font Color 1
+wFontLoadTmpGFX:           ds 2 ; EQU $FF86 ; Line drawing buffer
 
 ; Constants
 

@@ -748,20 +748,20 @@ Sound_Cmd_SetChVol_\1:
 	ld   hl, iSndInfo_RegNRx2Data
 	add  hl, de
 	ldi  a, [hl]				; A = iSndInfo_RegNRx2Data
-	ld   [c], a					; Write to NRx2
+	ldh  [c], a					; Write to NRx2
 	
 	; Update NRx3
 	inc  c						; C++, to NRx3
 	ld   hl, iSndInfo_RegNRx3Data
 	add  hl, de
 	ldi  a, [hl]				; A = iSndInfo_RegNRx3Data
-	ld   [c], a					; Write to NRx3
+	ldh  [c], a					; Write to NRx3
 	
 	; Update NRx4
 	inc  c						; C++, to NRx4
 	ld   a, [hl]				; A = iSndInfo_RegNRx4Data
 	or   SNDCHF_RESTART			; Restart the tone to apply the changes
-	ld   [c], a
+	ldh  [c], a
 	
 	;--
 	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
@@ -771,9 +771,9 @@ Sound_Cmd_SetChVol_\1:
 	dec  c						; C -= 3, to NRx1
 	dec  c
 	dec  c
-	ld   a, [c]
+	ldh  a, [c]
 	and  $C0					; Only keep wave duty
-	ld   [c], a
+	ldh  [c], a
 	;--
 	ret
 	
@@ -1221,12 +1221,12 @@ Sound_DoChSndInfo_Vibrato_\1:
 	ld   hl, iSndInfo_RegPtr
 	add  hl, de
 	ld   c, [hl]
-	ld   [c], a
+	ldh  [c], a
 	inc  c
 	
 	; NRx4 = B
 	ld   a, b
-	ld   [c], a
+	ldh  [c], a
 	
 	;--
 	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
@@ -1236,9 +1236,9 @@ Sound_DoChSndInfo_Vibrato_\1:
 	dec  c						; C -= 3, to NRx1
 	dec  c
 	dec  c
-	ld   a, [c]
+	ldh  a, [c]
 	and  $C0					; Only keep wave duty
-	ld   [c], a
+	ldh  [c], a
 	;--
 	jr   Sound_DoChSndInfo_Main_\1
 	
@@ -1329,12 +1329,12 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	ld   hl, iSndInfo_RegNRx3Data
 	add  hl, de
 	ldi  a, [hl]
-	ld   [c], a
+	ldh  [c], a
 	
 	; NRx4 = iSndInfo_RegNRx4Data
 	inc  c
 	ld   a, [hl]
-	ld   [c], a
+	ldh  [c], a
 	
 	;--
 	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
@@ -1344,9 +1344,9 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	dec  c						; C -= 3, to NRx1
 	dec  c
 	dec  c
-	ld   a, [c]
+	ldh  a, [c]
 	and  $C0					; Only keep wave duty
-	ld   [c], a
+	ldh  [c], a
 	;--	
 .end:
 	
@@ -1590,7 +1590,7 @@ Sound_DoChSndInfo_Loop_\1:
 	;
 	dec  c				; C--, to NRx2
 	ld   a, [hl]		; Read out iSndInfo_RegNRx2Data
-	ld   [c], a			; Write to sound register
+	ldh  [c], a			; Write to sound register
 	inc  c				; C++, to NRx3
 	
 .updateNRx3:
@@ -1600,7 +1600,7 @@ Sound_DoChSndInfo_Loop_\1:
 	;
 	inc  l			; Seek to iSndInfo_RegNRx3Data
 	ldi  a, [hl]	; Read iSndInfo_RegNRx3Data, seek to iSndInfo_RegNRx4Data
-	ld   [c], a		; Write to sound register
+	ldh  [c], a		; Write to sound register
 	inc  c			; Next register
 
 .updateNRx4:
@@ -1608,7 +1608,7 @@ Sound_DoChSndInfo_Loop_\1:
 	; Update NRx4 with the contents of iSndInfo_RegNRx4Data
 	;
 	ld   a, [hl]	; Read out iSndInfo_RegNRx4Data
-	ld   [c], a		; Write to sound register
+	ldh  [c], a		; Write to sound register
 ;##
 
 	;--
@@ -1619,9 +1619,9 @@ Sound_DoChSndInfo_Loop_\1:
 	dec  c						; C -= 3, to NRx1
 	dec  c
 	dec  c
-	ld   a, [c]
+	ldh  a, [c]
 	and  $C0					; Only keep wave duty
-	ld   [c], a
+	ldh  [c], a
 	;--	
 	
 .chkNewLength:
@@ -1726,11 +1726,11 @@ ENDC
 	
 	dec  c						; to rNRx2
 	ld   a, $08					; Clear volume
-	ld   [c], a				
+	ldh  [c], a				
 	inc  c						; to rNRx3
 	inc  c						; to rNRx4
 	ld   a, SNDCHF_RESTART		; Apply changes
-	ld   [c], a
+	ldh  [c], a
 
 	ret
 
@@ -1786,7 +1786,7 @@ ENDC
 	ld   a, [hl]
 	set  SNDCHFB_RESTART, a			; Restart channel
 	or   a, SNDCHF_LENSTOP			; Stop channel playback when length expires
-	ld   [c], a
+	ldh  [c], a
 	ret
 	
 .noStop:
@@ -1795,7 +1795,7 @@ ENDC
 	add  hl, de
 	ld   a, [hl]
 	set  SNDCHFB_RESTART, a			; Restart channel
-	ld   [c], a
+	ldh  [c], a
 	ret
 
 Sound_CmdPtrTbl_\1:
@@ -2409,7 +2409,7 @@ Sound_Cmd_SetWaveData_\1:
 	ld   b, rWave_End-rWave					; B = Bytes to copy
 .loop:
 	ldi  a, [hl]							; Read from wave set
-	ld   [c], a								; Write it to the wave reg
+	ldh  [c], a								; Write it to the wave reg
 	inc  c									; Ptr++
 	dec  b									; Copied all bytes?
 	jr   nz, .loop							; If not, loop
@@ -2535,7 +2535,7 @@ Sound_Cmd_ChanStop_\1:
 	dec  c				; Seek back to NRx1, since HL is pointing to iSndInfo_RegNRx1Data
 
 	ldi  a, [hl]		; Read iSndInfo_RegNRx1Data, seek to SndInfo_Unknown_Unused_NR10Data
-	ld   [c], a			; Update NRx1
+	ldh  [c], a			; Update NRx1
 
 	;
 	; NRx2
@@ -2557,14 +2557,14 @@ Sound_Cmd_ChanStop_\1:
 	and  $0F				; Get rid of its volume info
 	add  b					; Merge it with the one from iSndInfo_VolPredict
 .cpNRx2:
-	ld   [c], a				; Write it to NRx2
+	ldh  [c], a				; Write it to NRx2
 
 	;
 	; NRx3
 	;
 	inc  c
 	ldi  a, [hl]			; Seek to NRx4 too
-	ld   [c], a
+	ldh  [c], a
 
 	;
 	; NRx4
@@ -2584,7 +2584,7 @@ Sound_Cmd_ChanStop_\1:
 	; Write BGM iSndInfo_RegNRx4Data to NRx4, and restart the tone
 	ldi  a, [hl]
 	or   a, SNDCHF_RESTART
-	ld   [c], a
+	ldh  [c], a
 
 	; Restore the "enabled channels" register from the BGM-only copy
 	ld   a, [wSndEnaChBGM]
@@ -2606,7 +2606,7 @@ Sound_Cmd_ChanStop_\1:
 	dec  a
 	ld   c, a
 	xor  a					; A = $00
-	ld   [c], a				; Write it to C
+	ldh  [c], a				; Write it to C
 	;--
 
 	;
@@ -2644,7 +2644,7 @@ Sound_Cmd_ChanStop_\1:
 	jr   z, .isFF
 	or   a, SNDCHF_LENSTOP	; Set kill flag
 .isFF:
-	ld   [c], a				; Write to rNR34
+	ldh  [c], a				; Write to rNR34
 
 	;
 	; Restore the BGM wave set
@@ -2675,7 +2675,7 @@ Sound_SetWaveDataCustom_\1:
 	ld   b, rWave_End-rWave					; B = Bytes to copy
 .loop:
 	ldi  a, [hl]							; Read from wave set
-	ld   [c], a								; Write it to the wave reg
+	ldh  [c], a								; Write it to the wave reg
 	inc  c									; Ptr++
 	dec  b									; Copied all bytes?
 	jr   nz, .loop							; If not, loop
@@ -2707,7 +2707,7 @@ Sound_SilenceCh_\1:
 
 	bit  SISB_USEDBYSFX, [hl]	; Is the sound channel being used by a sound effect?
 	ret  nz						; If so, return
-	ld   [c], a					; Otherwise, write the $00 value to the register
+	ldh  [c], a					; Otherwise, write the $00 value to the register
 	ret
 
 ; =============== Sound_WriteToReg ===============
@@ -2724,7 +2724,7 @@ Sound_WriteToReg_\1:
 
 	bit  SISB_USEDBYSFX, [hl]	; Is the sound channel being used a sound effect?
 	ret  nz						; If so, return
-	ld   [c], a					; Otherwise, write the value to the register
+	ldh  [c], a					; Otherwise, write the value to the register
 	ret
 ; =============== Sound_MarkSFXChUse ===============
 ; Registers to the BGM Channel Info if a sound effect is currently using that channel.

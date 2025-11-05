@@ -30,7 +30,7 @@ hSndPlayCnt:                 db ; EQU $FFC2 ; Sound Played Counter (bits3-0)
 hSndPlaySetCnt:              db ; EQU $FFC3 ; Sound Req Counter (bits3-0) (if != hSndPlaySetCnt, start a new track)
 hSndInfoCurDataPtr_Low:      db ; EQU $FFC4 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
 hSndInfoCurDataPtr_High:     db ; EQU $FFC5 ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
-hSndChEnaMask:               db ; EQU $FFC6 ; rNR51 bitmask. This is a global version of iSndInfo_ChEnaMask which operates in mono (only the lower nybble is used)
+hSndChEnaMask:               db ; EQU $FFC6 ; rNR51 bitmask. This is a global version of iSndInfo_Unused11 which operates in mono (only the lower nybble is used)
 hTemp:                       db ; EQU $FFC7
 hROMBank:                    db ; EQU $FFC8
 
@@ -62,7 +62,7 @@ DEF iSndInfo_VolPredict                EQU $0D ; "Volume timer" which predicts t
 DEF iSndInfo_RegNRx2Data               EQU $0E ; Last value written to rNR*2 | $FF00+(iSndInfo_RegPtr-1)
 DEF iSndInfo_RegNRx3Data               EQU $0F ; Last value written to rNR*3 | $FF00+(iSndInfo_RegPtr)
 DEF iSndInfo_RegNRx4Data               EQU $10 ; Last value written to rNR*4 | $FF00+(iSndInfo_RegPtr+1)
-DEF iSndInfo_ChEnaMask                 EQU $11 ; Default rNR51 bitmask, used when a sound channel is enabled
+DEF iSndInfo_Unused11                  EQU $11 ; [Free space]
 DEF iSndInfo_WaveSetId                 EQU $12 ; Id of last wave set loaded
 DEF iSndInfo_LoopTimerTbl              EQU $13 ; Table with timers counting down, used to determine how many times to "jump" the data pointer elsewhere before continuing.
 DEF iSndInfo_SlideFreqOffsetLow        EQU $16 ; Frequency offset (low byte) applied each active frame of a pitch slide.

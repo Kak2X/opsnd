@@ -475,22 +475,7 @@ Sound_DoFade_\1:
 .fadeOutEnd:
 	xor  a
 	ld   [wSndFadeStatus], a; End the fade
-	ldh  [rNR51], a			; (Already done by Sound_StopAll)
-	call Sound_StopAll_\1	; Reset everything
-	
-	;--
-	; [POI] Also already done by Sound_StopAll
-	xor  a
-	ld   [wBGMCh1Info+iSndChHeader_Status], a
-	ld   [wBGMCh2Info+iSndChHeader_Status], a
-	ld   [wBGMCh3Info+iSndChHeader_Status], a
-	ld   [wBGMCh4Info+iSndChHeader_Status], a
-	ld   [wSFXCh1Info+iSndChHeader_Status], a
-	ld   [wSFXCh2Info+iSndChHeader_Status], a
-	ld   [wSFXCh3Info+iSndChHeader_Status], a
-	ld   [wSFXCh4Info+iSndChHeader_Status], a
-	;--
-	ret
+	jp   Sound_StopAll_\1	; Reset everything
 
 ; =============== Sound_ChkNewSnd ===============
 ; Checks if we're trying to start a new BGM or SFX.
@@ -732,12 +717,6 @@ Sound_Cmd_SetChVol_\1:
 	; Not applicable if the BGM slot is in use by a SFX.
 	bit  SISB_USEDBYSFX, a
 	ret  nz
-	
-	;--
-	; [POI] We already just cleared this! This can never return.
-	bit  SISB_LOCKNRx2, a
-	ret  nz
-	;--
 	
 	; Update NRx2
 	ld   hl, iSndInfo_RegPtr
@@ -2050,7 +2029,7 @@ Sound_Cmd_SetPanning_\1:
 	ld   a, b
 	swap a			; Switch left/right sides
 	cpl				; Mark disabled channels with 1
-	and  c		; A = (A & C) | B
+	and  c			; A = (A & C) | B
 	or   b
 	;--
 
@@ -2058,10 +2037,10 @@ Sound_Cmd_SetPanning_\1:
 	; Set the updated NR51 value
 	;
 	
-	; Save the slot-specific NR51 mask settings
-	ld   hl, iSndInfo_ChEnaMask
-	add  hl, de
-	ld   [hl], a
+	;; Save the slot-specific NR51 mask settings
+	;ld   hl, iSndInfo_Unused11
+	;add  hl, de
+	;ld   [hl], a
 	
 	;##
 	; Before writing to the register, mask the finalized NR51 value against the global mask (hSndChEnaMask).
@@ -2426,7 +2405,6 @@ Sound_Cmd_ChanStopHiSFX4_\1:
 	jr   Sound_Cmd_ChanStop_\1
 	
 ; =============== Sound_Cmd_ChanStopHiSFXMulti ===============
-; [TCRF] Unused command.
 ; See above, but for multi-channel SFX.
 Sound_Cmd_ChanStopHiSFXMulti_\1:
 	ld   a, [wSndSfxPriority]
@@ -2623,23 +2601,11 @@ Sound_Cmd_ChanStop_\1:
 
 
 .stopCh3:
-	; [POI] We never get here in this game.
-	
-	;--
 	;
 	; Make ch3 stop when its length expires.
-	; [POI] Weirdly organized code. The first two lines are pointless,
-	;       as is the useless $FF check.
 	;
-
-	ld   a, [wSndCh3DelayCut]
-	or   a
-	;--
-	ldi  a, [hl]			; Read from iSndInfo_RegNRx4Data, seek to iSndInfo_ChEnaMask
-	cp   $FF
-	jr   z, .isFF
+	ldi  a, [hl]			; Read from iSndInfo_RegNRx4Data, seek to iSndInfo_Unused11
 	or   a, SNDCHF_LENSTOP	; Set kill flag
-.isFF:
 	ldh  [c], a				; Write to rNR34
 
 	;
@@ -2668,13 +2634,13 @@ Sound_SetWaveDataCustom_\1:
 
 	; Replace the current wave data
 	ld   c, LOW(rWave)						; C = Ptr to start of wave ram
-	ld   b, rWave_End-rWave					; B = Bytes to copy
-.loop:
 	ldi  a, [hl]							; Read from wave set
 	ldh  [c], a								; Write it to the wave reg
+REPT rWave_End-rWave-1
 	inc  c									; Ptr++
-	dec  b									; Copied all bytes?
-	jr   nz, .loop							; If not, loop
+	ldi  a, [hl]
+	ldh  [c], a	
+ENDR
 	
 	ld   a, SNDCH3_ON
 	ldh  [rNR30], a
@@ -2773,9 +2739,13 @@ Sound_StopAll_Main:
 ENDC
 	; Clear circular buffer of sound requests.
 	ld   hl, wSndIdReqTbl
-REPT 8
+	xor  a
+	ld   b, $08
+.queueClr:
 	ldi  [hl], a
-ENDR
+	dec  b
+	jr   nz, .queueClr
+
 	ld   hl, hSndPlayCnt
 	ldi  [hl], a
 	ldi  [hl], a
@@ -2797,28 +2767,12 @@ ENDR
 	ld   [wSndEnaChBGM], a
 	ld   [wSndCh3DelayCut], a
 	
-	; Silence all channels in preparation for the wipe
-	ldd  [hl], a ; rNR51
-	; Skip rNR50 for now
-	
-	; Clear channel registers.
-	ldd  [hl], a ; rNR44
-	ldd  [hl], a ; rNR43
-	ldd  [hl], a ; rNR42
-	ldd  [hl], a ; rNR41
-	ldd  [hl], a ; rNR34
-	ldd  [hl], a ; rNR33
-	ldd  [hl], a ; rNR32
-	ldd  [hl], a ; rNR31
-	ldd  [hl], a ; rNR30
-	ldd  [hl], a ; rNR24
-	ldd  [hl], a ; rNR23
-	ldd  [hl], a ; rNR22
-	ldd  [hl], a ; rNR21
-	ldd  [hl], a ; rNR14
-	ldd  [hl], a ; rNR13
-	ldd  [hl], a ; rNR12
-	ldd  [hl], a ; rNR11
+	; Silence all channels in preparation for the wipe, and clear all channel registers except for rNR10
+	ld   b, rNR51-rNR11
+.regClr:
+	ldd  [hl], a
+	dec  b
+	jr   nz, .regClr	
 	; Skip rNR10 for now
 
 	;

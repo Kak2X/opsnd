@@ -3,7 +3,7 @@ SECTION "Sound RAM", WRAM0[$DA00]
 ; SOUND DRIVER
 ;
 wSnd_Unused_Set:             db ; EQU $DA00 ; [TCRF] Leftover from 95, where it was set to play new a sound ID.
-wSnd_Unused_SfxPriority:     db ; EQU $DA01 ; [TCRF] Keeps track of high priority sound being played.
+wSndSfxPriority:             db ; EQU $DA01 ; Keeps track of high priority sound effects being played.
 wSndEnaChBGM:                db ; EQU $DA02 ; Keeps track of the last rNR51 value used modified by a BGM SndInfo.
 wSndCh3DelayCut:             db ; EQU $DA03 ; Keeps track of the last rNR31 wave cutoff value (wave_cutoff).
 wSndChProcLeft:              db ; EQU $DA04 ; Number of remaining wBGMCh*Info/wSFXCh*Info structs to process

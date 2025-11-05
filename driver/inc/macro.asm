@@ -135,7 +135,7 @@ ENDM
 ; Stops channel playback.
 ; Code: Sound_Cmd_ChanStop / Sound_Cmd_ChanStopHiSFXMulti / Sound_Cmd_ChanStopHiSFX4
 ; IN
-; - 1: [Optional] For SFX, the priority flag to clear from wSnd_Unused_SfxPriority (SNP_*).
+; - 1: [Optional] For SFX, the priority flag to clear from wSndSfxPriority (SNP_*).
 ;                 It must match the flag that was set on the init action code.
 MACRO chan_stop
 	IF _NARG > 0

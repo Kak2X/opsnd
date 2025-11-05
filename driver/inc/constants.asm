@@ -6,7 +6,7 @@ DEF SND_CH3_PTR        EQU LOW(rNR33)
 DEF SND_CH4_PTR        EQU LOW(rNR43)
 DEF SNDLEN_INFINITE    EQU $FF
 
-; wSnd_Unused_SfxPriority
+; wSndSfxPriority
 DEF SNPB_SFXMULTI         EQU 7 ; An high-priority multi-channel SFX is playing
 DEF SNPB_SFX4             EQU 6 ; An high-priority SFX4 is playing
 DEF SNP_SFXMULTI          EQU 1 << SNPB_SFXMULTI

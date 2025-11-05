@@ -860,16 +860,14 @@ Sound_UnpauseAll_\1:
 ; - BC: Ptr to song data                  
 Sound_StartNewBGM_\1:                        
 	xor  a                                
-	ld   [wSnd_Unused_SfxPriority], a          
+	ld   [wSndSfxPriority], a          
 	push bc                               
 		call Sound_StopAll_\1                
 	pop  bc                               
 	ld   de, wBGMCh1Info                  
 	jr   Sound_InitSongFromHeader_\1 
 	
-; =============== Sound_Unused_StartNewSFX1234Hi ===============
-; [TCRF] Unreferenced code. The priority system isn't used.
-;
+; =============== Sound_StartNewSFX1234Hi ===============
 ; Starts playback for an high-priority multi-channel SFX (uses ch1-2-3-4)
 ; Priority is defined by the start action defined in Sound_SndStartActionPtrTable.
 ;
@@ -882,7 +880,7 @@ Sound_StartNewBGM_\1:
 ; - Uses all channels: Low priority SFX can't play over high priority ones
 ; - Does not use all : Low and default priority SFX can't play over high priority ones
 ;
-; Specifically, when an high priority sound plays, its type is flagged in wSnd_Unused_SfxPriority.
+; Specifically, when an high priority sound plays, its type is flagged in wSndSfxPriority.
 ; Low (and default) priority sounds won't play when the bit they check for is set.
 ;
 ; The bit isn't cleared when a SFX ends, so such sound effects need to use a different version
@@ -890,16 +888,15 @@ Sound_StartNewBGM_\1:
 ;
 ; Note that, since all-channel sound effects with default priority can play over high priority ones,
 ; they can also wipe out the priority flags.
-Sound_Unused_StartNewSFX1234Hi_\1:
+Sound_StartNewSFX1234Hi_\1:
 	ld   a, SNP_SFXMULTI				; Clears SNP_SFX4, if set
-	ld   [wSnd_Unused_SfxPriority], a
+	ld   [wSndSfxPriority], a
 	jr   Sound_StartNewSFX1234_\1
 
-; =============== Sound_Unused_StartNewSFX1234Lo ===============
-; [TCRF] Unreferenced code.
+; =============== Sound_StartNewSFX1234Lo ===============
 ; Starts playback for a low priority multi-channel SFX (uses ch1-2-3-4)
-Sound_Unused_StartNewSFX1234Lo_\1:
-	ld   a, [wSnd_Unused_SfxPriority]
+Sound_StartNewSFX1234Lo_\1:
+	ld   a, [wSndSfxPriority]
 	bit  SNPB_SFXMULTI, a				; High priority multi-channel SFX playing?
 	ret  nz								; If so, don't replace it
 	; Fall-through
@@ -935,50 +932,47 @@ Sound_StartNewSFX1234_\1:
 ;	ldh  [rNR10], a
 ;	ret
 
-; =============== Sound_Unused_StartNewSFX234Hi ===============
-; [TCRF] Unreferenced code.
+; =============== Sound_StartNewSFX234Hi ===============
 ; Starts playback for an high-priority multi-channel SFX (uses ch2-3-4)
-Sound_Unused_StartNewSFX234Hi_\1:
-	ld   a, [wSnd_Unused_SfxPriority]	; High priority on
+Sound_StartNewSFX234Hi_\1:
+	ld   a, [wSndSfxPriority]	; High priority on
 	or   a, SNP_SFXMULTI
-	ld   [wSnd_Unused_SfxPriority], a
+	ld   [wSndSfxPriority], a
 	jr   Sound_StartNewSFX234_\1.initSong
 
 ; =============== Sound_StartNewSFX234 ===============
 ; Starts playback for a multi-channel SFX (uses ch2-3-4)
 Sound_StartNewSFX234_\1:
-	ld   a, [wSnd_Unused_SfxPriority]
+	ld   a, [wSndSfxPriority]
 	bit  SNPB_SFXMULTI, a				; High priority multi-channel SFX playing?
 	ret  nz								; If so, don't replace it
 .initSong:
 	ld   de, wSFXCh2Info
 	jr   Sound_InitSongFromHeader_\1
 	
-; =============== Sound_Unused_InitSongFromHeaderToCh3 ===============
-; [TCRF] Unreferenced code.
-Sound_Unused_InitSongFromHeaderToCh3_\1:
-	ld   de, wSFXCh3Info
-	jr   Sound_InitSongFromHeader_\1
+;; =============== Sound_Unused_InitSongFromHeaderToCh3 ===============
+;; [TCRF] Unreferenced code.
+;Sound_Unused_InitSongFromHeaderToCh3_\1:
+;	ld   de, wSFXCh3Info
+;	jr   Sound_InitSongFromHeader_\1
 
-; =============== Sound_Unused_StartNewSFX4Hi ===============
-; [TCRF] Unreferenced code.
+; =============== Sound_StartNewSFX4Hi ===============
 ; Starts playback for an high priority channel-4 only SFX (SFX4).
-Sound_Unused_StartNewSFX4Hi_\1:
-	ld   a, [wSnd_Unused_SfxPriority]	; High priority on
+Sound_StartNewSFX4Hi_\1:
+	ld   a, [wSndSfxPriority]	; High priority on
 	or   a, SNP_SFX4
-	ld   [wSnd_Unused_SfxPriority], a
+	ld   [wSndSfxPriority], a
 	jr   Sound_StartNewSFX4_\1.initSong
 
 ; =============== Sound_StartNewSFX4 ===============
 ; Starts playback for a channel-4 only SFX (SFX4).
 Sound_StartNewSFX4_\1:
-	; [TCRF] Bit never set
-	ld   a, [wSnd_Unused_SfxPriority]
+	ld   a, [wSndSfxPriority]
 	bit  SNPB_SFX4, a					; High priority SFX4 playing?
 	ret  nz								; If so, don't replace it
 .initSong:
 	ld   de, wSFXCh4Info
-	jr   Sound_InitSongFromHeader_\1
+	; Fall-through
 	
 ; =============== Sound_InitSongFromHeader ===============
 ; Copies song data from its header to multiple SndInfo.
@@ -2424,18 +2418,18 @@ Sound_Cmd_SetWaveData_\1:
 Sound_Cmd_ChanStopHiSFX4_\1:
 	; Like Sound_Cmd_ChanStop, except it also unmarks the priority flag.
 	; This allows SFX4 with less priority to play again.
-	ld   a, [wSnd_Unused_SfxPriority]
+	ld   a, [wSndSfxPriority]
 	and  $FF^SNP_SFX4
-	ld   [wSnd_Unused_SfxPriority], a
+	ld   [wSndSfxPriority], a
 	jr   Sound_Cmd_ChanStop_\1
 	
 ; =============== Sound_Cmd_ChanStopHiSFXMulti ===============
 ; [TCRF] Unused command.
 ; See above, but for multi-channel SFX.
 Sound_Cmd_ChanStopHiSFXMulti_\1:
-	ld   a, [wSnd_Unused_SfxPriority]
+	ld   a, [wSndSfxPriority]
 	and  $FF^SNP_SFXMULTI
-	ld   [wSnd_Unused_SfxPriority], a
+	ld   [wSndSfxPriority], a
 	; Fall-through
 	
 ; =============== Sound_Cmd_ChanStop ===============
@@ -2786,7 +2780,7 @@ ENDC
 	
 	; Wipe default priority
 	xor  a
-	ld   [wSnd_Unused_SfxPriority], a
+	ld   [wSndSfxPriority], a
 	; These weren't initialized in the older version of the driver.
 	; It matters more here due to conditional updates.
 	ld   [wSndEnaChBGM], a

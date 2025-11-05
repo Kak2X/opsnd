@@ -811,7 +811,9 @@ Sound_PauseAll_\1:
 ; Handles the sound unpause command during gameplay.
 Sound_UnpauseAll_\1:
 	; Restore enabled channels
+	ld   hl, hSndChEnaMask
 	ld   a, [wSndEnaChBGM]
+	and  [hl]
 	ldh  [rNR51], a
 	
 	; Resume music and sound effect channels
@@ -2015,62 +2017,45 @@ Sound_Cmd_SetPanning_\1:
 	mSndReadNextByte
 	ld   b, a
 	
-	; C = Current enabled channels
-	ldh  a, [rNR51]
-	ld   c, a
+	; C = Inverted mask for wiping old bits off
+	ld   c, $FF^$11				; C = 0-4
+	ld   hl, iSndInfo_RegPtr
+	add  hl, de
+	ld   a, [hl]
+	cp   SND_CH1_PTR		; Processing ch1?
+	jr   z, .maskFound		; If so, jump
+	rlc  c					; Otherwise, C <<= 1 (for ch2)
+	cp   SND_CH2_PTR		; ...
+	jr   z, .maskFound
+	rlc  c					; (ch3)
+	cp   SND_CH3_PTR
+	jr   z, .maskFound
+	rlc  c					; (ch4)
+.maskFound:
+	;
+	; Update the bits to the NR51 and related values.
+	;
 
-	;--
-	; Merge the enabled channels with the existing settings
-	;
-	; If the enabled channels are the same on both the left and right side,
-	; which appears to ALWAYS be the case, the operation is essentially rNR51 |= (data byte).
-	;
-	; When they aren't, the operation makes no sense.
-	ld   a, b
-	swap a			; Switch left/right sides
-	cpl				; Mark disabled channels with 1
-	and  c			; A = (A & C) | B
-	or   b
-	;--
-
-	;
-	; Set the updated NR51 value
-	;
-	
-	;; Save the slot-specific NR51 mask settings
-	;ld   hl, iSndInfo_Unused11
-	;add  hl, de
-	;ld   [hl], a
-	
-	;##
-	; Before writing to the register, mask the finalized NR51 value against the global mask (hSndChEnaMask).
-	
-	; L = Updated NR51 value
-	ld   l, a
-	
-	; H = Global mask
-	; Unlike other NR51 masks, this one operates in mono.
-	; Only the lower nybble is used, and it gets duplicated into the upper one.
-	ldh  a, [hSndChEnaMask]
-	and  $0F
-	ld   h, a					; H = hSndChEnaMask & $0F
-	swap a						; A = H << 4
-	or   h						
-	ld   h, a			
-	
-	; Mask the new NR51 against H
-	ld   a, l					; Restore NR51 value
-	and  h						; Mask it against
-	;##
-	
-	ldh  [rNR51], a
-
-	; If we did this for a BGM, save a copy of this elsewhere.
+	; If this is a BGM, update the BGM-only copy of NR51
 	ld   hl, iSndInfo_Status
 	add  hl, de
-	bit  SISB_SFX, [hl]					; Are we a BGM?
-	jp   nz, Sound_DoChSndInfo_Loop_\1  ; If not, we're done
+	bit  SISB_SFX, [hl]		; Are we a BGM?
+	jr   nz, .tryUpdNorm	; If not, skip
+	
+	ld   a, [wSndEnaChBGM]
+	and  c					; Mask out channel bits
+	or   b					; Replace with new ones
 	ld   [wSndEnaChBGM], a
+	
+.tryUpdNorm:
+	; If the channel is being used, update the actual register
+	bit  SISB_USEDBYSFX, [hl]		; Is a SFX using this channel?
+	jp   nz, Sound_DoChSndInfo_Loop_\1  ; If so, we're done
+	
+	ldh  a, [rNR51]
+	and  c					; Mask out channel bits
+	or   b					; Replace with new ones
+	ldh  [rNR51], a
 	jp   Sound_DoChSndInfo_Loop_\1
 
 ; =============== Sound_Cmd_WriteToNRx2 ===============
@@ -2561,7 +2546,9 @@ Sound_Cmd_ChanStop_\1:
 	ldh  [c], a
 
 	; Restore the "enabled channels" register from the BGM-only copy
+	ld   hl, hSndChEnaMask
 	ld   a, [wSndEnaChBGM]
+	and  [hl]
 	ldh  [rNR51], a
 
 .stopCh:

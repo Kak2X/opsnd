@@ -860,9 +860,11 @@ Sound_UnpauseAll_\1:
 ; - BC: Ptr to song data                  
 Sound_StartNewBGM_\1:                        
 	xor  a                                
-	ld   [wSndSfxPriority], a          
-	push bc                               
-		call Sound_StopAll_\1                
+	ld   [wSndSfxPriority], a   
+	push bc
+		ld   hl, wBGMCh4Info
+		ld   bc, SNDINFO_SIZE
+		call Sound_StopAll_Main.fromBGM
 	pop  bc                               
 	ld   de, wBGMCh1Info                  
 	jr   Sound_InitSongFromHeader_\1 
@@ -2769,6 +2771,15 @@ Sound_StopAll_\1:
 IF \2
 Sound_StopAll_Main:
 ENDC
+	; Clear circular buffer of sound requests.
+	ld   hl, wSndIdReqTbl
+REPT 8
+	ldi  [hl], a
+ENDR
+	ld   hl, hSndPlayCnt
+	ldi  [hl], a
+	ldi  [hl], a
+	
 	; Enable all sound channels
 	ld   a, $FF
 	ldh  [hSndChEnaMask], a
@@ -2809,28 +2820,30 @@ ENDC
 	ldd  [hl], a ; rNR12
 	ldd  [hl], a ; rNR11
 	; Skip rNR10 for now
-	
-	; Clear circular buffer of sound requests.
-	ld   hl, wSndIdReqTbl
-REPT 8
-	ldi  [hl], a
-ENDR
-	ld   hl, hSndPlayCnt
-	ldi  [hl], a
-	ldi  [hl], a
 
 	;
-	; Disable all sound slots.
+	; Disable all sound slots, from last to first.
 	; It's not necessary to fully wipe them, since initializing a slot wipes it.
 	;
-	ld   hl, wBGMCh1Info
-	ld   bc, SNDINFO_SIZE
+	ld   hl, wSFXCh4Info
+	ld   bc, -SNDINFO_SIZE
 	xor  a
-	ld   [hl], a
-REPT 7
+	ld   [hl], a ; wSFXCh4Info
 	add  hl, bc
-	ld   [hl], a
-ENDR
+	ld   [hl], a ; wSFXCh3Info
+	add  hl, bc
+	ld   [hl], a ; wSFXCh2Info
+	add  hl, bc
+	ld   [hl], a ; wSFXCh1Info
+	add  hl, bc
+.fromBGM:
+	ld   [hl], a ; wBGMCh4Info
+	add  hl, bc
+	ld   [hl], a ; wBGMCh3Info
+	add  hl, bc
+	ld   [hl], a ; wBGMCh2Info
+	add  hl, bc
+	ld   [hl], a ; wBGMCh1Info
 
 	; Use downwards sweep for ch1 (standard)
 	ld   a, $08			

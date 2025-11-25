@@ -843,7 +843,7 @@ Sound_StartNewBGM_\1:
 	push bc
 		xor  a
 		ld   hl, wBGMCh4Info
-		ld   bc, SNDINFO_SIZE
+		ld   bc, -SNDINFO_SIZE
 		call Sound_StopAll_Main.fromBGM
 	pop  bc                               
 	ld   de, wBGMCh1Info                  

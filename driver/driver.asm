@@ -1709,6 +1709,13 @@ ENDC
 	bit  SISB_USEDBYSFX, a		; Is a sound effect playing on the channel?
 	ret  nz						; If so, return 
 
+	:
+	; Keep track of the register pointer to C, for later
+	;
+	ld   hl, iSndInfo_RegPtr
+	add  hl, de					; Seek to register ptr
+	ld   c, [hl]				; Read it (C = Ptr to NRx3)
+
 	;
 	; If both frequency bytes are zero, mute the sound channel.
 	;
@@ -1720,11 +1727,20 @@ ENDC
 	jr   nz, .chkReinit			; If so, skip ahead
 
 .chkMuteCh:
-
-	; Depending on the currently modified channel, decide which channel to mute.
-	ld   hl, iSndInfo_RegPtr
-	add  hl, de
-	ld   c, [hl] ; C = Ptr to NRx3
+	
+	;--
+	;
+	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
+	;
+	ld   a, c
+	cp   SND_CH3_PTR			; Does it point to ch3?
+	jr   nz, .doMuteCh			; If not, jump
+	
+	ld   hl, rNR30				; Do the fix
+	ld   [hl], $00
+	ld   [hl], SNDCH3_ON
+.doMuteCh:
+	;--
 	
 	dec  c						; to rNRx2
 	ld   a, $08					; Clear volume
@@ -1748,13 +1764,10 @@ ENDC
 	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
 	;
 	
-	ld   hl, iSndInfo_RegPtr
-	add  hl, de					; Seek to register ptr
-	ld   a, [hl]				; Read it
 	;--
-	; Save a copy of this pointing to NRx4 for when we retrigger later on
-	ld   c, a
-	inc  c
+	; Save a copy of the register this pointing to NRx4 for when 
+	ld   a, c
+	inc  c						; C = Ptr to NRx4, for when we retrigger later on 
 	;--
 	cp   SND_CH3_PTR			; Does it point to ch3?
 	jr   nz, .noStop			; If not, jump

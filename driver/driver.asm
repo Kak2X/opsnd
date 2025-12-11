@@ -673,18 +673,17 @@ Sound_Cmd_SetChVol_\1:
 	ld   hl, iSndInfo_RegPtr
 	add  hl, de					; Seek to register ptr
 	ld   a, [hl]				; Read it
+	ld   c, a					; Save a copy for later
 	cp   SND_CH3_PTR			; Does it point to ch3?
+	ld   a, b					; (Shared between branches)
 	jr   nz, .ch124				; If not, jump
 .ch3:
-	ld   a, b					; A = B << 5
-	and  $03					
+	and  $03					; A = B << 5
 	swap a						; (<< 4)
-	ld   c, a
-	add  c						; (<< 1) (could have been "add a")
+	add  a						; (<< 1)
 	jr   .setVol
 .ch124:
-	ld   a, b					; A = B << 4
-	and  $0F
+	and  $0F					; A = B << 4
 	swap a
 .setVol:
 
@@ -718,22 +717,26 @@ Sound_Cmd_SetChVol_\1:
 	bit  SISB_USEDBYSFX, a
 	ret  nz
 	
-	; Update NRx2
-	ld   hl, iSndInfo_RegPtr
-	add  hl, de
-	ld   c, [hl]				; C = Ptr to NRx3
-	dec  c						; C--, to NRx2
+	; Perform the wave channel fix, now that we passed all checks and are sure the channel's getting retriggered
+	ld   a, c
+	cp   SND_CH3_PTR			; Are we restarting the wave channel?
+	jr   nz, .noWaveFix			; If not, jump
 	
+	ld   hl, rNR30				; Otherwise, do the fix
+	ld   [hl], $00
+	ld   [hl], SNDCH3_ON
+.noWaveFix:
+	
+	; Update NRx2
+	dec  c						; C--, to NRx2
 	ld   hl, iSndInfo_RegNRx2Data
 	add  hl, de
-	ldi  a, [hl]				; A = iSndInfo_RegNRx2Data
+	ldi  a, [hl]				; A = iSndInfo_RegNRx2Data, seek to iSndInfo_RegNRx3Data
 	ldh  [c], a					; Write to NRx2
 	
 	; Update NRx3
 	inc  c						; C++, to NRx3
-	ld   hl, iSndInfo_RegNRx3Data
-	add  hl, de
-	ldi  a, [hl]				; A = iSndInfo_RegNRx3Data
+	ldi  a, [hl]				; A = iSndInfo_RegNRx3Data, seek to iSndInfo_RegNRx4Data
 	ldh  [c], a					; Write to NRx3
 	
 	; Update NRx4
@@ -1577,8 +1580,7 @@ Sound_DoChSndInfo_Loop_\1:
 
 	ld   hl, iSndInfo_RegPtr		; Seek to iSndInfo_RegPtr
 	add  hl, de
-	ld   a, [hl]					; Read out the ptr
-	ld   c, a						; Store it to C for $FF00+C access
+	ld   c, [hl]					; Read out the ptr to C for $FF00+C access
 	
 	ld   hl, iSndInfo_RegNRx2Data	; Seek to iSndInfo_RegNRx2Data
 	add  hl, de
@@ -1799,8 +1801,7 @@ ENDC
 	ld   hl, iSndInfo_RegNRx4Data
 	add  hl, de
 	ld   a, [hl]
-	set  SNDCHFB_RESTART, a			; Restart channel
-	or   a, SNDCHF_LENSTOP			; Stop channel playback when length expires
+	or   SNDCHF_RESTART|SNDCHF_LENSTOP	; Restart channel *and* stop channel playback when length expires 
 	ldh  [c], a
 	ret
 	
@@ -1809,7 +1810,7 @@ ENDC
 	ld   hl, iSndInfo_RegNRx4Data
 	add  hl, de
 	ld   a, [hl]
-	set  SNDCHFB_RESTART, a			; Restart channel
+	set  SNDCHFB_RESTART, a				; Restart channel
 	ldh  [c], a
 	ret
 

@@ -2,14 +2,17 @@
 ; SAMPLE PROGRAM that plays Sound IDs through the driver.
 ;
 
-SECTION "Stub Program", HRAM[$FF80]
-hVBlankDone:               db   ; EQU $FF80 ; Marks if the VBlank loop is done
-hJoyKeys:                  db   ; EQU $FF81 ; Held keys
-hJoyNewKeys:               db   ; EQU $FF82 ; Newly pressed keys
-hCursorOpt:                db   ; EQU $FF83 ; Selected Sound ID
-wFontLoadBit0Col:          db   ; EQU $FF84 ; Font Color 0
-wFontLoadBit1Col:          db   ; EQU $FF85 ; Font Color 1
-wFontLoadTmpGFX:           ds 2 ; EQU $FF86 ; Line drawing buffer
+SECTION "Stub Program", HRAM
+hVBlankDone:               db   ; Marks if the VBlank loop is done
+hJoyKeys:                  db   ; Held keys
+hJoyNewKeys:               db   ; Newly pressed keys
+hCursorOpt:                db   ; Selected Sound ID
+wFontLoadBit0Col:          db   ; Font Color 0
+wFontLoadBit1Col:          db   ; Font Color 1
+wFontLoadTmpGFX:           ds 2 ; Line drawing buffer
+
+SECTION "Stack", WRAM0, ALIGN[6]
+wStack:                    ds $40
 
 ; Constants
 
@@ -185,7 +188,7 @@ EntryPoint:
 	call InitMemory
 	
 	; Set the real stack ptr now that WRAM is wiped
-	ld   sp, $DF00
+	ld   sp, wStack
 	
 	; Clear HRAM
 	ld   hl, HRAM_Begin

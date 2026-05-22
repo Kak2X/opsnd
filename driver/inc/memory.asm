@@ -26,7 +26,7 @@ hSndPlayCnt:                 db ; Sound Played Counter (bits3-0)
 hSndPlaySetCnt:              db ; Sound Req Counter (bits3-0) (if != hSndPlaySetCnt, start a new track)
 hSndInfoCurDataPtr_Low:      db ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
 hSndInfoCurDataPtr_High:     db ; Ptr to current sound channel data (initially copied from iSndInfo_DataPtr)
-hSndChEnaMask:               db ; rNR51 bitmask. This is a global version of iSndInfo_Unused11 which operates in mono (only the lower nybble is used)
+hSndChEnaMask:               db ; rNR51 bitmask, operates in mono (only the lower nybble is used)
 
 hTemp:                       db ; Temporary value
 hROMBank:                    db ; Current ROM Bank
@@ -59,14 +59,13 @@ DEF iSndInfo_VolPredict                EQU $0D ; "Volume timer" which predicts t
 DEF iSndInfo_RegNRx2Data               EQU $0E ; Last value written to rNR*2 | $FF00+(iSndInfo_RegPtr-1)
 DEF iSndInfo_RegNRx3Data               EQU $0F ; Last value written to rNR*3 | $FF00+(iSndInfo_RegPtr)
 DEF iSndInfo_RegNRx4Data               EQU $10 ; Last value written to rNR*4 | $FF00+(iSndInfo_RegPtr+1)
-DEF iSndInfo_Unused11                  EQU $11 ; [Free space]
-DEF iSndInfo_WaveSetId                 EQU $12 ; Id of last wave set loaded
-DEF iSndInfo_LoopTimerTbl              EQU $13 ; Table with timers counting down, used to determine how many times to "jump" the data pointer elsewhere before continuing.
-DEF iSndInfo_SlideFreqOffsetLow        EQU $16 ; Frequency offset (low byte) applied each active frame of a pitch slide.
-DEF iSndInfo_SlideFreqOffsetHigh       EQU $17 ; "" (high byte) ""
-DEF iSndInfo_SlideTimer                EQU $18 ; When this elapses, the pitch slide ends.
-DEF iSndInfo_FreqOffsetLow             EQU $19 ; Offset applied to the current frequency value.
-DEF iSndInfo_FreqOffsetHigh            EQU $1A ; "" (high byte) ""
+DEF iSndInfo_WaveSetId                 EQU $11 ; Id of last wave set loaded
+DEF iSndInfo_LoopTimerTbl              EQU $12 ; Table with timers counting down, used to determine how many times to "jump" the data pointer elsewhere before continuing.
+DEF iSndInfo_SlideFreqOffsetLow        EQU $15 ; Frequency offset (low byte) applied each active frame of a pitch slide.
+DEF iSndInfo_SlideFreqOffsetHigh       EQU $16 ; "" (high byte) ""
+DEF iSndInfo_SlideTimer                EQU $17 ; When this elapses, the pitch slide ends.
+DEF iSndInfo_FreqOffsetLow             EQU $18 ; Offset applied to the current frequency value.
+DEF iSndInfo_FreqOffsetHigh            EQU $19 ; "" (high byte) ""
 DEF iSndInfo_End                       EQU $20 ; Pointer stack moving up
 
 ; ldi requirements

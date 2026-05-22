@@ -2636,15 +2636,13 @@ Sound_Cmd_ChanStop_\1:
 	;
 	; Make ch3 stop when its length expires.
 	;
-	ldi  a, [hl]			; Read from iSndInfo_RegNRx4Data, seek to iSndInfo_Unused11
+	ldi  a, [hl]			; Read from iSndInfo_RegNRx4Data, seek to iSndInfo_WaveSetId
 	or   a, SNDCHF_LENSTOP	; Set kill flag
 	ldh  [c], a				; Write to rNR34
 
 	;
 	; Restore the BGM wave set
 	;
-	inc  l					; Seek to iSndInfo_WaveSetId
-	
 	; Fall-through
 	
 ; =============== Sound_SetWaveDataCustom ===============

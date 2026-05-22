@@ -2381,12 +2381,6 @@ Sound_Cmd_Ret_\1:
 ; Command data format:
 ; - 0: Wave set id
 Sound_Cmd_SetWaveData_\1:
-
-	; Ignore if the sound channel is used by a SFX
-	ld   a, [de]
-	bit  SISB_USEDBYSFX, a
-	jp   nz, Sound_DoChSndInfo_Loop_\1
-
 	; Disable wave ch
 	xor  a
 	ldh  [rNR30], a

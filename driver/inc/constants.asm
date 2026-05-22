@@ -12,6 +12,10 @@ DEF SNPB_SFX4             EQU 6 ; An high-priority SFX4 is playing
 DEF SNP_SFXMULTI          EQU 1 << SNPB_SFXMULTI
 DEF SNP_SFX4              EQU 1 << SNPB_SFX4
 
+; Flags stored alongside the channel count in the song header.
+DEF SDFB_BANKED           EQU 7 ; Tells the song init routine that it has bank-specific channels.
+DEF SDF_BANKED            EQU 1 << SDFB_BANKED
+
 ; iSndInfo_Status
 DEF SISB_PAUSE            EQU 0 ; If set, iSndInfo processing is paused for that channel
 DEF SISB_LOCKNRx2         EQU 1 ; If set, rNR*2 won't be updated

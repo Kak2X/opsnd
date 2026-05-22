@@ -999,12 +999,12 @@ Sound_InitSongFromHeader_\1:
 	ld   e, c
 	ld   d, b
 
-	; A sound can take up multiple channels -- and channel info is stored into a $20 byte struct.
-	; The first byte from the sound header marks how many channels ($20 byte blocks) may need to be initialized.
-
 	; B = Channels used
+	; C = Untouched value with flags
 	ld   a, [de]
 	inc  de
+	ld   c, a
+	and  $FF^SDF_BANKED ; Filter out flags
 	ld   b, a
 .chLoop:
 
@@ -1023,20 +1023,32 @@ REPT 3
 	inc  de
 ENDR
 	
-	; The bank number we previously bankswitched to goes to iSndInfo_DataPtr_Bank
-	ldh  a, [hROMBank]
-	ldi  [hl], a
-
-	; Then the remaining 2 original bytes
-REPT 2
-	ld   a, [de]
-	ldi  [hl], a
+	; For compatibility reasons, the order between RAM/ROM formats now diverge.
+	inc  l					; iSndInfo_FreqDataIdBase
+	ld   a, [de]			; C = Fine tune note offset
 	inc  de
-ENDR
-
+	ldd  [hl], a			; Write it, then back to iSndInfo_DataPtr_Bank
+	
+	; Copy over the bank number... if one is set and we're in banked mode.
+	ld   a, [de]
+	inc  de
+	bit  SDFB_BANKED, c	; Are we in banked mode?
+	jr   z, .noBank		; If not, use the current bank
+	and  a				; Is the bank number set in the channel data?
+	jr   nz, .setBank	; If so, write it
+.noBank:
+	ldh  a, [hROMBank]
+.setBank:
+	ldi  [hl], a		; iSndInfo_DataPtr_Bank
+	inc  l
+	
 	;
 	; Then initialize other fields
 	;
+	
+	; No vibratos active by default
+	xor  a					; Write to iSndInfo_VibratoId
+	ldi  [hl], a
 	
 	; Point data "stack index" to the very end of the SndInfo structure
 	ld   a, iSndInfo_End

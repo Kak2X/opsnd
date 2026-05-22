@@ -1071,7 +1071,7 @@ ENDR
 	ret
 	
 .skip:
-	ld  a, b
+	push bc
 		; HL += SNDINFO_SIZE
 		ld   bc, SNDINFO_SIZE
 		add  hl, bc
@@ -1079,7 +1079,7 @@ ENDR
 		REPT 5
 			inc  de
 		ENDR
-	ld   b, a
+	pop  bc
 	dec  b				; Finished all loops?
 	jr   nz, .chLoop	; If not, jump	
 	

@@ -15,10 +15,12 @@ REPT \2 - (.end_\@ - .start_\@)
 ENDR
 ENDM
 
+; The first song is skipped, as it is blank by convention.
+; This offsets the number of total songs reported by the GBS by one.
 SECTION "GBS Header", ROM0[$0000]
 	db "GBS"			; Identifier string
 	db $01				; Version
-	db (Sound_SndListTable_Main.end-Sound_SndListTable_Main)/5		; Number of songs
+	db ((Sound_SndListTable_Main.end-Sound_SndListTable_Main)/5)-1		; Number of songs
 	db $01				; First song 
 	dw GBS_StartCode	; Load address
 	dw GBS_Init			; Init address
@@ -38,6 +40,6 @@ GBS_Init:
 	push af
 		call SoundInt_Init
 	pop  af
-	add  a, SND_BASE
+	add  a, SND_BASE+1
 	ld   c, a
 	jp   SoundInt_ReqPlayId

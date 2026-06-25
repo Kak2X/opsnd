@@ -1,10 +1,15 @@
-DEF SNDIDREQ_SIZE      EQU $08
-DEF SNDINFO_SIZE       EQU $20 ; Size of iSndInfo struct
-DEF SND_CH1_PTR        EQU LOW(rNR13)
-DEF SND_CH2_PTR        EQU LOW(rNR23)
-DEF SND_CH3_PTR        EQU LOW(rNR33)
-DEF SND_CH4_PTR        EQU LOW(rNR43)
-DEF SNDLEN_INFINITE    EQU $FF
+; Disable SOUNDBANK_1ST if it isn't set
+IF !DEF(SOUNDBANK_1ST)
+DEF SOUNDBANK_1ST         EQU $01
+ENDC
+
+DEF SNDIDREQ_SIZE         EQU $08
+DEF SNDINFO_SIZE          EQU $20 ; Size of iSndInfo struct
+DEF SND_CH1_PTR           EQU LOW(rNR13)
+DEF SND_CH2_PTR           EQU LOW(rNR23)
+DEF SND_CH3_PTR           EQU LOW(rNR33)
+DEF SND_CH4_PTR           EQU LOW(rNR43)
+DEF SNDLEN_INFINITE       EQU $FF
 
 ; wSndSfxPriority
 DEF SNPB_SFXMULTI         EQU 7 ; An high-priority multi-channel SFX is playing

@@ -72,13 +72,13 @@ ENDC
 ENDM
 
 MACRO _mSOUNDBANK
-SECTION "Sound Driver - Bank \1", ROMX[$4000], BANK[\1]
+SECTION "Sound Driver - Bank \1", ROMX[$4000], BANK[\1-(SOUNDBANK_1ST-1)]
 INCLUDE "driver/driver.asm"
 INCLUDE "driver/data/frequencies.asm"
 INCLUDE "driver/data/waves.asm"
 INCLUDE "driver/data/vibrato.asm"
 INCLUDE "driver/data/song_list.asm"
-SECTION "Sound Data - Bank \1", ROMX, BANK[\1]
+SECTION "Sound Data - Bank \1", ROMX, BANK[\1-(SOUNDBANK_1ST-1)]
 	; Sound data below
 ENDM
 

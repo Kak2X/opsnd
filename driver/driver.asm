@@ -1249,7 +1249,7 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	
 	; Not applicable if the feature is off
 	bit  SISB_SLIDE, a
-	jp   z, Sound_DoChSndInfo_Main_\1
+	jr   z, Sound_DoChSndInfo_Main_\1
 	
 .slideOk:	
 	; Disable the feature when its timer elapses
@@ -1394,7 +1394,7 @@ Sound_DoChSndInfo_Loop_\1:
 	; If it's not a command ID or a sound length, the next data byte can optionally be a new sound length value
 	; (which, again, will get applied immediately on the same frame).
 	;
-	mSndReadNextByte	; A = Data value
+	mSndReadNextByte	; A = Data value, BC = Ptr to data value
 	
 .chkIsCmd:
 
@@ -1452,7 +1452,7 @@ Sound_DoChSndInfo_Loop_\1:
 	ld   [hl], a
 
 	; Perform the register update
-	jr   .updateRegs
+	jr   .chkNewLength
 ;--
 .isCh123:
 
@@ -1460,8 +1460,8 @@ Sound_DoChSndInfo_Loop_\1:
 	; If the value is < $80, directly treat it as the new target length
 	; and don't update the registers.
 	;
-	cp   SNDNOTE_BASE	; A < $80? (MSB clear?)
-	jr   c, .setLength	; If so, skip ahead a lot
+	cp   SNDNOTE_BASE		; A < $80? (MSB clear?)
+	jr   c, .setLength		; If so, skip ahead a lot
 
 	;------
 
@@ -1523,125 +1523,40 @@ Sound_DoChSndInfo_Loop_\1:
 	inc  l
 	ld   [hl], b		; Save iSndInfo_RegNRx4Data
 	;------
-
-.updateRegs:
-
-	;--
-	;
-	; This part does the direct updates to the sound register sets, now that everything
-	; has been set (through command IDs and/or note ids) in the SndInfo fields.
-	;
-	; Since the registers "are in HRAM" all of the pointers pass through C and the data is written through "ld [c], a" instructions.
-	; Depending on the status flags, more or less data will be written in sequence.
-	;
-
-	ld   a, [de]			; Read iSndInfo_Status
-
-	;
-	; If a SFX is marked as currently playing for the channel, skip updating the sound registers.
-	; This can only jump if the current handled SndInfo set is for a BGM.
-	;
-	bit  SISB_USEDBYSFX, a		; Is the bit set?
-	jr   nz, .chkNewLength		; If so, skip ahead
-;##
-	;
-	; Set the 'z' flag for a later check.
-	; If set, we won't be updating rNRx2 (C-1).
-	;
-
-	bit  SISB_LOCKNRx2, a			; ### Is the bit set?...
-
-	;
-	; Read out the current 1-byte register pointer from iSndInfo_RegPtr to C.
-	;
-
-	ld   hl, iSndInfo_RegPtr		; Seek to iSndInfo_RegPtr
-	add  hl, de
-	ld   c, [hl]					; Read out the ptr to C for $FF00+C access
-	
-	ld   hl, iSndInfo_RegNRx2Data	; Seek to iSndInfo_RegNRx2Data
-	add  hl, de
-	
-	; Check if we're skipping NRx2
-	jr   nz, .updateNRx3			; ### ...if so, skip
-
-.updateNRx2:
-	;
-	; Update NRx2 with the contents of iSndInfo_RegNRx2Data
-	;
-	dec  c				; C--, to NRx2
-	ld   a, [hl]		; Read out iSndInfo_RegNRx2Data
-	ldh  [c], a			; Write to sound register
-	inc  c				; C++, to NRx3
-	
-.updateNRx3:
-
-	;
-	; Update NRx3 with the contents of iSndInfo_RegNRx3Data
-	;
-	inc  l			; Seek to iSndInfo_RegNRx3Data
-	ldi  a, [hl]	; Read iSndInfo_RegNRx3Data, seek to iSndInfo_RegNRx4Data
-	ldh  [c], a		; Write to sound register
-	inc  c			; Next register
-
-.updateNRx4:
-	;
-	; Update NRx4 with the contents of iSndInfo_RegNRx4Data
-	;
-	ld   a, [hl]	; Read out iSndInfo_RegNRx4Data
-	ldh  [c], a		; Write to sound register
-;##
 	
 .chkNewLength:
 
 	;
-	; NOTE: At the start of the loop, we incremented the data byte.
-	;
-	; After passing through the custom register update, an additional byte
-	; may be used to specify a new note length.
+	; After the note, an additional byte may be used to specify its length.
+	; For the Noise channel, this is the only way to specify lengths, as standalone length commands aren't supported.
 	;
 	ld   hl, hSndInfoCurDataPtr_High
 	ldd  a, [hl]
 	ld   c, [hl]
-	ld   b, a
+	ld   b, a				; BC = Ptr to potential length (or if not, the start of the next command)
 	
-	;
-	; If the (new) data byte is < $80, treat it as a new length target.
-	; Otherwise, ignore it completely.
-	;
+	; This only happens if the new value is < $80, like normal waits.
+	ld   a, [bc]			; Read it
+	cp   SNDNOTE_BASE		; A >= $80?
+	jr   nc, .saveDataPtr	; If so, skip. (we're pointing to the next command, keep BC unchanged)
 
-	ld   a, [bc]			; Read data byte
-	cp   $80				; A >= $80?
-	jr   nc, .saveDataPtr	; If so, skip
-
-	;
-	; ++
-	;
-	inc  [hl]
-	jr   nz, .setLength
-	inc  l
-	inc  [hl]
-
-	;------
 .setLength:
-
 	; Write the updated length value to iSndInfo_LengthTarget
+	inc  bc					; Seek BC to the next command
 	ld   hl, iSndInfo_LengthTarget
 	add  hl, de
 	ld   [hl], a
-	;------
 
 .saveDataPtr:
-
+	
 	;
-	; Save back the updated data pointer from HRAM back to the SndInfo
+	; Save back the updated data pointer from HRAM back to the SndInfo.
 	;
 	ld   hl, iSndInfo_DataPtr_Low
-	add  hl, de							; HL = Data ptr in SndInfo
-	ldh  a, [hSndInfoCurDataPtr_Low]	; Save low byte to SndInfo
-	ldi  [hl], a
-	ldh  a, [hSndInfoCurDataPtr_High]	; Save high byte to SndInfo
-	ld   [hl], a
+	add  hl, de
+	ld   a, c
+	ldi  [hl], a ; iSndInfo_DataPtr_Low
+	ld   [hl], b ; iSndInfo_DataPtr_High
 
 	;
 	; Reset the length timer
@@ -1654,8 +1569,6 @@ IF VIBRATO_NOTE
 	ld   [hl], a	; iSndInfo_VibratoDataOffset
 ENDC
 	
-	; The rest of these actions wouldn't be executed when using the explicit Sound_Cmd_ExtendNote command.
-
 	;
 	; Reset the volume prediction timer
 	;
@@ -1666,10 +1579,7 @@ ENDC
 	ld   [hl], a		; Write it back
 	
 	;
-	; The remainder of the subroutine involves checks for muting the sound channel.
-	;
-	; If we're a BGM SndInfo and the channel is in use by a sound effect, 
-	; return immediately to avoid interfering.
+	; If we're a BGM SndInfo and the channel is in use by a sound effect, return immediately to avoid interfering.
 	;
 	ld   a, [de]				; Read iSndInfo_Status
 	bit  SISB_USEDBYSFX, a		; Is a sound effect playing on the channel?
@@ -1685,29 +1595,27 @@ ENDC
 	;
 	; If both frequency bytes are zero, mute the sound channel.
 	;
-.chkMuteMode:
+.chkMute:
 	ld   hl, iSndInfo_RegNRx3Data
 	add  hl, de					;
 	ldi  a, [hl]				; iSndInfo_RegNRx3Data != 0
 	or   [hl]					; || iSndInfo_RegNRx4Data != 0?
-	jr   nz, .chkReinit			; If so, skip ahead
+	jr   nz, .playNote			; If so, skip ahead
 
-.chkMuteCh:
-	
 	;--
 	;
 	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
 	;
 	ld   a, c
 	cp   SND_CH3_PTR			; Does it point to ch3?
-	jr   nz, .doMuteCh			; If not, jump
+	jr   nz, .mute				; If not, skip
 	
 	ld   hl, rNR30				; Do the fix
 	ld   [hl], $00
 	ld   [hl], SNDCH3_ON
-.doMuteCh:
 	;--
-	
+.mute:
+	; Safely mute the channel, without causing audio pops.
 	dec  c						; to rNRx2
 	ld   a, $08					; Clear volume
 	ldh  [c], a				
@@ -1715,67 +1623,76 @@ ENDC
 	inc  c						; to rNRx4
 	ld   a, SNDCHF_RESTART		; Apply changes
 	ldh  [c], a
-
 	ret
 
-.chkReinit:
-	; If we skipped the NRx2 update (volume + env), return immediately
-	ld   a, [de]
-	bit  SISB_LOCKNRx2, a
-	ret  nz
-
-.chkCh3EndType:
-
+.playNote:
+	ld   b, $00					; B = Flags to write to NRx4
+	
+	;--
 	;
 	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
 	;
-	
-	;--
-	; Save a copy of the register this pointing to NRx4 for when 
 	ld   a, c
-	inc  c						; C = Ptr to NRx4, for when we retrigger later on 
-	;--
 	cp   SND_CH3_PTR			; Does it point to ch3?
-	jr   nz, .noStop			; If not, jump
+	jr   nz, .updateNrRegs		; If not, skip
 	
 	ld   hl, rNR30				; Do the fix
-	ld   [hl], $00
+	ld   [hl], b
 	ld   [hl], SNDCH3_ON
+	;--
 	
 	;
-	; Also specific to the wave, determine how we want to handle the end of channel playback when the length expires.
-	; If the checks all pass, wSndCh3DelayCut is used as channel length (after which, the channel mutes itself).
+	; Also specific to the wave, check if the length timer is set.
+	; If the checks all pass, use wSndCh3DelayCut as channel length (the channel will mute itself after that).
 	;
 
-	; If we're processing a sound effect, jump
+	; If we're processing a sound effect, skip
 	ld   a, [de]				; Read iOBJInfo_Status
 	bit  SISB_SFX, a			; Is the bit set?
-	jr   nz, .noStop			; If so, jump
+	jr   nz, .updateNrRegs		; If so, jump
 
-	; If the target length is marked as "none" ($FF), jump
+	; If the target length is marked as "none" ($FF), skip
 	ld   a, [wSndCh3DelayCut]
 	cp   SNDLEN_INFINITE
-	jr   z, .noStop
+	jr   z, .updateNrRegs
 
-.ch3StopOnEnd:
-	; Set the new ch3 length
-	ldh  [rNR31], a
+	ldh  [rNR31], a				; Set the new ch3 length
+	set  SNDCHFB_LENSTOP, b		; Include length timer in trigger
 
-	; Restart the channel playback
-	ld   hl, iSndInfo_RegNRx4Data
-	add  hl, de
-	ld   a, [hl]
-	or   SNDCHF_RESTART|SNDCHF_LENSTOP	; Restart channel *and* stop channel playback when length expires 
-	ldh  [c], a
-	ret
+.updateNrRegs:
+	;
+	; Update the actual sound registers, and optionally trigger the note.
+	;
 	
-.noStop:
-	; Restart the sound channel playback
-	ld   hl, iSndInfo_RegNRx4Data
-	add  hl, de
-	ld   a, [hl]
-	set  SNDCHFB_RESTART, a				; Restart channel
-	ldh  [c], a
+	ld   hl, iSndInfo_RegNRx2Data
+	add  hl, de					; Seek HL to iSndInfo_RegNRx2Data
+	
+	; Check if we're skipping NRx2.
+	; Skipping it prevents the channel from being triggered, to match old behavior.
+	ld   a, [de]				; Read iSndInfo_Status
+	bit  SISB_LOCKNRx2, a		; Are NRx2 updates locked?
+	jr   nz, .updateNRx3		; If so, skip
+
+.updateNRx2:
+	; Update NRx2 with the contents of iSndInfo_RegNRx2Data
+	dec  c						; C--, to NRx2
+	ld   a, [hl]				; Read out iSndInfo_RegNRx2Data
+	ldh  [c], a					; Write to sound register
+	inc  c						; C++, to NRx3
+	set  SNDCHFB_RESTART, b 	; Confirm channel retrigger (matches old behavior)
+	
+.updateNRx3:
+	; Update NRx3 with the contents of iSndInfo_RegNRx3Data
+	inc  l						; Seek to iSndInfo_RegNRx3Data
+	ldi  a, [hl]				; Read iSndInfo_RegNRx3Data, seek to iSndInfo_RegNRx4Data
+	ldh  [c], a					; Write to sound register
+	inc  c						; Next register
+
+.updateNRx4:
+	; Update NRx4 with the contents of iSndInfo_RegNRx4Data
+	ld   a, [hl]				; Read iSndInfo_RegNRx4Data
+	or   b						; Merge with trigger flags
+	ldh  [c], a					; Write to sound register
 	ret
 
 Sound_CmdPtrTbl_\1:

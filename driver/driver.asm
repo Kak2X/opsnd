@@ -1241,8 +1241,10 @@ Sound_DoChSndInfo_Vibrato_\1:
 	ldh  [c], a
 	inc  c
 	
-	; NRx4 = B
-	ld   a, b
+	; NRx4 = (NRx4 & SNDCHF_LENSTOP) + B
+	ldh  a, [c]
+	and  SNDCHF_LENSTOP ; Preserve length flag, otherwise vibratos break completely with the length timer set
+	or   b				; Merge new frequency
 	ldh  [c], a
 	
 	;--
@@ -1348,9 +1350,11 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	ldi  a, [hl]
 	ldh  [c], a
 	
-	; NRx4 = iSndInfo_RegNRx4Data
+	; NRx4 = (NRx4 & SNDCHF_LENSTOP) + iSndInfo_RegNRx4Data
 	inc  c
-	ld   a, [hl]
+	ldh  a, [c]
+	and  SNDCHF_LENSTOP 
+	or   [hl]				
 	ldh  [c], a
 	
 	;--

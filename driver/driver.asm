@@ -744,19 +744,6 @@ Sound_Cmd_SetChVol_\1:
 	ld   a, [hl]				; A = iSndInfo_RegNRx4Data
 	or   SNDCHF_RESTART			; Restart the tone to apply the changes
 	ldh  [c], a
-	
-	;--
-	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
-	; clear the length timer in NRx1.
-	bit  SNDCHFB_LENSTOP, a
-	ret  nz
-	dec  c						; C -= 3, to NRx1
-	dec  c
-	dec  c
-	ldh  a, [c]
-	and  $C0					; Only keep wave duty
-	ldh  [c], a
-	;--
 	ret
 	
 ; =============== Sound_FastSlideSFXtoC_8 ===============
@@ -1246,19 +1233,6 @@ Sound_DoChSndInfo_Vibrato_\1:
 	and  SNDCHF_LENSTOP ; Preserve length flag, otherwise vibratos break completely with the length timer set
 	or   b				; Merge new frequency
 	ldh  [c], a
-	
-	;--
-	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
-	; clear the length timer in NRx1.
-	bit  SNDCHFB_LENSTOP, a
-	jr   nz, Sound_DoChSndInfo_Main_\1
-	dec  c						; C -= 3, to NRx1
-	dec  c
-	dec  c
-	ldh  a, [c]
-	and  $C0					; Only keep wave duty
-	ldh  [c], a
-	;--
 	jr   Sound_DoChSndInfo_Main_\1
 	
 Sound_DoChSndInfo_ChkSlide_\1:
@@ -1356,19 +1330,6 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	and  SNDCHF_LENSTOP 
 	or   [hl]				
 	ldh  [c], a
-	
-	;--
-	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
-	; clear the length timer in NRx1.
-	bit  SNDCHFB_LENSTOP, a
-	jr   nz, .end
-	dec  c						; C -= 3, to NRx1
-	dec  c
-	dec  c
-	ldh  a, [c]
-	and  $C0					; Only keep wave duty
-	ldh  [c], a
-	;--	
 .end:
 	
 Sound_DoChSndInfo_Main_\1:
@@ -1630,19 +1591,6 @@ Sound_DoChSndInfo_Loop_\1:
 	ld   a, [hl]	; Read out iSndInfo_RegNRx4Data
 	ldh  [c], a		; Write to sound register
 ;##
-
-	;--
-	; If the channel length isn't being used (SNDCHFB_LENSTOP cleared),
-	; clear the length timer in NRx1.
-	bit  SNDCHFB_LENSTOP, a
-	jr   nz, .chkNewLength
-	dec  c						; C -= 3, to NRx1
-	dec  c
-	dec  c
-	ldh  a, [c]
-	and  $C0					; Only keep wave duty
-	ldh  [c], a
-	;--	
 	
 .chkNewLength:
 

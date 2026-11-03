@@ -132,6 +132,7 @@ ENDC
 	ld   [hl], e
 	ret
 
+IF !TRIM_UNMAPPED
 ; =============== Sound_CmdS_StartSlide ===============
 ; Version of Sound_StartSlide used by sound data commands.
 ; IN
@@ -328,7 +329,8 @@ Sound_Div_\1:
 	dec  d			; Done with all digits?
 	jr   nz, .loop	; If not, loop
 	ret
-	
+ENDC
+
 ; =============== Sound_SndChInfoPtrTable ===============
 ; Maps the IDs passed to Sound_StartSlide to sound channel info pointers.
 Sound_SndChInfoPtrTable_\1:
@@ -706,8 +708,10 @@ Sound_Cmd_SetChVol_\1:
 	
 	; Setting a volume requires updating NRx2, so the lock has to go.
 	ld   a, [de]
-	res  SISB_LOCKNRx2, a
-	ld   [de], a
+	IF !TRIM_UNMAPPED
+		res  SISB_LOCKNRx2, a
+		ld   [de], a
+	ENDC
 	
 	;
 	; Try to set the volume to the registers.
@@ -746,6 +750,7 @@ Sound_Cmd_SetChVol_\1:
 	ldh  [c], a
 	ret
 	
+IF !TRIM_UNMAPPED
 ; =============== Sound_FastSlideSFXtoC_8 ===============
 ; Slides the two SFX pulse channels to note C-8 over 1 second.
 Sound_FastSlideSFXtoC_8_\1:
@@ -769,7 +774,8 @@ Sound_SlowSlideSFXtoF#4_\1:
 	ld   e, 4*60		; 4 secs
 	ld   bc, $069E		; F#4
 	jp   Sound_StartSlide_\1      
-                                          
+ENDC
+				  
 ; =============== Sound_PauseAll ===============
 ; Handles the sound pause command during gameplay.
 Sound_PauseAll_\1:                           
@@ -1233,6 +1239,8 @@ Sound_DoChSndInfo_Vibrato_\1:
 	and  SNDCHF_LENSTOP ; Preserve length flag, otherwise vibratos break completely with the length timer set
 	or   b				; Merge new frequency
 	ldh  [c], a
+	
+IF !TRIM_UNMAPPED
 	jr   Sound_DoChSndInfo_Main_\1
 	
 Sound_DoChSndInfo_ChkSlide_\1:
@@ -1331,6 +1339,9 @@ Sound_DoChSndInfo_ChkSlide_\1:
 	or   [hl]				
 	ldh  [c], a
 .end:
+ELSE
+Sound_DoChSndInfo_ChkSlide_\1:
+ENDC
 	
 Sound_DoChSndInfo_Main_\1:
 	;------------
@@ -1383,6 +1394,9 @@ ENDC
 	
 ; =============== Sound_DoChSndInfo_Loop ===============
 Sound_DoChSndInfo_Loop_\1:
+IF \2
+Sound_DoChSndInfo_Loop_Main:
+ENDC
 
 	;
 	; Read out a "command byte" from the data, and point to the next data byte.
@@ -1607,11 +1621,11 @@ ENDC
 	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
 	;
 	ld   a, c
-	cp   SND_CH3_PTR			; Does it point to ch3?
+	sub  SND_CH3_PTR			; Does it point to ch3?
 	jr   nz, .mute				; If not, skip
 	
 	ld   hl, rNR30				; Do the fix
-	ld   [hl], $00
+	ld   [hl], a				; (A = 0)
 	ld   [hl], SNDCH3_ON
 	;--
 .mute:
@@ -1633,11 +1647,11 @@ ENDC
 	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
 	;
 	ld   a, c
-	cp   SND_CH3_PTR			; Does it point to ch3?
+	sub  SND_CH3_PTR			; Does it point to ch3?
 	jr   nz, .updateNrRegs		; If not, skip
 	
 	ld   hl, rNR30				; Do the fix
-	ld   [hl], b
+	ld   [hl], a				; (A = 0)
 	ld   [hl], SNDCH3_ON
 	;--
 	
@@ -1667,11 +1681,13 @@ ENDC
 	ld   hl, iSndInfo_RegNRx2Data
 	add  hl, de					; Seek HL to iSndInfo_RegNRx2Data
 	
+IF !TRIM_UNMAPPED
 	; Check if we're skipping NRx2.
 	; Skipping it prevents the channel from being triggered, to match old behavior.
 	ld   a, [de]				; Read iSndInfo_Status
 	bit  SISB_LOCKNRx2, a		; Are NRx2 updates locked?
 	jr   nz, .updateNRx3		; If so, skip
+ENDC
 
 .updateNRx2:
 	; Update NRx2 with the contents of iSndInfo_RegNRx2Data
@@ -1702,8 +1718,8 @@ Sound_CmdPtrTbl_\1:
 	dw Sound_Cmd_ChanStop_\1
 	dw Sound_Cmd_WriteToNRx2_\1
 	dw Sound_Cmd_JpFromLoop_\1
-	dw Sound_Cmd_AddToBaseFreqId_\1
-	dw Sound_Cmd_JpFromLoopByTimer_\1
+	ct Sound_Cmd_AddToBaseFreqId_\1
+	ct Sound_Cmd_JpFromLoopByTimer_\1
 	dw Sound_Cmd_WriteToNR10_\1;X				; $08
 	dw Sound_Cmd_SetPanning_\1
 	dw Sound_Cmd_SetBaseFreqOff_\1;X
@@ -1711,8 +1727,8 @@ Sound_CmdPtrTbl_\1:
 	dw Sound_Cmd_Call_\1
 	dw Sound_Cmd_Ret_\1
 	dw Sound_Cmd_WriteToNRx1_\1
-	dw Sound_Cmd_LockNRx2_\1
-	dw Sound_Cmd_UnlockNRx2_\1					; $10
+	ct Sound_Cmd_LockNRx2_\1
+	ct Sound_Cmd_UnlockNRx2_\1					; $10
 	dw Sound_Cmd_SetVibrato_\1
 	dw Sound_Cmd_ClrVibrato_\1;X
 	dw Sound_Cmd_SetWaveData_\1
@@ -1724,11 +1740,12 @@ Sound_CmdPtrTbl_\1:
 	dw Sound_DoChSndInfo_Loop_\1;X
 	dw Sound_Cmd_ExtendNote_\1
 	dw Sound_DoChSndInfo_Loop_\1;X
-	dw Sound_Cmd_Unused_StartSlide_\1;X
+	ct Sound_Cmd_Unused_StartSlide_\1;X
 	dw Sound_DoChSndInfo_Loop_\1;X
 	dw Sound_DoChSndInfo_Loop_\1;X
 	dw Sound_DoChSndInfo_Loop_\1;X				; $1F
 
+IF !TRIM_UNMAPPED
 ; =============== Sound_Cmd_Unused_StartSlide ===============
 ; [TCRF] Not used.
 ; Starts a pitch slide with custom parameters.
@@ -1782,6 +1799,7 @@ Sound_Cmd_Unused_StartSlide_\1:
 	ld   [hl], a
 	
 	jp   Sound_DoChSndInfo_Loop_\1
+ENDC
 	
 ; =============== Sound_Cmd_WriteToNR31 ===============
 ; Sets a new length value for channel 3 (wSndCh3DelayCut), and applies it immediately.
@@ -1800,6 +1818,7 @@ Sound_Cmd_WriteToNR31_\1:
 	ldh  [rNR31], a
 	jp   Sound_DoChSndInfo_Loop_\1
 	
+IF !TRIM_UNMAPPED
 ; =============== Sound_Cmd_AddToBaseFreqId ===============
 ; Increases the base frequency index by the read amount.
 ; Command data format:
@@ -1814,7 +1833,8 @@ Sound_Cmd_AddToBaseFreqId_\1:
 	add  [hl]				; A += iSndInfo_FreqDataIdBase
 	ld   [hl], a			; Save it back
 	jp   Sound_DoChSndInfo_Loop_\1
-	
+ENDC
+
 ; =============== Sound_Cmd_SetBaseFreqOff ===============
 ; Sets the base frequency offset to the specified value.
 ; Equivalent to TB's PXX command.
@@ -1873,6 +1893,7 @@ Sound_Cmd_ClrVibrato_\1:
 
 	jp   Sound_DoChSndInfo_Loop_\1
 
+IF !TRIM_UNMAPPED
 ; =============== Sound_Cmd_UnlockNRx2 ===============
 ; Clears disable flag for NRx2 writes.
 Sound_Cmd_UnlockNRx2_\1:
@@ -1890,6 +1911,7 @@ Sound_Cmd_LockNRx2_\1:
 	ld   [de], a
 	
 	jp   Sound_DoChSndInfo_Loop_\1
+ENDC
 
 ; =============== Sound_Cmd_ExtendNote ===============
 ; Extends the current note without restarting it.
@@ -2075,6 +2097,7 @@ Sound_Cmd_WriteToNR10_\1:
 	
 	jp   Sound_DoChSndInfo_Loop_\1
 	
+IF !TRIM_UNMAPPED
 ; =============== Sound_Cmd_JpFromLoopByTimer ===============
 ; Loops the sound channel a certain amount of times.
 ; Depending on the loop timer table index in data byte 0, bytes 1-2 may be set as the new hSndInfoCurDataPtr.
@@ -2150,6 +2173,7 @@ ENDC
 	ldh  [hSndInfoCurDataPtr_High], a  
 	
 	jp   Sound_DoChSndInfo_Loop_\1
+ENDC
  
 ; =============== Sound_Cmd_JpFromLoop ===============
 ; If called directly as a sound command, this will always loop the sound channel without loop limit.

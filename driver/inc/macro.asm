@@ -37,6 +37,18 @@ MACRO dp
 	dw \1
 ENDM
 
+; =============== ct ===============
+; Defines a trimmable entry in the command pointer table.
+; IN
+; - 1: Ptr to a command
+MACRO ct
+	IF !TRIM_UNMAPPED
+		dw \1
+	ELSE
+		dw Sound_DoChSndInfo_Loop_Main
+	ENDC
+ENDM
+
 ; =============== mVbDef ===============
 ; Defines a vibrato table.
 ; IN

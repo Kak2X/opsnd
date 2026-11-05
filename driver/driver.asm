@@ -1640,62 +1640,86 @@ ENDC
 	ret
 
 .playNote:
+	ld   hl, iSndInfo_RegNRx2Data
+	add  hl, de					; HL = Ptr to iSndInfo_RegNRx2Data	
+	
+	;
+	; Determine what flags to write to NRx4
+	;
 	ld   b, $00					; B = Flags to write to NRx4
 	
-	;--
+.chkLengthTimer:
 	;
-	; The wave channel needs to set rNR30 in a particular way before retriggering to avoid wave corruption.
+	; Determine if the length timer should be set. 
+	; Only the wave channel is set up for it.
 	;
-	ld   a, c
-	sub  SND_CH3_PTR			; Does it point to ch3?
-	jr   nz, .updateNrRegs		; If not, skip
-	
-	ld   hl, rNR30				; Do the fix
-	ld   [hl], a				; (A = 0)
-	ld   [hl], SNDCH3_ON
-	;--
-	
-	;
-	; Also specific to the wave, check if the length timer is set.
 	; If the checks all pass, use wSndCh3DelayCut as channel length (the channel will mute itself after that).
 	;
-
+	ld   a, c
+	sub  SND_CH3_PTR			; Are we pointing to ch3?
+IF !TRIM_UNMAPPED
+	jr   nz, .chkRetrigger		; If not, skip
+ELSE
+	jr   nz, .triggerOk			; (Without SISB_LOCKNRx2, we can avoid checking for the sound channel twice)
+ENDC
 	; If we're processing a sound effect, skip
 	ld   a, [de]				; Read iOBJInfo_Status
-	bit  SISB_SFX, a			; Is the bit set?
-	jr   nz, .updateNrRegs		; If so, jump
+	bit  SISB_SFX, a			; Are we processing a sound effect?
+	jr   nz, .chkRetrigger		; If so, skip
 
 	; If the target length is marked as "none" ($FF), skip
 	ld   a, [wSndCh3DelayCut]
 	cp   SNDLEN_INFINITE
-	jr   z, .updateNrRegs
+	jr   z, .chkRetrigger
 
 	ldh  [rNR31], a				; Set the new ch3 length
 	set  SNDCHFB_LENSTOP, b		; Include length timer in trigger
+	
+.chkRetrigger:
+	;
+	; Determine whether the channel should be retriggered or not.
+	; Most channels need to be retriggered to play anything on them, except for the wave channel.
+	;
+	; As long as that channel is active, playing a new note will work even without retriggering.
+	; This is beneficial, since:
+	; - Retriggering would make the channel pop like crazy
+	; - The wave corruption workaround is only useful when retriggering
+	;   It also would mute the channel, forcing us to retrigger and causing a pop.
+	;
 
-.updateNrRegs:
-	;
-	; Update the actual sound registers, and optionally trigger the note.
-	;
-	
-	ld   hl, iSndInfo_RegNRx2Data
-	add  hl, de					; Seek HL to iSndInfo_RegNRx2Data
-	
 IF !TRIM_UNMAPPED
-	; Check if we're skipping NRx2.
-	; Skipping it prevents the channel from being triggered, to match old behavior.
+	; If NRx2 is locked, not only skip updating it, but also skip retriggering the channel. 
 	ld   a, [de]				; Read iSndInfo_Status
 	bit  SISB_LOCKNRx2, a		; Are NRx2 updates locked?
 	jr   nz, .updateNRx3		; If so, skip
+	
+	ld   a, c
+	cp   SND_CH3_PTR			; Are we pointing to ch3?
+	jr   nz, .triggerOk			; If not, always trigger the channel
 ENDC
+
+	ldh  a, [rNR52]
+	and  SNDCTRL_CH3			; Is anything playing on the wave channel?
+	jr   nz, .updateNRx2		; If so, we can safely skip triggering it
+	
+	; Otherwise, perform the wave corruption workaround and retrigger
+	ldh  [rNR30], a				; A = 0
+	ld   a, SNDCH3_ON
+	ldh  [rNR30], a
+	
+.triggerOk:
+	set  SNDCHFB_RESTART, b 	; Confirm channel retrigger (matches old behavior)
+
+	;
+	; Update the actual sound registers, and optionally trigger the note.
+	;
 
 .updateNRx2:
 	; Update NRx2 with the contents of iSndInfo_RegNRx2Data
 	dec  c						; C--, to NRx2
 	ld   a, [hl]				; Read out iSndInfo_RegNRx2Data
 	ldh  [c], a					; Write to sound register
-	inc  c						; C++, to NRx3
-	set  SNDCHFB_RESTART, b 	; Confirm channel retrigger (matches old behavior)
+	inc  c						; C++, to NRx3		
 	
 .updateNRx3:
 	; Update NRx3 with the contents of iSndInfo_RegNRx3Data
